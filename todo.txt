@@ -1,0 +1,16 @@
+Current(smaller stuff):
+- #set-your-roles images
+- !bairhitfall clip
+- Help command
+- Info command
+- Write README
+
+Current(LARGE):
+- Populate hitboxes database
+- Images for hitboxes database
+
+Finalizations:
+- Update !framedata screenshot and embed to current patch
+- Update mentor database to match Academy
+- Update !mentors command to ping specified mentors
+- Deploy to Heroku

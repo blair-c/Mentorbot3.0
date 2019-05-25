@@ -1,0 +1,68 @@
+"""Helper functions for mentorbot events and commands."""
+
+from datetime import datetime
+
+import discord
+from discord.ext import commands
+
+
+def character_info(cursor, character=None, region=None):
+    """Return id, name, color, and icon url of given character/region."""
+    if character: # If character was given
+        return cursor.execute(
+            '''SELECT * FROM characters WHERE name = :character''',
+            {'character': character.title()}).fetchone()
+    elif region: # If region was given
+        return cursor.execute(
+            '''SELECT * FROM characters WHERE name = :region''',
+            {'region': region.upper()}).fetchone()
+
+
+def character_role(guild, cursor, character, main=False):
+    """Return role of character with name given."""
+    character = cursor.execute(
+        '''SELECT name FROM characters WHERE name = :character''',
+        {'character': character.title()}).fetchone()
+    if main:
+        return discord.utils.get(guild.roles, f"{character['name']} (Main)")
+    else:
+        return discord.utils.get(guild.roles, character['name'])
+
+
+def display_color(color):
+    """Return color, returning default embed color if default."""
+    if color == discord.Color.default():
+        return 0x4f545c
+    else:
+        return color
+
+
+def get_nickname(member):
+    """Return member's nickname, and if it is their default name."""
+    if member.nick:
+        return member.nick
+    else:
+        return f'{member.display_name} (No nickname)'
+
+
+def in_channel(name):
+    """Check that command is in channel of given name."""
+    async def predicate(ctx):
+        return ctx.channel == discord.utils.get(ctx.guild.text_channels, name=name)
+    return commands.check(predicate)
+
+
+async def update_roles(member, remove, add):
+    """Remove/add given roles, and return embed of info."""
+    await member.remove_roles(remove)
+    await member.add_roles(add)
+    embed = discord.Embed(
+        color=display_color(add.color),
+        description=f'**Updated roles for {member.mention}:**\n'
+                    '```diff\n'
+                    f'- {remove.name}\n'
+                    f'+ {add.name}```',
+        timestamp=datetime.now())
+    embed.set_author(name='Roles updated', icon_url=member.avatar_url)
+    embed.set_footer(text=f'ID: {member.id}')
+    return embed
