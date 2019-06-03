@@ -1,5 +1,4 @@
 Current(smaller stuff):
-- #set-your-roles images
 - !bairhitfall clip
 - Help command
 - Info command

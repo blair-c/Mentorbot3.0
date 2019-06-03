@@ -117,7 +117,7 @@ class Roles(commands.Cog):
             await member.remove_roles(*[role for role in regions if role in member.roles])
             # Add new region role
             await member.add_roles(discord.utils.get(guild.roles, name=emote))
-        # Undergrad
+        # RAS
         elif 'amateur' in message.content:
             if emote == 'NA':
                 await member.add_roles(discord.utils.get(guild.roles, name='Undergrad'))
@@ -156,7 +156,7 @@ class Roles(commands.Cog):
         # Secondaries
         elif 'secondary' in message.content:
             await member.remove_roles(discord.utils.get(guild.roles, name=emote))
-        # Undergrad
+        # RAS
         elif 'amateur' in message.content:
             if emote == 'NA':
                 await member.remove_roles(discord.utils.get(guild.roles, name='Undergrad'))
@@ -177,9 +177,7 @@ class Roles(commands.Cog):
             '• Reacting too quickly may cause the bot to fail in adding/removing roles.\n'
             '• You might need to react and unreact for the role to be added properly.')
         # Main
-        embed = discord.Embed()
-        embed.set_image(url='')
-        await ctx.send(embed=embed)
+        await ctx.send(file=discord.File('images/setyourroles/main.png'))
         msg = await ctx.send(
             '• **Click on a character reaction below to set your main.**\n'
             '• Click on the reaction again to remove a main.\n'
@@ -188,8 +186,7 @@ class Roles(commands.Cog):
             await msg.add_reaction(
                 discord.utils.get(self.bot.emojis, name=character.replace(' ', '')))
         # Secondaries
-        embed.set_image(url='')
-        await ctx.send(embed=embed)
+        await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
         msg = await ctx.send(
             '• **Click on a character reaction below to add a secondary.**\n'
             '• Click on the reaction again to remove a secondary.\n'
@@ -198,8 +195,7 @@ class Roles(commands.Cog):
             await msg.add_reaction(
                 discord.utils.get(self.bot.emojis, name=character.replace(' ', '')))
         # Region
-        embed.set_image(url='')
-        await ctx.send(embed=embed)
+        await ctx.send(file=discord.File('images/setyourroles/region.png'))
         msg = await ctx.send(
             '• **Click on a region reaction below to set your region.**\n'
             '<:WestCoast:547189520781803530> → West Coast\n'
@@ -212,12 +208,11 @@ class Roles(commands.Cog):
             '<:Africa:547189379605725225> → Africa')
         for region in rivals.regions:
             await msg.add_reaction(discord.utils.get(self.bot.emojis, name=region))
-        # Undergrad
-        embed.set_image(url='')
-        await ctx.send(embed=embed)
+        # RAS
+        await ctx.send(file=discord.File('images/setyourroles/ras.png'))
         msg = await ctx.send(
-            '• **If you would like to be notified for our weekly amateur tournaments, '
-               ' please click on a region reaction below.**\n'
+            '• **If you would like to be notified for our weekly amateur tournaments '
+               ' (Rivals Amateur Series), please click on a region reaction below.**\n'
             '• Click on the reaction again to opt out of notifications.\n'
             '<:NorthAmerica:547189311527845907> → North America\n'
             '<:Europe:547189473432305665> → Europe\n'
@@ -226,8 +221,7 @@ class Roles(commands.Cog):
         for region in ['NorthAmerica', 'Europe']:
             await msg.add_reaction(discord.utils.get(self.bot.emojis, name=region))
         # Enroll
-        embed.set_image(url='')
-        await ctx.send(embed=embed)
+        await ctx.send(file=discord.File('images/setyourroles/enroll.png'))
         msg = await ctx.send(
             '• **Is this the only channel you can see?**\n'
             '• Click the <:roaa:547193471191089179> reaction below to enroll in the '
