@@ -1,4 +1,5 @@
 Current(smaller stuff):
+- #action-log on_message_delete() images
 - !bairhitfall clip
 - Help command
 - Info command
