@@ -55,20 +55,6 @@ class ActionLog(commands.Cog):
         await action_log.send(embed=embed)
 
     @commands.Cog.listener()
-    async def on_raw_bulk_message_delete(self, payload):
-        """"""
-        guild = self.bot.get_guild(payload.guild_id)
-        channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
-        if channel.name == 'boardroom': return # Ignore deletions from boardroom
-        embed = discord.Embed(
-            color=0xffffff,
-            description=f'**{len(payload.message_ids)} messages deleted in '
-                        f'{channel.mention}**')
-        embed.set_author(name='Bulk Message Deletion')
-        action_log = discord.utils.get(guild.text_channels, name='action-log')
-        await action_log.send(embed=embed)
-
-    @commands.Cog.listener()
     async def on_message_edit(self, before, after):
         """Display info of edited message in action-log channel."""
         # Ignore messages from boardroom, and ensure that message content has changed

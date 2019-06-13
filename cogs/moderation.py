@@ -15,7 +15,16 @@ class Moderation(commands.Cog):
     @commands.has_permissions(manage_messages=True)
     async def delete_n_messages(self, ctx, n: int = 0):
         """Delete last n+1 messages from channel (Limit 100)."""
-        await ctx.channel.purge(limit=n+1)
+        deleted = await ctx.channel.purge(limit=n)
+        if ctx.channel.name == 'boardroom': return # Don't display deletions from boardroom
+        # Bulk message deletion embed
+        embed = discord.Embed(
+            color=helpers.display_color(ctx.author.color),
+            description=f'**{len(deleted)} messages deleted in {ctx.channel.mention} '
+                        f'by {ctx.author.mention}**')
+        embed.set_author(name='Bulk Message Deletion')
+        action_log = discord.utils.get(guild.text_channels, name='action-log')
+        await action_log.send(embed=embed)
 
     @commands.command(name='whois', hidden=True)
     @commands.has_permissions(ban_members=True)
