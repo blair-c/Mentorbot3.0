@@ -58,29 +58,34 @@ class Roles(commands.Cog):
                 {'value': dnd_value, 'id': ctx.author.id})
         await ctx.send(embed=embed)
 
-    @commands.command(name='advisor', aliases=['mentor'], hidden=True)
-    @commands.has_any_role('Mentor', 'Advisor')
+    @commands.command(name='advisor', hidden=True)
+    @commands.has_role('Mentor')
     @helpers.in_channel('teacher-lounge')
-    async def mentor_advisor_toggle(self, ctx):
-        """Update member's advisor/mentor status, and update database."""
-        mentor_role = discord.utils.get(ctx.guild.roles, name='Mentor')
-        advisor_role = discord.utils.get(ctx.guild.roles, name='Advisor')
-        member = ctx.guild.get_member(ctx.author.id)
-        # Mentor -> Advisor
-        if mentor_role in ctx.author.roles:
-            status = 'Advisor'
-            # Update roles and get embed
-            embed = await helpers.update_roles(member, mentor_role, advisor_role)
-        # Advisor -> Mentor
-        elif advisor_role in ctx.author.roles:
-            status = 'Mentor'
-            # Update roles and embed
-            embed = await helpers.update_roles(member, advisor_role, mentor_role)
+    async def advisor_role_toggle(self, ctx):
+        """Update member's roles from mentor to advisor, and update database."""
+        embed = await helpers.update_roles(
+            ctx.guild.get_member(ctx.author.id),
+            discord.utils.get(ctx.guild.roles, name='Mentor'),  # Remove
+            discord.utils.get(ctx.guild.roles, name='Advisor')) # Add
         # Update database
         with db:
-            cursor.execute(
-                '''UPDATE mentors SET status = :status WHERE discord_id = :id''',
-                {'status': status, 'id': ctx.author.id})
+            cursor.execute('''UPDATE mentors SET status = 'advisor'
+                           WHERE discord_id = :id''', {'id': ctx.author.id})
+        await ctx.send(embed=embed)
+
+    @commands.command(name='mentor', hidden=True)
+    @commands.has_role('Advisor')
+    @helpers.in_channel('teacher-lounge')
+    async def mentor_role_toggle(self, ctx):
+        """Update member's roles from advisor to mentor, and update database."""
+        embed = await helpers.update_roles(
+            ctx.guild.get_member(ctx.author.id),
+            discord.utils.get(ctx.guild.roles, name='Advisor'), # Remove
+            discord.utils.get(ctx.guild.roles, name='Mentor'))  # Add
+        # Update database
+        with db:
+            cursor.execute('''UPDATE mentors SET status = 'mentor'
+                           WHERE discord_id = :id''', {'id': ctx.author.id})
         await ctx.send(embed=embed)
 
     # Reaction system for main, secondaries, region, undergrad, and enrollment
