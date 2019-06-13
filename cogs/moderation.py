@@ -73,23 +73,6 @@ class Moderation(commands.Cog):
             embed.add_field(name='Acknowledgements', value=acknowledgement, inline=False)
         await ctx.send(embed=embed)
 
-    @commands.command(name='purgewelcome', hidden=True)
-    @commands.has_permissions(kick_members=True)
-    async def purge_welcome_channel(self, ctx):
-        """Kick inactive members that have not enrolled."""
-        embed = discord.Embed()
-        embed.set_author(name='Working...')
-        await ctx.send(embed=embed)
-        # Kick members that have not enrolled and that joined before the past week
-        new_members = discord.utils.get(ctx.guild.roles, name='New Member').members
-        new_members = [member for member in new_members
-                      if member.joined_at < datetime.utcnow() - timedelta(weeks=1)]
-        for member in new_members:
-            await member.kick(reason='Inactivity')
-        # Send message that users were kicked
-        embed.set_author(name=f'{len(new_members)} members kicked.')
-        await ctx.send(embed=embed)
-
 
 def setup(bot):
     bot.add_cog(Moderation(bot))
