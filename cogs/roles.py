@@ -23,7 +23,7 @@ class Roles(commands.Cog):
     @commands.has_any_role('Mentors', 'DO NOT DISTURB')
     @helpers.in_channel('teacher-lounge')
     async def do_not_disturb_toggle(self, ctx):
-        """Update member's do not disturb role, and update database."""
+        """Toggle member's do not disturb role, and update database."""
         mentors_role = discord.utils.get(ctx.guild.roles, name='Mentors')
         dnd_role = discord.utils.get(ctx.guild.roles, name='DO NOT DISTURB')
         member = ctx.guild.get_member(ctx.author.id)
@@ -62,7 +62,7 @@ class Roles(commands.Cog):
     @commands.has_role('Mentor')
     @helpers.in_channel('teacher-lounge')
     async def advisor_role_toggle(self, ctx):
-        """Update member's roles from mentor to advisor, and update database."""
+        """Toggle member's roles from mentor to advisor, and update database."""
         embed = await helpers.update_roles(
             ctx.guild.get_member(ctx.author.id),
             discord.utils.get(ctx.guild.roles, name='Mentor'),  # Remove
@@ -77,7 +77,7 @@ class Roles(commands.Cog):
     @commands.has_role('Advisor')
     @helpers.in_channel('teacher-lounge')
     async def mentor_role_toggle(self, ctx):
-        """Update member's roles from advisor to mentor, and update database."""
+        """Toggle member's roles from advisor to mentor, and update database."""
         embed = await helpers.update_roles(
             ctx.guild.get_member(ctx.author.id),
             discord.utils.get(ctx.guild.roles, name='Advisor'), # Remove
