@@ -49,7 +49,7 @@ class ActionLog(commands.Cog):
         embed.set_footer(text=f'User ID: {message.author.id}')
         # Message content may not exist, such as an embed or picture
         if message.content:
-            embed.add_field(name='Message:', value=f'```{message.content}```')
+            embed.add_field(name='Message:', value=f'```{message.clean_content}```')
         action_log = discord.utils.get(message.guild.text_channels, name='action-log')
         await action_log.send(embed=embed)
 
@@ -67,15 +67,12 @@ class ActionLog(commands.Cog):
         embed.set_footer(text=f'User ID: {before.author.id}')
         # Before edit
         if before.content:
-            embed.add_field(name='Before:', value=f'```{before.content}```', inline=False)
+            embed.add_field(name='Before:', value=f'```{before.clean_content}```', inline=False)
         # After edit
         if after.content:
-            embed.add_field(name='After:', value=f'```{after.content}```', inline=False)
+            embed.add_field(name='After:', value=f'```{after.clean_content}```', inline=False)
         action_log = discord.utils.get(before.guild.text_channels, name='action-log')
-        try:
-            await action_log.send(embed=embed)
-        except discord.errors.HTTPException:
-            pass # Suppress invalid form body error
+        await action_log.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
