@@ -130,15 +130,14 @@ class Roles(commands.Cog):
                 await member.add_roles(discord.utils.get(guild.roles, name='amatEUr'))
         # Enrollment
         elif emote == 'roaa':
-            new_member = discord.utils.get(guild.roles, name='New Member')
             student = discord.utils.get(guild.roles, name='Student')
-            if new_member in member.roles:
+            if student not in member.roles:
                 await member.add_roles(student)
-                await member.remove_roles(new_member)
                 # Display enrollment in action-log
                 embed = discord.Embed(
                     color=helpers.display_color(member),
-                    description=f'**{member.mention} has enrolled in the {guild.name}!**',
+                    description=f'**{member.mention} has enrolled in '
+                                'the Rivals of Aether Academy!**',
                     timestamp=datetime.now())
                 embed.set_author(name='Member Enrolled', icon_url=member.avatar_url)
                 embed.set_footer(text=f'ID: {payload.user_id}')

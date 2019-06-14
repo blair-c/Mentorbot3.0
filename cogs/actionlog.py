@@ -14,8 +14,7 @@ class ActionLog(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        """Log that member has joined, and give them New Member role."""
-        await member.add_roles(discord.utils.get(member.guild.roles, name='New Member'))
+        """Log that member has joined."""
         embed = discord.Embed(
             description=f'**{member.mention} has joined the Rivals of Aether Academy!**',
             timestamp=datetime.now())
