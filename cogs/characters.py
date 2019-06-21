@@ -29,7 +29,7 @@ class Characters(commands.Cog):
             value='\n'.join(char_commands))
         embed.add_field(
             name='If you live in Europe, try this command:',
-            value='<:MentorsEurope:547189291969937420> For Europe, type **!EU**')
+            value='<:MentorsEurope:547189291969937420> **!EU**')
         await ctx.send(embed=embed)
 
     # Region-based mentor commands
