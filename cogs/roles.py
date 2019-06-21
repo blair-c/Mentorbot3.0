@@ -219,9 +219,7 @@ class Roles(commands.Cog):
                ' (Rivals Amateur Series), please click on a region reaction below.**\n'
             '• Click on the reaction again to opt out of notifications.\n'
             '<:NorthAmerica:547189311527845907> → North America\n'
-            '<:Europe:547189473432305665> → Europe\n'
-            '<:Australia:547189427416596502> → '
-            'Anyone with the AU region role will be automatically notified for AU RAS')
+            '<:Europe:547189473432305665> → Europe')
         for region in ['NorthAmerica', 'Europe']:
             await msg.add_reaction(discord.utils.get(self.bot.emojis, name=region))
         # Enroll

@@ -28,9 +28,9 @@ class Characters(commands.Cog):
             name="Please choose the character you'd like to be mentored in:",
             value='\n'.join(char_commands))
         embed.add_field(
-            name='If you live outside of North America, try these commands:',
-            value='<:MentorsEurope:547189291969937420> For Europe, type **!EU**\n'
-                  '<:MentorsAustralia:547189275569946720> For Australia, type **!AU**')
+            name='Alternatively, try these region-based commands:',
+            value=''
+                  '<:Europe:547189473432305665> For Europe, type **!EU**')
         await ctx.send(embed=embed)
 
     # Region-based mentor commands
@@ -38,11 +38,6 @@ class Characters(commands.Cog):
     async def eu_mentors(self, ctx):
         """Display all EU mentors, trial mentors, and advisors."""
         await mentors.mentor_info(ctx, cursor, r='EU')
-
-    @commands.command(name='AU')
-    async def au_mentors(self, ctx):
-        """Display all AU mentors, trial mentors, and advisors."""
-        await mentors.mentor_info(ctx, cursor, r='AU')
 
     # Character commands - mentors and hitboxes
     async def character_command(self, ctx, character, *move):
