@@ -34,7 +34,7 @@ async def mentor_info(ctx, cursor, c=None, r=None):
 def mentors_of_status(ctx, cursor, status, c=None, r=None):
     """Return mentors of given status and character/region for embed."""
     character_region = helpers.character_info(cursor, character=c, region=r)['name']
-    if c: # If character was given
+    if c:  # If character was given
         # cursor.execute('''SELECT discord_id, region FROM mentors WHERE status = :status
         #                AND characters LIKE :character = 1 AND do_not_disturb = 0''',
         #                {'status': status, 'character': f'%{character_region}%'})
@@ -44,7 +44,7 @@ def mentors_of_status(ctx, cursor, status, c=None, r=None):
                        AND characters LIKE :character = 1 AND do_not_disturb = 0''',
                        {'status': status, 'character': f'%{character_region}%'})
         mentors = [f"{row['name']} ({row['region']})" for row in cursor.fetchall()]
-    elif r: # If region was given
+    elif r:  # If region was given
         # cursor.execute('''SELECT discord_id, characters FROM mentors WHERE status =
         #                :status AND region = :region AND do_not_disturb = 0''',
         #                {'status': status, 'region': character_region})

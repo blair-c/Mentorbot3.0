@@ -39,7 +39,7 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_message_delete(self, message):
         """Display info of deleted message in action-log channel."""
-        if message.channel.name == 'boardroom': return # Ignore messages from boardroom
+        if message.channel.name == 'boardroom': return  # Ignore messages from boardroom
         embed = discord.Embed(
             color=helpers.display_color(message.author.color),
             description=f'**Message by {message.author.mention} deleted in '
@@ -77,7 +77,7 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
         """Display in action-log channel that member's nickname has changed."""
-        if before.nick == after.nick: return # Ensure that nickname has changed
+        if before.nick == after.nick: return  # Ensure that nickname has changed
         embed = discord.Embed(
             color=helpers.display_color(before.color),
             description=f'**{before.mention} nickname changed**',

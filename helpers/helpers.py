@@ -8,11 +8,11 @@ from discord.ext import commands
 
 def character_info(cursor, character=None, region=None):
     """Return id, name, color, and icon url of given character/region."""
-    if character: # If character was given
+    if character:  # If character was given
         return cursor.execute(
             '''SELECT * FROM characters WHERE name = :character''',
             {'character': character.title()}).fetchone()
-    elif region: # If region was given
+    elif region:  # If region was given
         return cursor.execute(
             '''SELECT * FROM characters WHERE name = :region''',
             {'region': region.upper()}).fetchone()

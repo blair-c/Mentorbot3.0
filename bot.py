@@ -43,11 +43,11 @@ async def globally_block_dms(ctx):
 if __name__ == '__main__':
     for cog in extensions:
         try:
-            bot.load_extension(f'cogs.{cog}') # Dot path to cogs subdirectory
+            bot.load_extension(f'cogs.{cog}')  # Dot path to cogs subdirectory
             print(f'Loaded {cog} cog...')
         except Exception as e:
             print(f'Failed to load {cog} cog.\n'
                   f'[{type(e).__name__}: {e}]', file=sys.stderr)
             sys.exit(1)
     print('Logging in...')
-    bot.run(os.environ.get('TOKEN')) # API Key from environment
+    bot.run(os.environ.get('TOKEN'))  # API Key from environment

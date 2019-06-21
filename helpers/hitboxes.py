@@ -39,7 +39,7 @@ async def move_info(ctx, cursor, character, *move):
         'Sweetspot Damage': 'sweetspot_damage',
         'Tipper Damage': 'tipper_damage',
     }
-    move_display = '──────────────────────────────' # ASCII code 196, 30x
+    move_display = '──────────────────────────────'  # ASCII code 196, 30x
     for row in move_info:
         # Each column may or may not exist
         hit_info = [[display_name, row[column]]
@@ -50,7 +50,7 @@ async def move_info(ctx, cursor, character, *move):
         # Add table of hit info
         move_display += (
             '```autohotkey\n'
-            f"{tabulate(hit_info, tablefmt='presto')}\n".replace('\n ', '\n')) # Strip left-hand whitespace
+            f"{tabulate(hit_info, tablefmt='presto')}\n".replace('\n ', '\n'))  # Strip left-hand whitespace
         if row['notes']:
             move_display += row['notes']
         move_display += '```'

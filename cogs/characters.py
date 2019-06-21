@@ -41,9 +41,9 @@ class Characters(commands.Cog):
     # Character commands - mentors and hitboxes
     async def character_command(self, ctx, character, *move):
         """Display mentor info for character, or return hitbox info for move."""
-        if not move: # No args passed, display mentor info
+        if not move:  # No args passed, display mentor info
             await mentors.mentor_info(ctx, cursor, c=character)
-        else: # Arg(s) passed, display move info
+        else:  # Arg(s) passed, display move info
             await hitboxes.move_info(ctx, cursor, character, *move)
 
     @commands.command(name='zetterburn', aliases=['zetter', 'zet'])

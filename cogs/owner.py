@@ -17,7 +17,7 @@ class Owner(commands.Cog):
         cog = cog.replace(' ', '')
         embed = discord.Embed()
         try:
-            self.bot.load_extension(f'cogs.{cog}') # Dot path to cogs subdirectory
+            self.bot.load_extension(f'cogs.{cog}')  # Dot path to cogs subdirectory
             embed.set_author(name=f'Loaded {cog} cog.')
         except Exception as e:
             embed.add_field(name=f'Could not load "{cog}" cog.',
@@ -31,7 +31,7 @@ class Owner(commands.Cog):
         cog = cog.replace(' ', '')
         embed = discord.Embed()
         try:
-            self.bot.unload_extension(f'cogs.{cog}') # Dot path to cogs subdirectory
+            self.bot.unload_extension(f'cogs.{cog}')  # Dot path to cogs subdirectory
             embed.set_author(name=f'Unoaded {cog} cog.')
         except Exception as e:
             embed.add_field(name=f'Could not unload "{cog}" cog.',
@@ -45,7 +45,7 @@ class Owner(commands.Cog):
         cog = cog.replace(' ', '')
         embed = discord.Embed()
         try:
-            self.bot.unload_extension(f'cogs.{cog}') # Dot path to cogs subdirectory
+            self.bot.unload_extension(f'cogs.{cog}')  # Dot path to cogs subdirectory
             self.bot.load_extension(f'cogs.{cog}')
             embed.set_author(name=f'Reloaded {cog} cog.')
         except Exception as e:
@@ -62,7 +62,7 @@ class Owner(commands.Cog):
         await ctx.send(embed=embed)
         for cog in extensions:
             try:
-                self.bot.unload_extension(f'cogs.{cog}') # Dot path to cogs subdirectory
+                self.bot.unload_extension(f'cogs.{cog}')  # Dot path to cogs subdirectory
                 self.bot.load_extension(f'cogs.{cog}')
             except Exception as e:
                 embed.set_author(name='Restart failed.')
