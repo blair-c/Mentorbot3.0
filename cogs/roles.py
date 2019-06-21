@@ -69,7 +69,7 @@ class Roles(commands.Cog):
             discord.utils.get(ctx.guild.roles, name='Advisor')) # Add
         # Update database
         with db:
-            cursor.execute('''UPDATE mentors SET status = 'advisor'
+            cursor.execute('''UPDATE mentors SET status = 'Advisor'
                            WHERE discord_id = :id''', {'id': ctx.author.id})
         await ctx.send(embed=embed)
 
@@ -84,8 +84,9 @@ class Roles(commands.Cog):
             discord.utils.get(ctx.guild.roles, name='Mentor'))  # Add
         # Update database
         with db:
-            cursor.execute('''UPDATE mentors SET status = 'mentor'
-                           WHERE discord_id = :id''', {'id': ctx.author.id})
+            cursor.execute('''UPDATE mentors SET status = 'Mentor' WHERE discord_id = :id
+                           AND name NOT LIKE '%secondaries\'''' , {'id': ctx.author.id})
+                           # Secondaries stay as Advisor status
         await ctx.send(embed=embed)
 
     # Reaction system for main, secondaries, region, undergrad, and enrollment
