@@ -49,7 +49,7 @@ async def move_info(ctx, cursor, character, *move):
             move_display += f"\n**{row['hit']}**"
         # Add table of hit info
         move_display += (
-            '```autohotkey\n'
+            '```ml\n'
             f"{tabulate(hit_info, tablefmt='presto')}\n".replace('\n ', '\n'))  # Strip left-hand whitespace
         if row['notes']:
             move_display += row['notes']
