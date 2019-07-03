@@ -1,7 +1,6 @@
 Current(smaller stuff):
 - Mentor database secondaries column
 - Mentor commands try catch
-- Fix !whois
 - !bairhitfall clip
 - Help command
 - Info command
