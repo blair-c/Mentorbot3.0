@@ -39,89 +39,202 @@ class Characters(commands.Cog):
         await mentors.mentor_info(ctx, cursor, r='EU')
 
     # Character commands - mentors and hitboxes
-    async def character_command(self, ctx, character, *move):
+    async def character_command(self, ctx, character, move):
         """Display mentor info for character, or return hitbox info for move."""
         if not move:  # No args passed, display mentor info
             await mentors.mentor_info(ctx, cursor, c=character)
         else:  # Arg(s) passed, display move info
-            await hitboxes.move_info(ctx, cursor, character, *move)
+            await hitboxes.move_info(ctx, cursor, character, move)
 
     @commands.command(name='zetterburn', aliases=['zetter', 'zet'])
     async def zetterburn(self, ctx, *move):
         """Display Zetterburn mentors, or display info of move given."""
-        await self.character_command(ctx, 'Zetterburn', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move == 'shine':
+            move = 'nspecial'
+        elif move == 'fireball':
+            move = 'fspecial'
+        await self.character_command(ctx, 'Zetterburn', move)
 
     @commands.command(name='forsburn', aliases=['fors'])
     @commands.guild_only()
     async def forsburn(self, ctx, *move):
         """Display Forsburn mentors, or display info of move given."""
-        await self.character_command(ctx, 'Forsburn', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move == 'cape':
+            move = 'fstrong'
+        elif move == 'smoke':
+            move = 'nspecial'
+        elif move == 'clone':
+            move = 'fspecial'
+        elif move == 'combust':
+            move = 'dspecial'
+        await self.character_command(ctx, 'Forsburn', move)
 
     @commands.command(name='clairen')
     async def clairen(self, ctx, *move):
         """Display Clairen mentors, or display info of move given."""
-        await self.character_command(ctx, 'Clairen', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move == 'grab':
+            move = 'nspecial'
+        elif move == 'counter':
+            move = 'dspecial'
+        await self.character_command(ctx, 'Clairen', move)
 
     @commands.command(name='orcane', aliases=['orca'])
     async def orcane(self, ctx, *move):
         """Display Orcane mentors, or display info of move given."""
-        await self.character_command(ctx, 'Orcane', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move == 'bubblebutt':
+            move = 'fair'
+        elif move in ['droplet', 'puddle']:
+            move = 'nspecial'
+        elif move == 'teleport':
+            move = 'uspecial'
+        elif move == 'bubbles':
+            move = 'dspecial'
+        await self.character_command(ctx, 'Orcane', move)
 
     @commands.command(name='etalus', aliases=['eta'])
     async def etalus(self, ctx, *move):
         """Display Etalus mentors, or display info of move given."""
-        await self.character_command(ctx, 'Etalus', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move == 'hammer':
+            move = 'nspecial'
+        elif move == 'icicles':
+            move = 'fspecial'
+        await self.character_command(ctx, 'Etalus', move)
 
     @commands.command(name='ranno')
     async def ranno(self, ctx, *move):
         """Display Ranno mentors, or display info of move given."""
-        await self.character_command(ctx, 'Ranno', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move in ['needles', 'darts', 'needle']:
+            move = 'nspecial'
+        elif move == 'tongue':
+            move = 'fspecial'
+        elif move == 'bubble':
+            move = 'dspecial'
+        await self.character_command(ctx, 'Ranno', move)
 
     @commands.command(name='kragg')
     async def kragg(self, ctx, *move):
         """Display Kragg mentors, or display info of move given."""
-        await self.character_command(ctx, 'Kragg', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move in ['rock', 'rockshine']:
+            move = 'nspecial'
+        elif move == 'pillar':
+            move = 'uspecial'
+        await self.character_command(ctx, 'Kragg', move)
 
     @commands.command(name='maypul')
     async def maypul(self, ctx, *move):
         """Display Maypul mentors, or display info of move given."""
-        await self.character_command(ctx, 'Maypul', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move == 'seed':
+            move = 'nspecial'
+        elif move in ['uppercut', 'tether']:
+            move = 'uspecial'
+        elif move == 'lily':
+            move = 'dspecial'
+        await self.character_command(ctx, 'Maypul', move)
 
     @commands.command(name='sylvanos', aliases=['sylv'])
     async def sylvanos(self, ctx, *move):
         """Display Sylvanos mentors, or display info of move given."""
-        await self.character_command(ctx, 'Sylvanos', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move in ['seed', 'flower']:
+            move = 'nspecial'
+        elif move == 'howl':
+            move = 'dspecial'
+        await self.character_command(ctx, 'Sylvanos', move)
 
     @commands.command(name='wrastor')
     async def wrastor(self, ctx, *move):
         """Display Wrastor mentors, or display info of move given."""
-        await self.character_command(ctx, 'Wrastor', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move == 'tornado':
+            move = 'nspecial'
+        elif move == 'slipstream':
+            move = 'fspecial'
+        await self.character_command(ctx, 'Wrastor', move)
 
     @commands.command(name='absa')
     async def absa(self, ctx, *move):
         """Display Absa mentors, or display info of move given."""
-        await self.character_command(ctx, 'Absa', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move in ['cloudpop', 'cloudhop']:
+            move = 'nspecial'
+        elif move == 'cloud':
+            move = 'fspecial'
+        elif move == 'cloudbomb':
+            move = 'dspecial'
+        await self.character_command(ctx, 'Absa', move)
 
     @commands.command(name='elliana', aliases=['elli'])
     async def elliana(self, ctx, *move):
         """Display Elliana mentors, or display info of move given."""
-        await self.character_command(ctx, 'Elliana', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move == 'fist':
+            move = 'nspecial'
+        elif move in ['missile', 'missiles']:
+            move = 'fspecial'
+        elif move in ['mech', 'eject']:
+            move = 'uspecial'
+        elif move == 'mine':
+            move = 'dspecial'
+        await self.character_command(ctx, 'Elliana', move)
 
     @commands.command(name='ori')
     async def ori(self, ctx, *move):
         """Display Ori mentors, or display info of move given."""
-        await self.character_command(ctx, 'Ori', *move)
+        move = ''.join(move).lower()
+        # Alternate move names
+        if move in ['sein', 'seintaps']:
+            move = 'nspecial'
+        elif move == 'lightball':
+            move = 'fspecial'
+        elif move == 'bash':
+            move = 'dspecial'
+        await self.character_command(ctx, 'Ori', move)
 
     @commands.command(name='shovelknight', aliases=['shovel-knight', 'shovel', 'sk'])
     async def shovelknight(self, ctx, *move):
         """Display Shovel Knight mentors, or display info of move given."""
         if not move:
-            await self.character_command(ctx, 'Shovel Knight', *move)
+            await self.character_command(ctx, 'Shovel Knight', move)
+        move = ''.join(move).lower()
         # Allow for '!shovel knight [move]' syntax
-        elif move[0].lower() == 'knight':
-            await self.character_command(ctx, 'Shovel Knight', *move[1:])
-        else:
-            await self.character_command(ctx, 'Shovel Knight', *move)
+        if move[0].lower() == 'knight':
+            move = move[1:]
+        # Alternate move names
+        if move == 'dig':
+            move = 'dtilt'
+        elif move == 'bigdig':
+            move = 'ustrong'
+        elif move == 'coincapture':
+            move = 'nspecial'
+        elif move == 'infinidagger':
+            move = 'fspecial'
+        elif move == 'anchor':
+            move = 'uspecial'
+        elif move in ['fishingrod', 'fish']:
+            move = 'dspecial'
+        elif move == 'shop':
+            move = 'taunt'
+        await self.character_command(ctx, 'Shovel Knight', move)
 
 def setup(bot):
     bot.add_cog(Characters(bot))

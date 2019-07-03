@@ -7,12 +7,11 @@ from tabulate import tabulate
 from helpers import helpers
 
 
-async def move_info(ctx, cursor, character, *move):
+async def move_info(ctx, cursor, character, move):
     """Display frame data and hitbox info of move given."""
     # Get character info
     character_info = helpers.character_info(cursor, character=character)
     # Get move ID and display name
-    move = ''.join(move).lower()
     move = cursor.execute(
         '''SELECT id, display_name FROM moves WHERE name1 = :move OR name2 = :move
            OR name3 = :move OR name4 = :move''', {'move': move}).fetchone()
