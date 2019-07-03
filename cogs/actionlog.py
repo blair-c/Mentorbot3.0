@@ -32,9 +32,18 @@ class ActionLog(commands.Cog):
             timestamp=datetime.now())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
+        # Ping principals if member was a mentor
+        ping = ''
+        roles = member.guild.roles
+        mentor = discord.utils.get(roles, name='Mentor')
+        dnd = discord.utils.get(roles, name='DO NOT DISTURB')
+        if mentor in member.roles or dnd in mentor.roles:
+            principal = discord.utils.get(roles, name='Principal')
+            vice_principal = discord.utils.get(roles, name='Vice Principal')
+            ping = f'{principal.mention} {vice_principal.mention}'
         # Send in action-log
         action_log = discord.utils.get(member.guild.text_channels, name='action-log')
-        await action_log.send(embed=embed)
+        await action_log.send(content=ping, embed=embed)
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
