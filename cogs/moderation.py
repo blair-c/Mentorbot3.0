@@ -47,10 +47,10 @@ class Moderation(commands.Cog):
         # Dates of server join and Discord registration
         embed.add_field(
             name='Joined',
-            value=f'{member.joined_at:%a, %b %-d, %Y at %-I:%M %p}')
+            value=f'{member.joined_at:%a, %b %d, %Y at %I:%M %p}')
         embed.add_field(
             name='Registered',
-            value=f'{member.created_at:%a, %b %-d, %Y at %-I:%M %p}')
+            value=f'{member.created_at:%a, %b %d, %Y at %I:%M %p}')
         # Member's status (eg. online, offline, invisible, etc.)
         embed.add_field(name='Status', value=member.status, inline=False)
         # Member's roles, excluding @everyone role
