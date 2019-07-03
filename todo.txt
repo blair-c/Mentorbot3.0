@@ -1,7 +1,4 @@
 Current(smaller stuff):
-- Ping principals when a mentor leaves
-- Remove “Message:” from on_delete()
-- Add individual to bulk message delete (!clear)
 - Mentor database secondaries column
 - Mentor commands try catch
 - Fix !whois
