@@ -48,17 +48,18 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_message_delete(self, message):
         """Display info of deleted message in action-log channel."""
+        desc = f'**Message by {message.author.mention} deleted in {message.channel.mention}**'
+        # Message content may not exist, such as an embed or picture
+        if message.clean_content:
+            desc += f'```\n{message.clean_content}```'
         if message.channel.name == 'boardroom': return  # Ignore messages from boardroom
         embed = discord.Embed(
             color=helpers.display_color(message.author.color),
-            description=f'**Message by {message.author.mention} deleted in '
-                        f'{message.channel.mention}**',
+            description=desc,
             timestamp=datetime.now())
         embed.set_author(name='Message Deleted', icon_url=message.author.avatar_url)
         embed.set_footer(text=f'User ID: {message.author.id}')
-        # Message content may not exist, such as an embed or picture
-        if message.content:
-            embed.add_field(name='Message:', value=f'```{message.clean_content}```')
+        # Send in action-log
         action_log = discord.utils.get(message.guild.text_channels, name='action-log')
         await action_log.send(embed=embed)
 
