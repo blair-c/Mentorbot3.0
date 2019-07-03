@@ -1,5 +1,4 @@
 Current(smaller stuff):
-- Alternate hitbox commands (eg. !kragg pillar)
 - Ping principals when a mentor leaves
 - Remove “Message:” from on_delete()
 - Add individual to bulk message delete (!clear)
