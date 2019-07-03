@@ -15,13 +15,20 @@ class Moderation(commands.Cog):
     @commands.has_permissions(manage_messages=True)
     async def delete_n_messages(self, ctx, n: int = 0):
         """Delete last n messages from channel (Limit 100)."""
-        deleted = await ctx.channel.purge(limit=n+1)  # +1 to include message of command
+        await ctx.message.delete() # Delete message of command
+        deleted = await ctx.channel.purge(limit=n)
         if ctx.channel.name == 'boardroom': return  # Don't display deletions from boardroom
         # Bulk message deletion embed
-        embed = discord.Embed(
-            color=helpers.display_color(ctx.author.color),
-            description=f'**{len(deleted) - 1} messages deleted in {ctx.channel.mention} '
-                        f'by {ctx.author.mention}**')
+        desc = f'**{len(deleted)} messages deleted in ' \
+               f'{ctx.channel.mention} by {ctx.author.mention}**\n'
+        for msg in reversed(deleted):
+            desc += f'\n**by {msg.author.mention}'
+            # Message content may not exist, such as an embed or picture
+            if msg.clean_content:
+                desc += f':**\n```{msg.clean_content}```'
+            else: 
+                desc += '**\n```(No message content)```'
+        embed = discord.Embed(color=helpers.display_color(ctx.author.color), description=desc)
         embed.set_author(name='Bulk Message Deletion')
         action_log = discord.utils.get(ctx.guild.text_channels, name='action-log')
         await action_log.send(embed=embed)
