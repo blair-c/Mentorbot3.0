@@ -62,7 +62,7 @@ async def update_roles(member, remove, add):
                     '```diff\n'
                     f'- {remove.name}\n'
                     f'+ {add.name}```',
-        timestamp=datetime.now())
+        timestamp=datetime.utcnow())
     embed.set_author(name='Roles updated', icon_url=member.avatar_url)
     embed.set_footer(text=f'ID: {member.id}')
     return embed

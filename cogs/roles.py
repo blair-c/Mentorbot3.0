@@ -139,7 +139,7 @@ class Roles(commands.Cog):
                     color=helpers.display_color(member),
                     description=f'**{member.mention} has enrolled in '
                                 'the Rivals of Aether Academy!**',
-                    timestamp=datetime.now())
+                    timestamp=datetime.utcnow())
                 embed.set_author(name='Member Enrolled', icon_url=member.avatar_url)
                 embed.set_footer(text=f'ID: {payload.user_id}')
                 action_log = discord.utils.get(guild.text_channels, name='action-log')

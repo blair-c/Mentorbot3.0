@@ -17,7 +17,7 @@ class ActionLog(commands.Cog):
         """Log that member has joined."""
         embed = discord.Embed(
             description=f'**{member.mention} has joined the Rivals of Aether Academy!**',
-            timestamp=datetime.now())
+            timestamp=datetime.utcnow())
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
         action_log = discord.utils.get(member.guild.text_channels, name='action-log')
@@ -29,7 +29,7 @@ class ActionLog(commands.Cog):
         embed = discord.Embed(
             color=helpers.display_color(member.color),
             description=f'**{member.mention} has left the Rivals of Aether Academy :(**',
-            timestamp=datetime.now())
+            timestamp=datetime.utcnow())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
         # Ping principals if member was a mentor
@@ -56,7 +56,7 @@ class ActionLog(commands.Cog):
         embed = discord.Embed(
             color=helpers.display_color(message.author.color),
             description=desc,
-            timestamp=datetime.now())
+            timestamp=datetime.utcnow())
         embed.set_author(name='Message Deleted', icon_url=message.author.avatar_url)
         embed.set_footer(text=f'User ID: {message.author.id}')
         # Send in action-log
@@ -72,7 +72,7 @@ class ActionLog(commands.Cog):
             color=helpers.display_color(before.author.color),
             description=f'**Message by {before.author.mention} edited in '
                         f'{before.channel.mention}**',
-            timestamp=datetime.now())
+            timestamp=datetime.utcnow())
         embed.set_author(name='Message Edited', icon_url=before.author.avatar_url)
         embed.set_footer(text=f'User ID: {before.author.id}')
         # Before edit
@@ -91,7 +91,7 @@ class ActionLog(commands.Cog):
         embed = discord.Embed(
             color=helpers.display_color(before.color),
             description=f'**{before.mention} nickname changed**',
-            timestamp=datetime.now())
+            timestamp=datetime.utcnow())
         embed.set_author(name=f'Nickname Changed', icon_url=before.avatar_url)
         embed.set_footer(text=f'ID: {before.id}')
         # Before nickname change

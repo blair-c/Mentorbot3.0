@@ -33,7 +33,7 @@ class Moderation(commands.Cog):
         embed = discord.Embed(
             color=helpers.display_color(member.color),
             description=member.mention,
-            timestamp=datetime.now())
+            timestamp=datetime.utcnow())
         embed.set_author(name=member, icon_url=member.avatar_url)
         embed.set_thumbnail(url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
