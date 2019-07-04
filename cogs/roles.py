@@ -85,7 +85,7 @@ class Roles(commands.Cog):
         # Update database
         with db:
             cursor.execute('''UPDATE mentors SET status = 'Mentor' WHERE discord_id = :id
-                           AND name NOT LIKE '%secondaries\'''' , {'id': ctx.author.id})
+                           AND secondaries = 0''' , {'id': ctx.author.id})
                            # Secondaries stay as Advisor status
         await ctx.send(embed=embed)
 
