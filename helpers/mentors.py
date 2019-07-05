@@ -35,23 +35,27 @@ def mentors_of_status(ctx, cursor, status, c=None, r=None):
     """Return mentors of given status and character/region for embed."""
     character_region = helpers.character_info(cursor, character=c, region=r)['name']
     if c:  # If character was given
-        # cursor.execute('''SELECT discord_id, region FROM mentors WHERE status = :status
-        #                AND characters LIKE :character = 1 AND do_not_disturb = 0''',
-        #                {'status': status, 'character': f'%{character_region}%'})
-        #mentors = [f"{ctx.bot.get_user(row['discord_id']).mention} ({row['region']})"
-        #          for row in cursor.fetchall()]
-        cursor.execute('''SELECT name, region FROM mentors WHERE status = :status
-                       AND characters LIKE :character = 1 AND do_not_disturb = 0''',
-                       {'status': status, 'character': f'%{character_region}%'})
-        mentors = [f"{row['name']} ({row['region']})" for row in cursor.fetchall()]
+        try:
+            cursor.execute('''SELECT discord_id, region FROM mentors WHERE status = :status
+                           AND characters LIKE :character = 1 AND do_not_disturb = 0''',
+                           {'status': status, 'character': f'%{character_region}%'})
+            mentors = [f"{ctx.bot.get_user(row['discord_id']).mention} ({row['region']})"
+                      for row in cursor.fetchall()]
+        except AttributeError:  # Catch if one or more mentors are not pingable
+            cursor.execute('''SELECT name, region FROM mentors WHERE status = :status
+                           AND characters LIKE :character = 1 AND do_not_disturb = 0''',
+                           {'status': status, 'character': f'%{character_region}%'})
+            mentors = [f"{row['name']} ({row['region']})" for row in cursor.fetchall()]
     elif r:  # If region was given
-        # cursor.execute('''SELECT discord_id, characters FROM mentors WHERE status =
-        #                :status AND region = :region AND do_not_disturb = 0''',
-        #                {'status': status, 'region': character_region})
-        #mentors = [f"{ctx.bot.get_user(row['discord_id']).mention} ({row['characters']})"
-        #          for row in cursor.fetchall()]
-        cursor.execute('''SELECT name, characters FROM mentors WHERE status =
-                       :status AND region = :region AND do_not_disturb = 0''',
-                       {'status': status, 'region': character_region})
-        mentors = [f"{row['name']} ({row['characters']})" for row in cursor.fetchall()]
+        try:
+            cursor.execute('''SELECT discord_id, characters FROM mentors WHERE status =
+                            :status AND region = :region AND do_not_disturb = 0''',
+                            {'status': status, 'region': character_region})
+            mentors = [f"{ctx.bot.get_user(row['discord_id']).mention} ({row['characters']})"
+                    for row in cursor.fetchall()]
+        except AttributeError:  # Catch if one or more mentors are not pingable
+            cursor.execute('''SELECT name, characters FROM mentors WHERE status =
+                        :status AND region = :region AND do_not_disturb = 0''',
+                        {'status': status, 'region': character_region})
+            mentors = [f"{row['name']} ({row['characters']})" for row in cursor.fetchall()]
     return '\n'.join(mentors)
