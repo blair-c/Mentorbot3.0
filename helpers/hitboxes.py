@@ -56,7 +56,7 @@ async def move_info(ctx, cursor, character, move):
     embed = discord.Embed(color=character_info['color'], description=move_display)
     embed.set_author(name=f"{character} {move['display_name']}",
                      icon_url=character_info['icon'])
-    embed.set_thumbnail(move_info[0]['image'])
+    embed.set_image(url=move_info[0]['image'])
     embed.set_footer(text='See !framedata document for full details.')
     # Send move info embed
     await ctx.send(embed=embed)
