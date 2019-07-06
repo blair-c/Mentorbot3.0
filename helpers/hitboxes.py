@@ -38,7 +38,6 @@ async def move_info(ctx, cursor, character, move):
         'Sweetspot Damage': 'sweetspot_damage',
         'Tipper Damage': 'tipper_damage',
     }
-    move_display = '──────────────────────────────'  # ASCII code 196, 30x
     for row in move_info:
         # Each column may or may not exist
         hit_info = [[display_name, row[column]]
