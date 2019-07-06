@@ -119,6 +119,8 @@ class Characters(commands.Cog):
             move = 'nspecial'
         elif move == 'tongue':
             move = 'fspecial'
+        elif move in ['divekick', 'needlestorm', 'poisonspin']:
+            move = 'uspecial'
         elif move == 'bubble':
             move = 'dspecial'
         await self.character_command(ctx, 'Ranno', move)
@@ -235,6 +237,7 @@ class Characters(commands.Cog):
         elif move == 'shop':
             move = 'taunt'
         await self.character_command(ctx, 'Shovel Knight', move)
+
 
 def setup(bot):
     bot.add_cog(Characters(bot))
