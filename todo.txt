@@ -1,10 +1,4 @@
 Current(smaller stuff):
-- Commands for:
-    - Knockback formula
-    - Hitstun formula
-    - Hitpause formula
-    - Angle flipper definitions
-    - Force flinch definition
 - !bairhitfall clip
 - Help command
 - Info command
