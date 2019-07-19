@@ -30,6 +30,31 @@ class Links(commands.Cog):
         """Link to clip of and instructions for the 'hitfalling' tutorial."""
         await ctx.send('TODO')
 
+    @commands.command(name='knockback-formula', aliases=['knockbackformula', 'knockback', 'kb'])
+    async def formula_knockback(self, ctx, *formula):
+        """Send display of Rivals' knockback formula."""
+        formula = ('```ml\n'
+                   'BKB + Damage * Knockback_Scaling * 0.12 * Knockback_Adj```')
+        embed = discord.Embed(title='Knockback Formula', description=formula)
+        await ctx.send(embed=embed)
+
+    @commands.command(name='hitpause-formula', aliases=['hitpauseformula', 'hitpause'])
+    async def formula_hitpause(self, ctx, *formula):
+        """Send display of Rivals' hitpause formula."""
+        formula = ('```ml\n'
+                   'Base_Hitpause + Damage * Hitpause_scaling * .05```')
+        embed = discord.Embed(title='Hitpause Formula', description=formula)
+        await ctx.send(embed=embed)
+
+    @commands.command(name='hitstun-formula', aliases=['hitstunformula', 'hitstun'])
+    async def formula_hitstun(self, ctx, *formula):
+        """Send display of Rivals' hitstun formula."""
+        formula = ('```ml\n'
+                   'BKB * 4 * ((Knockback_Adj - 1) * 0.6 + 1) + Damage * '
+                   '0.12 * Knockback_scaling * 4 * 0.65 * Knockback_Adj```')
+        embed = discord.Embed(title='Hitstun Formula', description=formula)
+        await ctx.send(embed=embed)
+
     @commands.command(name='frame-data', aliases=['framedata'])
     async def frame_data_doc(self, ctx):
         """Link to SNC's frame data document."""
