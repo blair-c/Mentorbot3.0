@@ -3,7 +3,7 @@ from discord.ext import commands
 
 
 class Links(commands.Cog):
-    """Send informational Rivals links."""
+    """Send informational Rivals links and formatted displays."""
 
     def __init__(self, bot):
         self.bot = bot
@@ -29,6 +29,33 @@ class Links(commands.Cog):
     async def bair_hitfall_tutorial(self, ctx):
         """Link to clip of and instructions for the 'hitfalling' tutorial."""
         await ctx.send('TODO')
+
+    @commands.command(name='angle-flippers', aliases=['angleflippers'])
+    async def definitions_angle_flippers(self, ctx, *formula):
+        """Send display of angle flipper definitions."""
+        definitions = ('```glsl\n'
+            '0 - Sends at the exact knockback_angle every time\n'
+            '1 - Sends away from center of the enemy player\n'
+            '2 - Sends toward center of the enemy player\n'
+            '3 - Horizontal knockback sends away from the center of the hitbox\n'
+            '4 - Horizontal knockback sends toward the center of the hitbox\n'
+            '5 - Horizontal knockback is reversed\n'
+            '6 - Horizontal knockback sends away from the enemy player\n'
+            '7 - Horizontal knockback sends toward the enemy player\n'
+            '8 - Sends away from the center of the hitbox\n'
+            '9 - Hits toward the center of the hitbox```')
+        embed = discord.Embed(title='Angle Flipper Definitions', description=definitions)
+        await ctx.send(embed=embed)
+
+    @commands.command(name='force-flinch', aliases=['forceflinch'])
+    async def definitions_force_flinch(self, ctx, *formula):
+        """Send display of force flinch definitions."""
+        definitions = ('```glsl\n'
+            '1 - Forces a flinch, unless the attack is crouch cancelled\n'
+            '2 - Cannot cause flinch, even if crouch cancelled\n'
+            '3 - Can always be crouch cancelled, regardless of percent```')
+        embed = discord.Embed(title='Force Flinch Definitions', description=definitions)
+        await ctx.send(embed=embed)
 
     @commands.command(name='knockback-formula', aliases=['knockbackformula', 'knockback', 'kb'])
     async def formula_knockback(self, ctx, *formula):
