@@ -217,10 +217,10 @@ class Characters(commands.Cog):
         """Display Shovel Knight mentors, or display info of move given."""
         if not move:
             await self.character_command(ctx, 'Shovel Knight', move)
-        move = ''.join(move).lower()
         # Allow for '!shovel knight [move]' syntax
         if move[0].lower() == 'knight':
             move = move[1:]
+        move = ''.join(move).lower()
         # Alternate move names
         if move == 'dig':
             move = 'dtilt'
