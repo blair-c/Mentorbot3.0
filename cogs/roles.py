@@ -93,13 +93,11 @@ class Roles(commands.Cog):
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
         """Give member character, region, undergrad, or student role on reaction."""
-        # Ignore reactions from Mentorbot
-        if payload.user_id == self.bot.user.id: return
+        if payload.user_id == self.bot.user.id: return  # Ignore reactions from Mentorbot
         guild = self.bot.get_guild(payload.guild_id)
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
-        # Ensure set-your-roles channel
-        if channel.name != 'set-your-roles': return
-        message = await channel.get_message(payload.message_id)
+        if channel.name != 'set-your-roles': return  # Ensure set-your-roles channel
+        message = await channel.fetch_message(payload.message_id)
         member = guild.get_member(payload.user_id)
         emote = payload.emoji.name
         # Main
@@ -150,9 +148,8 @@ class Roles(commands.Cog):
         """Remove member's character, region, or undergrad role on reaction remove."""
         guild = self.bot.get_guild(payload.guild_id)
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
-        # Ensure set-your-roles channel
-        if channel.name != 'set-your-roles': return
-        message = await channel.get_message(payload.message_id)
+        if channel.name != 'set-your-roles': return  # Ensure set-your-roles channel
+        message = await channel.fetch_message(payload.message_id)
         member = guild.get_member(payload.user_id)
         emote = payload.emoji.name
         # Main
