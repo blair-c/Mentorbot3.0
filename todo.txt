@@ -10,5 +10,4 @@ Current(LARGE):
 Finalizations:
 - Update !framedata screenshot and embed to current patch
 - Update mentor database to match Academy
-- Update !mentors command to ping specified mentors
 - Deploy to Heroku
