@@ -141,7 +141,9 @@ class Characters(commands.Cog):
         """Display Maypul mentors, or display info of move given."""
         move = ''.join(move).lower()
         # Alternate move names
-        if move == 'seed':
+        if move == 'root':
+            move = 'dair'
+        elif move == 'seed':
             move = 'nspecial'
         elif move in ['uppercut', 'tether']:
             move = 'uspecial'
