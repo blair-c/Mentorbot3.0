@@ -158,6 +158,8 @@ class Characters(commands.Cog):
         # Alternate move names
         if move in ['seed', 'flower']:
             move = 'nspecial'
+        elif move == 'burrow':
+            move = 'uspecial'
         elif move == 'howl':
             move = 'dspecial'
         await self.character_command(ctx, 'Sylvanos', move)
@@ -190,8 +192,10 @@ class Characters(commands.Cog):
     async def elliana(self, ctx, *move):
         """Display Elliana mentors, or display info of move given."""
         move = ''.join(move).lower()
-        # Alternate move names
-        if move == 'fist':
+        # Alternate move 
+        if move == 'steam':
+            move = 'fstrong'
+        elif move == 'fist':
             move = 'nspecial'
         elif move in ['missile', 'missiles']:
             move = 'fspecial'
@@ -206,9 +210,9 @@ class Characters(commands.Cog):
         """Display Ori mentors, or display info of move given."""
         move = ''.join(move).lower()
         # Alternate move names
-        if move in ['sein', 'seintaps']:
+        if move in ['sein', 'seintaps', 'spiritflame']:
             move = 'nspecial'
-        elif move == 'lightball':
+        elif move in ['lightball', 'orb']:
             move = 'fspecial'
         elif move == 'bash':
             move = 'dspecial'
