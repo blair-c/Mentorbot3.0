@@ -192,7 +192,7 @@ class Characters(commands.Cog):
     async def elliana(self, ctx, *move):
         """Display Elliana mentors, or display info of move given."""
         move = ''.join(move).lower()
-        # Alternate move 
+        # Alternate move names
         if move == 'steam':
             move = 'fstrong'
         elif move == 'fist':
