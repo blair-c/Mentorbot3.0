@@ -69,7 +69,7 @@ class Characters(commands.Cog):
             move = 'nspecial'
         elif move == 'clone':
             move = 'fspecial'
-        elif move == 'combust':
+        elif move in ['combust', 'inhale']:
             move = 'dspecial'
         await self.character_command(ctx, 'Forsburn', move)
 
@@ -91,7 +91,7 @@ class Characters(commands.Cog):
         # Alternate move names
         if move == 'bubblebutt':
             move = 'fair'
-        elif move in ['droplet', 'puddle']:
+        elif move in ['droplet', 'puddle', 'puddleshot']:
             move = 'nspecial'
         elif move == 'teleport':
             move = 'uspecial'
@@ -169,7 +169,7 @@ class Characters(commands.Cog):
         """Display Wrastor mentors, or display info of move given."""
         move = ''.join(move).lower()
         # Alternate move names
-        if move == 'tornado':
+        if move in ['tornado', 'nado']:
             move = 'nspecial'
         elif move == 'slipstream':
             move = 'fspecial'
