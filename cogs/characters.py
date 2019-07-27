@@ -180,7 +180,7 @@ class Characters(commands.Cog):
         """Display Absa mentors, or display info of move given."""
         move = ''.join(move).lower()
         # Alternate move names
-        if move in ['cloudpop', 'cloudhop']:
+        if move in ['thunderline', 'cloudpop', 'cloudhop']:
             move = 'nspecial'
         elif move == 'cloud':
             move = 'fspecial'
