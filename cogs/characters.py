@@ -182,6 +182,8 @@ class Characters(commands.Cog):
         # Alternate move names
         if move in ['cloud', 'thunderline', 'cloudpop', 'cloudhop']:
             move = 'nspecial'
+        elif move == 'quickattack':
+            move = 'uspecial'
         elif move == 'cloudbomb':
             move = 'dspecial'
         await self.character_command(ctx, 'Absa', move)
