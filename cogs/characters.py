@@ -193,7 +193,9 @@ class Characters(commands.Cog):
         """Display Elliana mentors, or display info of move given."""
         move = ''.join(move).lower()
         # Alternate move names
-        if move == 'steam':
+        if move in ['hook', 'claw']:
+            move == 'utilt'
+        elif move == 'steam':
             move = 'fstrong'
         elif move == 'fist':
             move = 'nspecial'
