@@ -20,13 +20,13 @@ class HelpInfo(commands.Cog):
             icon_url=self.bot.user.avatar_url)
         embed.add_field(
             name='<:yesdefinitely:609053319415201793> Created by yesdefinitely', 
-            value='<:twitter:609049225560457216> https://twitter.com/ydefinitely\n'
-                  '<:github:609047166417109005> https://github.com/blair-c/Mentorbot3.0', 
+            value='<:twitter:609120999744733204> https://twitter.com/ydefinitely\n'
+                  '<:github:609120967280689161> https://github.com/blair-c/Mentorbot3.0', 
             inline=False)
         embed.add_field(
             name='<:SNC:609053198736424960> Frame data info provided by SNC and Sector 7-G', 
-            value='<:twitter:609049225560457216> https://twitter.com/SNC_Sector7G\n'
-                  '<:discord:609047933685465178> https://discord.gg/qgKqaPX',
+            value='<:twitter:609120999744733204> https://twitter.com/SNC_Sector7G\n'
+                  '<:discord:609120982543630336> https://discord.gg/qgKqaPX',
             inline=False)
         await ctx.send(embed=embed)
 
