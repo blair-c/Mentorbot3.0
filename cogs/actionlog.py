@@ -16,7 +16,7 @@ class ActionLog(commands.Cog):
     async def on_member_join(self, member):
         """Log that member has joined."""
         embed = discord.Embed(
-            description=f'**{member.mention} has joined the Rivals of Aether Academy!**',
+            description=f'**{member.mention} has joined the {member.guild.name}!**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
@@ -28,7 +28,7 @@ class ActionLog(commands.Cog):
         """Display in action-log channel that member has left."""
         embed = discord.Embed(
             color=helpers.display_color(member.color),
-            description=f'**{member.mention} has left the Rivals of Aether Academy :(**',
+            description=f'**{member.mention} has left the {member.guild.name} :(**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
