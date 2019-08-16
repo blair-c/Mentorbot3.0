@@ -174,7 +174,7 @@ class Roles(commands.Cog):
         await ctx.message.delete()
         # Introduction
         await ctx.send(
-            'Hello! Welcome to the **Rivals of Aether Academy!**\n\n'
+            f'Hello! Welcome to the **{ctx.guild.name}!**\n\n'
             '• **Please add reactions below to set your main, secondaries, and region.**\n'
             '• Reacting too quickly may cause the bot to fail in adding/removing roles.\n'
             '• You might need to react and unreact for the role to be added properly.')
