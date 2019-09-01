@@ -1,7 +1,6 @@
 Current(smaller stuff):
 - !bairhitfall clip
 - Help command
-- Info command
 - Write README
 
 Current(LARGE):
