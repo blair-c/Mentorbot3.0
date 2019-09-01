@@ -3,9 +3,6 @@ Current(smaller stuff):
 - Help command
 - Write README
 
-Current(LARGE):
-- Images for hitboxes database
-
 Finalizations:
 - Update !framedata screenshot and embed to current patch
 - Update mentor database to match Academy
