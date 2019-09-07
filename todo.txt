@@ -4,5 +4,4 @@ Current(smaller stuff):
 - Write README
 
 Finalizations:
-- Update !framedata screenshot and embed to current patch
 - Deploy to Heroku
