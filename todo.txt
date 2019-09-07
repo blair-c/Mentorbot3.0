@@ -5,5 +5,4 @@ Current(smaller stuff):
 
 Finalizations:
 - Update !framedata screenshot and embed to current patch
-- Update mentor database to match Academy
 - Deploy to Heroku
