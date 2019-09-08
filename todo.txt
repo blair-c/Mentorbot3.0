@@ -1,5 +1,4 @@
 Current(smaller stuff):
-- !bairhitfall clip
 - Help command
 - Write README
 
