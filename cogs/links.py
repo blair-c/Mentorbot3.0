@@ -28,7 +28,22 @@ class Links(commands.Cog):
     @commands.command(name='bairhitfall', aliases=['bair-hitfall'])
     async def bair_hitfall_tutorial(self, ctx):
         """Link to clip of and instructions for the 'hitfalling' tutorial."""
-        await ctx.send('TODO')
+        instructions = ('```\n'
+            'Instructions:\n'
+            '1. Turn away from Orby\n'
+            '2. Input jump\n'
+            '3. Buffer the input for back air\n'
+            '4. Input fast fall (down on joystick) as soon as the back air hits\n'
+            '5. Buffer input for turn around to face towards Orby\n'
+            '6. Buffer inputs for up and strong attack immediately after, and '
+            'continue holding up and towards Orby until the up strong begins```')
+        embed = discord.Embed(description=instructions, color=0x76428a)
+        embed.set_author(
+            name='Bair Hitfall Ustrongs Tutorial', 
+            icon_url='https://i.imgur.com/WlD8Bac.png')
+        await ctx.send(embed=embed)
+        # Send example Clip
+        await ctx.send('https://gfycat.com/FlakyEasyAmethystgemclam')
 
     @commands.command(name='angle-flippers', aliases=['angleflippers'])
     async def definitions_angle_flippers(self, ctx, *formula):
