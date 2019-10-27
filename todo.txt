@@ -1,13 +1,6 @@
 Current(smaller stuff):
-- !bairhitfall clip
 - Help command
-- Info command
 - Write README
 
-Current(LARGE):
-- Images for hitboxes database
-
 Finalizations:
-- Update !framedata screenshot and embed to current patch
-- Update mentor database to match Academy
 - Deploy to Heroku

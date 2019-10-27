@@ -106,6 +106,10 @@ class Roles(commands.Cog):
             mains = [discord.utils.get(guild.roles, name=f'{character} (Main)')
                     for character in rivals.characters]
             await member.remove_roles(*[role for role in mains if role in member.roles])
+            # Remove secondary role of main being added
+            secondary_role = discord.utils.get(guild.roles, name=emote)
+            if secondary_role in member.roles:
+                await member.remove_roles(secondary_role)
             # Add new main role
             await member.add_roles(discord.utils.get(guild.roles, name=f'{emote} (Main)'))
         # Secondaries
