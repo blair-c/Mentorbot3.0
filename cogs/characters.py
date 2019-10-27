@@ -63,8 +63,10 @@ class Characters(commands.Cog):
         """Display Forsburn mentors, or display info of move given."""
         move = ''.join(move).lower()
         # Alternate move names
-        if move == 'cape':
+        if move in ['cape', 'fcape']:
             move = 'fstrong'
+        elif move == 'upcape':
+            move = 'ustrong'
         elif move == 'smoke':
             move = 'nspecial'
         elif move == 'clone':
