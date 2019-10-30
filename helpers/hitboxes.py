@@ -25,6 +25,7 @@ async def move_info(ctx, cursor, character, move):
         'Startup': 'startup',
         'Active': 'active',
         'Intangible': 'intangible',
+        'Invulnerable': 'invulnerable',
         'Armored': 'armored',
         'Endlag': 'endlag',
         'Endlag (Hit)': 'endlag_hit',
