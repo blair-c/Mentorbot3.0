@@ -104,12 +104,12 @@ class Links(commands.Cog):
                 '19UtK7xG2c-ehxdlhCFKMpM4_IHSG-EXFgXLJaunE79I')
         embed = discord.Embed(
             url=link,
-            title='Rivals of Aether Academy Frame Data - Updated for 1.4.14',
+            title='Rivals of Aether Academy Frame Data - Updated for 1.4.15',
             description='Data extracted manually in-game and from dev-mode files by SNC. '
                         'Extra information provided by Menace13 and Youngblood. '
                         'General Stats created by Kisuno. '
                         'Collated Patch Notes created by SNC.')
-        embed.set_thumbnail(url='https://i.imgur.com/A6zuZw3.png')
+        embed.set_thumbnail(url='https://i.imgur.com/ovYeevo.png')
         await ctx.send(content=link, embed=embed)
 
     @commands.command(name='golden-guides', aliases=['goldenguides'])
