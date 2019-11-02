@@ -14,10 +14,9 @@ class HelpInfo(commands.Cog):
     @helpers.in_channel('bot-stuff')
     async def info_command(self, ctx):
         """Display information about Mentorbot."""
-        embed = discord.Embed(description='A custom Discord bot for the Rivals of Aether Academy.')
-        embed.set_author(
-            name='About Mentorbot 3.0', 
-            icon_url=self.bot.user.avatar_url)
+        embed = discord.Embed(
+            description='A custom Discord bot for the Rivals of Aether Academy.')
+        embed.set_author(name='About Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
         embed.add_field(
             name='<:yesdefinitely:609053319415201793> Created by yesdefinitely', 
             value='<:twitter:609120999744733204> https://twitter.com/ydefinitely\n'
@@ -30,11 +29,12 @@ class HelpInfo(commands.Cog):
             inline=False)
         await ctx.send(embed=embed)
 
-    @commands.command(name='help', aliases=['commands'], hidden=True)
+    @commands.command(name='help', aliases=['syntax'], hidden=True)
     @helpers.in_channel('bot-stuff')
     async def help_command(self, ctx, *arg):
-        """Display information and command syntax for public commands."""
+        """Display information and command syntax for hitbox commands."""
         embed = discord.Embed()
+        embed.set_author(name='Hitbox Command Syntax', icon_url=self.bot.user.avatar_url)
         await ctx.send(embed=embed)
 
 
