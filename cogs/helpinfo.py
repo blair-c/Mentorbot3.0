@@ -35,6 +35,10 @@ class HelpInfo(commands.Cog):
         """Display information and command syntax for hitbox commands."""
         embed = discord.Embed()
         embed.set_author(name='Hitbox Command Syntax', icon_url=self.bot.user.avatar_url)
+        embed.add_field(
+            name='`![character] [move]`',
+            value='Multiple character and move names are supported, try it out!')
+        embed.set_image(url='https://i.imgur.com/iiLINcV.png')
         await ctx.send(embed=embed)
 
 
