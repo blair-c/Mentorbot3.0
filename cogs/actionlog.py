@@ -43,7 +43,7 @@ class ActionLog(commands.Cog):
         roles = member.guild.roles
         mentor = discord.utils.get(roles, name='Mentor')
         dnd = discord.utils.get(roles, name='DO NOT DISTURB')
-        if mentor in member.roles or dnd in mentor.roles:
+        if mentor in member.roles or dnd in member.roles:
             principal = discord.utils.get(roles, name='Principal')
             vice_principal = discord.utils.get(roles, name='Vice Principal')
             ping = f'{principal.mention} {vice_principal.mention}'
