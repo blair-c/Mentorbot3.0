@@ -1,6 +1,0 @@
-Current(smaller stuff):
-- Help command
-- Write README
-
-Finalizations:
-- Deploy to Heroku
