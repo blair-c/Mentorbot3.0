@@ -187,14 +187,6 @@ class Links(commands.Cog):
         embed.set_thumbnail(url='https://imgur.com/WtU3xBU.png')
         await ctx.send(content=link, embed=embed)
 
-    @commands.command(name='smashvods', aliases=['vods'])
-    async def smashvods_link(self, ctx):
-        """Link to Rivals of Aether section of SmashVods website."""
-        link = 'http://smashvods.com/roa'
-        embed = discord.Embed(url=link, title='SmashVods',
-                              description='Search for RoA VODs by player or matchup.')
-        await ctx.send(content=link, embed=embed)
-
 
 def setup(bot):
     bot.add_cog(Links(bot))
