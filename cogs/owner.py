@@ -3,6 +3,8 @@ from discord.ext import commands
 
 from bot import extensions
 
+from helpers import helpers
+
 
 class Owner(commands.Cog):
     """Load, unload, and reload cogs; or logout bot."""

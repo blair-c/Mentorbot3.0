@@ -1,8 +1,6 @@
 import discord
 from discord.ext import commands
 
-from helpers import helpers
-
 
 class HelpInfo(commands.Cog):
     """Help and info commands."""
