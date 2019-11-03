@@ -6,6 +6,8 @@ import discord
 from discord.ext import commands
 
 
+# Helper Functions
+
 def character_info(cursor, character=None, region=None):
     """Return id, name, color, and icon url of given character/region."""
     if character:  # If character was given
@@ -45,13 +47,6 @@ def get_nickname(member):
         return f'{member.display_name} (No nickname)'
 
 
-def in_channel(name):
-    """Check that command is in channel of given name."""
-    async def predicate(ctx):
-        return ctx.channel == discord.utils.get(ctx.guild.text_channels, name=name)
-    return commands.check(predicate)
-
-
 async def update_roles(member, remove, add):
     """Remove/add given roles, and return embed of info."""
     await member.remove_roles(remove)
@@ -66,3 +61,18 @@ async def update_roles(member, remove, add):
     embed.set_author(name='Roles updated', icon_url=member.avatar_url)
     embed.set_footer(text=f'ID: {member.id}')
     return embed
+
+
+# Helper Command Checks
+
+def in_academy():
+    """Check that command is in Adademy or Mentorbot Test Server."""
+    async def predicate(ctx):
+        return ctx.message.guild.id in [252352512332529664, 475599187812155392]
+    return commands.check(predicate)
+
+def in_channel(name):
+    """Check that command is in channel of given name."""
+    async def predicate(ctx):
+        return ctx.channel == discord.utils.get(ctx.guild.text_channels, name=name)
+    return commands.check(predicate)
