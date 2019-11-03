@@ -35,11 +35,6 @@ async def on_ready():
     """Display bot info when bot is fully prepared."""
     print(f'Logged in as {bot.user.name}\nUser ID: {bot.user.id}')
 
-@bot.check
-async def globally_block_dms(ctx):
-    """Global check to block DMs."""
-    return ctx.guild is not None
-
 if __name__ == '__main__':
     for cog in extensions:
         try:

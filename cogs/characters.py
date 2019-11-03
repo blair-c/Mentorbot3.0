@@ -58,7 +58,6 @@ class Characters(commands.Cog):
         await self.character_command(ctx, 'Zetterburn', move)
 
     @commands.command(name='forsburn', aliases=['fors'])
-    @commands.guild_only()
     async def forsburn(self, ctx, *move):
         """Display Forsburn mentors, or display info of move given."""
         move = ''.join(move).lower()
