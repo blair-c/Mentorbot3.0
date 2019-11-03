@@ -13,7 +13,7 @@ class HelpInfo(commands.Cog):
         """Display information about Mentorbot."""
         embed = discord.Embed(
             description='A custom Discord bot by the Rivals of Aether Academy.')
-        embed.set_author(name='About Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
+        embed.set_author(name='Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
         embed.add_field(
             name='<:yesdefinitely:609053319415201793> Created by yesdefinitely', 
             value='<:twitter:609120999744733204> https://twitter.com/ydefinitely\n'
@@ -24,6 +24,10 @@ class HelpInfo(commands.Cog):
             value='<:twitter:609120999744733204> https://twitter.com/SNC_Sector7G\n'
                   '<:discord:609120982543630336> https://discord.gg/qgKqaPX',
             inline=False)
+        embed.add_field(
+            name='Add Mentorbot to your own server:',
+            value=('https://discordapp.com/api/oauth2/authorize?'
+                   'client_id=475596740368793600&permissions=134522944&scope=bot'))
         await ctx.send(embed=embed)
 
     @commands.command(name='help', aliases=['syntax'], hidden=True)
