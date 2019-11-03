@@ -2,7 +2,7 @@
 
 A custom Discord bot by the Rivals of Aether Academy.
 
-See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [add it to your own server](https://discordapp.com/api/oauth2/authorize?client_id=475596740368793600&permissions=134522944&scope=bot).
+See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [add it to your own server](https://discordapp.com/api/oauth2/authorize?client_id=475596740368793600&permissions=264192&scope=bot).
 
 ## Credits
 
