@@ -25,7 +25,7 @@ class HelpInfo(commands.Cog):
                   '<:discord:609120982543630336> https://discord.gg/qgKqaPX',
             inline=False)
         embed.add_field(
-            name='<:Mentorbot:640465696869974017> [Add Mentorbot to your own server](https://discordapp.com/api/oauth2/authorize?client_id=475596740368793600&permissions=134522944&scope=bot):',
+            name='<:Mentorbot:640465696869974017> Add Mentorbot to your own server:',
             value=('https://discordapp.com/api/oauth2/authorize?'
                    'client_id=475596740368793600&permissions=134522944&scope=bot'))
         await ctx.send(embed=embed)
