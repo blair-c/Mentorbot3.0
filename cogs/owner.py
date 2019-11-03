@@ -11,6 +11,7 @@ class Owner(commands.Cog):
         self.bot = bot
 
     @commands.command(name='load', hidden=True)
+    @helpers.in_academy()
     @commands.is_owner()
     async def load_cog(self, ctx, *, cog: str):
         """Load given cog."""
@@ -25,6 +26,7 @@ class Owner(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name='unload', hidden=True)
+    @helpers.in_academy()
     @commands.is_owner()
     async def unload_cog(self, ctx, *, cog: str):
         """Unload given cog."""
@@ -39,6 +41,7 @@ class Owner(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name='reload', hidden=True)
+    @helpers.in_academy()
     @commands.is_owner()
     async def reload_cog(self, ctx, *, cog: str):
         """Reload given cog."""
@@ -54,6 +57,7 @@ class Owner(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name='restart', hidden=True)
+    @helpers.in_academy()
     @commands.is_owner()
     async def reload_cogs(self, ctx):
         """Reload all cogs in startup extensions."""
@@ -75,6 +79,7 @@ class Owner(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name='logout', hidden=True)
+    @helpers.in_academy()
     @commands.is_owner()
     async def logout(self, ctx):
         """Log Mentorbot out of Discord."""

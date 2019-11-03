@@ -11,7 +11,6 @@ class HelpInfo(commands.Cog):
         self.bot = bot
 
     @commands.command(name='info', aliases=['information', 'about'], hidden=True)
-    @helpers.in_channel('bot-stuff')
     async def info_command(self, ctx):
         """Display information about Mentorbot."""
         embed = discord.Embed(
@@ -30,7 +29,6 @@ class HelpInfo(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name='help', aliases=['syntax'], hidden=True)
-    @helpers.in_channel('bot-stuff')
     async def help_command(self, ctx, *arg):
         """Display information and command syntax for hitbox commands."""
         embed = discord.Embed()

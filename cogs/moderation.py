@@ -13,6 +13,7 @@ class Moderation(commands.Cog):
 
     @commands.command(name='clear', aliases=['delete', 'delet'], hidden=True)
     @commands.has_permissions(manage_messages=True)
+    @helpers.in_academy()
     async def delete_n_messages(self, ctx, n: int = 0):
         """Delete last n messages from channel (Limit 100)."""
         await ctx.message.delete() # Delete message of command
@@ -35,6 +36,7 @@ class Moderation(commands.Cog):
 
     @commands.command(name='whois', hidden=True)
     @commands.has_permissions(ban_members=True)
+    @helpers.in_academy()
     async def display_member_info(self, ctx, *, member: discord.Member):
         """Display information of given member."""
         embed = discord.Embed(

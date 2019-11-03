@@ -15,6 +15,9 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         """Log that member has joined."""
+        # Ignore non-Academy servers
+        if member.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Log member join
         embed = discord.Embed(
             description=f'**{member.mention} has joined the {member.guild.name}!**',
             timestamp=datetime.utcnow())
@@ -26,6 +29,9 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         """Display in action-log channel that member has left."""
+        # Ignore non-Academy servers
+        if member.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Log member removal
         embed = discord.Embed(
             color=helpers.display_color(member.color),
             description=f'**{member.mention} has left the {member.guild.name} :(**',
@@ -48,11 +54,15 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_message_delete(self, message):
         """Display info of deleted message in action-log channel."""
+        # Ignore non-Academy messages
+        if member.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Ignore messages from boardroom
+        if message.channel.name == 'boardroom': return
+        # Log message deletion
         desc = f'**Message by {message.author.mention} deleted in {message.channel.mention}**'
         # Message content may not exist, such as an embed or picture
         if message.clean_content:
             desc += f'```\n{message.clean_content}```'
-        if message.channel.name == 'boardroom': return  # Ignore messages from boardroom
         embed = discord.Embed(
             color=helpers.display_color(message.author.color),
             description=desc,
@@ -66,8 +76,11 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
         """Display info of edited message in action-log channel."""
+        # Ignore non-Academy messages
+        if member.guild.id not in [252352512332529664, 475599187812155392]: return
         # Ignore messages from boardroom, and ensure that message content has changed
         if before.channel.name == 'boardroom' or before.content == after.content: return
+        # Log message edit
         embed = discord.Embed(
             color=helpers.display_color(before.author.color),
             description=f'**Message by {before.author.mention} edited in '
@@ -87,7 +100,11 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
         """Display in action-log channel that member's nickname has changed."""
-        if before.nick == after.nick: return  # Ensure that nickname has changed
+        # Ignore non-Academy messages
+        if member.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Ensure that nickname has changed
+        if before.nick == after.nick: return
+        # Log nickname change
         embed = discord.Embed(
             color=helpers.display_color(before.color),
             description=f'**{before.mention} nickname changed**',

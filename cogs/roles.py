@@ -22,6 +22,7 @@ class Roles(commands.Cog):
     @commands.command(name='dnd', hidden=True)
     @commands.has_any_role('Mentors', 'DO NOT DISTURB')
     @helpers.in_channel('teacher-lounge')
+    @helpers.in_academy()
     async def do_not_disturb_toggle(self, ctx):
         """Toggle member's do not disturb role, and update database."""
         mentors_role = discord.utils.get(ctx.guild.roles, name='Mentors')
@@ -61,6 +62,7 @@ class Roles(commands.Cog):
     @commands.command(name='advisor', hidden=True)
     @commands.has_role('Mentor')
     @helpers.in_channel('teacher-lounge')
+    @helpers.in_academy()
     async def advisor_role_toggle(self, ctx):
         """Toggle member's roles from mentor to advisor, and update database."""
         embed = await helpers.update_roles(
@@ -76,6 +78,7 @@ class Roles(commands.Cog):
     @commands.command(name='mentor', hidden=True)
     @commands.has_role('Advisor')
     @helpers.in_channel('teacher-lounge')
+    @helpers.in_academy()
     async def mentor_role_toggle(self, ctx):
         """Toggle member's roles from advisor to mentor, and update database."""
         embed = await helpers.update_roles(
@@ -93,10 +96,15 @@ class Roles(commands.Cog):
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
         """Give member character, region, undergrad, or student role on reaction."""
-        if payload.user_id == self.bot.user.id: return  # Ignore reactions from Mentorbot
+        # Ignore non-Academy servers
+        if member.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Ignore reactions from Mentorbot
+        if payload.user_id == self.bot.user.id: return
+        # Ensure set-your-roles channel
         guild = self.bot.get_guild(payload.guild_id)
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
-        if channel.name != 'set-your-roles': return  # Ensure set-your-roles channel
+        if channel.name != 'set-your-roles': return
+        # Add/remove roles
         message = await channel.fetch_message(payload.message_id)
         member = guild.get_member(payload.user_id)
         emote = payload.emoji.name
@@ -150,9 +158,13 @@ class Roles(commands.Cog):
     @commands.Cog.listener()
     async def on_raw_reaction_remove(self, payload):
         """Remove member's character, region, or undergrad role on reaction remove."""
+        # Ignore non-Academy servers
+        if member.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Ensure set-your-roles channel
         guild = self.bot.get_guild(payload.guild_id)
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
-        if channel.name != 'set-your-roles': return  # Ensure set-your-roles channel
+        if channel.name != 'set-your-roles': return
+        # Remove roles
         message = await channel.fetch_message(payload.message_id)
         member = guild.get_member(payload.user_id)
         emote = payload.emoji.name
@@ -170,8 +182,9 @@ class Roles(commands.Cog):
                 await member.remove_roles(discord.utils.get(guild.roles, name='amatEUr'))
 
     @commands.command(name='setyourroles')
-    @commands.is_owner()
     @helpers.in_channel('set-your-roles')
+    @helpers.in_academy()
+    @commands.is_owner()
     async def set_your_roles_channel_setup(self, ctx):
         """Send and react to messages to set up role reaction system channel."""
         # Delete message of command
@@ -233,6 +246,7 @@ class Roles(commands.Cog):
         await msg.add_reaction(discord.utils.get(self.bot.emojis, name='roaa'))
 
     @commands.command(name='addstudent', hidden=True)
+    @helpers.in_academy()
     @commands.is_owner()
     async def add_student_roles(self, ctx):
         """One-time setup to add Student role to users without Student or New Member"""
