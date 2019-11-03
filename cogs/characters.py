@@ -45,7 +45,7 @@ class Characters(commands.Cog):
         """Display mentor info for character, or return hitbox info for move."""
         if not move:  # No args passed, display mentor info
             # Ignore non-Academy servers
-            if member.guild.id not in [252352512332529664, 475599187812155392]: return
+            if ctx.guild.id not in [252352512332529664, 475599187812155392]: return
             # Display mentor info
             await mentors.mentor_info(ctx, cursor, c=character)
         else:  # Arg(s) passed, display move info
