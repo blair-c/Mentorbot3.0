@@ -14,7 +14,7 @@ class HelpInfo(commands.Cog):
     async def info_command(self, ctx):
         """Display information about Mentorbot."""
         embed = discord.Embed(
-            description='A custom Discord bot for the Rivals of Aether Academy.')
+            description='A custom Discord bot by the Rivals of Aether Academy.')
         embed.set_author(name='About Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
         embed.add_field(
             name='<:yesdefinitely:609053319415201793> Created by yesdefinitely', 

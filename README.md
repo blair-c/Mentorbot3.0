@@ -1,6 +1,6 @@
 # Mentorbot3.0
 
-A custom Discord bot for the Rivals of Aether Academy.
+A custom Discord bot by the Rivals of Aether Academy.
 
 ## Credits
 
