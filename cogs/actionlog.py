@@ -15,8 +15,9 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         """Log that member has joined."""
-        # Ignore non-Academy servers
-        if member.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Ignore non-Academy/S7-G servers
+        if (member.guild.id not in [252352512332529664, 
+            568340394178510849, 475599187812155392]): return
         # Log member join
         embed = discord.Embed(
             description=f'**{member.mention} has joined the {member.guild.name}!**',
@@ -29,8 +30,9 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         """Display in action-log channel that member has left."""
-        # Ignore non-Academy servers
-        if member.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Ignore non-Academy/S7-G servers
+        if (member.guild.id not in [252352512332529664, 
+            568340394178510849, 475599187812155392]): return
         # Log member removal
         embed = discord.Embed(
             color=helpers.display_color(member.color),
@@ -54,8 +56,9 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_message_delete(self, message):
         """Display info of deleted message in action-log channel."""
-        # Ignore non-Academy messages
-        if message.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Ignore non-Academy/S7-G messages
+        if (member.guild.id not in [252352512332529664, 
+            568340394178510849, 475599187812155392]): return
         # Ignore messages from boardroom
         if message.channel.name == 'boardroom': return
         # Log message deletion
@@ -76,8 +79,9 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
         """Display info of edited message in action-log channel."""
-        # Ignore non-Academy messages
-        if before.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Ignore non-Academy/S7-G messages
+        if (member.guild.id not in [252352512332529664, 
+            568340394178510849, 475599187812155392]): return
         # Ignore messages from boardroom, and ensure that message content has changed
         if before.channel.name == 'boardroom' or before.content == after.content: return
         # Log message edit
@@ -100,8 +104,9 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
         """Display in action-log channel that member's nickname has changed."""
-        # Ignore non-Academy messages
-        if before.guild.id not in [252352512332529664, 475599187812155392]: return
+        # Ignore non-Academy/S7-G messages
+        if (member.guild.id not in [252352512332529664, 
+            568340394178510849, 475599187812155392]): return
         # Ensure that nickname has changed
         if before.nick == after.nick: return
         # Log nickname change
