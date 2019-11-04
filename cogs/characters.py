@@ -60,6 +60,8 @@ class Characters(commands.Cog):
             move = 'nspecial'
         elif move == 'fireball':
             move = 'fspecial'
+        elif move == 'firefox':
+            move = 'uspecial'
         await self.character_command(ctx, 'Zetterburn', move)
 
     @commands.command(name='forsburn', aliases=['fors'])
@@ -73,9 +75,11 @@ class Characters(commands.Cog):
             move = 'ustrong'
         elif move == 'smoke':
             move = 'nspecial'
-        elif move == 'clone':
+        elif move in ['clone', 'superclone']:
             move = 'fspecial'
-        elif move in ['combust', 'inhale']:
+        elif move == 'teleport':
+            move = 'uspecial'
+        elif move in ['combust', 'inhale', 'cloneattack']:
             move = 'dspecial'
         await self.character_command(ctx, 'Forsburn', move)
 
@@ -86,11 +90,11 @@ class Characters(commands.Cog):
         # Alternate move names
         if move == 'grab':
             move = 'nspecial'
-        elif move == 'counter':
+        elif move in ['counter', 'forcefield', 'nofunzone']:
             move = 'dspecial'
         await self.character_command(ctx, 'Clairen', move)
 
-    @commands.command(name='orcane', aliases=['orca'])
+    @commands.command(name='orcane', aliases=['orc', 'orca'])
     async def orcane(self, ctx, *move):
         """Display Orcane mentors, or display info of move given."""
         move = ''.join(move).lower().replace('-', '')
@@ -114,6 +118,8 @@ class Characters(commands.Cog):
             move = 'nspecial'
         elif move == 'icicles':
             move = 'fspecial'
+        elif move == 'freeze':
+            move = 'dspecial'
         await self.character_command(ctx, 'Etalus', move)
 
     @commands.command(name='ranno')
@@ -125,7 +131,7 @@ class Characters(commands.Cog):
             move = 'nspecial'
         elif move == 'tongue':
             move = 'fspecial'
-        elif move in ['divekick', 'needlestorm', 'poisonspin']:
+        elif move in ['divekick', 'needlestorm', 'poisonspin', 'whirlydirly']:
             move = 'uspecial'
         elif move == 'bubble':
             move = 'dspecial'
@@ -138,8 +144,12 @@ class Characters(commands.Cog):
         # Alternate move names
         if move in ['rock', 'rockshine']:
             move = 'nspecial'
+        elif move == 'rollout':
+            move = 'fspecial'
         elif move == 'pillar':
             move = 'uspecial'
+        elif move == 'spikes':
+            move = 'dspecial'
         await self.character_command(ctx, 'Kragg', move)
 
     @commands.command(name='maypul')
@@ -149,7 +159,7 @@ class Characters(commands.Cog):
         # Alternate move names
         if move == 'root':
             move = 'dair'
-        elif move == 'seed':
+        elif move in ['seed', 'nut']:
             move = 'nspecial'
         elif move in ['uppercut', 'tether']:
             move = 'uspecial'
@@ -164,6 +174,8 @@ class Characters(commands.Cog):
         # Alternate move names
         if move in ['seed', 'flower']:
             move = 'nspecial'
+        elif move == 'beastdash':
+            move = 'fspecial'
         elif move == 'burrow':
             move = 'uspecial'
         elif move == 'howl':
@@ -175,7 +187,11 @@ class Characters(commands.Cog):
         """Display Wrastor mentors, or display info of move given."""
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
-        if move in ['tornado', 'nado']:
+        if move in ['clap', 'fclap', 'forwardclap']:
+            move == 'fstrong'
+        elif move in ['uclap', 'upclap']:
+            move = 'ustrong'
+        elif move in ['tornado', 'nado']:
             move = 'nspecial'
         elif move == 'slipstream':
             move = 'fspecial'
@@ -218,10 +234,12 @@ class Characters(commands.Cog):
         """Display Ori mentors, or display info of move given."""
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
-        if move in ['sein', 'seintaps', 'spiritflame']:
+        if move in ['sein', 'tap', 'seintap', 'taps', 'seintaps', 'spiritflame']:
             move = 'nspecial'
         elif move in ['lightball', 'orb']:
             move = 'fspecial'
+        elif move in ['parasol', 'parachute']:
+            move = 'uspecial'
         elif move == 'bash':
             move = 'dspecial'
         await self.character_command(ctx, 'Ori', move)
