@@ -54,7 +54,7 @@ class Characters(commands.Cog):
     @commands.command(name='zetterburn', aliases=['zetter', 'zet'])
     async def zetterburn(self, ctx, *move):
         """Display Zetterburn mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move == 'shine':
             move = 'nspecial'
@@ -65,7 +65,7 @@ class Characters(commands.Cog):
     @commands.command(name='forsburn', aliases=['fors'])
     async def forsburn(self, ctx, *move):
         """Display Forsburn mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move in ['cape', 'fcape', 'forwardcape']:
             move = 'fstrong'
@@ -82,7 +82,7 @@ class Characters(commands.Cog):
     @commands.command(name='clairen')
     async def clairen(self, ctx, *move):
         """Display Clairen mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move == 'grab':
             move = 'nspecial'
@@ -93,7 +93,7 @@ class Characters(commands.Cog):
     @commands.command(name='orcane', aliases=['orca'])
     async def orcane(self, ctx, *move):
         """Display Orcane mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move == 'bubblebutt':
             move = 'fair'
@@ -108,7 +108,7 @@ class Characters(commands.Cog):
     @commands.command(name='etalus', aliases=['eta'])
     async def etalus(self, ctx, *move):
         """Display Etalus mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move == 'hammer':
             move = 'nspecial'
@@ -119,7 +119,7 @@ class Characters(commands.Cog):
     @commands.command(name='ranno')
     async def ranno(self, ctx, *move):
         """Display Ranno mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move in ['needles', 'darts', 'needle']:
             move = 'nspecial'
@@ -134,7 +134,7 @@ class Characters(commands.Cog):
     @commands.command(name='kragg')
     async def kragg(self, ctx, *move):
         """Display Kragg mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move in ['rock', 'rockshine']:
             move = 'nspecial'
@@ -145,7 +145,7 @@ class Characters(commands.Cog):
     @commands.command(name='maypul')
     async def maypul(self, ctx, *move):
         """Display Maypul mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move == 'root':
             move = 'dair'
@@ -160,7 +160,7 @@ class Characters(commands.Cog):
     @commands.command(name='sylvanos', aliases=['sylv'])
     async def sylvanos(self, ctx, *move):
         """Display Sylvanos mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move in ['seed', 'flower']:
             move = 'nspecial'
@@ -173,7 +173,7 @@ class Characters(commands.Cog):
     @commands.command(name='wrastor')
     async def wrastor(self, ctx, *move):
         """Display Wrastor mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move in ['tornado', 'nado']:
             move = 'nspecial'
@@ -184,7 +184,7 @@ class Characters(commands.Cog):
     @commands.command(name='absa')
     async def absa(self, ctx, *move):
         """Display Absa mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move in ['cloud', 'thunderline', 'cloudpop', 'cloudhop']:
             move = 'nspecial'
@@ -197,7 +197,7 @@ class Characters(commands.Cog):
     @commands.command(name='elliana', aliases=['elli'])
     async def elliana(self, ctx, *move):
         """Display Elliana mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move in ['hook', 'claw']:
             move == 'utilt'
@@ -216,7 +216,7 @@ class Characters(commands.Cog):
     @commands.command(name='ori')
     async def ori(self, ctx, *move):
         """Display Ori mentors, or display info of move given."""
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move in ['sein', 'seintaps', 'spiritflame']:
             move = 'nspecial'
@@ -234,7 +234,7 @@ class Characters(commands.Cog):
         # Allow for '!shovel knight [move]' syntax
         if move[0].lower() == 'knight':
             move = move[1:]
-        move = ''.join(move).lower()
+        move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move == 'dig':
             move = 'dtilt'
