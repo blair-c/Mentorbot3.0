@@ -241,7 +241,7 @@ class Roles(commands.Cog):
         await ctx.send(file=discord.File('images/setyourroles/enroll.png'))
         msg = await ctx.send(
             '• **Is this the only channel you can see?**\n'
-            '• Click the <:roaa:547193471191089179> reaction below to enroll in the '
+            '• Click the <:roaa:547193418560962570> reaction below to enroll in the '
             'server and view the rest of the channels!')
         await msg.add_reaction(discord.utils.get(self.bot.emojis, name='roaa'))
 
