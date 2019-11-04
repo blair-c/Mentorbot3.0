@@ -36,7 +36,7 @@ class ActionLog(commands.Cog):
         # Log member removal
         embed = discord.Embed(
             color=helpers.display_color(member.color),
-            description=f'**{member.mention} has left the {member.guild.name} :(**',
+            description=f'**{str(member)} has left the {member.guild.name} :(**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
