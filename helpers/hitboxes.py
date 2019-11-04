@@ -14,7 +14,8 @@ async def move_info(ctx, cursor, character, move):
     # Get move ID and display name
     move = cursor.execute(
         '''SELECT id, display_name FROM moves WHERE name1 = :move OR name2 = :move
-           OR name3 = :move OR name4 = :move''', {'move': move}).fetchone()
+           OR name3 = :move OR name4 = :move OR name5 = :move OR name6 = :move''', 
+           {'move': move}).fetchone()
     # Get move info
     move_info = cursor.execute(
         '''SELECT * FROM hitboxes WHERE char_id = :char_id AND move_id = :move_id''',
