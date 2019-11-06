@@ -20,7 +20,7 @@ class ActionLog(commands.Cog):
             568340394178510849, 475599187812155392]): return
         # Log member join
         embed = discord.Embed(
-            color=0x43a047
+            color=0x43a047,
             description=f'**{member.mention} has joined the {member.guild.name}!**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
