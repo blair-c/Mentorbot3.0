@@ -234,7 +234,8 @@ class Characters(commands.Cog):
         """Display Ori mentors, or display info of move given."""
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
-        if move in ['sein', 'tap', 'seintap', 'taps', 'seintaps', 'spiritflame']:
+        if (move in ['sein', 'tap', 'seintap', 'taps', 'seintaps', 
+                     'spiritflame', 'chargeflame', 'chargesein', 'seincharge']):
             move = 'nspecial'
         elif move in ['lightball', 'orb']:
             move = 'fspecial'
