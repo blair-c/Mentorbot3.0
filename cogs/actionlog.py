@@ -15,9 +15,9 @@ class ActionLog(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         """Log that member has joined."""
-        # Ignore non-Academy/S7-G servers
-        if (member.guild.id not in [252352512332529664, 
-            568340394178510849, 475599187812155392]): return
+        # Check that action-log channel exists and is viewable
+        action_log = discord.utils.get(member.guild.text_channels, name='action-log')
+        if not action_log: return
         # Log member join
         embed = discord.Embed(
             color=0x43a047,
@@ -25,15 +25,15 @@ class ActionLog(commands.Cog):
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
-        action_log = discord.utils.get(member.guild.text_channels, name='action-log')
+        # Send in action-log
         await action_log.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         """Display in action-log channel that member has left."""
-        # Ignore non-Academy/S7-G servers
-        if (member.guild.id not in [252352512332529664, 
-            568340394178510849, 475599187812155392]): return
+        # Check that action-log channel exists and is viewable
+        action_log = discord.utils.get(member.guild.text_channels, name='action-log')
+        if not action_log: return
         # Log member removal
         embed = discord.Embed(
             color=0xfb8c00,
@@ -51,15 +51,14 @@ class ActionLog(commands.Cog):
             vice_principal = discord.utils.get(roles, name='Vice Principal')
             ping = f'{principal.mention} {vice_principal.mention}'
         # Send in action-log
-        action_log = discord.utils.get(member.guild.text_channels, name='action-log')
         await action_log.send(content=ping, embed=embed)
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
         """Display info of deleted message in action-log channel."""
-        # Ignore non-Academy/S7-G messages
-        if (message.guild.id not in [252352512332529664, 
-            568340394178510849, 475599187812155392]): return
+        # Check that action-log channel exists and is viewable
+        action_log = discord.utils.get(member.guild.text_channels, name='action-log')
+        if not action_log: return
         # Ignore messages from boardroom
         if message.channel.name == 'boardroom': return
         # Log message deletion
@@ -74,15 +73,14 @@ class ActionLog(commands.Cog):
         embed.set_author(name='Message Deleted', icon_url=message.author.avatar_url)
         embed.set_footer(text=f'User ID: {message.author.id}')
         # Send in action-log
-        action_log = discord.utils.get(message.guild.text_channels, name='action-log')
         await action_log.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_message_edit(self, before, after):
         """Display info of edited message in action-log channel."""
-        # Ignore non-Academy/S7-G messages
-        if (before.guild.id not in [252352512332529664, 
-            568340394178510849, 475599187812155392]): return
+        # Check that action-log channel exists and is viewable
+        action_log = discord.utils.get(member.guild.text_channels, name='action-log')
+        if not action_log: return
         # Ignore messages from boardroom, and ensure that message content has changed
         if before.channel.name == 'boardroom' or before.content == after.content: return
         # Log message edit
@@ -99,15 +97,15 @@ class ActionLog(commands.Cog):
         # After edit
         if after.content:
             embed.add_field(name='After:', value=f'```{after.clean_content}```', inline=False)
-        action_log = discord.utils.get(before.guild.text_channels, name='action-log')
+        # Send in action-log
         await action_log.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_member_update(self, before, after):
         """Display in action-log channel that member's nickname has changed."""
-        # Ignore non-Academy/S7-G messages
-        if (before.guild.id not in [252352512332529664, 
-            568340394178510849, 475599187812155392]): return
+        # Check that action-log channel exists and is viewable
+        action_log = discord.utils.get(member.guild.text_channels, name='action-log')
+        if not action_log: return
         # Ensure that nickname has changed
         if before.nick == after.nick: return
         # Log nickname change
@@ -123,7 +121,7 @@ class ActionLog(commands.Cog):
         # After nickname change
         embed.add_field(name='After:', value=f'```{helpers.get_nickname(after)}```',
                         inline=False)
-        action_log = discord.utils.get(before.guild.text_channels, name='action-log')
+        # Send in action-log
         await action_log.send(embed=embed)
 
 
