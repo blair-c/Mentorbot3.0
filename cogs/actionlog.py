@@ -20,6 +20,7 @@ class ActionLog(commands.Cog):
             568340394178510849, 475599187812155392]): return
         # Log member join
         embed = discord.Embed(
+            color=0x43a047
             description=f'**{member.mention} has joined the {member.guild.name}!**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
@@ -35,7 +36,7 @@ class ActionLog(commands.Cog):
             568340394178510849, 475599187812155392]): return
         # Log member removal
         embed = discord.Embed(
-            color=helpers.display_color(member.color),
+            color=0xfb8c00,
             description=f'**{str(member)} has left the {member.guild.name} :(**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
@@ -67,7 +68,7 @@ class ActionLog(commands.Cog):
         if message.clean_content:
             desc += f'```\n{message.clean_content}```'
         embed = discord.Embed(
-            color=helpers.display_color(message.author.color),
+            color=0xe53935,
             description=desc,
             timestamp=datetime.utcnow())
         embed.set_author(name='Message Deleted', icon_url=message.author.avatar_url)
@@ -86,7 +87,7 @@ class ActionLog(commands.Cog):
         if before.channel.name == 'boardroom' or before.content == after.content: return
         # Log message edit
         embed = discord.Embed(
-            color=helpers.display_color(before.author.color),
+            color=0x3949ab,
             description=f'**Message by {before.author.mention} edited in '
                         f'{before.channel.mention}**',
             timestamp=datetime.utcnow())
@@ -111,7 +112,7 @@ class ActionLog(commands.Cog):
         if before.nick == after.nick: return
         # Log nickname change
         embed = discord.Embed(
-            color=helpers.display_color(before.color),
+            color=0x5e35b1,
             description=f'**{before.mention} nickname changed**',
             timestamp=datetime.utcnow())
         embed.set_author(name=f'Nickname Changed', icon_url=before.avatar_url)

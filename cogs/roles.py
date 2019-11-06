@@ -146,7 +146,7 @@ class Roles(commands.Cog):
                 await member.add_roles(student)
                 # Display enrollment in action-log
                 embed = discord.Embed(
-                    color=helpers.display_color(member.color),
+                    color=0xffffff,
                     description=f'**{member.mention} has enrolled in '
                                 'the Rivals of Aether Academy!**',
                     timestamp=datetime.utcnow())

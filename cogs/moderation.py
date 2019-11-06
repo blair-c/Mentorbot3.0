@@ -29,7 +29,7 @@ class Moderation(commands.Cog):
                 desc += f':**\n```{msg.clean_content}```'
             else: 
                 desc += '**\n```(No message content)```'
-        embed = discord.Embed(color=helpers.display_color(ctx.author.color), description=desc)
+        embed = discord.Embed(color=0xb71c1c, description=desc)
         embed.set_author(name='Bulk Message Deletion', icon_url=ctx.author.avatar_url)
         action_log = discord.utils.get(ctx.guild.text_channels, name='action-log')
         await action_log.send(embed=embed)
