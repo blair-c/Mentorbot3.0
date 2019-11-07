@@ -71,7 +71,7 @@ class ActionLog(commands.Cog):
             color=0xe53935,
             description=desc,
             timestamp=datetime.utcnow())
-        embed.set_author(name=f'Message Deleted by {str(member)}', icon_url=message.author.avatar_url)
+        embed.set_author(name=f'Message Deleted by {str(message.author)}', icon_url=message.author.avatar_url)
         embed.set_footer(text=f'User ID: {message.author.id}')
         # Send in action-log
         await action_log.send(embed=embed)
@@ -89,7 +89,7 @@ class ActionLog(commands.Cog):
             color=0x3949ab,
             description=f'**Message by {before.author.mention} edited in {before.channel.mention}**',
             timestamp=datetime.utcnow())
-        embed.set_author(name=f'Message Edited by {str(member)}', icon_url=before.author.avatar_url)
+        embed.set_author(name=f'Message Edited by {str(before.author)}', icon_url=before.author.avatar_url)
         embed.set_footer(text=f'User ID: {before.author.id}')
         # Before edit
         if before.content:
@@ -113,7 +113,7 @@ class ActionLog(commands.Cog):
             color=0x5e35b1,
             description=f'**{before.mention} nickname changed**',
             timestamp=datetime.utcnow())
-        embed.set_author(name=f'{str(member)} Nickname Changed', icon_url=before.avatar_url)
+        embed.set_author(name=f'{str(before.author)} Nickname Changed', icon_url=before.avatar_url)
         embed.set_footer(text=f'ID: {before.id}')
         # Before nickname change
         embed.add_field(name='Before:', value=f'```{helpers.get_nickname(before)}```',
