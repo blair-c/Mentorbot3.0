@@ -63,8 +63,7 @@ class ActionLog(commands.Cog):
         # Ignore messages from boardroom
         if message.channel.name == 'boardroom': return
         # Log message deletion
-        desc = (f'**Message by {message.author.mention} deleted in {message.channel.mention} '
-                f'[Jump to message]({message.jump_url})**')
+        desc = (f'**Message by {message.author.mention} deleted in {message.channel.mention}**')
         # Message content may not exist, such as an embed or picture
         if message.clean_content:
             desc += f'```\n{message.clean_content}```'
