@@ -20,7 +20,7 @@ class ActionLog(commands.Cog):
         if not action_log: return
         # Log member join
         embed = discord.Embed(
-            color=0x43a047,
+            color=0x66bb6a,
             description=f'**{member.mention} {str(member)}**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
@@ -36,7 +36,7 @@ class ActionLog(commands.Cog):
         if not action_log: return
         # Log member removal
         embed = discord.Embed(
-            color=0xfb8c00,
+            color=0xff7043,
             description=f'**{member.mention} {str(member)}**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
@@ -68,7 +68,7 @@ class ActionLog(commands.Cog):
         if message.clean_content:
             desc += f'```\n{message.clean_content}```'
         embed = discord.Embed(
-            color=0xe53935,
+            color=0xef5350,
             description=desc,
             timestamp=datetime.utcnow())
         embed.set_author(name=f'Message Deleted by {str(message.author)}', icon_url=message.author.avatar_url)
@@ -86,7 +86,7 @@ class ActionLog(commands.Cog):
         if before.channel.name == 'boardroom' or before.content == after.content: return
         # Log message edit
         embed = discord.Embed(
-            color=0x3949ab,
+            color=0x5c6bc0,
             description=(f'**Message by {before.author.mention} edited in {before.channel.mention} '
                          f'[Jump to message]({before.jump_url})**'),
             timestamp=datetime.utcnow())
@@ -111,7 +111,7 @@ class ActionLog(commands.Cog):
         if before.nick == after.nick: return
         # Log nickname change
         embed = discord.Embed(
-            color=0x5e35b1,
+            color=0x7e57c2,
             description=f'**{before.mention} nickname changed**',
             timestamp=datetime.utcnow())
         embed.set_author(name=f'{str(before.author)} Nickname Changed', icon_url=before.avatar_url)
