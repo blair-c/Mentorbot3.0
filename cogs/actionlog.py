@@ -71,7 +71,7 @@ class ActionLog(commands.Cog):
             color=0xef5350,
             description=desc,
             timestamp=datetime.utcnow())
-        embed.set_author(name=f'Message Deleted by {str(message.author)}', icon_url=message.author.avatar_url)
+        embed.set_author(name=f'Message by {str(message.author)} Deleted', icon_url=message.author.avatar_url)
         embed.set_footer(text=f'User ID: {message.author.id}')
         # Send in action-log
         await action_log.send(embed=embed)
@@ -90,7 +90,7 @@ class ActionLog(commands.Cog):
             description=(f'**Message by {before.author.mention} edited in {before.channel.mention} '
                          f'[Jump to message]({before.jump_url})**'),
             timestamp=datetime.utcnow())
-        embed.set_author(name=f'Message Edited by {str(before.author)}', icon_url=before.author.avatar_url)
+        embed.set_author(name=f'Message by {str(before.author)} Edited', icon_url=before.author.avatar_url)
         embed.set_footer(text=f'User ID: {before.author.id}')
         # Before edit
         if before.content:
