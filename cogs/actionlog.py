@@ -63,8 +63,8 @@ class ActionLog(commands.Cog):
         # Ignore messages from boardroom
         if message.channel.name == 'boardroom': return
         # Log message deletion
-        desc = f'**Message by {message.author.mention} deleted in {message.channel.mention} '
-               f'[Jump to message]({message.jump_url})**'
+        desc = (f'**Message by {message.author.mention} deleted in {message.channel.mention} '
+                f'[Jump to message]({message.jump_url})**')
         # Message content may not exist, such as an embed or picture
         if message.clean_content:
             desc += f'```\n{message.clean_content}```'
@@ -88,8 +88,8 @@ class ActionLog(commands.Cog):
         # Log message edit
         embed = discord.Embed(
             color=0x3949ab,
-            description=f'**Message by {before.author.mention} edited in {before.channel.mention} '
-                        f'[Jump to message]({before.jump_url})**',
+            description=(f'**Message by {before.author.mention} edited in {before.channel.mention} '
+                         f'[Jump to message]({before.jump_url})**'),
             timestamp=datetime.utcnow())
         embed.set_author(name=f'Message Edited by {str(before.author)}', icon_url=before.author.avatar_url)
         embed.set_footer(text=f'User ID: {before.author.id}')
