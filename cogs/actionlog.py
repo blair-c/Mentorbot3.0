@@ -21,7 +21,7 @@ class ActionLog(commands.Cog):
         # Log member join
         embed = discord.Embed(
             color=0x43a047,
-            description=f'**{member.mention} has joined the {member.guild.name}!**',
+            description=f'**{member.mention} {str(member)}**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
@@ -37,19 +37,20 @@ class ActionLog(commands.Cog):
         # Log member removal
         embed = discord.Embed(
             color=0xfb8c00,
-            description=f'**{str(member)} has left the {member.guild.name} :(**',
+            description=f'**{member.mention} {str(member)}**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
-        # Ping principals if member was a mentor
-        ping = ''
-        roles = member.guild.roles
-        mentor = discord.utils.get(roles, name='Mentor')
-        dnd = discord.utils.get(roles, name='DO NOT DISTURB')
-        if mentor in member.roles or dnd in member.roles:
-            principal = discord.utils.get(roles, name='Principal')
-            vice_principal = discord.utils.get(roles, name='Vice Principal')
-            ping = f'{principal.mention} {vice_principal.mention}'
+        # Ping principals if member was a mentor (only in Academy/test server)
+        if member.guild.id not in [252352512332529664, 475599187812155392]:
+            ping = ''
+            roles = member.guild.roles
+            mentor = discord.utils.get(roles, name='Mentor')
+            dnd = discord.utils.get(roles, name='DO NOT DISTURB')
+            if mentor in member.roles or dnd in member.roles:
+                principal = discord.utils.get(roles, name='Principal')
+                vice_principal = discord.utils.get(roles, name='Vice Principal')
+                ping = f'{principal.mention} {vice_principal.mention}'
         # Send in action-log
         await action_log.send(content=ping, embed=embed)
 
@@ -70,7 +71,7 @@ class ActionLog(commands.Cog):
             color=0xe53935,
             description=desc,
             timestamp=datetime.utcnow())
-        embed.set_author(name='Message Deleted', icon_url=message.author.avatar_url)
+        embed.set_author(name=f'Message Deleted by {str(member)}', icon_url=message.author.avatar_url)
         embed.set_footer(text=f'User ID: {message.author.id}')
         # Send in action-log
         await action_log.send(embed=embed)
@@ -86,10 +87,9 @@ class ActionLog(commands.Cog):
         # Log message edit
         embed = discord.Embed(
             color=0x3949ab,
-            description=f'**Message by {before.author.mention} edited in '
-                        f'{before.channel.mention}**',
+            description=f'**Message by {before.author.mention} edited in {before.channel.mention}**',
             timestamp=datetime.utcnow())
-        embed.set_author(name='Message Edited', icon_url=before.author.avatar_url)
+        embed.set_author(name=f'Message Edited by {str(member)}', icon_url=before.author.avatar_url)
         embed.set_footer(text=f'User ID: {before.author.id}')
         # Before edit
         if before.content:
@@ -113,7 +113,7 @@ class ActionLog(commands.Cog):
             color=0x5e35b1,
             description=f'**{before.mention} nickname changed**',
             timestamp=datetime.utcnow())
-        embed.set_author(name=f'Nickname Changed', icon_url=before.avatar_url)
+        embed.set_author(name=f'{str(member)} Nickname Changed', icon_url=before.avatar_url)
         embed.set_footer(text=f'ID: {before.id}')
         # Before nickname change
         embed.add_field(name='Before:', value=f'```{helpers.get_nickname(before)}```',
