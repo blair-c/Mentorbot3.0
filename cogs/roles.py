@@ -203,7 +203,7 @@ class Roles(commands.Cog):
             '• You may only have one main character.')
         for character in rivals.characters:
             await msg.add_reaction(
-                discord.utils.get(self.bot.emojis, name=character.replace(' ', '')))
+                discord.utils.get(self.bot.emojis, name=character))
         # Secondaries
         await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
         msg = await ctx.send(
@@ -212,7 +212,7 @@ class Roles(commands.Cog):
             '• You may have multiple secondaries.')
         for character in rivals.characters:
             await msg.add_reaction(
-                discord.utils.get(self.bot.emojis, name=character.replace(' ', '')))
+                discord.utils.get(self.bot.emojis, name=character))
         # Region
         await ctx.send(file=discord.File('images/setyourroles/region.png'))
         msg = await ctx.send(

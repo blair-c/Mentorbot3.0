@@ -13,7 +13,7 @@ characters = {
     'Absa': '<:Absa:547182403144384532>',
     'Elliana': '<:Elliana:547182393908396052>',
     'Ori': '<:Ori:547182375956774920>',
-    'Shovel Knight': '<:ShovelKnight:547182360219746349>'
+    'ShovelKnight': '<:ShovelKnight:547182360219746349>'
 }
 
 # Rivals regions
