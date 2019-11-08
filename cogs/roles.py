@@ -106,7 +106,7 @@ class Roles(commands.Cog):
         if channel.name != 'set-your-roles': return
         # Add/remove roles
         guild_roles = guild.roles
-        user = bot.get_user(user_id)
+        user = self.bot.get_user(user_id)
         member = guild.get_member(user_id)
         message = await channel.fetch_message(payload.message_id)
         # Main
