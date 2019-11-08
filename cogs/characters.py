@@ -157,7 +157,9 @@ class Characters(commands.Cog):
         """Display Maypul mentors, or display info of move given."""
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
-        if move == 'root':
+        if move == 'helicopter':
+            move = 'uair'
+        elif move == 'root':
             move = 'dair'
         elif move in ['seed', 'nut']:
             move = 'nspecial'
