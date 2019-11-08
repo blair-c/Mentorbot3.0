@@ -99,49 +99,58 @@ class Roles(commands.Cog):
         # Ignore non-Academy servers
         if payload.guild_id not in [252352512332529664, 475599187812155392]: return
         # Ignore reactions from Mentorbot
-        if payload.user_id == self.bot.user.id: return
+        if (user_id := payload.user_id) == self.bot.user.id: return
         # Ensure set-your-roles channel
         guild = self.bot.get_guild(payload.guild_id)
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
         if channel.name != 'set-your-roles': return
         # Add/remove roles
+        guild_roles = guild.roles
+        user = bot.get_user(user_id)
+        member = guild.get_member(user_id)
         message = await channel.fetch_message(payload.message_id)
-        member = guild.get_member(payload.user_id)
-        emote = payload.emoji.name
         # Main
         if 'main' in message.content:
-            # Remove previous main roles
-            mains = [discord.utils.get(guild.roles, name=f'{character} (Main)')
-                    for character in rivals.characters]
-            await member.remove_roles(*[role for role in mains if role in member.roles])
-            # Remove secondary role of main being added
-            secondary_role = discord.utils.get(guild.roles, name=emote)
-            if secondary_role in member.roles:
-                await member.remove_roles(secondary_role)
-            # Add new main role
-            await member.add_roles(discord.utils.get(guild.roles, name=f'{emote} (Main)'))
+            for reaction in message.reactions:
+                character = reaction.emoji.name
+                main_role = discord.utils.get(guild_roles, name=f'{character} (Main)')
+                if character == payload.emoji.name:
+                    # Remove secondary role of main being added
+                    secondary_role = discord.utils.get(guild_roles, name=character)
+                    if secondary_role in member.roles:
+                        await member.remove_roles(secondary_role)
+                    # Add new main role
+                    await member.add_roles(main_role)
+                else:
+                    # Remove previous main role
+                    if main_role in member.roles:
+                        await member.remove_roles(main_role)
+                    # Remove previous main reaction
+                    await reactors = reaction.users().flatten()
+                    if user in reactors:
+                        await reaction.remove(user)
         # Secondaries
         elif 'secondaries' in message.content:
-            main_role = discord.utils.get(guild.roles, name=f'{emote} (Main)')
+            main_role = discord.utils.get(guild_roles, name=f'{emote} (Main)')
             if main_role not in member.roles:
-                await member.add_roles(discord.utils.get(guild.roles, name=emote))
+                await member.add_roles(discord.utils.get(guild_roles, name=emote))
         # Region
         elif 'region' in message.content:
             # Remove previous region roles
-            regions = [discord.utils.get(guild.roles, name=region) for region in
+            regions = [discord.utils.get(guild_roles, name=region) for region in
                       rivals.regions]
             await member.remove_roles(*[role for role in regions if role in member.roles])
             # Add new region role
-            await member.add_roles(discord.utils.get(guild.roles, name=emote))
+            await member.add_roles(discord.utils.get(guild_roles, name=emote))
         # RAS
         elif 'amateur' in message.content:
             if emote == 'NA':
-                await member.add_roles(discord.utils.get(guild.roles, name='Undergrad'))
+                await member.add_roles(discord.utils.get(guild_roles, name='Undergrad'))
             elif emote == 'EU':
-                await member.add_roles(discord.utils.get(guild.roles, name='amatEUr'))
+                await member.add_roles(discord.utils.get(guild_roles, name='amatEUr'))
         # Enrollment
         elif emote == 'roaa':
-            student = discord.utils.get(guild.roles, name='Student')
+            student = discord.utils.get(guild_roles, name='Student')
             if student not in member.roles:
                 await member.add_roles(student)
                 # Display enrollment in action-log
