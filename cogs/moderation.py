@@ -11,7 +11,7 @@ class Moderation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='clear', aliases=['delete', 'delet'], hidden=True)
+    @commands.command(name='clear', aliases=['delete', 'purge'], hidden=True)
     @commands.has_permissions(manage_messages=True)
     @helpers.in_academy()
     async def delete_n_messages(self, ctx, n: int = 0):
