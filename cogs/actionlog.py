@@ -17,7 +17,7 @@ class ActionLog(commands.Cog):
         """Log that member has joined."""
         # Check that action-log channel exists and is viewable
         guild = member.guild
-        if not guild = member.guild: return
+        if not guild: return
         action_log = discord.utils.get(guild.text_channels, name='action-log')
         if not action_log: return
         # Log member join
