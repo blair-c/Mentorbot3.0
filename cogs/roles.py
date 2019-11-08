@@ -105,16 +105,17 @@ class Roles(commands.Cog):
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
         if channel.name != 'set-your-roles': return
         # Add/remove roles
-        guild_roles = guild.roles
         user = self.bot.get_user(user_id)
         member = guild.get_member(user_id)
         message = await channel.fetch_message(payload.message_id)
+        guild_roles = guild.roles
+        emote = payload.emoji.name
         # Main
         if 'main' in message.content:
             for reaction in message.reactions:
                 character = reaction.emoji.name
                 main_role = discord.utils.get(guild_roles, name=f'{character} (Main)')
-                if character == payload.emoji.name:
+                if character == emote:
                     # Remove secondary role of main being added
                     secondary_role = discord.utils.get(guild_roles, name=character)
                     if secondary_role in member.roles:
@@ -141,6 +142,19 @@ class Roles(commands.Cog):
             await member.remove_roles(*[role for role in regions if role in member.roles])
             # Add new region role
             await member.add_roles(discord.utils.get(guild_roles, name=emote))
+            for reaction in message.reactions:
+                region = reaction.emoji.name
+                region_role = discord.utils.get(guild_roles, name=region)
+                if region == emote:
+                    # Add new region role
+                    await member.add_roles(region_role)
+                else:
+                    # Remove previous region role
+                    if region_role in member.roles:
+                        await member.remove_roles(region_role)
+                    # Remove previous region reaction
+                    if user in await reaction.users().flatten():
+                        await reaction.remove(user)
         # RAS
         elif 'amateur' in message.content:
             if emote == 'NA':
