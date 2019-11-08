@@ -126,8 +126,7 @@ class Roles(commands.Cog):
                     if main_role in member.roles:
                         await member.remove_roles(main_role)
                     # Remove previous main reaction
-                    reactors = await reaction.users().flatten()
-                    if user in reactors:
+                    if user in await reaction.users().flatten():
                         await reaction.remove(user)
         # Secondaries
         elif 'secondaries' in message.content:
