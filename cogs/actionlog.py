@@ -87,8 +87,8 @@ class ActionLog(commands.Cog):
         # Log message edit
         embed = discord.Embed(
             color=0x5c6bc0,
-            description=(f'**Message by {before.author.mention} edited in {before.channel.mention} '
-                         f'[Jump to message]({before.jump_url})**'),
+            description=(f'**Message by {before.author.mention} edited in {before.channel.mention}** '
+                         f'[Jump to message]({before.jump_url})'),
             timestamp=datetime.utcnow())
         embed.set_author(name=f'Message by {str(before.author)} Edited', icon_url=before.author.avatar_url)
         embed.set_footer(text=f'User ID: {before.author.id}')
