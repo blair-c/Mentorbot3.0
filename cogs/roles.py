@@ -187,21 +187,22 @@ class Roles(commands.Cog):
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
         if channel.name != 'set-your-roles': return
         # Remove roles
-        message = await channel.fetch_message(payload.message_id)
         member = guild.get_member(payload.user_id)
+        message = await channel.fetch_message(payload.message_id)
+        guild_roles = guild.roles
         emote = payload.emoji.name
         # Main
         if 'main' in message.content:
-            await member.remove_roles(discord.utils.get(guild.roles, name=f'{emote} (Main)'))
+            await member.remove_roles(discord.utils.get(guild_roles, name=f'{emote} (Main)'))
         # Secondaries
         elif 'secondary' in message.content:
-            await member.remove_roles(discord.utils.get(guild.roles, name=emote))
+            await member.remove_roles(discord.utils.get(guild_roles, name=emote))
         # RAS
         elif 'amateur' in message.content:
             if emote == 'NA':
-                await member.remove_roles(discord.utils.get(guild.roles, name='Undergrad'))
+                await member.remove_roles(discord.utils.get(guild_roles, name='Undergrad'))
             elif emote == 'EU':
-                await member.remove_roles(discord.utils.get(guild.roles, name='amatEUr'))
+                await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
 
     @commands.command(name='setyourroles')
     @helpers.in_channel('set-your-roles')
