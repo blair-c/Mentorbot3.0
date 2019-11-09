@@ -68,7 +68,7 @@ class ActionLog(commands.Cog):
         if message.clean_content:
             desc += f'```\n{message.clean_content}```'
         embed = discord.Embed(
-            color=0xef5350,
+            color=0xec407a,
             description=desc,
             timestamp=datetime.utcnow())
         embed.set_author(name=f'{str(message.author)}', icon_url=message.author.avatar_url)
