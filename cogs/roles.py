@@ -169,8 +169,7 @@ class Roles(commands.Cog):
                 # Display enrollment in action-log
                 embed = discord.Embed(
                     color=0xffffff,
-                    description=f'**{member.mention} has enrolled in '
-                                'the Rivals of Aether Academy!**',
+                    description=f'{member.mention} **{str(member)}**',
                     timestamp=datetime.utcnow())
                 embed.set_author(name='Member Enrolled', icon_url=member.avatar_url)
                 embed.set_footer(text=f'ID: {payload.user_id}')
