@@ -21,7 +21,7 @@ class ActionLog(commands.Cog):
         # Log member join
         embed = discord.Embed(
             color=0x66bb6a,
-            description=f'**{member.mention} {str(member)}**',
+            description=f'{member.mention} **{str(member)}**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
@@ -37,7 +37,7 @@ class ActionLog(commands.Cog):
         # Log member removal
         embed = discord.Embed(
             color=0xff7043,
-            description=f'**{member.mention} {str(member)}**',
+            description=f'{member.mention} **{str(member)}**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
@@ -112,7 +112,7 @@ class ActionLog(commands.Cog):
         # Log nickname change
         embed = discord.Embed(
             color=0x7e57c2,
-            description=f'**{before.mention} nickname changed**',
+            description=f'{before.mention} **nickname changed**',
             timestamp=datetime.utcnow())
         embed.set_author(name=f'{str(before.author)}', icon_url=before.avatar_url)
         embed.set_footer(text=f'ID: {before.id}')
