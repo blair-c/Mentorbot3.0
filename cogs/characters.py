@@ -1,4 +1,5 @@
 import sqlite3
+from time import sleep
 
 import discord
 from discord.ext import commands
@@ -49,6 +50,7 @@ class Characters(commands.Cog):
             # Display mentor info
             await mentors.mentor_info(ctx, cursor, c=character)
         else:  # Arg(s) passed, display move info
+            sleep(0.1)  # Delay to avoid bot message appearing before command message
             await hitboxes.move_info(ctx, cursor, character, move)
 
     @commands.command(name='zetterburn', aliases=['zetter', 'zet'])
