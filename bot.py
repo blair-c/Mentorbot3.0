@@ -37,7 +37,7 @@ async def change_bot_activity():
         url='https://github.com/blair-c/Mentorbot3.0',
         state=':jackie:',
         details=stats)
-    await client.change_presence(activity=activity)
+    await bot.change_presence(activity=activity)
 
 @bot.event
 async def on_ready():
