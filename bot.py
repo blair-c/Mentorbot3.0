@@ -31,12 +31,13 @@ extensions = [
 
 @tasks.loop(seconds=10)
 async def change_bot_activity():
+    stats = f'{len(bot.guilds)} servers | {len(bot.users)} users'
     activity = discord.Activity(
-        name=f'{len(bot.guilds)} servers | {len(bot.users)} users',
+        name=stats,
         url='https://github.com/blair-c/Mentorbot3.0',
         state=':jackie:',
-        details='Mentorbot 3.0')
-    await client,change_presence(activity=activity)
+        details=stats)
+    await client.change_presence(activity=activity)
 
 @bot.event
 async def on_ready():
