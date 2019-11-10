@@ -3,7 +3,7 @@ import sys
 
 try:
     import discord
-    from discord.ext import commands
+    from discord.ext import commands, tasks
 except ImportError:
     print('Discord.py is not installed', file=sys.stderr)
     sys.exit(1)
@@ -29,10 +29,19 @@ extensions = [
     'roles',       # Role request commands and reaction system
 ]
 
+@tasks.loop(seconds=10)
+async def change_bot_activity():
+    activity = discord.Activity(
+        name=f'{len(bot.guilds)} servers | {len(bot.users)} users',
+        url='https://github.com/blair-c/Mentorbot3.0',
+        state=':jackie:',
+        details='Mentorbot 3.0')
+    await client,change_presence(activity=activity)
+
 @bot.event
 async def on_ready():
-    """Display bot info when bot is fully prepared."""
-    bot.change_presence(activity=discord.Game(f''))
+    """Change bot activity, and display bot info when fully prepared."""
+    change_bot_activity.start()
     print(f'Logged in as {bot.user.name}\nUser ID: {bot.user.id}')
 
 if __name__ == '__main__':
