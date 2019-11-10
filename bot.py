@@ -32,7 +32,7 @@ extensions = [
 @tasks.loop(seconds=10)
 async def change_bot_activity():
     """Update bot's activity every 10 seconds to show usage statistics."""
-    stats = f'{len(bot.guilds)} servers | {len(set(bot.users))} users'
+    stats = f'{len(bot.guilds)} servers | {len(bot.users)} users'
     await bot.change_presence(activity=discord.Game(stats))
 
 @bot.event
