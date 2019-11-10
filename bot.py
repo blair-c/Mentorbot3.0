@@ -16,7 +16,6 @@ if discord.__version__ != '1.2.4':
 
 bot = commands.Bot(
     command_prefix='!',
-    description='A Discord bot for the Rivals of Aether Academy.',
     case_insensitive=True)
 bot.remove_command('help')
 
@@ -33,6 +32,7 @@ extensions = [
 @bot.event
 async def on_ready():
     """Display bot info when bot is fully prepared."""
+    bot.change_presence(activity=discord.Game(f''))
     print(f'Logged in as {bot.user.name}\nUser ID: {bot.user.id}')
 
 if __name__ == '__main__':
