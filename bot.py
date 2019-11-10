@@ -31,6 +31,7 @@ extensions = [
 
 @tasks.loop(seconds=10)
 async def change_bot_activity():
+    """Change bot's activity to show usage statistics."""
     stats = f'{len(bot.guilds)} servers | {len(bot.users)} users'
     activity = discord.Activity(
         name=stats,
