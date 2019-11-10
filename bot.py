@@ -31,18 +31,13 @@ extensions = [
 
 @tasks.loop(seconds=10)
 async def change_bot_activity():
-    """Change bot's activity to show usage statistics."""
+    """Update bot's activity every 10 seconds to show usage statistics."""
     stats = f'{len(bot.guilds)} servers | {len(bot.users)} users'
-    activity = discord.Activity(
-        name=stats,
-        url='https://github.com/blair-c/Mentorbot3.0',
-        state=':jackie:',
-        details=stats)
-    await bot.change_presence(activity=activity)
+    await bot.change_presence(activity=discord.Game(stats))
 
 @bot.event
 async def on_ready():
-    """Change bot activity, and display bot info when fully prepared."""
+    """Set bot activity, and display bot info when fully prepared."""
     change_bot_activity.start()
     print(f'Logged in as {bot.user.name}\nUser ID: {bot.user.id}')
 
