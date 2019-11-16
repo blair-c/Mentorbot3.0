@@ -28,10 +28,12 @@ class Characters(commands.Cog):
                         for character, emote in rivals.characters.items()]
         embed.add_field(
             name="Please choose the character you'd like to be mentored in:",
-            value='\n'.join(char_commands))
+            value='\n'.join(char_commands),
+            inline=False)
         embed.add_field(
             name='If you live in Europe, try this command:',
-            value='<:MentorsEurope:547189291969937420> **!EU**')
+            value='<:MentorsEurope:547189291969937420> **!EU**',
+            inline=False)
         await ctx.send(embed=embed)
 
     # Region-based mentor commands
