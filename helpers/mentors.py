@@ -41,8 +41,9 @@ def mentors_of_status(ctx, cursor, status, c=None, r=None):
                         {'status': status, 'character': f'%{character_region}%'})
         for row in cursor.fetchall():
             try:
+                mentor = ctx.bot.get_user(row['discord_id'])
                 mentors.append(
-                    f"{ctx.bot.get_user(row['discord_id']).mention} ({row['region']})")
+                    f"{mentor.mention} {str(mentor)} ({row['region']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server
                 mentors.append(f"{row['name']} ({row['region']})")
     elif r:  # If region was given
@@ -51,8 +52,9 @@ def mentors_of_status(ctx, cursor, status, c=None, r=None):
                         {'status': status, 'region': character_region})
         for row in cursor.fetchall():
             try:
+                mentor = ctx.bot.get_user(row['discord_id'])
                 mentors.append(
-                    f"{ctx.bot.get_user(row['discord_id']).mention} ({row['characters']})")
+                    f"{mentor.mention} {str(mentor)} ({row['characters']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server
                 mentors.append(f"{row['name']} ({row['characters']})")
     return '\n'.join(mentors)
