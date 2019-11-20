@@ -23,7 +23,7 @@ class ActionLog(commands.Cog):
         embed = discord.Embed(
             color=0x66bb6a,
             description=f'{member.mention} **{str(member)}**',
-            timestamp=(joined_at := datetime.utcnow())
+            timestamp=(joined_at := datetime.utcnow()))
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
         # Note if user joined within 10 mins of account creation
