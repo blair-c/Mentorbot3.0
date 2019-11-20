@@ -1,4 +1,5 @@
-from datetime import datetime
+from datetime import datetime, timedelta
+import timeago
 
 import discord
 from discord.ext import commands
@@ -22,9 +23,14 @@ class ActionLog(commands.Cog):
         embed = discord.Embed(
             color=0x66bb6a,
             description=f'{member.mention} **{str(member)}**',
-            timestamp=datetime.utcnow())
+            timestamp=(joined_at := datetime.utcnow())
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
+        # Note if user joined within 10 mins of account creation
+        if (joined_at - member.created_at) < timedelta(minutes=10):
+            embed.add_field(
+                name='New Account', 
+                value=f'Created {timeago.format(member.created_at, joined_at)}')
         # Send in action-log
         await action_log.send(embed=embed)
 
