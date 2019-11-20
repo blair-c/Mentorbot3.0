@@ -17,7 +17,7 @@ class ActionLog(commands.Cog):
     async def on_member_join(self, member):
         """Log that member has joined."""
         # Check that action-log channel exists and is viewable
-        if not (guild:= member.guild): return
+        if not (guild := member.guild): return
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log member join
         embed = discord.Embed(
@@ -38,7 +38,7 @@ class ActionLog(commands.Cog):
     async def on_member_remove(self, member):
         """Display in action-log channel that member has left."""
         # Check that action-log channel exists and is viewable
-        if not (guild:= member.guild): return
+        if not (guild := member.guild): return
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log member removal
         embed = discord.Embed(
@@ -64,7 +64,7 @@ class ActionLog(commands.Cog):
     async def on_message_delete(self, message):
         """Display info of deleted message in action-log channel."""
         # Check that action-log channel exists and is viewable
-        if not (guild:= message.guild): return
+        if not (guild := message.guild): return
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Ignore messages from boardroom
         if message.channel.name == 'boardroom': return
@@ -86,7 +86,7 @@ class ActionLog(commands.Cog):
     async def on_message_edit(self, before, after):
         """Display info of edited message in action-log channel."""
         # Check that action-log channel exists and is viewable
-        if not (guild:= before.guild): return
+        if not (guild := before.guild): return
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Ignore messages from boardroom, and ensure that message content has changed
         if before.channel.name == 'boardroom' or before.content == after.content: return
@@ -111,7 +111,7 @@ class ActionLog(commands.Cog):
     async def on_member_update(self, before, after):
         """Display in action-log channel that member's nickname has changed."""
         # Check that action-log channel exists and is viewable
-        if not (guild:= before.guild): return
+        if not (guild := before.guild): return
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Ensure that nickname has changed
         if before.nick == after.nick: return
