@@ -168,7 +168,7 @@ class Roles(commands.Cog):
                 await member.add_roles(student)
                 # Display enrollment in action-log
                 embed = discord.Embed(
-                    color=0xffffff,
+                    color=discord.Color.from_rgb(255, 255, 255),
                     description=f'{member.mention} **{str(member)}**',
                     timestamp=datetime.utcnow())
                 embed.set_author(name='Member Enrolled', icon_url=member.avatar_url)
