@@ -39,6 +39,9 @@ async def move_info(ctx, cursor, character, move):
         'Sourspot Damage': 'sourspot_damage',
         'Sweetspot Damage': 'sweetspot_damage',
         'Tipper Damage': 'tipper_damage',
+        # For hurtbox commands
+        'Height': 'height',
+        'Width': 'width',
     }
     move_display = ''
     for row in move_info:
