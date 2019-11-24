@@ -95,7 +95,7 @@ class Links(commands.Cog):
              'Startup      | 2    \n'
              'Invulnerable | 3-15 \n'
              'Endlag       | 12   \n'
-             'FAF          | 27```\n')
+             'FAF          | 27```\n'))
         embed.set_author(name='Universal Dodge Frame Data')
         await ctx.send(embed=embed)
 
