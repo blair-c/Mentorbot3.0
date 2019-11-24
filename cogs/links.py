@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-from tabulate import tabulate
 
 
 class Links(commands.Cog):
@@ -76,30 +75,27 @@ class Links(commands.Cog):
     @commands.command(name='dodge', aliases=['parry', 'roll', 'airdodge'])
     async def dodge_data(self, ctx):
         """Send display of universal parry, roll, and airdodge frame data."""
-        parry_data = {
-            'Startup': '2',
-            'Invulnerable': '3-10',
-            'Endlag': '20',
-            'FAF': '31',
-            'Cooldown': '20'}
-        roll_data = {
-            'Startup': 'TBA',
-            'Invulnerable': 'TBA',
-            'Endlag': 'TBA'}
-        airdodge_data = {
-            'Startup': '2',
-            'Invulnerable': '12',
-            'Endlag': '12',
-            'FAF': '27'}
-        # Format datasets for display
-        for dataset in [parry_data, roll_data, airdodge_data]:
-            dataset = tabulate(dataset, tablefmt='presto').replace('\n ', '\n')  # Strip left-hand whitespace
-            dataset = f'```ml\n{dataset}```'
-        # Display data
         embed = discord.Embed(description=
-            (f'**Parry** {parry_data}\n'
-             f'**Roll** {roll_data}\n'
-             f'**Airdodge** {airdodge_data}'))
+            # Parry
+            ('**Parry** ```ml\n'
+             'Startup      | 2    \n'
+             'Invulnerable | 3-10 \n'
+             'Endlag       | 20   \n'
+             'FAF          | 31   \n'
+             'Cooldown     | 20   \n'
+             'successfully parrying removes your ability to parry/roll for 30 frames.```\n'
+             # Roll
+             '**Roll** ```ml\n'
+             'Startup      | 4    \n'
+             'Invulnerable | 5-19 \n'
+             'Endlag       | 12   \n'
+             'FAF          | 31```\n'
+             # Airdodge
+             '**Airdodge** ```ml\n'
+             'Startup      | 2    \n'
+             'Invulnerable | 3-15 \n'
+             'Endlag       | 12   \n'
+             'FAF          | 27```\n')
         embed.set_author(name='Universal Dodge Frame Data')
         await ctx.send(embed=embed)
 
