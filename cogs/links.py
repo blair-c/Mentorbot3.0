@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from tabulate import tabulate
 
 
 class Links(commands.Cog):
@@ -70,6 +71,36 @@ class Links(commands.Cog):
             '2 - Cannot cause flinch, even if crouch cancelled\n'
             '3 - Can always be crouch cancelled, regardless of percent```')
         embed = discord.Embed(title='Force Flinch Definitions', description=definitions)
+        await ctx.send(embed=embed)
+
+    @commands.command(name='dodge', aliases=['parry', 'roll', 'airdodge'])
+    async def dodge_data(self, ctx):
+        """Send display of universal parry, roll, and airdodge frame data."""
+        parry_data = {
+            'Startup': '2',
+            'Invulnerable': '3-10',
+            'Endlag': '20',
+            'FAF': '31',
+            'Cooldown': '20'}
+        roll_data = {
+            'Startup': 'TBA',
+            'Invulnerable': 'TBA',
+            'Endlag': 'TBA'}
+        airdodge_data = {
+            'Startup': '2',
+            'Invulnerable': '12',
+            'Endlag': '12',
+            'FAF': '27'}
+        # Format datasets for display
+        for dataset in [parry_data, roll_data, airdodge_data]:
+            dataset = tabulate(dataset, tablefmt='presto').replace('\n ', '\n')  # Strip left-hand whitespace
+            dataset = f'```ml\n{dataset}```'
+        # Display data
+        embed = discord.embed(description=
+            (f'**Parry** {parry_data}\n'
+             f'**Roll** {roll_data}\n'
+             f'**Airdodge** {airdodge_data}')
+        embed.set_author(name='Universal Dodge Frame Data')
         await ctx.send(embed=embed)
 
     @commands.command(name='knockback-formula', aliases=['knockbackformula', 'knockback', 'kb'])
