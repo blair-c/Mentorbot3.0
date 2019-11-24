@@ -167,6 +167,18 @@ class Links(commands.Cog):
         embed.set_thumbnail(url='https://i.imgur.com/WRxAYTN.png')
         await ctx.send(content=link, embed=embed)
 
+    @commands.command(name='hurtbox-data', aliases=['hurtboxdata', 'hurtboxes'])
+    async def hurtbox_data(self, ctx):
+        """Link to IGL's hurtbox measurements doc."""
+        link = ('https://docs.google.com/spreadsheets/d/'
+                '1jtfuDGjHXfC0UXbEyw7JOZYjB4ufZg6HbF39iNMHxbw')
+        embed = discord.Embed(
+            url=link,
+            title='Rivals Hurtbox Sizes',
+            description='Idle, crouch, and hitstun hurtbox size measurements by IGL.')
+        embed.set_thumbnail(url='https://i.imgur.com/nN6DAmT.png')
+        await ctx.send(content=link, embed=embed)
+
     @commands.command(name='mindset', aliases=['jackie'])
     async def mindset_screenshot(self, ctx):
         """Send screenshot of Jackie Chan mindset post."""
