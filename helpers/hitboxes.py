@@ -64,6 +64,11 @@ async def move_info(ctx, cursor, character, move):
     # Some moves may be missing an image
     if move_info[0]['image']:
         embed.set_image(url=move_info[0]['image'])
-    embed.set_footer(text='See !framedata document for full details.')
+    # Display different footer for hitbox/hurtbox commands
+    if move['id'] == 0:
+        more_info_command = '!hurtboxdata'
+    else:
+        more_info_command = '!framedata'
+    embed.set_footer(text=f'See {more_info_command} document for full details.')
     # Send move info embed
     await ctx.send(embed=embed)
