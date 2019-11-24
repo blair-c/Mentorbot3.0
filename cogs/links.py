@@ -99,7 +99,7 @@ class Links(commands.Cog):
         embed = discord.embed(description=
             (f'**Parry** {parry_data}\n'
              f'**Roll** {roll_data}\n'
-             f'**Airdodge** {airdodge_data}')
+             f'**Airdodge** {airdodge_data}'))
         embed.set_author(name='Universal Dodge Frame Data')
         await ctx.send(embed=embed)
 
