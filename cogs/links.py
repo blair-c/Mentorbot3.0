@@ -96,7 +96,7 @@ class Links(commands.Cog):
             dataset = tabulate(dataset, tablefmt='presto').replace('\n ', '\n')  # Strip left-hand whitespace
             dataset = f'```ml\n{dataset}```'
         # Display data
-        embed = discord.embed(description=
+        embed = discord.Embed(description=
             (f'**Parry** {parry_data}\n'
              f'**Roll** {roll_data}\n'
              f'**Airdodge** {airdodge_data}'))
