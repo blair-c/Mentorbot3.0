@@ -83,19 +83,19 @@ class Links(commands.Cog):
              'Endlag       | 20   \n'
              'FAF          | 31   \n'
              'Cooldown     | 20   \n'
-             'successfully parrying removes your ability to parry/roll for 30 frames.```\n'
+             'successfully parrying removes your ability to parry/roll for 30 frames.```'
              # Roll
              '**Roll** ```ml\n'
              'Startup      | 4    \n'
              'Invulnerable | 5-19 \n'
              'Endlag       | 12   \n'
-             'FAF          | 31```\n'
+             'FAF          | 31```'
              # Airdodge
              '**Airdodge** ```ml\n'
              'Startup      | 2    \n'
              'Invulnerable | 3-15 \n'
              'Endlag       | 12   \n'
-             'FAF          | 27```\n'))
+             'FAF          | 27```'))
         embed.set_author(name='Universal Dodge Frame Data')
         await ctx.send(embed=embed)
 
