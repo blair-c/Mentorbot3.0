@@ -31,14 +31,6 @@ def character_role(guild, cursor, character, main=False):
         return discord.utils.get(guild.roles, character['name'])
 
 
-def display_color(color):
-    """Return color, returning default embed color if default."""
-    if color == discord.Color.default():
-        return 0x4f545c
-    else:
-        return color
-
-
 def get_nickname(member):
     """Return member's nickname, and if it is their default name."""
     if member.nick:
@@ -52,7 +44,7 @@ async def update_roles(member, remove, add):
     await member.remove_roles(remove)
     await member.add_roles(add)
     embed = discord.Embed(
-        color=display_color(add.color),
+        color=add.color,
         description=f'**Updated roles for {member.mention}:**\n'
                     '```diff\n'
                     f'- {remove.name}\n'

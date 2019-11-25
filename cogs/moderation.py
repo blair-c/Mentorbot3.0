@@ -40,7 +40,7 @@ class Moderation(commands.Cog):
     async def display_member_info(self, ctx, *, member: discord.Member):
         """Display information of given member."""
         embed = discord.Embed(
-            color=helpers.display_color(member.color),
+            color=member.color,
             description=member.mention,
             timestamp=datetime.utcnow())
         embed.set_author(name=member, icon_url=member.avatar_url)
