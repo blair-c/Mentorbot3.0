@@ -36,7 +36,6 @@ class Moderation(commands.Cog):
 
     @commands.command(name='whois', hidden=True)
     @commands.has_permissions(ban_members=True)
-    @helpers.in_academy()
     async def display_member_info(self, ctx, *, member: discord.Member):
         """Display information of given member."""
         embed = discord.Embed(
