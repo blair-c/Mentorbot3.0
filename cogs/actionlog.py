@@ -66,8 +66,6 @@ class ActionLog(commands.Cog):
         # Check that action-log channel exists and is viewable
         if not (guild := message.guild): return
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
-        # Ignore messages from boardroom
-        if message.channel.name == 'boardroom': return
         # Log message deletion
         desc = f'**Message by {message.author.mention} deleted in {message.channel.mention}**'
         # Message content may not exist, such as an embed or picture
@@ -88,8 +86,8 @@ class ActionLog(commands.Cog):
         # Check that action-log channel exists and is viewable
         if not (guild := before.guild): return
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
-        # Ignore messages from boardroom, and ensure that message content has changed
-        if before.channel.name == 'boardroom' or before.content == after.content: return
+        # Ensure that message content has changed
+        if before.content == after.content: return
         # Log message edit
         embed = discord.Embed(
             color=0x5c6bc0,
