@@ -29,16 +29,17 @@ extensions = [
     'roles',       # Role request commands and reaction system
 ]
 
-@tasks.loop(seconds=10)
-async def change_bot_activity():
-    """Update bot's activity every 10 seconds to show usage statistics."""
-    stats = f'{len(bot.guilds)} servers, {len(bot.users)} users!'
-    await bot.change_presence(activity=discord.Game(stats))
+# @tasks.loop(seconds=10)
+# async def change_bot_activity():
+#     """Update bot's activity every 10 seconds to show usage statistics."""
+#     stats = f'{len(bot.guilds)} servers, {len(bot.users)} users!'
+#     await bot.change_presence(activity=discord.Game(stats))
 
 @bot.event
 async def on_ready():
     """Set bot activity, and display bot info when fully prepared."""
-    change_bot_activity.start()
+    # change_bot_activity.start()
+    await bot.change_presence(activity=discord.Game('Updating to patch 1.4.17 soon!'))
     print(f'Logged in as {bot.user.name}\nUser ID: {bot.user.id}')
 
 if __name__ == '__main__':
