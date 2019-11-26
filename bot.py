@@ -1,6 +1,5 @@
 import os
 import sys
-from itertools import cycle
 
 try:
     import discord
@@ -34,8 +33,7 @@ extensions = [
 async def change_bot_activity():
     """Update bot's activity every 10 seconds to show usage statistics."""
     stats = f'{len(bot.guilds)} servers, {len(bot.users)} users!'
-    status = cycle([stats, 'Updating to patch 1.4.17 soon!'])
-    await bot.change_presence(activity=discord.Game(next(status)))
+    await bot.change_presence(activity=discord.Game(stats))
 
 @bot.event
 async def on_ready():
