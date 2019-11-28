@@ -39,7 +39,7 @@ extensions = [
 async def on_ready():
     """Set bot activity, and display bot info when fully prepared."""
     # change_bot_activity.start()
-    await bot.change_presence(activity=discord.Game('Updating to 1.4.17 soon!'))
+    await bot.change_presence(activity=discord.Game('Updated to patch 1.4.17!'))
     print(f'Logged in as {bot.user.name}\nUser ID: {bot.user.id}')
 
 if __name__ == '__main__':
