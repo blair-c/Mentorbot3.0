@@ -1,5 +1,6 @@
 import os
 import sys
+from itertools import cycle
 
 try:
     import discord
@@ -29,17 +30,19 @@ extensions = [
     'roles',       # Role request commands and reaction system
 ]
 
-# @tasks.loop(seconds=10)
-# async def change_bot_activity():
-#     """Update bot's activity every 10 seconds to show usage statistics."""
-#     stats = f'{len(bot.guilds)} servers, {len(bot.users)} users!'
-#     await bot.change_presence(activity=discord.Game(stats))
+stats = ''
+status = cycle([stats, 'Updated to patch 1.4.17!'])
+
+@tasks.loop(seconds=10)
+async def change_bot_activity():
+    """Update bot's activity to display message or usage statistics."""
+    stats = f'{len(bot.guilds)} servers, {len(bot.users)} users!'
+    await bot.change_presence(activity=discord.Game(next(status)))
 
 @bot.event
 async def on_ready():
     """Set bot activity, and display bot info when fully prepared."""
-    # change_bot_activity.start()
-    await bot.change_presence(activity=discord.Game('Updated to patch 1.4.17!'))
+    change_bot_activity.start()
     print(f'Logged in as {bot.user.name}\nUser ID: {bot.user.id}')
 
 if __name__ == '__main__':
