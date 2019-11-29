@@ -36,6 +36,7 @@ index_cycle = cycle([0, 1])
 async def change_bot_activity():
     """Update bot's activity to display message or usage statistics."""
     statuses = [
+        'discord.me/mentor',
         'Updated to patch 1.4.17!',
         f'{len(bot.guilds):,} servers, {len(bot.users):,} users!']
     status = statuses[next(index_cycle)]
