@@ -30,14 +30,14 @@ extensions = [
     'roles',       # Role request commands and reaction system
 ]
 
-stats = ''
-status = cycle([stats, 'Updated to patch 1.4.17!'])
+bot.stats = ''
+bot.status = cycle([bot.stats, 'Updated to patch 1.4.17!'])
 
 @tasks.loop(seconds=10)
 async def change_bot_activity():
     """Update bot's activity to display message or usage statistics."""
-    stats = f'{len(bot.guilds)} servers, {len(bot.users)} users!'
-    await bot.change_presence(activity=discord.Game(next(status)))
+    bot.stats = f'{len(bot.guilds)} servers, {len(bot.users)} users!'
+    await bot.change_presence(activity=discord.Game(next(bot.status)))
 
 @bot.event
 async def on_ready():
