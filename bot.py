@@ -39,7 +39,7 @@ async def change_bot_activity():
         'Updated to patch 1.4.17!',
         f'{len(bot.guilds)} servers, {len(bot.users)} users!']
     status = statuses[next(index_cycle)]
-    await bot.change_presence(activity=discord.Game(status)
+    await bot.change_presence(activity=discord.Game(status))
 
 @bot.event
 async def on_ready():
