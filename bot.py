@@ -30,16 +30,20 @@ extensions = [
     'roles',       # Role request commands and reaction system
 ]
 
-index_cycle = cycle([0, 1, 2])
+statuses = {
+    'update_note': 'Updated to patch 1.4.17!',
+    'academy_link': 'discord.me/mentor',
+    'usage_stats': ''  # To be updated in loop
+}
+index_cycle = cycle(['update_note', 'academy_link', 'usage_stats'])
 
 @tasks.loop(seconds=10)
 async def change_bot_activity():
     """Update bot's activity to display message or usage statistics."""
-    statuses = [
-        'Updated to patch 1.4.17!',
-        'discord.me/mentor',
-        f'{len(bot.guilds):,} servers, {len(bot.users):,} users!']
-    status = statuses[next(index_cycle)]
+    index = next(index_cycle)
+    if index == 'usage_stats':  # Update usage stats if necessary
+        statuses['usage_stats'] = f'{len(bot.guilds):,} servers, {len(bot.users):,} users!'
+    status = statuses[index]
     await bot.change_presence(activity=discord.Game(status))
 
 @bot.event
