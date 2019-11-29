@@ -30,7 +30,7 @@ extensions = [
     'roles',       # Role request commands and reaction system
 ]
 
-index_cycle = cycle([0, 1])
+index_cycle = cycle([0, 1, 2])
 
 @tasks.loop(seconds=10)
 async def change_bot_activity():
