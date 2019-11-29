@@ -194,7 +194,7 @@ class Characters(commands.Cog):
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move in ['clap', 'fclap', 'forwardclap']:
-            move == 'fstrong'
+            move = 'fstrong'
         elif move in ['uclap', 'upclap']:
             move = 'ustrong'
         elif move in ['tornado', 'nado']:
