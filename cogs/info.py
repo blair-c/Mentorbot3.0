@@ -10,7 +10,7 @@ class Info(commands.Cog):
 
     @comminds.command(name='commandslist', aliases=['infocommands', 'commands'])
     async def commands_list(self, ctx):
-        """List all info commands.""""
+        """List all info commands."""
         embed = discord.Embed()
         embed.set_author(name='Commands List', icon_url=self.bot.user.avatar_url)
         commands = {
