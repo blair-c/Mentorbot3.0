@@ -23,8 +23,7 @@ bot.remove_command('help')
 extensions = [
     'actionlog',   # Action-log channel functionality
     'characters',  # Mentor and hitbox commands
-    'helpinfo',    # Help and info commands
-    'links',       # Links and informational commands
+    'info',        # Help, links, and informational commands
     'moderation',  # Moderation commands
     'owner',       # Bot upkeep commands
     'roles',       # Role request commands and reaction system
