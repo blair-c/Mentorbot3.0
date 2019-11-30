@@ -15,9 +15,10 @@ class Info(commands.Cog):
             'Mentorbot':
                 ['help', 'info'],
             'Rivals Data':
-                ['angleflippers', 'dodgedata', 'forceflinch', 'framedata', 
-                 'hitpauseformula', 'hitstunformula', 'hurtboxdata',
-                 'knockbackformula', 'patchnotes'],
+                ['angleflippers', 'dodgedata', 'forceflinch', 'hitpauseformula', 
+                 'hitstunformula', 'knockbackformula'],
+            'Sector 7-G Resources':
+                ['framedata', 'hurtboxdata', 'patchnotes']
             'Videos & Clips':
                 ['AAAA', 'babydashing', 'bairhitfall'],
             'Golden Guides':
@@ -125,21 +126,6 @@ class Info(commands.Cog):
         embed = discord.Embed(title='Force Flinch Definitions', description=definitions)
         await ctx.send(embed=embed)
 
-    @commands.command(name='framedata')
-    async def frame_data_doc(self, ctx):
-        """Link to SNC's frame data document."""
-        link = ('https://docs.google.com/spreadsheets/d/'
-                '19UtK7xG2c-ehxdlhCFKMpM4_IHSG-EXFgXLJaunE79I')
-        embed = discord.Embed(
-            url=link,
-            title='Rivals of Aether Academy Frame Data - Updated for 1.4.15',
-            description='Data extracted manually in-game and from dev-mode files by SNC. '
-                        'Extra information provided by Menace13 and Youngblood. '
-                        'General Stats created by Kisuno. '
-                        'Collated Patch Notes created by SNC.')
-        embed.set_thumbnail(url='https://i.imgur.com/ovYeevo.png')
-        await ctx.send(content=link, embed=embed)
-
     @commands.command(name='hitpauseformula', aliases=['hitpause'])
     async def hitpause_formula(self, ctx, *formula):
         """Send display of Rivals' hitpause formula."""
@@ -157,6 +143,30 @@ class Info(commands.Cog):
         embed = discord.Embed(title='Hitstun Formula', description=formula)
         await ctx.send(embed=embed)
 
+    @commands.command(name='knockbackformula', aliases=['knockback', 'kbformula', 'kb'])
+    async def knockback_formula(self, ctx, *formula):
+        """Send display of Rivals' knockback formula."""
+        formula = ('```ml\n'
+                   'BKB + Damage * Knockback_Scaling * 0.12 * Knockback_Adj```')
+        embed = discord.Embed(title='Knockback Formula', description=formula)
+        await ctx.send(embed=embed)
+
+    # Sector 7-G Resources
+    @commands.command(name='framedata')
+    async def frame_data_doc(self, ctx):
+        """Link to SNC's frame data document."""
+        link = ('https://docs.google.com/spreadsheets/d/'
+                '19UtK7xG2c-ehxdlhCFKMpM4_IHSG-EXFgXLJaunE79I')
+        embed = discord.Embed(
+            url=link,
+            title='Rivals of Aether Academy Frame Data - Updated for 1.4.15',
+            description='Data extracted manually in-game and from dev-mode files by SNC. '
+                        'Extra information provided by Menace13 and Youngblood. '
+                        'General Stats created by Kisuno. '
+                        'Collated Patch Notes created by SNC.')
+        embed.set_thumbnail(url='https://i.imgur.com/ovYeevo.png')
+        await ctx.send(content=link, embed=embed)
+
     @commands.command(name='hurtboxdata', aliases=['hurtboxes'])
     async def hurtbox_data(self, ctx):
         """Link to IGL's hurtbox measurements doc."""
@@ -168,14 +178,6 @@ class Info(commands.Cog):
             description='Idle, crouch, and hitstun hurtbox size measurements by IGL.')
         embed.set_thumbnail(url='https://i.imgur.com/nN6DAmT.png')
         await ctx.send(content=link, embed=embed)
-
-    @commands.command(name='knockbackformula', aliases=['knockback', 'kbformula', 'kb'])
-    async def knockback_formula(self, ctx, *formula):
-        """Send display of Rivals' knockback formula."""
-        formula = ('```ml\n'
-                   'BKB + Damage * Knockback_Scaling * 0.12 * Knockback_Adj```')
-        embed = discord.Embed(title='Knockback Formula', description=formula)
-        await ctx.send(embed=embed)
 
     @commands.command(name='patchnotes')
     async def patch_notes(self, ctx):
