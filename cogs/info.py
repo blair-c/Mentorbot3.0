@@ -8,7 +8,7 @@ class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @comminds.command(name='commandslist', aliases=['infocommands', 'commands'])
+    @commands.command(name='commandslist', aliases=['infocommands', 'commands'])
     async def commands_list(self, ctx):
         """List all info commands."""
         embed = discord.Embed()
