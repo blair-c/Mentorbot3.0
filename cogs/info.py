@@ -18,7 +18,7 @@ class Info(commands.Cog):
                 ['angleflippers', 'dodgedata', 'forceflinch', 'hitpauseformula', 
                  'hitstunformula', 'knockbackformula'],
             'Sector 7-G Resources':
-                ['framedata', 'hurtboxdata', 'patchnotes']
+                ['framedata', 'hurtboxdata', 'patchnotes'],
             'Videos & Clips':
                 ['AAAA', 'babydashing', 'bairhitfall'],
             'Golden Guides':
