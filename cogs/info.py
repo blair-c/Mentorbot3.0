@@ -29,7 +29,7 @@ class Info(commands.Cog):
             display += f'\n**{category}**\n'
             # Commands list
             commands_list = [f'`!{command}`' for command in commands[category]]
-            display += '\n'.join(commands_list))
+            display += '\n'.join(commands_list)
         embed = discord.Embed(description=display)
         embed.set_author(name='Commands List', icon_url=self.bot.user.avatar_url)
         await ctx.send(embed=embed)
