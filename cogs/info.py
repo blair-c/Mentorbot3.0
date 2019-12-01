@@ -17,14 +17,14 @@ class Info(commands.Cog):
             'Rivals Data':
                 ['angleflippers', 'dodgedata', 'forceflinch', 'hitpauseformula', 
                  'hitstunformula', 'knockbackformula'],
-            'Golden Guides':
-                ['goldenguides', 'thebasics', 'everytech', 'survivaldi', 'techchasing'],
-            'Sector 7-G Resources':
-                ['framedata', 'hurtboxdata', 'patchnotes'],
             'Videos & Clips':
                 ['AAAA', 'babydashing', 'bairhitfall'],
             'Mentorbot':
-                ['help', 'info']
+                ['help', 'info'],
+            'Golden Guides':
+                ['goldenguides', 'thebasics', 'everytech', 'survivaldi', 'techchasing'],
+            'Sector 7-G Resources':
+                ['framedata', 'hurtboxdata', 'patchnotes']
         }
         for category in commands:
             commands_list = [f'!{command}' for command in commands[category]]
