@@ -11,6 +11,8 @@ class Info(commands.Cog):
     @commands.command(name='commandslist', aliases=['infocommands', 'commands'])
     async def commands_list(self, ctx):
         """List all info commands."""
+        embed = discord.Embed()
+        embed.set_author(name='Commands List', icon_url=self.bot.user.avatar_url)
         commands = {
             'Mentorbot':
                 ['help', 'info'],
@@ -24,16 +26,9 @@ class Info(commands.Cog):
             'Golden Guides':
                 ['goldenguides', 'thebasics', 'everytech', 'survivaldi', 'techchasing']
         }
-        display = ''
         for category in commands:
-            # Category
-            display += f'\n**{category}**\n```'
-            # Commands list
-            commands_list = [f'!{command}' for command in commands[category]]
-            display += '\n'.join(commands_list)
-            display += '```'
-        embed = discord.Embed(description=display)
-        embed.set_author(name='Commands List', icon_url=self.bot.user.avatar_url)
+            commands_list = [f'!{command}\n' for command in commands[category]]
+            embed.add_field(name=f'**{category}**', value=f'```{commands_list}```')
         await ctx.send(embed=embed)
 
     # Mentorbot
