@@ -14,57 +14,22 @@ class Info(commands.Cog):
         embed = discord.Embed()
         embed.set_author(name='Commands List', icon_url=self.bot.user.avatar_url)
         commands = {
-            'Mentorbot':
-                ['help', 'info'],
             'Rivals Data':
                 ['angleflippers', 'dodgedata', 'forceflinch', 'hitpauseformula', 
                  'hitstunformula', 'knockbackformula'],
+            'Golden Guides':
+                ['goldenguides', 'thebasics', 'everytech', 'survivaldi', 'techchasing'],
             'Sector 7-G Resources':
                 ['framedata', 'hurtboxdata', 'patchnotes'],
             'Videos & Clips':
                 ['AAAA', 'babydashing', 'bairhitfall'],
-            'Golden Guides':
-                ['goldenguides', 'thebasics', 'everytech', 'survivaldi', 'techchasing']
+            'Mentorbot':
+                ['help', 'info']
         }
         for category in commands:
             commands_list = [f'!{command}' for command in commands[category]]
             commands_list = '\n'.join(commands_list)
             embed.add_field(name=f'**{category}**', value=f'```{commands_list}```')
-        await ctx.send(embed=embed)
-
-    # Mentorbot
-    @commands.command(name='help', aliases=['syntax'], hidden=True)
-    async def help_command(self, ctx, *arg):
-        """Display information and command syntax for hitbox commands."""
-        embed = discord.Embed()
-        embed.set_author(name='Hitbox Command Syntax', icon_url=self.bot.user.avatar_url)
-        embed.add_field(
-            name='`![character] [move]`',
-            value='Multiple character and move names are supported, try it out!')
-        embed.set_image(url='https://i.imgur.com/iiLINcV.png')
-        embed.set_footer(text='For non-hitbox commands, try !commands.')
-        await ctx.send(embed=embed)
-
-    @commands.command(name='info', aliases=['information', 'about'], hidden=True)
-    async def info_command(self, ctx):
-        """Display information about Mentorbot."""
-        embed = discord.Embed(
-            description='A custom Discord bot by the Rivals of Aether Academy.')
-        embed.set_author(name='Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
-        embed.add_field(
-            name='<:yesdefinitely:609053319415201793> Created by yesdefinitely', 
-            value='<:twitter:609120999744733204> https://twitter.com/ydefinitely\n'
-                  '<:github:609120967280689161> https://github.com/blair-c/Mentorbot3.0', 
-            inline=False)
-        embed.add_field(
-            name='<:SNC:609053198736424960> Frame data info provided by SNC and Sector 7-G', 
-            value='<:twitter:609120999744733204> https://twitter.com/SNC_Sector7G\n'
-                  '<:discord:609120982543630336> https://discord.gg/qgKqaPX',
-            inline=False)
-        embed.add_field(
-            name='<:Mentorbot:640465696869974017> Add Mentorbot to your own server:',
-            value=('https://discordapp.com/api/oauth2/authorize?'
-                   'client_id=475596740368793600&permissions=264192&scope=bot'))
         await ctx.send(embed=embed)
 
     # Rivals Data
@@ -147,6 +112,62 @@ class Info(commands.Cog):
         embed = discord.Embed(title='Knockback Formula', description=formula)
         await ctx.send(embed=embed)
 
+    # Golden Guides
+    @commands.command(name='goldenguides')
+    async def goldenguides_complete_collection(self, ctx):
+        """Link to "Complete Collection" of Golden Guides Reddit post."""
+        await ctx.send('https://www.reddit.com/r/RivalsOfAether/comments/9v6pw4/')
+
+    @commands.command(name='thebasics', aliases=['basics'])
+    async def goldenguide_basics(self, ctx):
+        """Link to Golden Elite's beginner's guide."""
+        link = ('https://docs.google.com/document/d/'
+                '1232jAesA_q1tRch-jer7rYYxWWn3K8BXVmhX75Tmnyw')
+        embed = discord.Embed(
+            url=link,
+            title='Golden Guides: The Basics',
+            description='Beginner\'s guide featuring a complete tech list '
+                        'and a large amount of technical definitions.')
+        embed.set_thumbnail(url='https://i.imgur.com/tXcwyJR.png')
+        await ctx.send(content=link, embed=embed)
+
+    @commands.command(name='everytech')
+    async def goldenguide_everytech(self, ctx):
+        """Link to Golden Elite's write-up of every tech in Rivals."""
+        link = ('https://docs.google.com/document/d/'
+                '1R10JBGY3633U3Ja1voqvNwV8YS5-XI1HbjyXmV592uA')
+        embed = discord.Embed(
+            url=link,
+            title='Golden Guides: Every Tech',
+            description='Comprehensive list of every advanced technique in the game.')
+        embed.set_thumbnail(url='https://i.imgur.com/BKyW9u5.png?1')
+        await ctx.send(content=link, embed=embed)
+
+    @commands.command(name='survivaldi', aliases=['di'])
+    async def goldenguide_survivaldi(self, ctx):
+        """Link to Golden Elite's Survival DI guide."""
+        link = ('https://docs.google.com/document/d/'
+                '1Q7b0bLYcATnwlakuB_HtS2Mx2Jl3rf2YQlVX5RQJIeU')
+        embed = discord.Embed(
+            url=link,
+            title='Golden Guides: Survival DI',
+            description='How to DI the killing blows of each character.')
+        embed.set_thumbnail(url='https://i.imgur.com/Po4u4Wp.png')
+        await ctx.send(content=link, embed=embed)
+
+    @commands.command(name='techchasing')
+    async def goldenguide_techchasing(self, ctx):
+        """Link to Golden Elite's tech chasing guide."""
+        link = ('https://docs.google.com/document/d/'
+                '1e0japzRqVI5VvnwzZ5uijL4nkOrRrOSaQ_qlyU6Bww0')
+        embed = discord.Embed(
+            url=link,
+            title='Golden Guides: Tech Chasing',
+            description='The overall thought process, priority list, '
+                        'and tech chasing options for each character.')
+        embed.set_thumbnail(url='https://i.imgur.com/WRxAYTN.png')
+        await ctx.send(content=link, embed=embed)
+
     # Sector 7-G Resources
     @commands.command(name='framedata')
     async def frame_data_doc(self, ctx):
@@ -227,61 +248,40 @@ class Info(commands.Cog):
         # Send example Clip
         await ctx.send('https://gfycat.com/FlakyEasyAmethystgemclam')
 
-    # Golden Guides
-    @commands.command(name='goldenguides')
-    async def goldenguides_complete_collection(self, ctx):
-        """Link to "Complete Collection" of Golden Guides Reddit post."""
-        await ctx.send('https://www.reddit.com/r/RivalsOfAether/comments/9v6pw4/')
+    # Mentorbot
+    @commands.command(name='help', aliases=['syntax'], hidden=True)
+    async def help_command(self, ctx, *arg):
+        """Display information and command syntax for hitbox commands."""
+        embed = discord.Embed()
+        embed.set_author(name='Hitbox Command Syntax', icon_url=self.bot.user.avatar_url)
+        embed.add_field(
+            name='`![character] [move]`',
+            value='Multiple character and move names are supported, try it out!')
+        embed.set_image(url='https://i.imgur.com/iiLINcV.png')
+        embed.set_footer(text='For non-hitbox commands, try !commands.')
+        await ctx.send(embed=embed)
 
-    @commands.command(name='thebasics', aliases=['basics'])
-    async def goldenguide_basics(self, ctx):
-        """Link to Golden Elite's beginner's guide."""
-        link = ('https://docs.google.com/document/d/'
-                '1232jAesA_q1tRch-jer7rYYxWWn3K8BXVmhX75Tmnyw')
+    @commands.command(name='info', aliases=['information', 'about'], hidden=True)
+    async def info_command(self, ctx):
+        """Display information about Mentorbot."""
         embed = discord.Embed(
-            url=link,
-            title='Golden Guides: The Basics',
-            description='Beginner\'s guide featuring a complete tech list '
-                        'and a large amount of technical definitions.')
-        embed.set_thumbnail(url='https://i.imgur.com/tXcwyJR.png')
-        await ctx.send(content=link, embed=embed)
-
-    @commands.command(name='everytech')
-    async def goldenguide_everytech(self, ctx):
-        """Link to Golden Elite's write-up of every tech in Rivals."""
-        link = ('https://docs.google.com/document/d/'
-                '1R10JBGY3633U3Ja1voqvNwV8YS5-XI1HbjyXmV592uA')
-        embed = discord.Embed(
-            url=link,
-            title='Golden Guides: Every Tech',
-            description='Comprehensive list of every advanced technique in the game.')
-        embed.set_thumbnail(url='https://i.imgur.com/BKyW9u5.png?1')
-        await ctx.send(content=link, embed=embed)
-
-    @commands.command(name='survivaldi', aliases=['di'])
-    async def goldenguide_survivaldi(self, ctx):
-        """Link to Golden Elite's Survival DI guide."""
-        link = ('https://docs.google.com/document/d/'
-                '1Q7b0bLYcATnwlakuB_HtS2Mx2Jl3rf2YQlVX5RQJIeU')
-        embed = discord.Embed(
-            url=link,
-            title='Golden Guides: Survival DI',
-            description='How to DI the killing blows of each character.')
-        embed.set_thumbnail(url='https://i.imgur.com/Po4u4Wp.png')
-        await ctx.send(content=link, embed=embed)
-
-    @commands.command(name='techchasing')
-    async def goldenguide_techchasing(self, ctx):
-        """Link to Golden Elite's tech chasing guide."""
-        link = ('https://docs.google.com/document/d/'
-                '1e0japzRqVI5VvnwzZ5uijL4nkOrRrOSaQ_qlyU6Bww0')
-        embed = discord.Embed(
-            url=link,
-            title='Golden Guides: Tech Chasing',
-            description='The overall thought process, priority list, '
-                        'and tech chasing options for each character.')
-        embed.set_thumbnail(url='https://i.imgur.com/WRxAYTN.png')
-        await ctx.send(content=link, embed=embed)
+            description='A custom Discord bot by the Rivals of Aether Academy.')
+        embed.set_author(name='Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
+        embed.add_field(
+            name='<:yesdefinitely:609053319415201793> Created by yesdefinitely', 
+            value='<:twitter:609120999744733204> https://twitter.com/ydefinitely\n'
+                  '<:github:609120967280689161> https://github.com/blair-c/Mentorbot3.0', 
+            inline=False)
+        embed.add_field(
+            name='<:SNC:609053198736424960> Frame data info provided by SNC and Sector 7-G', 
+            value='<:twitter:609120999744733204> https://twitter.com/SNC_Sector7G\n'
+                  '<:discord:609120982543630336> https://discord.gg/qgKqaPX',
+            inline=False)
+        embed.add_field(
+            name='<:Mentorbot:640465696869974017> Add Mentorbot to your own server:',
+            value=('https://discordapp.com/api/oauth2/authorize?'
+                   'client_id=475596740368793600&permissions=264192&scope=bot'))
+        await ctx.send(embed=embed)
 
     # Hidden
     @commands.command(name='mindset', aliases=['jackie'])
