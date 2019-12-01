@@ -112,6 +112,79 @@ class Info(commands.Cog):
         embed = discord.Embed(title='Knockback Formula', description=formula)
         await ctx.send(embed=embed)
 
+    # Videos & Clips
+    @commands.command(name='AAAA', aliases=['dropdashing', 'dropdash'])
+    async def aaaa_dashing(self, ctx):
+        """Link to clip of the 'AAAA dashing' advanced technique."""
+        link = ('https://gifsound.com/?'
+                'gfycat=ApprehensiveConventionalFrilledlizard&v=kyUtGNIFx5c&s=7')
+        embed = discord.Embed(
+            url=link, title='AAAA Dashing', description='Also known as dropdashing.')
+        embed.set_thumbnail(
+            url='https://thumbs.gfycat.com/'
+                'ApprehensiveConventionalFrilledlizard-size_restricted.gif')
+        await ctx.send(content=link, embed=embed)
+
+    @commands.command(name='babydashing', aliases=['babydash'])
+    async def babydashing(self, ctx):
+        """Link to video covering the 'babydashing' advanced technique."""
+        await ctx.send('https://www.youtube.com/watch?v=BW1M8zx_KGM')
+
+    @commands.command(name='bairhitfall')
+    async def bair_hitfall_tutorial(self, ctx):
+        """Link to clip of and instructions for the 'hitfalling' tutorial."""
+        instructions = ('```\n'
+            'Instructions:\n'
+            '1. Turn away from Orby\n'
+            '2. Input jump\n'
+            '3. Buffer the input for back air\n'
+            '4. Input fast fall (down on joystick) as soon as the back air hits\n'
+            '5. Buffer input for turn around to face towards Orby\n'
+            '6. Buffer inputs for up and strong attack immediately after, and '
+            'continue holding up and towards Orby until the up strong begins```')
+        embed = discord.Embed(description=instructions, color=0x76428a)
+        embed.set_author(
+            name='Bair Hitfall Ustrongs Tutorial', 
+            icon_url='https://i.imgur.com/WlD8Bac.png')
+        await ctx.send(embed=embed)
+        # Send example Clip
+        await ctx.send('https://gfycat.com/FlakyEasyAmethystgemclam')
+
+    # Mentorbot
+    @commands.command(name='help', aliases=['syntax'], hidden=True)
+    async def help_command(self, ctx, *arg):
+        """Display information and command syntax for hitbox commands."""
+        embed = discord.Embed()
+        embed.set_author(name='Hitbox Command Syntax', icon_url=self.bot.user.avatar_url)
+        embed.add_field(
+            name='`![character] [move]`',
+            value='Multiple character and move names are supported, try it out!')
+        embed.set_image(url='https://i.imgur.com/iiLINcV.png')
+        embed.set_footer(text='For non-hitbox commands, try !commands.')
+        await ctx.send(embed=embed)
+
+    @commands.command(name='info', aliases=['information', 'about'], hidden=True)
+    async def info_command(self, ctx):
+        """Display information about Mentorbot."""
+        embed = discord.Embed(
+            description='A custom Discord bot by the Rivals of Aether Academy.')
+        embed.set_author(name='Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
+        embed.add_field(
+            name='<:yesdefinitely:609053319415201793> Created by yesdefinitely', 
+            value='<:twitter:609120999744733204> https://twitter.com/ydefinitely\n'
+                  '<:github:609120967280689161> https://github.com/blair-c/Mentorbot3.0', 
+            inline=False)
+        embed.add_field(
+            name='<:SNC:609053198736424960> Frame data info provided by SNC and Sector 7-G', 
+            value='<:twitter:609120999744733204> https://twitter.com/SNC_Sector7G\n'
+                  '<:discord:609120982543630336> https://discord.gg/qgKqaPX',
+            inline=False)
+        embed.add_field(
+            name='<:Mentorbot:640465696869974017> Add Mentorbot to your own server:',
+            value=('https://discordapp.com/api/oauth2/authorize?'
+                   'client_id=475596740368793600&permissions=264192&scope=bot'))
+        await ctx.send(embed=embed)
+
     # Golden Guides
     @commands.command(name='goldenguides')
     async def goldenguides_complete_collection(self, ctx):
@@ -209,79 +282,6 @@ class Info(commands.Cog):
                         'separate changes for each character.')
         embed.set_thumbnail(url='https://imgur.com/WtU3xBU.png')
         await ctx.send(content=link, embed=embed)
-
-    # Videos & Clips
-    @commands.command(name='AAAA', aliases=['dropdashing', 'dropdash'])
-    async def aaaa_dashing(self, ctx):
-        """Link to clip of the 'AAAA dashing' advanced technique."""
-        link = ('https://gifsound.com/?'
-                'gfycat=ApprehensiveConventionalFrilledlizard&v=kyUtGNIFx5c&s=7')
-        embed = discord.Embed(
-            url=link, title='AAAA Dashing', description='Also known as dropdashing.')
-        embed.set_thumbnail(
-            url='https://thumbs.gfycat.com/'
-                'ApprehensiveConventionalFrilledlizard-size_restricted.gif')
-        await ctx.send(content=link, embed=embed)
-
-    @commands.command(name='babydashing', aliases=['babydash'])
-    async def babydashing(self, ctx):
-        """Link to video covering the 'babydashing' advanced technique."""
-        await ctx.send('https://www.youtube.com/watch?v=BW1M8zx_KGM')
-
-    @commands.command(name='bairhitfall')
-    async def bair_hitfall_tutorial(self, ctx):
-        """Link to clip of and instructions for the 'hitfalling' tutorial."""
-        instructions = ('```\n'
-            'Instructions:\n'
-            '1. Turn away from Orby\n'
-            '2. Input jump\n'
-            '3. Buffer the input for back air\n'
-            '4. Input fast fall (down on joystick) as soon as the back air hits\n'
-            '5. Buffer input for turn around to face towards Orby\n'
-            '6. Buffer inputs for up and strong attack immediately after, and '
-            'continue holding up and towards Orby until the up strong begins```')
-        embed = discord.Embed(description=instructions, color=0x76428a)
-        embed.set_author(
-            name='Bair Hitfall Ustrongs Tutorial', 
-            icon_url='https://i.imgur.com/WlD8Bac.png')
-        await ctx.send(embed=embed)
-        # Send example Clip
-        await ctx.send('https://gfycat.com/FlakyEasyAmethystgemclam')
-
-    # Mentorbot
-    @commands.command(name='help', aliases=['syntax'], hidden=True)
-    async def help_command(self, ctx, *arg):
-        """Display information and command syntax for hitbox commands."""
-        embed = discord.Embed()
-        embed.set_author(name='Hitbox Command Syntax', icon_url=self.bot.user.avatar_url)
-        embed.add_field(
-            name='`![character] [move]`',
-            value='Multiple character and move names are supported, try it out!')
-        embed.set_image(url='https://i.imgur.com/iiLINcV.png')
-        embed.set_footer(text='For non-hitbox commands, try !commands.')
-        await ctx.send(embed=embed)
-
-    @commands.command(name='info', aliases=['information', 'about'], hidden=True)
-    async def info_command(self, ctx):
-        """Display information about Mentorbot."""
-        embed = discord.Embed(
-            description='A custom Discord bot by the Rivals of Aether Academy.')
-        embed.set_author(name='Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
-        embed.add_field(
-            name='<:yesdefinitely:609053319415201793> Created by yesdefinitely', 
-            value='<:twitter:609120999744733204> https://twitter.com/ydefinitely\n'
-                  '<:github:609120967280689161> https://github.com/blair-c/Mentorbot3.0', 
-            inline=False)
-        embed.add_field(
-            name='<:SNC:609053198736424960> Frame data info provided by SNC and Sector 7-G', 
-            value='<:twitter:609120999744733204> https://twitter.com/SNC_Sector7G\n'
-                  '<:discord:609120982543630336> https://discord.gg/qgKqaPX',
-            inline=False)
-        embed.add_field(
-            name='<:Mentorbot:640465696869974017> Add Mentorbot to your own server:',
-            value=('https://discordapp.com/api/oauth2/authorize?'
-                   'client_id=475596740368793600&permissions=264192&scope=bot'))
-        await ctx.send(embed=embed)
 
     # Hidden
     @commands.command(name='mindset', aliases=['jackie'])
