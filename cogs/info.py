@@ -29,7 +29,7 @@ class Info(commands.Cog):
         for category in commands:
             commands_list = [f'!{command}' for command in commands[category]]
             commands_list = '\n'.join(commands_list)
-            embed.add_field(name=f'**{category}**', value=f'```{commands_list}```')
+            embed.add_field(name=f'{category}', value=f'```{commands_list}```')
         await ctx.send(embed=embed)
 
     # Rivals Data
