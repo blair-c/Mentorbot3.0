@@ -20,7 +20,7 @@ class Info(commands.Cog):
             'Videos & Clips':
                 ['AAAA', 'babydashing', 'bairhitfall'],
             'Mentorbot':
-                ['help', 'info'],
+                ['about', 'help'],
             'Golden Guides':
                 ['goldenguides', 'thebasics', 'everytech', 'survivaldi', 'techchasing'],
             'Sector 7-G Resources':
@@ -151,19 +151,7 @@ class Info(commands.Cog):
         await ctx.send('https://gfycat.com/FlakyEasyAmethystgemclam')
 
     # Mentorbot
-    @commands.command(name='help', aliases=['syntax'], hidden=True)
-    async def help_command(self, ctx, *arg):
-        """Display information and command syntax for hitbox commands."""
-        embed = discord.Embed()
-        embed.set_author(name='Hitbox Command Syntax', icon_url=self.bot.user.avatar_url)
-        embed.add_field(
-            name='`![character] [move]`',
-            value='Multiple character and move names are supported, try it out!')
-        embed.set_image(url='https://i.imgur.com/iiLINcV.png')
-        embed.set_footer(text='For non-hitbox commands, try !commands.')
-        await ctx.send(embed=embed)
-
-    @commands.command(name='info', aliases=['information', 'about'], hidden=True)
+    @commands.command(name='about', aliases=['info', 'information'], hidden=True)
     async def info_command(self, ctx):
         """Display information about Mentorbot."""
         embed = discord.Embed(
@@ -183,6 +171,18 @@ class Info(commands.Cog):
             name='<:Mentorbot:640465696869974017> Add Mentorbot to your own server:',
             value=('https://discordapp.com/api/oauth2/authorize?'
                    'client_id=475596740368793600&permissions=264192&scope=bot'))
+        await ctx.send(embed=embed)
+
+    @commands.command(name='help', aliases=['syntax'], hidden=True)
+    async def help_command(self, ctx, *arg):
+        """Display information and command syntax for hitbox commands."""
+        embed = discord.Embed()
+        embed.set_author(name='Hitbox Command Syntax', icon_url=self.bot.user.avatar_url)
+        embed.add_field(
+            name='`![character] [move]`',
+            value='Multiple character and move names are supported, try it out!')
+        embed.set_image(url='https://i.imgur.com/iiLINcV.png')
+        embed.set_footer(text='For non-hitbox commands, try !commands.')
         await ctx.send(embed=embed)
 
     # Golden Guides
