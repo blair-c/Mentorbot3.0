@@ -27,6 +27,10 @@ async def mentor_info(ctx, cursor, c=None, r=None):
     advisors = mentors_of_status(ctx, cursor, 'Advisor', c=c, r=r)
     if advisors:
         embed.add_field(name='Advisors', value=advisors, inline=False)
+    # DND
+    dnd = dnd_mentors(ctx, cursor, c=c, r=r)
+    if dnd:
+        embed.add_field(name='DND (Do Not Disturb)', value=dnd, inline=False)
     # Send mentor info
     await ctx.send(embed=embed)
 
@@ -58,3 +62,33 @@ def mentors_of_status(ctx, cursor, status, c=None, r=None):
             except AttributeError:  # catch if user ID isn't found, eg. left the server
                 mentors.append(f"{row['name']} ({row['characters']})")
     return '\n'.join(mentors)
+
+
+def dnd_mentors(ctx, cursor, c=None, r=None):
+    """Return DND mentors of given character/region for embed."""
+    character_region = helpers.character_info(cursor, character=c, region=r)['name']
+    mentors = []
+    if c:  # If character was given
+        cursor.execute('''SELECT discord_id, name, region FROM mentors WHERE '
+                        characters LIKE :character = 1 AND do_not_disturb = 1''',
+                        {'character': f'%{character_region}%'})
+        for row in cursor.fetchall():
+            try:
+                mentor = ctx.bot.get_user(row['discord_id'])
+                mentors.append(
+                    f"{mentor.mention} **{str(mentor)}** ({row['region']})")
+            except AttributeError:  # catch if user ID isn't found, eg. left the server
+                mentors.append(f"{row['name']} ({row['region']})")
+    elif r:  # If region was given
+        cursor.execute('''SELECT discord_id, name, characters FROM mentors WHERE 
+                        region = :region AND do_not_disturb = 1''',
+                        {'region': character_region})
+        for row in cursor.fetchall():
+            try:
+                mentor = ctx.bot.get_user(row['discord_id'])
+                mentors.append(
+                    f"{mentor.mention} **{str(mentor)}** ({row['characters']})")
+            except AttributeError:  # catch if user ID isn't found, eg. left the server
+                mentors.append(f"{row['name']} ({row['characters']})")
+    return '\n'.join(mentors)
+
