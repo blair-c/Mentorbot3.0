@@ -69,7 +69,7 @@ def dnd_mentors(ctx, cursor, c=None, r=None):
     character_region = helpers.character_info(cursor, character=c, region=r)['name']
     mentors = []
     if c:  # If character was given
-        cursor.execute('''SELECT discord_id, name, region FROM mentors WHERE '
+        cursor.execute('''SELECT discord_id, name, region FROM mentors WHERE
                         characters LIKE :character = 1 AND do_not_disturb = 1''',
                         {'character': f'%{character_region}%'})
         for row in cursor.fetchall():
