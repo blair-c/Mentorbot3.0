@@ -8,7 +8,7 @@ class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='commandslist', aliases=['infocommands', 'commands'])
+    @commands.command(name='commands')
     async def commands_list(self, ctx):
         """List all info commands."""
         embed = discord.Embed()
@@ -50,7 +50,7 @@ class Info(commands.Cog):
         embed = discord.Embed(title='Angle Flipper Definitions', description=definitions)
         await ctx.send(embed=embed)
 
-    @commands.command(name='dodgedata', aliases=['dodge', 'parry', 'roll', 'airdodge'])
+    @commands.command(name='dodgedata', aliases=['parry', 'roll', 'airdodge', 'dodge'])
     async def dodge_data(self, ctx):
         """Send display of universal parry, roll, and airdodge frame data."""
         embed = discord.Embed(description=
@@ -284,8 +284,8 @@ class Info(commands.Cog):
         await ctx.send(content=link, embed=embed)
 
     # Hidden
-    @commands.command(name='mindset', aliases=['jackie'])
-    async def mindset_screenshot(self, ctx):
+    @commands.command(name='jackie', aliases=['mindset'])
+    async def jackie_screenshot(self, ctx):
         """Send screenshot of Jackie Chan mindset post."""
         jackie = '<:jackie:547193437229940746>'
         await ctx.send(f'{jackie} https://i.imgur.com/jDnEAOz.jpg {jackie}')
