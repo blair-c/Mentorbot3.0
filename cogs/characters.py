@@ -52,7 +52,7 @@ class Characters(commands.Cog):
             embed = mentors.mentor_info(ctx.bot, cursor, c=character)
         else:  # Arg(s) passed, display move info
             embed = hitboxes.move_info(cursor, character, move)
-        ctx.send(embed=embed)
+        await ctx.send(embed=embed)
 
     @commands.command(name='zetterburn', aliases=['zetter', 'zet'])
     async def zetterburn(self, ctx, *move):
