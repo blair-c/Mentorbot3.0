@@ -21,6 +21,9 @@ class Info(commands.Cog):
                 ['AAAA', 'babydashing', 'bairhitfall'],
             'Mentorbot':
                 ['about', 'help'],
+            'Beefy Aether Doods':
+                ['cactuardashing', 'DI', 'horizontalwaveland', 'ledgecancel','RAR',
+                 'teching', 'wavedashing']
             'Golden Guides':
                 ['goldenguides', 'thebasics', 'everytech', 'survivaldi', 'techchasing'],
             'Sector 7-G Resources':
@@ -127,7 +130,7 @@ class Info(commands.Cog):
 
     @commands.command(name='babydashing', aliases=['babydash'])
     async def babydashing(self, ctx):
-        """Link to video covering the 'babydashing' advanced technique."""
+        """Link to Rivals Dojo video covering babydashing."""
         await ctx.send('https://www.youtube.com/watch?v=BW1M8zx_KGM')
 
     @commands.command(name='bairhitfall')
@@ -185,6 +188,42 @@ class Info(commands.Cog):
         embed.set_footer(text='For non-hitbox commands, try !commands.')
         await ctx.send(embed=embed)
 
+    # Beefy Aether Doods
+    @commands.command(name='cactuardashing', aliases=['cactuar','cactuardash'])
+    async def beefy_cactuardashing(self, ctx):
+        """Link to Beefy Aether Doods video covering cactuar dashing."""
+        await ctx.send('https://www.youtube.com/watch?v=SBQOpChfbx4')
+
+    @commands.command(name='DI', aliases=['directionalinfluence'])
+    async def beefy_di(self, ctx):
+        """Link to Beefy Aether Doods video covering DI."""
+        await ctx.send('https://www.youtube.com/watch?v=-22VyPy6QZU')
+
+    @commands.command(name='horizontalwaveland', aliases=['horizontalwavelanding'])
+    async def beefy_horizontalwaveland(self, ctx):
+        """Link to Beefy Aether Doods video covering horizontal wavelanding."""
+        await ctx.send('https://www.youtube.com/watch?v=ejN--TPcePE')
+
+    @commands.command(name='ledgecancel', aliases=['legdeslip'])
+    async def beefy_ledgecancel(self, ctx):
+        """Link to Beefy Aether Doods video covering ledge cancelling."""
+        await ctx.send('https://www.youtube.com/watch?v=6N6joIHrqDg')
+
+    @commands.command(name='RAR', aliases=['reverse_aerial_rush'])
+    async def beefy_rar(self, ctx):
+        """Link to Beefy Aether Doods video covering reverse aerial rush."""
+        await ctx.send('https://www.youtube.com/watch?v=M8XgHJkAltw')
+
+    @commands.command(name='teching', aliases=['tech'])
+    async def beefy_teching(self, ctx):
+        """Link to Beefy Aether Doods video covering teching."""
+        await ctx.send('https://www.youtube.com/watch?v=tc781GiW20Q')
+
+    @commands.command(name='wavedash', aliases=['waveland', 'wavedashing', 'wavelanding'])
+    async def beefy_wavedash_waveland(self, ctx):
+        """Link to Beefy Aether Doods video covering wavedashing and wavelanding."""
+        await ctx.send('https://www.youtube.com/watch?v=RkLciJMr42g')
+
     # Golden Guides
     @commands.command(name='goldenguides')
     async def goldenguides_complete_collection(self, ctx):
@@ -216,7 +255,7 @@ class Info(commands.Cog):
         embed.set_thumbnail(url='https://i.imgur.com/BKyW9u5.png?1')
         await ctx.send(content=link, embed=embed)
 
-    @commands.command(name='survivaldi', aliases=['di'])
+    @commands.command(name='survivaldi')
     async def goldenguide_survivaldi(self, ctx):
         """Link to Golden Elite's Survival DI guide."""
         link = ('https://docs.google.com/document/d/'
