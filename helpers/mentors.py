@@ -6,7 +6,7 @@ from discord.ext import commands
 from helpers import helpers
 
 
-async def mentor_info(ctx, cursor, c=None, r=None):
+def mentor_info(bot, cursor, c=None, r=None):
     """Display an embed listing the mentors of given character/region."""
     # Get character/region name, color, and icon url
     info = helpers.character_info(cursor, character=c, region=r)
@@ -16,26 +16,26 @@ async def mentor_info(ctx, cursor, c=None, r=None):
         title=f"Here's a list of our {info['name']} mentors and advisors:")
     embed.set_author(name='Great selection!', icon_url=info['icon'])
     # Mentors
-    mentors = mentors_of_status(ctx, cursor, 'Mentor', c=c, r=r)
+    mentors = mentors_of_status(bot, cursor, 'Mentor', c=c, r=r)
     if mentors:
         embed.add_field(name='Mentors', value=mentors, inline=False)
     # Trial Mentors
-    trial_mentors = mentors_of_status(ctx, cursor, 'Trial', c=c, r=r)
+    trial_mentors = mentors_of_status(bot, cursor, 'Trial', c=c, r=r)
     if trial_mentors:
         embed.add_field(name='Trial Mentors', value=trial_mentors, inline=False)
     # Advisors
-    advisors = mentors_of_status(ctx, cursor, 'Advisor', c=c, r=r)
+    advisors = mentors_of_status(bot, cursor, 'Advisor', c=c, r=r)
     if advisors:
         embed.add_field(name='Advisors', value=advisors, inline=False)
     # DND
-    dnd = dnd_mentors(ctx, cursor, c=c, r=r)
+    dnd = dnd_mentors(bot, cursor, c=c, r=r)
     if dnd:
         embed.add_field(name='Do Not Disturb', value=dnd, inline=False)
     # Send mentor info
-    await ctx.send(embed=embed)
+    return embed
 
 
-def mentors_of_status(ctx, cursor, status, c=None, r=None):
+def mentors_of_status(bot, cursor, status, c=None, r=None):
     """Return mentors of given status and character/region for embed."""
     character_region = helpers.character_info(cursor, character=c, region=r)['name']
     mentors = []
@@ -45,7 +45,7 @@ def mentors_of_status(ctx, cursor, status, c=None, r=None):
                         {'status': status, 'character': f'%{character_region}%'})
         for row in cursor.fetchall():
             try:
-                mentor = ctx.bot.get_user(row['discord_id'])
+                mentor = bot.get_user(row['discord_id'])
                 mentors.append(
                     f"{mentor.mention} **{str(mentor)}** ({row['region']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server
@@ -56,7 +56,7 @@ def mentors_of_status(ctx, cursor, status, c=None, r=None):
                         {'status': status, 'region': character_region})
         for row in cursor.fetchall():
             try:
-                mentor = ctx.bot.get_user(row['discord_id'])
+                mentor = bot.get_user(row['discord_id'])
                 mentors.append(
                     f"{mentor.mention} **{str(mentor)}** ({row['characters']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server
@@ -64,7 +64,7 @@ def mentors_of_status(ctx, cursor, status, c=None, r=None):
     return '\n'.join(mentors)
 
 
-def dnd_mentors(ctx, cursor, c=None, r=None):
+def dnd_mentors(bot, cursor, c=None, r=None):
     """Return DND mentors of given character/region for embed."""
     character_region = helpers.character_info(cursor, character=c, region=r)['name']
     mentors = []
@@ -74,7 +74,7 @@ def dnd_mentors(ctx, cursor, c=None, r=None):
                         {'character': f'%{character_region}%'})
         for row in cursor.fetchall():
             try:
-                mentor = ctx.bot.get_user(row['discord_id'])
+                mentor = bot.get_user(row['discord_id'])
                 mentors.append(
                     f"{mentor.mention} **{str(mentor)}** ({row['region']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server
@@ -85,7 +85,7 @@ def dnd_mentors(ctx, cursor, c=None, r=None):
                         {'region': character_region})
         for row in cursor.fetchall():
             try:
-                mentor = ctx.bot.get_user(row['discord_id'])
+                mentor = bot.get_user(row['discord_id'])
                 mentors.append(
                     f"{mentor.mention} **{str(mentor)}** ({row['characters']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server

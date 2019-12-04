@@ -47,13 +47,12 @@ class Characters(commands.Cog):
     async def character_command(self, ctx, character, move):
         """Display mentor info for character, or return hitbox info for move."""
         sleep(0.1)  # Delay to avoid bot message appearing before command message
-        if not move:  # No args passed, display mentor info
-            # Ignore non-Academy servers
+        if not move:  # No args passed, display mentor info in Academy
             if ctx.guild.id not in [252352512332529664, 475599187812155392]: return
-            # Display mentor info
-            await mentors.mentor_info(ctx, cursor, c=character)
+            embed = mentors.mentor_info(ctx.bot, cursor, c=character)
         else:  # Arg(s) passed, display move info
-            await hitboxes.move_info(ctx, cursor, character, move)
+            embed = hitboxes.move_info(cursor, character, move)
+        ctx.send(embed=embed)
 
     @commands.command(name='zetterburn', aliases=['zetter', 'zet'])
     async def zetterburn(self, ctx, *move):
