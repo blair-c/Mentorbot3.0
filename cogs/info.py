@@ -23,7 +23,7 @@ class Info(commands.Cog):
                 ['about', 'help'],
             'Beefy Aether Doods':
                 ['cactuardashing', 'DI', 'horizontalwaveland', 'ledgecancel','RAR',
-                 'teching', 'wavedashing']
+                 'teching', 'wavedashing'],
             'Golden Guides':
                 ['goldenguides', 'thebasics', 'everytech', 'survivaldi', 'techchasing'],
             'Sector 7-G Resources':
