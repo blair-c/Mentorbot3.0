@@ -30,7 +30,7 @@ extensions = [
 ]
 
 statuses = {
-    'update_note': 'Updated to patch 1.4.17!',
+    'update_note': 'Updated to patch 1.4.18!',
     'academy_link': 'discord.me/mentor',
     'usage_stats': ''  # To be updated in loop
 }
