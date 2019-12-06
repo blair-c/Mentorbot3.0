@@ -27,7 +27,7 @@ class Info(commands.Cog):
             'Golden Guides':
                 ['goldenguides', 'thebasics', 'everytech', 'survivaldi', 'techchasing'],
             'Sector 7-G Resources':
-                ['framedata', 'hurtboxdata', 'patchnotes']
+                ['framedata', 'hurtboxdata', 'generalstats', 'patchnotes']
         }
         for category in commands:
             commands_list = [f'!{command}' for command in commands[category]]
@@ -311,6 +311,19 @@ class Info(commands.Cog):
             title='Rivals Hurtbox Sizes',
             description='Idle, crouch, and hitstun hurtbox size measurements by IGL.')
         embed.set_thumbnail(url='https://i.imgur.com/nN6DAmT.png')
+        await ctx.send(content=link, embed=embed)
+
+    @commands.command(name='generalstats', aliases=['stats'])
+    async def hurtbox_data(self, ctx):
+        """Link to Kisuno's general stats doc."""
+        link = ('https://docs.google.com/spreadsheets/d/'
+                '14JIjL_5t81JHqnJmU6BSsRosTe2JO8sFGUysM_9tDoU')
+        embed = discord.Embed(
+            url=link,
+            title='Rivals General Stats',
+            description='Data extracted from devmode files and formatted by Kisuno. '
+                        'Info provided by Menace13, Youngblood and SNC.')
+        embed.set_thumbnail(url='https://i.imgur.com/5Iy3ZrX.png')
         await ctx.send(content=link, embed=embed)
 
     @commands.command(name='patchnotes')
