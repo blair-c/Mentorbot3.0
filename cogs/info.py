@@ -298,7 +298,7 @@ class Info(commands.Cog):
                         'Extra information provided by Menace13 and Youngblood. '
                         'General Stats created by Kisuno. '
                         'Collated Patch Notes created by SNC.')
-        embed.set_thumbnail(url='https://i.imgur.com/ovYeevo.png')
+        embed.set_thumbnail(url='https://i.imgur.com/RX7bTcq.png')
         await ctx.send(content=link, embed=embed)
 
     @commands.command(name='hurtboxdata', aliases=['hurtboxes'])
