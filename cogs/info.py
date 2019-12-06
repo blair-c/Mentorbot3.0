@@ -135,7 +135,7 @@ class Info(commands.Cog):
 
     @commands.command(name='bairhitfall')
     async def bair_hitfall_tutorial(self, ctx):
-        """Link to clip of and instructions for the 'hitfalling' tutorial."""
+        """Link to clip of and instructions for the hitfalling tutorial."""
         instructions = ('```\n'
             'Instructions:\n'
             '1. Turn away from Orby\n'
