@@ -18,7 +18,7 @@ class Info(commands.Cog):
                 ['angleflippers', 'dodgedata', 'forceflinch', 'hitpauseformula', 
                  'hitstunformula', 'knockbackformula'],
             'Videos & Clips':
-                ['AAAA', 'babydashing', 'bairhitfall'],
+                ['AAAA', 'babydashing', 'bairhitfall', 'pwjpecotr'],
             'Mentorbot':
                 ['about', 'help'],
             'Beefy Aether Doods':
@@ -152,6 +152,11 @@ class Info(commands.Cog):
         await ctx.send(embed=embed)
         # Send example Clip
         await ctx.send('https://gfycat.com/FlakyEasyAmethystgemclam')
+
+    @commands.command(name='pwjpecotr')
+    async def pwjpecotr(self, ctx):
+        """Link to MSB's pwjpecotr tweet."""
+        await ctx.send('https://twitter.com/notMSB/status/1025537436565364738')
 
     # Mentorbot
     @commands.command(name='about', aliases=['info', 'information'], hidden=True)
