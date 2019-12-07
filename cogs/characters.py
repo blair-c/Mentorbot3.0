@@ -49,7 +49,7 @@ class Characters(commands.Cog):
         sleep(0.1)  # Delay to avoid bot message appearing before command message
         if not move:  # No args passed, display mentor info in Academy
             if ctx.guild.id not in [252352512332529664, 475599187812155392]: return
-            embed = mentors.mentor_info(ctx.bot, cursor, c=character)
+            mentors.mentor_info(ctx, cursor, c=character)
         else:  # Arg(s) passed, display move info
             embed = hitboxes.move_info(cursor, character, move)
         await ctx.send(embed=embed)

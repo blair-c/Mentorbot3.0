@@ -6,7 +6,7 @@ from discord.ext import commands
 from helpers import helpers
 
 
-def mentor_info(bot, cursor, c=None, r=None):
+def mentor_info(ctx, cursor, c=None, r=None):
     """Display an embed listing the mentors of given character/region."""
     # Get character/region name, color, and icon url
     info = helpers.character_info(cursor, character=c, region=r)
@@ -16,6 +16,7 @@ def mentor_info(bot, cursor, c=None, r=None):
         title=f"Here's a list of our {info['name']} mentors and advisors:")
     embed.set_author(name='Great selection!', icon_url=info['icon'])
     # Mentors
+    bot = ctx.bot
     mentors = mentors_of_status(bot, cursor, 'Mentor', c=c, r=r)
     if mentors:
         embed.add_field(name='Mentors', value=mentors, inline=False)
@@ -32,7 +33,7 @@ def mentor_info(bot, cursor, c=None, r=None):
     if dnd:
         embed.add_field(name='Do Not Disturb', value=dnd, inline=False)
     # Send mentor info
-    return embed
+    ctx.send(embed=embed)
 
 
 def mentors_of_status(bot, cursor, status, c=None, r=None):
