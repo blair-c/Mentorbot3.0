@@ -72,3 +72,14 @@ async def move_info(ctx, cursor, character, move):
     embed.set_footer(text=f'See {more_info_command} document for full details.')
     # Send move info
     await ctx.send(embed=embed)
+    # Send additional info message for Clairen Plasma Field
+    if (character_info['name'] == 'Clairen') and (move['id'] == 17):
+        link = ('https://docs.google.com/document/d/'
+                '12I3L4w27sHRZc139FJYtZkkAbjE6CcdpfHAFzfsKkQM')
+        embed = discord.Embed(
+            url=link,
+            title='Clairen Plasma Field Interactions',
+            description="General projectile interactions with "
+                        "Clairen's Down Special: Plasma Field")
+        embed.set_thumbnail(url='https://i.imgur.com/5NVvUtj.png')
+        await ctx.send(content=link, embed=embed)
