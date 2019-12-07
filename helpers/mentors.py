@@ -6,7 +6,7 @@ from discord.ext import commands
 from helpers import helpers
 
 
-def mentor_info(ctx, cursor, c=None, r=None):
+async def mentor_info(ctx, cursor, c=None, r=None):
     """Display an embed listing the mentors of given character/region."""
     # Get character/region name, color, and icon url
     info = helpers.character_info(cursor, character=c, region=r)
