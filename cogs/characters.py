@@ -93,7 +93,7 @@ class Characters(commands.Cog):
         # Alternate move names
         if move == 'grab':
             move = 'nspecial'
-        elif move in ['counter', 'forcefield', 'nofunzone']:
+        elif move in ['counter', 'forcefield', 'plasmafield', 'nofunzone']:
             move = 'dspecial'
         await self.character_command(ctx, 'Clairen', move)
 
