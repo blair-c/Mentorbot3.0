@@ -293,7 +293,7 @@ class Info(commands.Cog):
                 '19UtK7xG2c-ehxdlhCFKMpM4_IHSG-EXFgXLJaunE79I')
         embed = discord.Embed(
             url=link,
-            title='Rivals of Aether Academy Frame Data - Updated for 1.4.15',
+            title='Rivals of Aether Academy Frame Data - Updated for 1.4.18',
             description='Data extracted manually in-game and from dev-mode files by SNC. '
                         'Extra information provided by Menace13 and Youngblood. '
                         'General Stats created by Kisuno. '
@@ -320,7 +320,7 @@ class Info(commands.Cog):
                 '14JIjL_5t81JHqnJmU6BSsRosTe2JO8sFGUysM_9tDoU')
         embed = discord.Embed(
             url=link,
-            title='Rivals General Stats',
+            title='Rivals General Stats - Updated for 1.4.0',
             description='Data extracted from devmode files and formatted by Kisuno. '
                         'Info provided by Menace13, Youngblood and SNC.')
         embed.set_thumbnail(url='https://i.imgur.com/5Iy3ZrX.png')
