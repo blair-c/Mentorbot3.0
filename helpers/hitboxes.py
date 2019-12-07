@@ -73,7 +73,7 @@ async def move_info(ctx, cursor, character, move):
     # Send move info
     await ctx.send(embed=embed)
     # Send additional info message for Clairen Plasma Field
-    if (character_info['name'] == 'Clairen') and (move['id'] == 17):
+    if character_info['name'] == 'Clairen' and move['id'] == 17:
         embed = discord.Embed(
             url='https://docs.google.com/document/d/'
                 '12I3L4w27sHRZc139FJYtZkkAbjE6CcdpfHAFzfsKkQM',
