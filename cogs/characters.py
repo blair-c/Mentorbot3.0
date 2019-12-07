@@ -51,8 +51,7 @@ class Characters(commands.Cog):
             if ctx.guild.id not in [252352512332529664, 475599187812155392]: return
             await mentors.mentor_info(ctx, cursor, c=character)
         else:  # Arg(s) passed, display move info
-            embed = hitboxes.move_info(cursor, character, move)
-        await ctx.send(embed=embed)
+            await hitboxes.move_info(ctx, cursor, character, move)
 
     @commands.command(name='zetterburn', aliases=['zetter', 'zet'])
     async def zetterburn(self, ctx, *move):

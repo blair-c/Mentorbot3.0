@@ -7,7 +7,7 @@ from tabulate import tabulate
 from helpers import helpers
 
 
-def move_info(cursor, character, move):
+async def move_info(ctx, cursor, character, move):
     """Display frame data and hitbox info of move given."""
     # Get character info
     character_info = helpers.character_info(cursor, character=character)
@@ -70,4 +70,5 @@ def move_info(cursor, character, move):
     else:
         more_info_command = '!framedata'
     embed.set_footer(text=f'See {more_info_command} document for full details.')
-    return embed
+    # Send move info
+    await ctx.send(embed=embed)
