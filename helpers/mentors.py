@@ -33,7 +33,7 @@ async def mentor_info(ctx, cursor, c=None, r=None):
     if dnd:
         embed.add_field(name='Do Not Disturb', value=dnd, inline=False)
     # Send mentor info
-    ctx.send(embed=embed)
+    await ctx.send(embed=embed)
 
 
 def mentors_of_status(bot, cursor, status, c=None, r=None):
