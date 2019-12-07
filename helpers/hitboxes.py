@@ -79,7 +79,6 @@ async def move_info(ctx, cursor, character, move):
                 '12I3L4w27sHRZc139FJYtZkkAbjE6CcdpfHAFzfsKkQM',
             color=character_info['color'],
             title='Clairen Plasma Field Interactions',
-            description="General projectile interactions with "
-                        "Clairen's Down Special: Plasma Field")
+            description="General projectile interactions with Clairen's Plasma Field")
         embed.set_thumbnail(url='https://i.imgur.com/5NVvUtj.png')
         await ctx.send(embed=embed)
