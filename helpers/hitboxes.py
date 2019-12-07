@@ -77,6 +77,7 @@ async def move_info(ctx, cursor, character, move):
         embed = discord.Embed(
             url='https://docs.google.com/document/d/'
                 '12I3L4w27sHRZc139FJYtZkkAbjE6CcdpfHAFzfsKkQM',
+            color=character_info['color'],
             title='Clairen Plasma Field Interactions',
             description="General projectile interactions with "
                         "Clairen's Down Special: Plasma Field")
