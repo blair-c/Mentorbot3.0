@@ -27,7 +27,7 @@ class ActionLog(commands.Cog):
         embed.set_footer(text=f'ID: {member.id}')
         # Note if user joined within 1 min of account creation
         if (time_ago := joined_at - member.created_at) < timedelta(minutes=1):
-            embed.add_field(name='New Account', value=timeago.strftime('%-S seconds ago'))
+            embed.add_field(name='New Account', value=time_ago.strftime('%-S seconds ago'))
         # Send in action-log
         await action_log.send(embed=embed)
 
