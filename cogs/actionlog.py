@@ -115,7 +115,7 @@ class ActionLog(commands.Cog):
             color=0x7e57c2,
             description=f'{before.mention} **nickname changed**',
             timestamp=datetime.utcnow())
-        embed.set_author(name=f'{str(before.author)}', icon_url=before.avatar_url)
+        embed.set_author(name=f'{str(before)}', icon_url=before.avatar_url)
         embed.set_footer(text=f'ID: {before.id}')
         # Before nickname change
         embed.add_field(name='Before:', value=f'```{helpers.get_nickname(before)}```',
