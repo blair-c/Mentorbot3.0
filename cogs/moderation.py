@@ -23,7 +23,7 @@ class Moderation(commands.Cog):
         desc = f'**{len(deleted)} messages deleted in ' \
                f'{ctx.channel.mention} by {ctx.author.mention}**\n'
         for msg in reversed(deleted):
-            desc += f'\n**by {msg.author.mention} {str(msg.authon)}'
+            desc += f'\n**by {msg.author.mention} {str(msg.author)}'
             # Message content may not exist, such as an embed or picture
             if msg.clean_content:
                 desc += f':**\n```{msg.clean_content}```'
