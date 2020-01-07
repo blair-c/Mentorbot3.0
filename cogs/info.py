@@ -80,7 +80,7 @@ class Info(commands.Cog):
         embed.set_author(name='Universal Dodge Frame Data')
         await ctx.send(embed=embed)
 
-    @commands.command(name='forceflinch')
+    @commands.command(name='forceflinch', aliases=['flinch'])
     async def force_flinch_definitions(self, ctx, *formula):
         """Send display of force flinch definitions."""
         definitions = ('```glsl\n'
