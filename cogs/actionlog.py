@@ -25,9 +25,16 @@ class ActionLog(commands.Cog):
             timestamp=(joined_at := datetime.utcnow()))
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
-        # Note if user joined within 1 min of account creation
-        if (time_ago := joined_at - member.created_at) < timedelta(minutes=1):
-            embed.add_field(name='New Account', value=time_ago.strftime('%-S seconds ago'))
+        # Note if user joined within 1 day of account creation
+        if (t := joined_at - member.created_at) < timedelta(days=1):
+            hours, minutes, seconds = t.hours, t.minutes, t.seconds
+            time_ago = ''
+            if hours > 0:
+                time_ago += f'{hours} hours, '
+            if minutes > 0:
+                time_ago += f'{minutes} minutes, '
+            time_ago += f'{seconds} seconds'
+            embed.add_field(name='New Account', value=f'Created {time_ago} ago')
         # Send in action-log
         await action_log.send(embed=embed)
 
