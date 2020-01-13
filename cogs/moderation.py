@@ -18,7 +18,6 @@ class Moderation(commands.Cog):
         """Delete last n messages from channel (Limit 100)."""
         await ctx.message.delete() # Delete message of command
         deleted = await ctx.channel.purge(limit=n)
-        if ctx.channel.name == 'boardroom': return  # Don't display deletions from boardroom
         # Bulk message deletion embed
         desc = f'**{len(deleted)} messages deleted in ' \
                f'{ctx.channel.mention} by {ctx.author.mention}**\n'
