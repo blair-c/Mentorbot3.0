@@ -66,13 +66,13 @@ class Info(commands.Cog):
              'Cooldown     | 20   \n'
              'successfully parrying removes your ability to parry/roll for 30 frames.```'
              # Roll
-             '**Roll** ```ml\n'
+             '\n**Roll** ```ml\n'
              'Startup      | 4    \n'
              'Invulnerable | 5-19 \n'
              'Endlag       | 12   \n'
              'FAF          | 31```'
              # Airdodge
-             '**Airdodge** ```ml\n'
+             '\n**Airdodge** ```ml\n'
              'Startup      | 2    \n'
              'Invulnerable | 3-15 \n'
              'Endlag       | 12   \n'
