@@ -144,7 +144,7 @@ class Characters(commands.Cog):
         """Display Kragg mentors, or display info of move given."""
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
-        if move in ['rock', 'rockshine']:
+        if move in ['rock', 'block', 'rockshine']:
             move = 'nspecial'
         elif move == 'rollout':
             move = 'fspecial'
@@ -261,7 +261,7 @@ class Characters(commands.Cog):
         # Alternate move names
         if move == 'dig':
             move = 'dtilt'
-        elif move == 'bigdig':
+        elif move in ['bigdig', 'rock', 'block', 'dirtblock']:
             move = 'ustrong'
         elif move == 'coincapture':
             move = 'nspecial'
