@@ -26,15 +26,8 @@ class ActionLog(commands.Cog):
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
         # Note if user joined within 1 day of account creation
-        if (t := joined_at - member.created_at) < timedelta(days=1):
-            hours, minutes, seconds = t.hours, t.minutes, t.seconds
-            time_ago = ''
-            if hours > 0:
-                time_ago += f'{hours} hours, '
-            if minutes > 0:
-                time_ago += f'{minutes} minutes, '
-            time_ago += f'{seconds} seconds'
-            embed.add_field(name='New Account', value=f'Created {time_ago} ago')
+        if (joined_at - member.created_at) < timedelta(days=1):
+            embed.add_field(name='New Account', value=f'Account created within past day')
         # Send in action-log
         await action_log.send(embed=embed)
 
