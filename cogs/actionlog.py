@@ -83,7 +83,7 @@ class ActionLog(commands.Cog):
         # Check that action-log channel exists and is viewable
         if not (guild := before.guild): return
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
-        # Ensure that message content has changed
+        # Ensure that message content has changed (ignore embeds)
         if before.content == after.content: return
         # Log message edit
         embed = discord.Embed(
