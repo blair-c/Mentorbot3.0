@@ -118,7 +118,7 @@ class Characters(commands.Cog):
         # Alternate move names
         if move == 'hammer':
             move = 'nspecial'
-        elif move == 'icicles':
+        elif move in ['icicle', 'icicles']:
             move = 'fspecial'
         elif move == 'freeze':
             move = 'dspecial'
