@@ -48,7 +48,7 @@ class Characters(commands.Cog):
         """Display mentor info for character, or return hitbox info for move."""
         sleep(0.1)  # Delay to avoid bot message appearing before command message
         if not move:  # No args passed, display mentor info in Academy
-            if ctx.guild.id not in [252352512332529664, 475599187812155392]
+            if ctx.guild.id not in [252352512332529664, 475599187812155392] \
             or ctx.channel.name == 'ask-a-mentor':
                 return
             await mentors.mentor_info(ctx, cursor, c=character)
