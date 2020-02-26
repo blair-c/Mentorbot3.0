@@ -40,8 +40,8 @@ class Moderation(commands.Cog):
         """Put member into suspension."""
         embed = await helpers.update_roles(
             member,
-            discord.utils.get(ctx.guild.roles, name='Student'),     # Remove
-            discord.utils.get(ctx.guild.roles, name='Suspension'))  # Add
+            discord.utils.get(ctx.guild.roles, name='Student'),    # Remove
+            discord.utils.get(ctx.guild.roles, name='Suspension')) # Add
         await ctx.send(embed=embed)
 
     @commands.command(name='unsuspend', hidden=True)
@@ -51,8 +51,8 @@ class Moderation(commands.Cog):
         """Remove member from suspension."""
         embed = await helpers.update_roles(
             member,
-            discord.utils.get(ctx.guild.roles, name='Suspension'),  # Remove
-            discord.utils.get(ctx.guild.roles, name='Student'))     # Add
+            discord.utils.get(ctx.guild.roles, name='Suspension'), # Remove
+            discord.utils.get(ctx.guild.roles, name='Student'))    # Add
         await ctx.send(embed=embed)
 
     @commands.command(name='whois', hidden=True)
