@@ -33,6 +33,28 @@ class Moderation(commands.Cog):
         action_log = discord.utils.get(ctx.guild.text_channels, name='action-log')
         await action_log.send(embed=embed)
 
+    @commands.command(name='suspend')
+    @commands.has_permissions(ban_members=True)
+    @helpers.in_academy()
+    async def suspend_member(self, ctx, *, member: discord.Member):
+        """Put member into suspension."""
+        embed = await helpers.update_roles(
+            member,
+            discord.utils.get(ctx.guild.roles, name='Student'),     # Remove
+            discord.utils.get(ctx.guild.roles, name='Suspension'))  # Add
+        await ctx.send(embed=embed)
+
+    @commands.command(name='unsuspend')
+    @commands.has_permissions(ban_members=True)
+    @helpers.in_academy()
+    async def suspend_member(self, ctx, *, member: discord.Member):
+        """Remove member from suspension."""
+        embed = await helpers.update_roles(
+            member,
+            discord.utils.get(ctx.guild.roles, name='Suspension'),  # Remove
+            discord.utils.get(ctx.guild.roles, name='Student'))     # Add
+        await ctx.send(embed=embed)
+
     @commands.command(name='whois', hidden=True)
     @commands.has_permissions(ban_members=True)
     async def display_member_info(self, ctx, *, member: discord.Member):
