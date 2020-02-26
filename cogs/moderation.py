@@ -33,7 +33,7 @@ class Moderation(commands.Cog):
         action_log = discord.utils.get(ctx.guild.text_channels, name='action-log')
         await action_log.send(embed=embed)
 
-    @commands.command(name='suspend')
+    @commands.command(name='suspend', hidden=True)
     @commands.has_permissions(ban_members=True)
     @helpers.in_academy()
     async def suspend_member(self, ctx, *, member: discord.Member):
@@ -44,7 +44,7 @@ class Moderation(commands.Cog):
             discord.utils.get(ctx.guild.roles, name='Suspension'))  # Add
         await ctx.send(embed=embed)
 
-    @commands.command(name='unsuspend')
+    @commands.command(name='unsuspend', hidden=True)
     @commands.has_permissions(ban_members=True)
     @helpers.in_academy()
     async def suspend_member(self, ctx, *, member: discord.Member):
