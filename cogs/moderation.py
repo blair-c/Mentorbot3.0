@@ -11,6 +11,23 @@ class Moderation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    @commands.command(name='modcommands', hidden=True)
+    @commands.has_permissions(ban_members=True)
+    async def moderation_commands_list(self, ctx):
+        """List all moderation commands."""
+        embed = discord.Embed()
+        embed.set_author(name='Moderation Commands List', icon_url=self.bot.user.avatar_url)
+        commands = {'General': ['clear', 'whois']}
+        # Include Academy-specific commands if in Academy
+        if ctx.message.guild.id in [252352512332529664, 475599187812155392]:
+            commands['Academy'] = ['detain', 'undetain', 'suspend', 'unsuspend']
+        for category in commands:
+            commands_list = [f'!{command}' for command in commands[category]]
+            commands_list = '\n'.join(commands_list)
+            embed.add_field(name=f'{category}', value=f'```{commands_list}```')
+        await ctx.send(embed=embed)
+
+    # General moderation commands
     @commands.command(name='clear', aliases=['delete', 'purge'], hidden=True)
     @commands.has_permissions(manage_messages=True)
     async def delete_n_messages(self, ctx, n: int = 0):
@@ -31,50 +48,6 @@ class Moderation(commands.Cog):
         embed.set_author(name='Bulk Message Deletion', icon_url=ctx.author.avatar_url)
         action_log = discord.utils.get(ctx.guild.text_channels, name='action-log')
         await action_log.send(embed=embed)
-
-    @commands.command(name='detain', hidden=True)
-    @commands.has_permissions(ban_members=True)
-    @helpers.in_academy()
-    async def detain_member(self, ctx, *, member: discord.Member):
-        """Place member into detention."""
-        embed = await helpers.update_roles(
-            member,
-            discord.utils.get(ctx.guild.roles, name='Student'),   # Remove
-            discord.utils.get(ctx.guild.roles, name='Detention')) # Add
-        await ctx.send(embed=embed)
-
-    @commands.command(name='undetain', hidden=True)
-    @commands.has_permissions(ban_members=True)
-    @helpers.in_academy()
-    async def undetain_member(self, ctx, *, member: discord.Member):
-        """Remove member from detention."""
-        embed = await helpers.update_roles(
-            member,
-            discord.utils.get(ctx.guild.roles, name='Detention'), # Remove
-            discord.utils.get(ctx.guild.roles, name='Student'))   # Add
-        await ctx.send(embed=embed)
-
-    @commands.command(name='suspend', hidden=True)
-    @commands.has_permissions(ban_members=True)
-    @helpers.in_academy()
-    async def suspend_member(self, ctx, *, member: discord.Member):
-        """Place member into suspension."""
-        embed = await helpers.update_roles(
-            member,
-            discord.utils.get(ctx.guild.roles, name='Student'),    # Remove
-            discord.utils.get(ctx.guild.roles, name='Suspension')) # Add
-        await ctx.send(embed=embed)
-
-    @commands.command(name='unsuspend', hidden=True)
-    @commands.has_permissions(ban_members=True)
-    @helpers.in_academy()
-    async def unsuspend_member(self, ctx, *, member: discord.Member):
-        """Remove member from suspension."""
-        embed = await helpers.update_roles(
-            member,
-            discord.utils.get(ctx.guild.roles, name='Suspension'), # Remove
-            discord.utils.get(ctx.guild.roles, name='Student'))    # Add
-        await ctx.send(embed=embed)
 
     @commands.command(name='whois', hidden=True)
     @commands.has_permissions(ban_members=True)
@@ -130,6 +103,51 @@ class Moderation(commands.Cog):
         # Add acknowledgement
         if acknowledgement:
             embed.add_field(name='Acknowledgements', value=acknowledgement, inline=False)
+        await ctx.send(embed=embed)
+
+    # Academy-specific mod commands
+    @commands.command(name='detain', hidden=True)
+    @commands.has_permissions(ban_members=True)
+    @helpers.in_academy()
+    async def detain_member(self, ctx, *, member: discord.Member):
+        """Place member into detention."""
+        embed = await helpers.update_roles(
+            member,
+            discord.utils.get(ctx.guild.roles, name='Student'),   # Remove
+            discord.utils.get(ctx.guild.roles, name='Detention')) # Add
+        await ctx.send(embed=embed)
+
+    @commands.command(name='undetain', hidden=True)
+    @commands.has_permissions(ban_members=True)
+    @helpers.in_academy()
+    async def undetain_member(self, ctx, *, member: discord.Member):
+        """Remove member from detention."""
+        embed = await helpers.update_roles(
+            member,
+            discord.utils.get(ctx.guild.roles, name='Detention'), # Remove
+            discord.utils.get(ctx.guild.roles, name='Student'))   # Add
+        await ctx.send(embed=embed)
+
+    @commands.command(name='suspend', hidden=True)
+    @commands.has_permissions(ban_members=True)
+    @helpers.in_academy()
+    async def suspend_member(self, ctx, *, member: discord.Member):
+        """Place member into suspension."""
+        embed = await helpers.update_roles(
+            member,
+            discord.utils.get(ctx.guild.roles, name='Student'),    # Remove
+            discord.utils.get(ctx.guild.roles, name='Suspension')) # Add
+        await ctx.send(embed=embed)
+
+    @commands.command(name='unsuspend', hidden=True)
+    @commands.has_permissions(ban_members=True)
+    @helpers.in_academy()
+    async def unsuspend_member(self, ctx, *, member: discord.Member):
+        """Remove member from suspension."""
+        embed = await helpers.update_roles(
+            member,
+            discord.utils.get(ctx.guild.roles, name='Suspension'), # Remove
+            discord.utils.get(ctx.guild.roles, name='Student'))    # Add
         await ctx.send(embed=embed)
 
 
