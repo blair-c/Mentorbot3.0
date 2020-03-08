@@ -7,7 +7,6 @@ from discord.ext import commands
 
 
 # Helper Functions
-
 def character_info(cursor, character=None, region=None):
     """Return id, name, color, and icon url of given character/region."""
     if character:  # If character was given
@@ -57,7 +56,6 @@ async def update_roles(member, remove, add):
 
 
 # Helper Command Checks
-
 def in_academy():
     """Check that command is in Adademy or Mentorbot Test Server."""
     async def predicate(ctx):
