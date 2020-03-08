@@ -20,7 +20,7 @@ class Moderation(commands.Cog):
         commands = {'General': ['clear', 'whois']}
         # Include Academy-specific commands if in Academy
         if ctx.message.guild.id in [252352512332529664, 475599187812155392]:
-            commands['Academy'] = ['detain', 'undetain', 'suspend', 'unsuspend']
+            commands['Academy'] = ['suspend', 'unsuspend']
         for category in commands:
             commands_list = [f'!{command}' for command in commands[category]]
             commands_list = '\n'.join(commands_list)
@@ -106,28 +106,6 @@ class Moderation(commands.Cog):
         await ctx.send(embed=embed)
 
     # Academy-specific mod commands
-    @commands.command(name='detain', hidden=True)
-    @commands.has_permissions(ban_members=True)
-    @helpers.in_academy()
-    async def detain_member(self, ctx, *, member: discord.Member):
-        """Place member into detention."""
-        embed = await helpers.update_roles(
-            member,
-            discord.utils.get(ctx.guild.roles, name='Student'),   # Remove
-            discord.utils.get(ctx.guild.roles, name='Detention')) # Add
-        await ctx.send(embed=embed)
-
-    @commands.command(name='undetain', hidden=True)
-    @commands.has_permissions(ban_members=True)
-    @helpers.in_academy()
-    async def undetain_member(self, ctx, *, member: discord.Member):
-        """Remove member from detention."""
-        embed = await helpers.update_roles(
-            member,
-            discord.utils.get(ctx.guild.roles, name='Detention'), # Remove
-            discord.utils.get(ctx.guild.roles, name='Student'))   # Add
-        await ctx.send(embed=embed)
-
     @commands.command(name='suspend', hidden=True)
     @commands.has_permissions(ban_members=True)
     @helpers.in_academy()
