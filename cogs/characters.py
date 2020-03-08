@@ -267,7 +267,7 @@ class Characters(commands.Cog):
             move = 'ustrong'
         elif move == 'coincapture':
             move = 'nspecial'
-        elif move == 'infinidagger':
+        elif move in ['infinidagger', 'propeller']:
             move = 'fspecial'
         elif move == 'anchor':
             move = 'uspecial'
