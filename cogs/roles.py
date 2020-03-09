@@ -175,6 +175,12 @@ class Roles(commands.Cog):
                 embed.set_footer(text=f'ID: {payload.user_id}')
                 action_log = discord.utils.get(guild.text_channels, name='action-log')
                 await action_log.send(embed=embed)
+        # Matchmaking
+        elif '' in message.content:
+            if emote == 'Matchmaking':
+                await member.add_roles(discord.utils.get(guild_roles, name='Matchmaking'))
+            elif emote == 'NewbieMatchmaking':
+                await member.add_roles(discord.utils.get(guild_roles, name='Newbie Matchmaking'))
 
     @commands.Cog.listener()
     async def on_raw_reaction_remove(self, payload):
@@ -202,6 +208,12 @@ class Roles(commands.Cog):
                 await member.remove_roles(discord.utils.get(guild_roles, name='Undergrad'))
             elif emote == 'EU':
                 await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
+        # Matchmaking
+        elif '' in message.content:
+            if emote == 'Matchmaking':
+                await member.remove_roles(discord.utils.get(guild_roles, name='Matchmaking'))
+            elif emote == 'NewbieMatchmaking':
+                await member.remove_roles(discord.utils.get(guild_roles, name='Newbie Matchmaking'))
 
     @commands.command(name='setyourroles')
     @helpers.in_channel('set-your-roles')
@@ -266,6 +278,25 @@ class Roles(commands.Cog):
             '• Click the <:roaa:547193418560962570> reaction below to enroll in the '
             'server and view the rest of the channels!')
         await msg.add_reaction(discord.utils.get(self.bot.emojis, name='roaa'))
+
+    @commands.command(name='setyourrolesmatchmaknig')
+    @helpers.in_channel('set-your-roles')
+    @helpers.in_academy()
+    @commands.is_owner()
+    async def set_your_roles_matchmaking_setup(self, ctx):
+        """Send and react to message to add matchmaking in #set-your-roles."""
+        await ctx.message.delete()  # Delete message of command
+        await ctx.send(file=discord.File('images/setyourroles/matchmaking.png'))
+        matchmaking = discord.utils.get(guild_roles, name='Matchmaking')
+        newbie_matchmaking = discord.utils.get(guild_roles, name='Newbie Matchmaking')
+        msg = await ctx.send(
+            f'• **Want to be notified by {matchmaking.mention} or {newbie_matchmaking.mention} '
+                 'pings? Click on a reaction below.**\n'
+            '• Click on the reaction again to opt out of notifications.\n'
+            '<:Matchmaking:686374327226335263> → General Matchmaking\n'
+            '<:NewbieMatchmaking:686374316979650572> → Newbie Matchmaking')
+        for emote in ['Matchmaking', 'NewbieMatchmaking']:
+            await msg.add_reaction(discord.utils.get(self.bot.emojis, name=emote))
 
     @commands.command(name='addstudent', hidden=True)
     @helpers.in_academy()
