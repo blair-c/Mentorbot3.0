@@ -287,7 +287,7 @@ class Roles(commands.Cog):
         """Send and react to message to add matchmaking in #set-your-roles."""
         await ctx.message.delete()  # Delete message of command
         await ctx.send(file=discord.File('images/setyourroles/matchmaking.png'))
-        guild_roles = guild.roles
+        guild_roles = ctx.guild.roles
         matchmaking = discord.utils.get(guild_roles, name='Matchmaking')
         newbie_matchmaking = discord.utils.get(guild_roles, name='Newbie Matchmaking')
         msg = await ctx.send(
