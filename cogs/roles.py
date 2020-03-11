@@ -135,7 +135,7 @@ class Roles(commands.Cog):
             if main_role not in member.roles:
                 await member.add_roles(discord.utils.get(guild_roles, name=emote))
         # Region
-        elif 'region' in message.content:
+        elif 'set your region' in message.content:
             # Remove previous region roles
             regions = [discord.utils.get(guild_roles, name=region) for region in
                       rivals.regions]
@@ -176,7 +176,7 @@ class Roles(commands.Cog):
                 action_log = discord.utils.get(guild.text_channels, name='action-log')
                 await action_log.send(embed=embed)
         # Matchmaking
-        elif '' in message.content:
+        elif 'Want to be notified by' in message.content:
             if emote == 'Matchmaking':
                 await member.add_roles(discord.utils.get(guild_roles, name='Matchmaking'))
             elif emote == 'NewbieMatchmaking':
@@ -200,7 +200,7 @@ class Roles(commands.Cog):
         if 'main' in message.content:
             await member.remove_roles(discord.utils.get(guild_roles, name=f'{emote} (Main)'))
         # Secondaries
-        elif 'secondary' in message.content:
+        elif 'secondaries' in message.content:
             await member.remove_roles(discord.utils.get(guild_roles, name=emote))
         # RAS
         elif 'amateur' in message.content:
@@ -209,7 +209,7 @@ class Roles(commands.Cog):
             elif emote == 'EU':
                 await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
         # Matchmaking
-        elif '' in message.content:
+        elif 'Want to be notified by' in message.content:
             if emote == 'Matchmaking':
                 await member.remove_roles(discord.utils.get(guild_roles, name='Matchmaking'))
             elif emote == 'NewbieMatchmaking':
