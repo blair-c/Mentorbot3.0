@@ -157,9 +157,9 @@ class Roles(commands.Cog):
                         await reaction.remove(user)
         # RAS
         elif 'amateur' in message.content:
-            if emote == 'NA':
+            if emote == 'NorthAmerica':
                 await member.add_roles(discord.utils.get(guild_roles, name='Undergrad'))
-            elif emote == 'EU':
+            elif emote == 'Europe':
                 await member.add_roles(discord.utils.get(guild_roles, name='amatEUr'))
         # Enrollment
         elif emote == 'roaa':
@@ -204,9 +204,9 @@ class Roles(commands.Cog):
             await member.remove_roles(discord.utils.get(guild_roles, name=emote))
         # RAS
         elif 'amateur' in message.content:
-            if emote == 'NA':
+            if emote == 'NorthAmerica':
                 await member.remove_roles(discord.utils.get(guild_roles, name='Undergrad'))
-            elif emote == 'EU':
+            elif emote == 'Europe':
                 await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
         # Matchmaking
         elif 'Want to be notified by' in message.content:
