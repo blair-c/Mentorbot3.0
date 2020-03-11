@@ -279,7 +279,7 @@ class Roles(commands.Cog):
             'server and view the rest of the channels!')
         await msg.add_reaction(discord.utils.get(self.bot.emojis, name='roaa'))
 
-    @commands.command(name='setyourrolesmatchmaknig')
+    @commands.command(name='setyourrolesmatchmaking')
     @helpers.in_channel('set-your-roles')
     @helpers.in_academy()
     @commands.is_owner()
