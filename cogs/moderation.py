@@ -67,6 +67,9 @@ class Moderation(commands.Cog):
         embed.add_field(
             name='Registered',
             value=f'{member.created_at:%a, %b %d, %Y at %I:%M %p}')
+        # Join position
+        join_position = sorted(ctx.guild.members, key=lambda m: m.joined_at).index(member) + 1
+        embed.add_field(name='Join Position', value=join_position, inline=False)
         # Member's status (eg. online, offline, invisible, etc.)
         embed.add_field(name='Status', value=member.status, inline=False)
         # Member's roles, excluding @everyone role
