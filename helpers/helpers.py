@@ -42,7 +42,8 @@ async def update_roles(member, remove, add):
     """Remove/add given roles, and return embed of info."""
     await member.remove_roles(remove)
     await member.add_roles(add)
-    if (sidebar := add.color) == discord.Color.default(): sidebar = 0x202225
+    if (sidebar := add.color) == discord.Color.default():
+        sidebar = 0x202225
     embed = discord.Embed(
         color=sidebar,
         description=f'**Updated roles for {member.mention}:**\n'
