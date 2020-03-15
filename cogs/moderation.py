@@ -55,8 +55,9 @@ class Moderation(commands.Cog):
         """Display information of given member."""
         if not member:
             member = ctx.author
+        if (sidebar := member.color) == discord.Color.default(): sidebar = 0x202225
         embed = discord.Embed(
-            color=member.color,
+            color=sidebar,
             description=member.mention,
             timestamp=datetime.utcnow())
         embed.set_author(name=member, icon_url=member.avatar_url)
