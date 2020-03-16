@@ -22,7 +22,7 @@ class ActionLog(commands.Cog):
         embed = discord.Embed(
             description=f'**#{channel.name}**',
             timestamp=(datetime.utcnow()))
-        embed.set_author(name='Channel Created', icon_url=guild.icon)
+        embed.set_author(name='Channel Created', icon_url=guild.icon_url)
         embed.set_footer(text=f'ID: {channel.id}')
         # Send in action-log
         await action_log.send(embed=embed)
@@ -37,7 +37,7 @@ class ActionLog(commands.Cog):
         embed = discord.Embed(
             description=f'**#{channel.name}**',
             timestamp=(datetime.utcnow()))
-        embed.set_author(name='Channel Deleted', icon_url=guild.icon)
+        embed.set_author(name='Channel Deleted', icon_url=guild.icon_url)
         embed.set_footer(text=f'ID: {channel.id}')
         # Send in action-log
         await action_log.send(embed=embed)
@@ -52,7 +52,7 @@ class ActionLog(commands.Cog):
         embed = discord.Embed(
             description=f'{role.mention} **',
             timestamp=(datetime.utcnow()))
-        embed.set_author(name='Role Created', icon_url=guild.icon)
+        embed.set_author(name='Role Created', icon_url=guild.icon_url)
         embed.set_footer(text=f'ID: {role.id}')
         # Send in action-log
         await action_log.send(embed=embed)
@@ -67,7 +67,7 @@ class ActionLog(commands.Cog):
         embed = discord.Embed(
             description=f'{role.mention} **',
             timestamp=(datetime.utcnow()))
-        embed.set_author(name='Role Deleted', icon_url=guild.icon)
+        embed.set_author(name='Role Deleted', icon_url=guild.icon_url)
         embed.set_footer(text=f'ID: {role.id}')
         # Send in action-log
         await action_log.send(embed=embed)
