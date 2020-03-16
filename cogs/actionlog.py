@@ -13,6 +13,66 @@ class ActionLog(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
+    async def on_guild_channel_create(self, channel):
+        """Log that channel has been created."""
+        # Check that action-log channel exists and is viewable
+        if not (guild := channel.guild): return
+        if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
+        # Log channel creation
+        embed = discord.Embed(
+            description=f'**#{channel.name}**',
+            timestamp=(datetime.utcnow()))
+        embed.set_author(name='Channel Created', icon_url=guild.icon)
+        embed.set_footer(text=f'ID: {channel.id}')
+        # Send in action-log
+        await action_log.send(embed=embed)
+
+    @commands.Cog.listener()
+    async def on_guild_channel_delete(self, channel):
+        """Log that channel has been deleted."""
+        # Check that action-log channel exists and is viewable
+        if not (guild := channel.guild): return
+        if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
+        # Log channel deletion
+        embed = discord.Embed(
+            description=f'**#{channel.name}**',
+            timestamp=(datetime.utcnow()))
+        embed.set_author(name='Channel Deleted', icon_url=guild.icon)
+        embed.set_footer(text=f'ID: {channel.id}')
+        # Send in action-log
+        await action_log.send(embed=embed)
+
+    @commands.Cog.listener()
+    async def on_guild_role_create(self, role):
+        """Log that role has been created."""
+        # Check that action-log channel exists and is viewable
+        if not (guild := role.guild): return
+        if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
+        # Log role creation
+        embed = discord.Embed(
+            description=f'{role.mention} **',
+            timestamp=(datetime.utcnow()))
+        embed.set_author(name='Role Created', icon_url=guild.icon)
+        embed.set_footer(text=f'ID: {role.id}')
+        # Send in action-log
+        await action_log.send(embed=embed)
+
+    @commands.Cog.listener()
+    async def on_guild_role_delete(self, role):
+        """Log that role has been deleted."""
+        # Check that action-log channel exists and is viewable
+        if not (guild := role.guild): return
+        if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
+        # Log role deletion
+        embed = discord.Embed(
+            description=f'{role.mention} **',
+            timestamp=(datetime.utcnow()))
+        embed.set_author(name='Role Deleted', icon_url=guild.icon)
+        embed.set_footer(text=f'ID: {role.id}')
+        # Send in action-log
+        await action_log.send(embed=embed)
+
+    @commands.Cog.listener()
     async def on_member_join(self, member):
         """Log that member has joined."""
         # Check that action-log channel exists and is viewable
