@@ -50,7 +50,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log role creation
         embed = discord.Embed(
-            description=f'{role.mention}',
+            description=f'**{role.name}**',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Created', icon_url=guild.icon_url)
         embed.set_footer(text=f'ID: {role.id}')
