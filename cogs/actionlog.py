@@ -66,19 +66,17 @@ class ActionLog(commands.Cog):
         # Log what attributes have been updated
         updated = '```\n'
         if before.name != after.name:  # Name
-            updated += f'- Name: {before.name} → {after.name}'
+            updated += f'- Name: {before.name} → {after.name}\n'
         if before.permissions != after.permissions:  # Permissions
-            updated += '- Permissions changed'
+            updated += '- Permissions changed\n'
         if before.color != after.color:  # Color
-            updated += f'- Color: {after.color}'
+            updated += f'- Color: {after.color}\n'
         if before.hoist != after.hoist:  # Sidebar position
-            updated += ('- Now separate on sidebar' if after.hoist else 
-                        '- No longer separate on sidebar')
+            updated += ('- Now separate on sidebar\n' if after.hoist else 
+                        '- No longer separate on sidebar\n')
         if before.mentionable != after.mentionable:  # Pingable
-            updated += ('- Now @mentionable' if after.mentionable else 
-                        '- No longer @mentionable')
-        if before.position != after.position:  # Role position
-            updated += ('- Role position changed')
+            updated += ('- Now @mentionable\n' if after.mentionable else 
+                        '- No longer @mentionable\n')
         # Don't log if none of these have been updated
         if updated == '```\n': return
         # Format
