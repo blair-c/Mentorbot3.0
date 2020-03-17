@@ -107,6 +107,22 @@ class ActionLog(commands.Cog):
         await action_log.send(embed=embed)
 
     @commands.Cog.listener()
+    async def on_member_ban(self, guild, user):
+        """Log that member has been banned."""
+        # Check that action-log channel exists and is viewable
+        if not guild: return
+        if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
+        # Log member ban
+        embed = discord.Embed(
+            color=0x701f1f,
+            description=f'**{str(user)}**',
+            timestamp=(datetime.utcnow()))
+        embed.set_author(name='Member Banned', icon_url=user.avatar_url)
+        embed.set_footer(text=f'ID: {user.id}')
+        # Send in action-log
+        await action_log.send(embed=embed)
+
+    @commands.Cog.listener()
     async def on_member_join(self, member):
         """Log that member has joined."""
         # Check that action-log channel exists and is viewable
