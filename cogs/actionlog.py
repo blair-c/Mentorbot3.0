@@ -61,7 +61,7 @@ class ActionLog(commands.Cog):
     async def on_guild_role_update(self, before, after):
         """Log that role has been updated."""
         # Check that action-log channel exists and is viewable
-        if not (guild := role.guild): return
+        if not (guild := after.guild): return
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log what attributes have been updated
         updated = '```\n'
@@ -84,10 +84,10 @@ class ActionLog(commands.Cog):
         # Format
         updated += '```'
         embed = discord.Embed(
-            description=f'**{role.name}** {role.mention}\n{updated}'
+            description=f'**{after.name}** {after.mention}\n{updated}'
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Updated', icon_url=guild.icon_url)
-        embed.set_footer(text=f'ID: {role.id}')
+        embed.set_footer(text=f'ID: {after.id}')
         # Send in action-log
         await action_log.send(embed=embed)
 
