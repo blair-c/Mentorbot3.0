@@ -30,7 +30,7 @@ def character_role(guild, cursor, character, main=False):
         return discord.utils.get(guild.roles, character['name'])
 
 
-def discord_color(color):
+def sidebar_color(color):
     """Return default sidebar color for default role and member colors."""
     if color == discord.Color.default():
         return 0x202225
@@ -50,9 +50,8 @@ async def update_roles(member, remove, add):
     """Remove/add given roles, and return embed of info."""
     await member.remove_roles(remove)
     await member.add_roles(add)
-    sidebar = discord_color(add.color)
     embed = discord.Embed(
-        color=sidebar,
+        color=sidebar_color(add.color),
         description=f'**Updated roles for {member.mention}:**\n'
                     '```diff\n'
                     f'- {remove.name}\n'
