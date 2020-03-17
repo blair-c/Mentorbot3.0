@@ -30,6 +30,14 @@ def character_role(guild, cursor, character, main=False):
         return discord.utils.get(guild.roles, character['name'])
 
 
+def discord_color(color):
+    """Return default sidebar color for default role and member colors."""
+    if color == discord.Color.default():
+        return 0x202225
+    else:
+        return color
+
+
 def get_nickname(member):
     """Return member's nickname, and if it is their default name."""
     if member.nick:
@@ -42,8 +50,7 @@ async def update_roles(member, remove, add):
     """Remove/add given roles, and return embed of info."""
     await member.remove_roles(remove)
     await member.add_roles(add)
-    if (sidebar := add.color) == discord.Color.default():
-        sidebar = 0x202225
+    sidebar = discord_color(add.color)
     embed = discord.Embed(
         color=sidebar,
         description=f'**Updated roles for {member.mention}:**\n'
@@ -62,6 +69,7 @@ def in_academy():
     async def predicate(ctx):
         return ctx.message.guild.id in [252352512332529664, 475599187812155392]
     return commands.check(predicate)
+
 
 def in_channel(name):
     """Check that command is in channel of given name."""
