@@ -118,6 +118,7 @@ class ActionLog(commands.Cog):
             description=f'**{str(user)}**',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Member Banned', icon_url=user.avatar_url)
+        embed.set_thumbnail(url=user.avatar_url)
         embed.set_footer(text=f'ID: {user.id}')
         # Send in action-log
         await action_log.send(embed=embed)
@@ -134,6 +135,7 @@ class ActionLog(commands.Cog):
             description=f'{member.mention} **{str(member)}**',
             timestamp=(joined_at := datetime.utcnow()))
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
+        embed.set_thumbnail(url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
         # Note if user joined within 1 day of account creation
         if (joined_at - member.created_at) < timedelta(days=1):
@@ -153,6 +155,7 @@ class ActionLog(commands.Cog):
             description=f'{member.mention} **{str(member)}**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
+        embed.set_thumbnail(url=member.avatar_url)
         embed.set_footer(text=f'ID: {member.id}')
         # Ping principals if member was a mentor (only in Academy/test server)
         ping = ''
