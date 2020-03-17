@@ -172,6 +172,7 @@ class Roles(commands.Cog):
                     description=f'{member.mention} **{str(member)}**',
                     timestamp=datetime.utcnow())
                 embed.set_author(name='Member Enrolled', icon_url=member.avatar_url)
+                embed.set_thumbnail(url=user.avatar_url)
                 embed.set_footer(text=f'ID: {payload.user_id}')
                 action_log = discord.utils.get(guild.text_channels, name='action-log')
                 await action_log.send(embed=embed)
