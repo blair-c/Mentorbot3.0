@@ -181,7 +181,7 @@ class ActionLog(commands.Cog):
         if before.nick == after.nick: return
         # Log nickname change
         embed = discord.Embed(
-            color=0x7e57c2,
+            color=0xebd863,
             description=f'{before.mention} **nickname changed**',
             timestamp=datetime.utcnow())
         embed.set_author(name=f'{str(before)}', icon_url=before.avatar_url)
