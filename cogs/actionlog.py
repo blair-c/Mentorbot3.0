@@ -112,7 +112,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log member ban
         embed = discord.Embed(
-            color=0x701f1f,
+            color=0xa83e1d,
             description=f'**{str(user)}**',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Member Banned', icon_url=user.avatar_url)
