@@ -21,6 +21,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log channel creation
         embed = discord.Embed(
+            color=0x66b1bb,
             description=f'**#{channel.name}**',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Channel Created', icon_url=guild.icon_url)
@@ -36,6 +37,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log channel deletion
         embed = discord.Embed(
+            color=0xbb66a4,
             description=f'**#{channel.name}**',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Channel Deleted', icon_url=guild.icon_url)
@@ -52,6 +54,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log role creation
         embed = discord.Embed(
+            color=0x66b1bb,
             description=f'**{role.name}** {role.mention}',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Created', icon_url=guild.icon_url)
@@ -84,6 +87,7 @@ class ActionLog(commands.Cog):
         # Format
         updated += '```'
         embed = discord.Embed(
+            color=0xbb66a4,
             description=f'**{after.name}** {after.mention}\n{updated}',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Updated', icon_url=guild.icon_url)
