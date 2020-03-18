@@ -103,6 +103,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log role deletion
         embed = discord.Embed(
+            color=0xbb66a4,
             description=f'**{role.name}**',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Deleted', icon_url=guild.icon_url)
