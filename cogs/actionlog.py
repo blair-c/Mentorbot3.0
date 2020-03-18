@@ -87,7 +87,7 @@ class ActionLog(commands.Cog):
         # Format
         updated += '```'
         embed = discord.Embed(
-            color=0xbb66a4,
+            color=0x9d66bb,
             description=f'**{after.name}** {after.mention}\n{updated}',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Updated', icon_url=guild.icon_url)
