@@ -21,7 +21,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log channel creation
         embed = discord.Embed(
-            color=0x668fbb,
+            color=0x8ab6e6,
             description=f'**#{channel.name}**',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Channel Created', icon_url=guild.icon_url)
@@ -37,7 +37,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log channel deletion
         embed = discord.Embed(
-            color=0xbb66a4,
+            color=0xe68acd,
             description=f'**#{channel.name}**',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Channel Deleted', icon_url=guild.icon_url)
@@ -54,7 +54,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log role creation
         embed = discord.Embed(
-            color=0x668fbb,
+            color=0x8ab6e6,
             description=f'**{role.name}** {role.mention}',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Created', icon_url=guild.icon_url)
@@ -87,7 +87,7 @@ class ActionLog(commands.Cog):
         # Format
         updated += '```'
         embed = discord.Embed(
-            color=0x8e66bb,
+            color=0xb58ae6,
             description=f'**{after.name}** {after.mention}\n{updated}',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Updated', icon_url=guild.icon_url)
@@ -103,7 +103,7 @@ class ActionLog(commands.Cog):
         if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
         # Log role deletion
         embed = discord.Embed(
-            color=0xbb66a4,
+            color=0xe68acd,
             description=f'**{role.name}**',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Deleted', icon_url=guild.icon_url)
