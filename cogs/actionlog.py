@@ -12,6 +12,7 @@ class ActionLog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    # Channel logging
     @commands.Cog.listener()
     async def on_guild_channel_create(self, channel):
         """Log that channel has been created."""
@@ -42,6 +43,7 @@ class ActionLog(commands.Cog):
         # Send in action-log
         await action_log.send(embed=embed)
 
+    # Role logging
     @commands.Cog.listener()
     async def on_guild_role_create(self, role):
         """Log that role has been created."""
@@ -104,6 +106,7 @@ class ActionLog(commands.Cog):
         # Send in action-log
         await action_log.send(embed=embed)
 
+    # Member logging
     @commands.Cog.listener()
     async def on_member_ban(self, guild, user):
         """Log that member has been banned."""
@@ -192,6 +195,7 @@ class ActionLog(commands.Cog):
         # Send in action-log
         await action_log.send(embed=embed)
 
+    # Message logging
     @commands.Cog.listener()
     async def on_message_delete(self, message):
         """Display info of deleted message in action-log channel."""
