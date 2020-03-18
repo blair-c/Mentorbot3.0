@@ -130,7 +130,7 @@ class ActionLog(commands.Cog):
         # Log member join
         embed = discord.Embed(
             color=0x66bb6a,
-            description=f'{member.mention} **{str(member)}**',
+            description=f'{member.mention}\n**{str(member)}**',
             timestamp=(joined_at := datetime.utcnow()))
         embed.set_author(name='Member Joined', icon_url=member.avatar_url)
         embed.set_thumbnail(url=member.avatar_url)
@@ -150,7 +150,7 @@ class ActionLog(commands.Cog):
         # Log member removal
         embed = discord.Embed(
             color=0xff7043,
-            description=f'{member.mention} **{str(member)}**',
+            description=f'{member.mention}\n**{str(member)}**',
             timestamp=datetime.utcnow())
         embed.set_author(name='Member Left', icon_url=member.avatar_url)
         embed.set_thumbnail(url=member.avatar_url)

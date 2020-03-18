@@ -169,7 +169,7 @@ class Roles(commands.Cog):
                 # Display enrollment in action-log
                 embed = discord.Embed(
                     color=0xfefefe,
-                    description=f'{member.mention} **{str(member)}**',
+                    description=f'{member.mention}\n**{str(member)}**',
                     timestamp=datetime.utcnow())
                 embed.set_author(name='Member Enrolled', icon_url=member.avatar_url)
                 embed.set_thumbnail(url=user.avatar_url)
