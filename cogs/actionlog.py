@@ -169,6 +169,30 @@ class ActionLog(commands.Cog):
         await action_log.send(content=ping, embed=embed)
 
     @commands.Cog.listener()
+    async def on_member_update(self, before, after):
+        """Display in action-log channel that member's nickname has changed."""
+        # Check that action-log channel exists and is viewable
+        if not (guild := before.guild): return
+        if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
+        # Ensure that nickname has changed
+        if before.nick == after.nick: return
+        # Log nickname change
+        embed = discord.Embed(
+            color=0x7e57c2,
+            description=f'{before.mention} **nickname changed**',
+            timestamp=datetime.utcnow())
+        embed.set_author(name=f'{str(before)}', icon_url=before.avatar_url)
+        embed.set_footer(text=f'ID: {before.id}')
+        # Before nickname change
+        embed.add_field(name='Before:', value=f'```{helpers.get_nickname(before)}```',
+                        inline=False)
+        # After nickname change
+        embed.add_field(name='After:', value=f'```{helpers.get_nickname(after)}```',
+                        inline=False)
+        # Send in action-log
+        await action_log.send(embed=embed)
+
+    @commands.Cog.listener()
     async def on_message_delete(self, message):
         """Display info of deleted message in action-log channel."""
         # Check that action-log channel exists and is viewable
@@ -210,30 +234,6 @@ class ActionLog(commands.Cog):
         # After edit
         if after.content:
             embed.add_field(name='After:', value=f'```{after.clean_content}```', inline=False)
-        # Send in action-log
-        await action_log.send(embed=embed)
-
-    @commands.Cog.listener()
-    async def on_member_update(self, before, after):
-        """Display in action-log channel that member's nickname has changed."""
-        # Check that action-log channel exists and is viewable
-        if not (guild := before.guild): return
-        if not (action_log := discord.utils.get(guild.text_channels, name='action-log')): return
-        # Ensure that nickname has changed
-        if before.nick == after.nick: return
-        # Log nickname change
-        embed = discord.Embed(
-            color=0x7e57c2,
-            description=f'{before.mention} **nickname changed**',
-            timestamp=datetime.utcnow())
-        embed.set_author(name=f'{str(before)}', icon_url=before.avatar_url)
-        embed.set_footer(text=f'ID: {before.id}')
-        # Before nickname change
-        embed.add_field(name='Before:', value=f'```{helpers.get_nickname(before)}```',
-                        inline=False)
-        # After nickname change
-        embed.add_field(name='After:', value=f'```{helpers.get_nickname(after)}```',
-                        inline=False)
         # Send in action-log
         await action_log.send(embed=embed)
 
