@@ -51,10 +51,19 @@ class Moderation(commands.Cog):
 
     @commands.command(name='whois', hidden=True)
     @commands.has_permissions(ban_members=True)
-    async def display_member_info(self, ctx, *, member: discord.Member = None):
+    async def display_member_info(self, ctx, *name):
         """Display information of given member."""
-        if not member:
+        if name:
+            for m in ctx.guild.members:
+                if (name in [m.mention, m.id] or
+                ''.join(name).lower() in [i.lower().replace(' ', '') for i in [m.name, str(m)]]):
+                    member = m
+                    break
+            else:
+                return
+        else:
             member = ctx.author
+        # Member info
         embed = discord.Embed(
             color=helpers.sidebar_color(member.color),
             description=member.mention,
