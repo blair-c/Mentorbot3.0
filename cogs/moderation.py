@@ -56,7 +56,7 @@ class Moderation(commands.Cog):
         if name:
             name = ''.join(name)
             for m in ctx.guild.members:
-                if (str(name) in [m.mention, str(m.id)]
+                if (str(name) in [str(m.mention), str(m.id)]
                 or name.lower() in [i.lower().replace(' ', '') for i in [m.name, str(m)]]):
                     member = m
                     break
