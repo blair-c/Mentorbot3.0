@@ -30,20 +30,20 @@ def character_role(guild, cursor, character, main=False):
         return discord.utils.get(guild.roles, character['name'])
 
 
-def sidebar_color(color):
-    """Return default sidebar color for default role and member colors."""
-    if color == discord.Color.default():
-        return 0x202225
-    else:
-        return color
-
-
 def get_nickname(member):
     """Return member's nickname, and if it is their default name."""
     if member.nick:
         return member.nick
     else:
         return f'{member.display_name} (No nickname)'
+
+
+def sidebar_color(color):
+    """Return default sidebar color for default role and member colors."""
+    if color == discord.Color.default():
+        return 0x202225
+    else:
+        return color
 
 
 async def update_roles(member, remove, add):
