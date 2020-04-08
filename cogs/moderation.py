@@ -55,10 +55,9 @@ class Moderation(commands.Cog):
         """Display information of given member."""
         if name:
             name = ''.join(name)
-            ctx.send(name)
             for m in ctx.guild.members:
-                if (name in [m.mention, str(m.id)]
-                or name.lower() in [i.lower().replace(' ', '') for i in [m.name, str(m)]]):
+                if name.lower() in [i.lower().replace(' ', '') for i in [m.name, str(m), m.id]])
+                or m in ctx.message.mentions:
                     member = m
                     break
             else:
