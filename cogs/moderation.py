@@ -54,6 +54,7 @@ class Moderation(commands.Cog):
     async def display_member_info(self, ctx, *member):
         """Display information of given member."""
         if not member: return
+        member = ''.join(member).lower()
         member = helpers.get_member(ctx, member)
         if not member:
             member = ctx.author
@@ -120,7 +121,9 @@ class Moderation(commands.Cog):
     async def suspend_member(self, ctx, *member):
         """Place member into suspension."""
         if not member: return
+        member = ''.join(member).lower()
         member = helpers.get_member(ctx, member)
+        if not member: return
         embed = await helpers.update_roles(
             member,
             discord.utils.get(ctx.guild.roles, name='Student'),    # Remove
@@ -133,7 +136,9 @@ class Moderation(commands.Cog):
     async def unsuspend_member(self, ctx, *member):
         """Remove member from suspension."""
         if not member: return
+        member = ''.join(member).lower()
         member = helpers.get_member(ctx, member)
+        if not member: return
         embed = await helpers.update_roles(
             member,
             discord.utils.get(ctx.guild.roles, name='Suspension'), # Remove
