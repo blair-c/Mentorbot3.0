@@ -62,7 +62,7 @@ async def update_roles(member, remove, add):
     await member.add_roles(add)
     embed = discord.Embed(
         color=sidebar_color(add.color),
-        description=f'**Updated roles for {member.mention}:**\n'
+        description=f'**Updated roles for {member.mention} {str(member)}:**\n'
                     '```diff\n'
                     f'- {remove.name}\n'
                     f'+ {add.name}```',
