@@ -30,7 +30,7 @@ def character_role(guild, cursor, character, main=False):
         return discord.utils.get(guild.roles, character['name'])
 
 
-async def get_member(ctx, info):
+def get_member(ctx, info):
     """Get member in server from given info."""
     for m in ctx.guild.members:
         if (m in ctx.message.mentions
