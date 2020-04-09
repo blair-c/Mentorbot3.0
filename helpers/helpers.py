@@ -30,6 +30,17 @@ def character_role(guild, cursor, character, main=False):
         return discord.utils.get(guild.roles, character['name'])
 
 
+async def get_member(ctx, *info):
+    """Get member in server from given info."""
+    info = ''.join(info)
+    for m in ctx.guild.members:
+        if (m in ctx.message.mentions
+        or info.lower() in [str(i).lower().replace(' ', '') for i in [m, m.name, m.id]]):
+            return m
+    else:
+        return None
+
+
 def get_nickname(member):
     """Return member's nickname, and if it is their default name."""
     if member.nick:

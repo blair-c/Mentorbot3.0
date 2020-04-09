@@ -51,20 +51,13 @@ class Moderation(commands.Cog):
 
     @commands.command(name='whois', hidden=True)
     @commands.has_permissions(ban_members=True)
-    async def display_member_info(self, ctx, *name):
+    async def display_member_info(self, ctx, *member):
         """Display information of given member."""
-        if name:
-            name = ''.join(name)
-            for m in ctx.guild.members:
-                if (m in ctx.message.mentions
-                or name.lower() in [str(i).lower().replace(' ', '') for i in [m, m.name, m.id]]):
-                    member = m
-                    break
-            else:
-                return
-        else:
+        if not member: return
+        member = helpers.get_member(ctx, member)
+        if not member:
             member = ctx.author
-        # Member info
+        # Display info
         embed = discord.Embed(
             color=helpers.sidebar_color(member.color),
             description=member.mention,
@@ -124,8 +117,10 @@ class Moderation(commands.Cog):
     @commands.command(name='suspend', hidden=True)
     @commands.has_permissions(ban_members=True)
     @helpers.in_academy()
-    async def suspend_member(self, ctx, *, member: discord.Member):
+    async def suspend_member(self, ctx, *member):
         """Place member into suspension."""
+        if not member: return
+        member = helpers.get_member(ctx, member)
         embed = await helpers.update_roles(
             member,
             discord.utils.get(ctx.guild.roles, name='Student'),    # Remove
@@ -135,8 +130,10 @@ class Moderation(commands.Cog):
     @commands.command(name='unsuspend', hidden=True)
     @commands.has_permissions(ban_members=True)
     @helpers.in_academy()
-    async def unsuspend_member(self, ctx, *, member: discord.Member):
+    async def unsuspend_member(self, ctx, *member):
         """Remove member from suspension."""
+        if not member: return
+        member = helpers.get_member(ctx, member)
         embed = await helpers.update_roles(
             member,
             discord.utils.get(ctx.guild.roles, name='Suspension'), # Remove
