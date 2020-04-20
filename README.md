@@ -20,10 +20,16 @@ The syntax for these commands is <kbd>![character] [move]</kbd>. Multiple charac
 title="Hitbox Command Demo" alt="hitbox command demo" width="600"/><br clear="all"/>
 
 ### Informational Commands
+
 Mentorbot includes a growing list of informational and reference commands, from in-game stats to competitive strategy guides.
-![info command examples](https://i.imgur.com/9EWyWUQ.png "Info Commands")
+
+<img src="https://i.imgur.com/9EWyWUQ.png" align="left"
+title="Info Commands" alt="info commands examples" width="800"/><br clear="all"/>
+
 <kbd>!commands</kbd> provides a full list of available info commands, as seen below.
-![info commands list](https://i.imgur.com/CP9TqoM.png "Info Commands List")
+
+<img src="https://i.imgur.com/CP9TqoM.png" align="left" 
+title="Info Commands List" alt="info commands list" width="600"/><br clear="all"/>
 
 ### Server Moderation
 #### Commands
