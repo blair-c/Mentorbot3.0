@@ -29,7 +29,7 @@ title="Info Commands" alt="info commands examples" width="800"/><br clear="all"/
 <kbd>!commands</kbd> provides a full list of available info commands, as seen below.
 
 <img src="https://i.imgur.com/CP9TqoM.png" align="left" 
-title="Info Commands List" alt="info commands list" width="600"/><br clear="all"/>
+title="Info Commands List" alt="info commands list" width="500"/><br clear="all"/>
 
 ### Server Moderation
 #### Commands
