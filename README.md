@@ -23,7 +23,7 @@ title="Hitbox Command Demo" alt="hitbox command demo" width="600"/><br clear="al
 
 Mentorbot includes a growing list of informational and reference commands, from in-game stats to competitive strategy guides.
 
-<img src="https://i.imgur.com/9EWyWUQ.png" align="left"
+<img src="https://i.imgur.com/lTucvU1.png" align="left"
 title="Info Commands" alt="info commands examples" width="800"/><br clear="all"/>
 
 <kbd>!commands</kbd> provides a full list of available info commands, as seen below.
