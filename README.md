@@ -8,7 +8,7 @@ See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [
 ## Universal Features
 
 ### Hitbox Commands
-Hitbox commands provide detailed frame data and hitbox images for any move in the game, covering the movesets of all 14 characters.
+Mentorbot's hitbox commands provide detailed frame data and hitbox images for any move in the game, covering the movesets of all 14 characters.
 <br />
 <img src="https://i.imgur.com/ZMwQbvT.png" align="left"
 title="Hitbox Commands" alt="hitbox commands examples" width="800"/>
