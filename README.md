@@ -12,7 +12,7 @@ Hitbox commands provide detailed frame data and hitbox images for any move in th
 <br />
 <img src="https://i.imgur.com/ZMwQbvT.png" alt="hitbox commands examples" title="Hitbox Commands"/>
 <br clear="all" />
-The syntax for these commands is `![character] [move]`. Multiple character and move names are supported.
+The syntax for these commands is <kbd>![character] [move]</kbd>. Multiple character and move names are supported.
 <br />
 <img src="https://i.imgur.com/vKaR7Oy.png" align="left" 
 alt="hitbox command demo" title="Hitbox Command Demo" width="600"/>
