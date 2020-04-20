@@ -8,11 +8,15 @@ See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [
 ## Universal Features
 
 ### Hitbox Commands
+Hitbox commands provide detailed frame data and hitbox images for any move in the game, covering the movesets of all 14 characters.
 ![hitbox commands examples](https://i.imgur.com/ZMwQbvT.png "Hitbox Commands")
+The syntax for these commands is `![character] [move]`. Multiple character and move names are supported.
 ![hitbox command demo](https://i.imgur.com/vKaR7Oy.png "Hitbox Command Demo")
 
 ### Informational Commands
+Mentorbot includes a growing list of informational and reference commands, from in-game stats to competitive strategy guides.
 ![info command examples](https://i.imgur.com/raYJU3G.png "Info Commands")
+The `!commands` command provides a full list of available info commands, as seen below.
 ![info commands list](https://i.imgur.com/CP9TqoM.png "Info Commands List")
 
 ### Server Moderation
