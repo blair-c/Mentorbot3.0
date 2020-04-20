@@ -20,7 +20,7 @@ See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [
 ![whois command](https://i.imgur.com/so0HtFk.png "Whois Command")
 ![clear command demo](https://i.imgur.com/W0aTDBd.png "Clear Command Demo")
 #### Action Logging
-![action-log examples](https://i.imgur.com/YgIRh6x.png "Action-Log Examples")
+![action-log examples](https://i.imgur.com/8dbzh9X.png "Action-Log Examples")
 
 
 ## Academy-Specific Features
