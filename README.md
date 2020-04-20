@@ -26,6 +26,7 @@ See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [
 ## Academy-Specific Features
 
 ### Mentor Commands
+![mentor commands examples](https://i.imgur.com/Xzg0na9.png "Mentor Commands")
 #### Management
 ![mentor management demo]( "Mentor Management Demo")
 
