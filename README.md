@@ -12,7 +12,7 @@ Mentorbot's hitbox commands provide detailed frame data and hitbox images for an
 <br />
 <img src="https://i.imgur.com/ZMwQbvT.png" align="left"
 title="Hitbox Commands" alt="hitbox commands examples" width="800"/>
-<br clear="all"/>
+<br clear="all"/><br \>
 The syntax for these commands is <kbd>![character] [move]</kbd>. Multiple character and move names are supported.
 <br />
 <img src="https://i.imgur.com/vKaR7Oy.png" align="left" 
