@@ -15,7 +15,7 @@ The syntax for these commands is `![character] [move]`. Multiple character and m
 
 ### Informational Commands
 Mentorbot includes a growing list of informational and reference commands, from in-game stats to competitive strategy guides.
-![info command examples](https://i.imgur.com/raYJU3G.png "Info Commands")
+![info command examples](https://i.imgur.com/9EWyWUQ.png "Info Commands")
 The `!commands` command provides a full list of available info commands, as seen below.
 ![info commands list](https://i.imgur.com/CP9TqoM.png "Info Commands List")
 
