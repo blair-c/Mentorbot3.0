@@ -10,8 +10,7 @@ See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [
 ### Hitbox Commands
 Hitbox commands provide detailed frame data and hitbox images for any move in the game, covering the movesets of all 14 characters.
 <br />
-<img src="https://i.imgur.com/ZMwQbvT.png" align="left" 
-alt="hitbox commands examples" title="Hitbox Commands" width="800"/>
+<img src="https://i.imgur.com/ZMwQbvT.png" alt="hitbox commands examples" title="Hitbox Commands"/>
 <br clear="all" />
 The syntax for these commands is `![character] [move]`. Multiple character and move names are supported.
 ![hitbox command demo](https://i.imgur.com/vKaR7Oy.png "Hitbox Command Demo")
