@@ -57,19 +57,27 @@ title="!Clear Command" alt="!clear command" width="300"/><br clear="all"/>
 
 ### Mentor Commands
 
+Character and region-based mentor commands list the Discord profiles of mentors, trial mentors, and advisors for that character or region.
+
 <img src="https://i.imgur.com/8Iftgz7.png" align="left"
 title="Mentor Commands" alt="mentor commands examples" width="800"/><br clear="all"/>
 
 #### Management
 
-![mentor management demo]( "Mentor Management Demo")
+Mentors can manage where they appear on these commands through <kbd>!dnd</kbd> and <kbd>!mentor</kbd>/<kbd>!advisor</kbd> commands.
 
+![mentor management demo]( "Mentor Management Demo")
 
 ### Role Management
 
-![set-your-roles](https://i.imgur.com/fIjcHbz.png "Set-Your-Roles")
+Major role management is handled by Mentorbot's role reaction system in the <kbd>#set-your-roles</kbd> channel. Members set their main and secondary characters, region, and more by adding and removing message reactions.
+
+<img src="https://i.imgur.com/fIjcHbz.png" align="left" 
+title="Set-Your-Roles" alt="set-your-roles" width="300"/><br clear="all"/>
 
 #### Moderation
+
+<kbd>!suspend</kbd> and <kbd>!unsuspend</kbd> provide simple command-based role management for server moderators.
 
 ![suspend/unsuspend commands]( "Suspend/Unsuspend Commands")
 
