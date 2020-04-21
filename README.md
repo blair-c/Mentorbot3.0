@@ -56,13 +56,21 @@ title="!Clear Command" alt="!clear command" width="300"/><br clear="all"/>
 ## Academy-Specific Features
 
 ### Mentor Commands
-![mentor commands examples](https://i.imgur.com/Xzg0na9.png "Mentor Commands")
+
+<img src="https://i.imgur.com/G9YIvD7.png" align="left"
+title="Mentor Commands" alt="mentor commands examples" width="800"/><br clear="all"/>
+
 #### Management
+
 ![mentor management demo]( "Mentor Management Demo")
 
+
 ### Role Management
+
 ![set-your-roles](https://i.imgur.com/fIjcHbz.png "Set-Your-Roles")
+
 #### Moderation
+
 ![suspend/unsuspend commands]( "Suspend/Unsuspend Commands")
 
 
