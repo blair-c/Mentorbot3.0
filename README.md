@@ -29,7 +29,7 @@ title="Info Commands" alt="info commands examples" width="800"/><br clear="all"/
 <kbd>!commands</kbd> provides a full list of available info commands, as seen below.
 
 <img src="https://i.imgur.com/CP9TqoM.png" align="left" 
-title="Info Commands List" alt="info commands list" width="500"/><br clear="all"/>
+title="Info Commands List" alt="info commands list" width="400"/><br clear="all"/>
 
 ### Server Moderation
 
@@ -45,12 +45,12 @@ title="Action-Log Examples" alt="action-log examples" width="800"/><br clear="al
 <kbd>!whois [member]</kbd> provides detailed information on a given member specified by username, @mention, or user ID. This command is only accessible to those with permissions to ban users.
 
 <img src="https://i.imgur.com/so0HtFk.png" align="left" 
-title="!Whois Command" alt="!whois command" width="500"/><br clear="all"/>
+title="!Whois Command" alt="!whois command" width="400"/><br clear="all"/>
 
 <kbd>!clear [n]</kbd> deletes the specified amount of messages from the current chat, and logs this into <kbd>#action-log</kbd>. To allow Mentorbot permissions to delete messages for this functionality, Mentorbot needs to be invited via [this link](https://discordapp.com/api/oauth2/authorize?client_id=475596740368793600&permissions=272384&scope=bot).
 
 <img src="https://i.imgur.com/W0aTDBd.png" align="left" 
-title="!Clear Command" alt="!clear command" width="500"/><br clear="all"/>
+title="!Clear Command" alt="!clear command" width="400"/><br clear="all"/>
 
 
 ## Academy-Specific Features
