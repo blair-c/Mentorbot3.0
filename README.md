@@ -45,7 +45,7 @@ title="Action-Log Examples" alt="action-log examples" width="800"/><br clear="al
 <kbd>!whois [member]</kbd> provides detailed information on a given member specified by username, @mention, or user ID. This command is only accessible to those with permissions to ban users.
 
 <img src="https://i.imgur.com/so0HtFk.png" align="left" 
-title="!Whois Command" alt="!whois command" width="500"/><br clear="all"/>
+title="!Whois Command" alt="!whois command" width="400"/><br clear="all"/>
 
 <kbd>!clear [n]</kbd> deletes the specified amount of messages from the current chat, and logs this into <kbd>#action-log</kbd>. This command is only accessible to those with permissions to manage messages. To enable this functionality, Mentorbot needs the required permissions to delete messages, and so needs to be invited via [this link](https://discordapp.com/api/oauth2/authorize?client_id=475596740368793600&permissions=272384&scope=bot).
 
