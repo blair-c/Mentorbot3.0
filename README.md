@@ -32,11 +32,25 @@ title="Info Commands" alt="info commands examples" width="800"/><br clear="all"/
 title="Info Commands List" alt="info commands list" width="500"/><br clear="all"/>
 
 ### Server Moderation
-#### Commands
-![whois command](https://i.imgur.com/so0HtFk.png "Whois Command")
-![clear command demo](https://i.imgur.com/W0aTDBd.png "Clear Command Demo")
+
 #### Action Logging
-![action-log examples](https://i.imgur.com/8dbzh9X.png "Action-Log Examples")
+
+Track edited and deleted messages, members joining and leaving, and other server actions via Mentorbot's action logging functionality. Enable this feature by creating a channel called <kbd>#action-log</kbd> and ensuring Mentorbot has permissions to send messages.
+
+<img src="https://i.imgur.com/8dbzh9X.png" align="left"
+title="Action-Log Examples" alt="action-log examples" width="800"/><br clear="all"/>
+
+#### Commands
+
+<kbd>!whois [member]</kbd> provides detailed information on a given member specified by username, @mention, or user ID. This command is only accessible to those with permissions to ban users.
+
+<img src="https://i.imgur.com/so0HtFk.png" align="left" 
+title="!Whois Command" alt="!whois command" width="500"/><br clear="all"/>
+
+<kbd>!clear [n]</kbd> deletes the specified amount of messages from the current chat, and logs this into <kbd>#action-log</kbd>. To allow Mentorbot permissions to delete messages for this functionality, Mentorbot needs to be invited via [this link](https://discordapp.com/api/oauth2/authorize?client_id=475596740368793600&permissions=272384&scope=bot).
+
+<img src="https://i.imgur.com/W0aTDBd.png" align="left" 
+title="!Clear Command" alt="!clear command" width="500"/><br clear="all"/>
 
 
 ## Academy-Specific Features
