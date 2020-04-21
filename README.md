@@ -73,7 +73,7 @@ Mentors can manage where they appear on these commands through <kbd>!dnd</kbd> a
 Major role management is handled by Mentorbot's role reaction system in the <kbd>#set-your-roles</kbd> channel. Members set their main and secondary characters, region, and more by adding and removing message reactions.
 
 <img src="https://i.imgur.com/fIjcHbz.png" align="left" 
-title="Set-Your-Roles" alt="set-your-roles" width="300"/><br clear="all"/>
+title="Set-Your-Roles" alt="set-your-roles" width="400"/><br clear="all"/>
 
 #### Moderation
 
