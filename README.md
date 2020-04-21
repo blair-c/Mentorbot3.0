@@ -57,7 +57,7 @@ title="!Clear Command" alt="!clear command" width="300"/><br clear="all"/>
 
 ### Mentor Commands
 
-<img src="https://i.imgur.com/G9YIvD7.png" align="left"
+<img src="https://i.imgur.com/8Iftgz7.png" align="left"
 title="Mentor Commands" alt="mentor commands examples" width="800"/><br clear="all"/>
 
 #### Management
