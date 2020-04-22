@@ -79,8 +79,8 @@ title="Set-Your-Roles" alt="set-your-roles" width="400"/><br clear="all"/>
 
 <kbd>!suspend</kbd> and <kbd>!unsuspend</kbd> provide simple command-based role management for server moderators.
 
-![suspend/unsuspend commands]( "Suspend/Unsuspend Commands")
-
+<img src="https://i.imgur.com/TrYIWoB.png" align="left" 
+title="!Suspend/!Unsuspend Commands" alt="!suspend/!unsuspend commands" width="700"/><br clear="all"/>
 
 ## Credits
 
