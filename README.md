@@ -66,7 +66,8 @@ title="Mentor Commands" alt="mentor commands examples" width="800"/><br clear="a
 
 Mentors can manage where they appear on these commands through <kbd>!dnd</kbd> and <kbd>!mentor</kbd>/<kbd>!advisor</kbd> commands.
 
-![mentor management demo]( "Mentor Management Demo")
+<img src="https://i.imgur.com/LCuivqK.png" align="left" 
+title="Mentor Management Demo" alt="mentor management demo" width="400"/><br clear="all"/>
 
 ### Role Management
 
