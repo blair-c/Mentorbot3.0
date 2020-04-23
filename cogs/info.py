@@ -189,7 +189,7 @@ class Info(commands.Cog):
         embed.add_field(
             name='`![character] [move]`',
             value='Multiple character and move names are supported, try it out!')
-        embed.set_image(url='https://i.imgur.com/iiLINcV.png')
+        embed.set_image(url='https://i.imgur.com/nHBfPyL.png')
         embed.set_footer(text='For non-hitbox commands, try !commands.')
         await ctx.send(embed=embed)
 

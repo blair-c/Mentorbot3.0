@@ -16,7 +16,7 @@ title="Hitbox Commands" alt="hitbox commands examples" width="800"/><br clear="a
 
 The syntax for these commands is <kbd>![character] [move]</kbd>. Multiple character and move names are supported.
 
-<img src="https://i.imgur.com/vKaR7Oy.png" align="left" 
+<img src="https://i.imgur.com/nHBfPyL.png" align="left" 
 title="Hitbox Command Demo" alt="hitbox command demo" width="600"/><br clear="all"/>
 
 ### Informational Commands
