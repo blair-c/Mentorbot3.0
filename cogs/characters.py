@@ -178,7 +178,9 @@ class Characters(commands.Cog):
         """Display Sylvanos mentors, or display info of move given."""
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
-        if move in ['seed', 'flower']:
+        if move in ['petalwave', 'wave', 'jabjabspecial', 'jabspecial']:
+            move == 'jab'
+        elif move in ['seed', 'flower']:
             move = 'nspecial'
         elif move == 'beastdash':
             move = 'fspecial'
