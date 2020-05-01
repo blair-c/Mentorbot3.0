@@ -76,6 +76,9 @@ class ActionLog(commands.Cog):
             updated += '- Permissions changed\n'
         if before.color != after.color:  # Color
             updated += f'- Color: {after.color}\n'
+            color = sidebar_color(after.color)
+        else:
+            color = 0xb58ae6
         if before.hoist != after.hoist:  # Sidebar position
             updated += ('- Now separate on sidebar\n' if after.hoist else 
                         '- No longer separate on sidebar\n')
@@ -87,7 +90,7 @@ class ActionLog(commands.Cog):
         # Format
         updated += '```'
         embed = discord.Embed(
-            color=0xb58ae6,
+            color=color,
             description=f'**{after.name}** {after.mention}\n{updated}',
             timestamp=(datetime.utcnow()))
         embed.set_author(name='Role Updated', icon_url=guild.icon_url)
