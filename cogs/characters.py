@@ -119,7 +119,7 @@ class Characters(commands.Cog):
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
         if move == 'slide':
-            move = 'da'
+            move = 'dashattack'
         elif move in ['hammer', 'armor', 'armour']:
             move = 'nspecial'
         elif move in ['icicle', 'icicles']:
