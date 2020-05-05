@@ -36,7 +36,7 @@ class Info(commands.Cog):
         await ctx.send(embed=embed)
 
     # Rivals Data
-    @commands.command(name='angleflippers')
+    @commands.command(name='angleflippers', aliases=['angleflipper', 'flippers', 'flipper'])
     async def angle_flippers(self, ctx, *formula):
         """Send display of angle flipper definitions."""
         definitions = ('```glsl\n'
