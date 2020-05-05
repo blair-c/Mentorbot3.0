@@ -118,7 +118,9 @@ class Characters(commands.Cog):
         """Display Etalus mentors, or display info of move given."""
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
-        if move in ['hammer', 'armor', 'armour']:
+        if move == 'slide':
+            move = 'da'
+        elif move in ['hammer', 'armor', 'armour']:
             move = 'nspecial'
         elif move in ['icicle', 'icicles']:
             move = 'fspecial'
