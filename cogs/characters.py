@@ -148,7 +148,9 @@ class Characters(commands.Cog):
         """Display Kragg mentors, or display info of move given."""
         move = ''.join(move).lower().replace('-', '')
         # Alternate move names
-        if move in ['rock', 'block', 'rockshine']:
+        if move == 'combos':  # lol
+            move = 'fair'
+        elif move in ['rock', 'block', 'rockshine']:
             move = 'nspecial'
         elif move == 'rollout':
             move = 'fspecial'
