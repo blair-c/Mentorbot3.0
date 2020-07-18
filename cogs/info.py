@@ -219,10 +219,11 @@ class Info(commands.Cog):
         """Link to Beefy Aether Doods video covering reverse aerial rush."""
         await ctx.send('https://www.youtube.com/watch?v=M8XgHJkAltw')
 
-    @commands.command(name='teching', aliases=['tech'])
+    @commands.command(name='teching', aliases=['tech', 'techroll'])
     async def beefy_teching(self, ctx):
         """Link to Beefy Aether Doods video covering teching."""
         await ctx.send('https://www.youtube.com/watch?v=tc781GiW20Q')
+        await ctx.send('https://cdn.discordapp.com/attachments/254803568308125706/730293957699043428/roaknockdownframedata-1.png')
 
     @commands.command(name='wavedash', aliases=['waveland', 'wavedashing', 'wavelanding'])
     async def beefy_wavedash_waveland(self, ctx):
