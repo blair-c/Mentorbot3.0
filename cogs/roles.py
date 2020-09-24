@@ -178,10 +178,22 @@ class Roles(commands.Cog):
                 await action_log.send(embed=embed)
         # Matchmaking
         elif 'Want to be notified by' in message.content:
-            if emote == 'Matchmaking':
-                await member.add_roles(discord.utils.get(guild_roles, name='Matchmaking'))
-            elif emote == 'NewbieMatchmaking':
-                await member.add_roles(discord.utils.get(guild_roles, name='Newbie Matchmaking'))
+            # Steam
+            if emote == 'SteamMatchmaking':
+                role = 'Matchmaking (Steam)'
+            elif emote == 'SteamNewbieMatchmaking':
+                role = 'Newbie Matchmaking (Steam)'
+            # Switch
+            elif emote == 'SwitchMatchmaking':
+                role = 'Matchmaking (Switch)'
+            elif emote == 'SwitchNewbieMatchmaking':
+                role = 'Newbie Matchmaking (Switch)'
+            # Xbox
+            elif emote == 'XboxMatchmaking':
+                role = 'Matchmaking (Xbox)'
+            elif emote == 'XboxNewbieMatchmaking':
+                role = 'Newbie Matchmaking (Xbox)'
+            await member.add_roles(discord.utils.get(guild_roles, name=role))
 
     @commands.Cog.listener()
     async def on_raw_reaction_remove(self, payload):
@@ -211,10 +223,22 @@ class Roles(commands.Cog):
                 await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
         # Matchmaking
         elif 'Want to be notified by' in message.content:
-            if emote == 'Matchmaking':
-                await member.remove_roles(discord.utils.get(guild_roles, name='Matchmaking'))
-            elif emote == 'NewbieMatchmaking':
-                await member.remove_roles(discord.utils.get(guild_roles, name='Newbie Matchmaking'))
+            # Steam
+            if emote == 'SteamMatchmaking':
+                role = 'Matchmaking (Steam)'
+            elif emote == 'SteamNewbieMatchmaking':
+                role = 'Newbie Matchmaking (Steam)'
+            # Switch
+            elif emote == 'SwitchMatchmaking':
+                role = 'Matchmaking (Switch)'
+            elif emote == 'SwitchNewbieMatchmaking':
+                role = 'Newbie Matchmaking (Switch)'
+            # Xbox
+            elif emote == 'XboxMatchmaking':
+                role = 'Matchmaking (Xbox)'
+            elif emote == 'XboxNewbieMatchmaking':
+                role = 'Newbie Matchmaking (Xbox)'
+            await member.remove_roles(discord.utils.get(guild_roles, name=role))
 
     @commands.command(name='setyourroles')
     @helpers.in_channel('set-your-roles')
@@ -288,16 +312,21 @@ class Roles(commands.Cog):
         """Send and react to message to add matchmaking in #set-your-roles."""
         await ctx.message.delete()  # Delete message of command
         await ctx.send(file=discord.File('images/setyourroles/matchmaking.png'))
-        guild_roles = ctx.guild.roles
-        matchmaking = discord.utils.get(guild_roles, name='Matchmaking')
-        newbie_matchmaking = discord.utils.get(guild_roles, name='Newbie Matchmaking')
         msg = await ctx.send(
-            f'• **Want to be notified by {matchmaking.mention} or {newbie_matchmaking.mention} '
-                 'pings? Click on a reaction below.**\n'
+            '• **Want to be notified by matchmaking pings? Click on a reaction below.**\n'
             '• Click on the reaction again to opt out of notifications.\n'
-            '<:Matchmaking:686374327226335263> → General Matchmaking\n'
-            '<:NewbieMatchmaking:686374316979650572> → Newbie Matchmaking')
-        for emote in ['Matchmaking', 'NewbieMatchmaking']:
+            # Steam
+            '<:SteamMatchmaking:758087699990315020> → General Matchmaking (Steam)\n'
+            '<:SteamNewbieMatchmaking:758087700237778994> → Newbie Matchmaking (Steam)\n'
+            # Switch
+            '<:SwitchMatchmaking:758087700363477074> → General Matchmaking (Switch)\n'
+            '<:SwitchNewbieMatchmaking:758087700468465725> → Newbie Matchmaking (Switch)\n'
+            # Xbox
+            '<:XboxMatchmaking:758087700405551175> → General Matchmaking (Xbox)\n'
+            '<:XboxNewbieMatchmaking:758087700309082182> → Newbie Matchmaking (Xbox)')
+        # Add reactions to msg
+        for emote in (['SteamMatchmaking', 'SteamNewbieMatchmaking', 'SwitchMatchmaking', 
+                     'SwitchNewbieMatchmaking', 'XboxMatchmaking', 'XboxNewbieMatchmaking']):
             await msg.add_reaction(discord.utils.get(self.bot.emojis, name=emote))
 
     @commands.command(name='addstudent', hidden=True)
