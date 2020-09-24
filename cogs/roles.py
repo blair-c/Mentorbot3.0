@@ -316,13 +316,13 @@ class Roles(commands.Cog):
             '• **Want to be notified by matchmaking pings? Click on a reaction below.**\n'
             '• Click on the reaction again to opt out of notifications.\n'
             # Steam
-            '<:SteamMatchmaking:758087699990315020> → General Matchmaking (Steam)\n'
+            '<:SteamMatchmaking:758087699990315020> → Matchmaking (Steam)\n'
             '<:SteamNewbieMatchmaking:758087700237778994> → Newbie Matchmaking (Steam)\n'
             # Switch
-            '<:SwitchMatchmaking:758087700363477074> → General Matchmaking (Switch)\n'
+            '<:SwitchMatchmaking:758087700363477074> → Matchmaking (Switch)\n'
             '<:SwitchNewbieMatchmaking:758087700468465725> → Newbie Matchmaking (Switch)\n'
             # Xbox
-            '<:XboxMatchmaking:758087700405551175> → General Matchmaking (Xbox)\n'
+            '<:XboxMatchmaking:758087700405551175> → Matchmaking (Xbox)\n'
             '<:XboxNewbieMatchmaking:758087700309082182> → Newbie Matchmaking (Xbox)')
         # Add reactions to msg
         for emote in (['SteamMatchmaking', 'SteamNewbieMatchmaking', 'SwitchMatchmaking', 
