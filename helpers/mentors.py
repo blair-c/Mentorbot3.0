@@ -9,7 +9,7 @@ import psycopg2
 from helpers import helpers
 
 
-DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = os.environ.get('DATABASE_URL')
 db = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
