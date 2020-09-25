@@ -1,9 +1,16 @@
 """Core functions for Mentorbot's character and region-based mentor commands."""
 
+import os
+
 import discord
 from discord.ext import commands
+import psycopg2
 
 from helpers import helpers
+
+
+DATABASE_URL = os.environ['DATABASE_URL']
+db = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 async def mentor_info(ctx, cursor, c=None, r=None):
