@@ -14,7 +14,7 @@ async def mentor_info(ctx, character=None, region=None):
         info = {'color': 3294334, 'icon': 'https://imgur.com/WPMrAhN.png'}
         selection = 'EU'
     else:
-        info =
+        info = rivals.characters[character]
         selection = character
     # Create embed
     embed = discord.Embed(
