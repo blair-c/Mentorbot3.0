@@ -13,7 +13,7 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
 db = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
-async def mentor_info(ctx, cursor, c=None, r=None):
+async def mentor_info(ctx, c=None, r=None):
     """Display an embed listing the mentors of given character/region."""
     # Get character/region name, color, and icon url
     info = helpers.character_info(cursor, character=c, region=r)
@@ -22,21 +22,15 @@ async def mentor_info(ctx, cursor, c=None, r=None):
         color=info['color'],
         title=f"Here's a list of our {info['name']} mentors and advisors:")
     embed.set_author(name='Great selection!', icon_url=info['icon'])
-    # Mentors
     bot = ctx.bot
-    mentors = mentors_of_status(bot, cursor, 'Mentor', c=c, r=r)
-    if mentors:
-        embed.add_field(name='Mentors', value=mentors, inline=False)
-    # Trial Mentors
-    trial_mentors = mentors_of_status(bot, cursor, 'Trial', c=c, r=r)
-    if trial_mentors:
-        embed.add_field(name='Trial Mentors', value=trial_mentors, inline=False)
-    # Advisors
-    advisors = mentors_of_status(bot, cursor, 'Advisor', c=c, r=r)
-    if advisors:
-        embed.add_field(name='Advisors', value=advisors, inline=False)
+    # Active
+    sections = {'Mentor': 'Mentors', 'Trial': 'Trial Mentors', 'Advisor': 'Advisors'}
+    for data_name, display in sections.items():
+        mentors = mentors_of_status(bot, data_name, c=c, r=r)
+        if mentors:
+            embed.add_field(name=display, value=mentors, inline=False)
     # DND
-    dnd = dnd_mentors(bot, cursor, c=c, r=r)
+    dnd = dnd_mentors(bot, c=c, r=r)
     if dnd:
         embed.add_field(name='Do Not Disturb', value=dnd, inline=False)
     # Send mentor info
