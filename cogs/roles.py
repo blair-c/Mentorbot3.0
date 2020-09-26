@@ -1,15 +1,11 @@
 from datetime import datetime
-import sqlite3
 
 import discord
 from discord.ext import commands
 
+from bot import db
 from data import rivals
 from helpers import helpers
-
-db = sqlite3.connect('data/academy.db')
-db.row_factory = sqlite3.Row
-cursor = db.cursor()
 
 
 class Roles(commands.Cog):
@@ -30,7 +26,7 @@ class Roles(commands.Cog):
         member = ctx.guild.get_member(ctx.author.id)
         # Mentors -> DND
         if mentors_role in ctx.author.roles:
-            dnd_value = 1
+            dnd_value = True
             # Change nickname
             try:
                 if ctx.author.display_name[:6] != '[DND] ':
@@ -41,7 +37,7 @@ class Roles(commands.Cog):
             embed = await helpers.update_roles(member, mentors_role, dnd_role)
         # DND -> Mentors
         elif dnd_role in ctx.author.roles:
-            dnd_value = 0
+            dnd_value = False
             # Change nickname
             try:
                 if ctx.author.display_name[6:] == ctx.author.name:
@@ -53,10 +49,9 @@ class Roles(commands.Cog):
             # Update roles and get embed
             embed = await helpers.update_roles(member, dnd_role, mentors_role)
         # Update database
-        with db:
-            cursor.execute(
-                '''UPDATE mentors SET do_not_disturb = :value WHERE discord_id = :id''',
-                {'value': dnd_value, 'id': ctx.author.id})
+        db.execute(
+            '''UPDATE mentors SET do_not_disturb = :value WHERE discord_id = :id''',
+            {'value': dnd_value, 'id': ctx.author.id})
         await ctx.send(embed=embed)
 
     @commands.command(name='advisor', hidden=True)
@@ -70,9 +65,8 @@ class Roles(commands.Cog):
             discord.utils.get(ctx.guild.roles, name='Mentor'),  # Remove
             discord.utils.get(ctx.guild.roles, name='Advisor')) # Add
         # Update database
-        with db:
-            cursor.execute('''UPDATE mentors SET status = 'Advisor'
-                           WHERE discord_id = :id''', {'id': ctx.author.id})
+        db.execute('''UPDATE mentors SET status = 'Advisor' WHERE discord_id = :id''', 
+                   {'id': ctx.author.id})
         await ctx.send(embed=embed)
 
     @commands.command(name='mentor', hidden=True)
@@ -86,10 +80,9 @@ class Roles(commands.Cog):
             discord.utils.get(ctx.guild.roles, name='Advisor'), # Remove
             discord.utils.get(ctx.guild.roles, name='Mentor'))  # Add
         # Update database
-        with db:
-            cursor.execute('''UPDATE mentors SET status = 'Mentor' WHERE discord_id = :id
-                           AND secondaries = 0''' , {'id': ctx.author.id})
-                           # Secondaries stay as Advisor status
+        db.execute('''UPDATE mentors SET status = 'Mentor' WHERE discord_id = :id
+                   AND secondaries = 0''' , {'id': ctx.author.id})
+                   # Secondaries stay as Advisor status
         await ctx.send(embed=embed)
 
     # Reaction system for main, secondaries, region, undergrad, and enrollment
@@ -262,7 +255,7 @@ class Roles(commands.Cog):
             '• You may only have one main character.')
         for character in rivals.characters:
             await msg.add_reaction(
-                discord.utils.get(self.bot.emojis, name=character))
+                discord.utils.get(self.bot.emojis, name=character.replace(' ', '')))
         # Secondaries
         await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
         msg = await ctx.send(
@@ -271,7 +264,7 @@ class Roles(commands.Cog):
             '• You may have multiple secondaries.')
         for character in rivals.characters:
             await msg.add_reaction(
-                discord.utils.get(self.bot.emojis, name=character))
+                discord.utils.get(self.bot.emojis, name=character.replace(' ', '')))
         # Region
         await ctx.send(file=discord.File('images/setyourroles/region.png'))
         msg = await ctx.send(

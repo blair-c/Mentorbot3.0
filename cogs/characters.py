@@ -41,7 +41,7 @@ class Characters(commands.Cog):
     @helpers.in_academy()
     async def eu_mentors(self, ctx):
         """Display all EU mentors, trial mentors, and advisors."""
-        await mentors.mentor_info(ctx, cursor, r='EU')
+        await mentors.mentor_info(ctx, cursor, region='EU')
 
     # Character commands - mentors and hitboxes
     async def character_command(self, ctx, character, move):
@@ -51,7 +51,7 @@ class Characters(commands.Cog):
             if ctx.guild.id not in [252352512332529664, 475599187812155392] \
             or ctx.channel.name == 'ask-a-mentor':
                 return
-            await mentors.mentor_info(ctx, cursor, c=character)
+            await mentors.mentor_info(ctx, cursor, character=character)
         else:  # Arg(s) passed, display move info
             await hitboxes.move_info(ctx, cursor, character, move)
 
