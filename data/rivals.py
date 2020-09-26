@@ -1,4 +1,4 @@
-# Character names and emote IDs
+# Character names, sidebar colors, emote IDs, and embed icons
 characters = {
     'Zetterburn': {
         'color': 16742462,

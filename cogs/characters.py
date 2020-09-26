@@ -24,8 +24,8 @@ class Characters(commands.Cog):
         """List available mentor commands for characters and regions."""
         embed = discord.Embed()
         embed.set_author(name='Hello!', icon_url=ctx.guild.icon_url)
-        char_commands = [f'{emote} For {character}, type **!{character.lower()}**'
-                        for character, emote in rivals.characters.items()]
+        char_commands = [f'{info['emote']} For {character}, type **!{character.lower()}**'
+                        for character, info in rivals.characters.items()]
         embed.add_field(
             name="Please choose the character you'd like to be mentored in:",
             value='\n'.join(char_commands),
