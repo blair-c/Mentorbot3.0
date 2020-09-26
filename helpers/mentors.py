@@ -11,6 +11,7 @@ from helpers import helpers
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 db = psycopg2.connect(DATABASE_URL, sslmode='require')
+cursor = db.cursor()
 
 
 async def mentor_info(ctx, c=None, r=None):
