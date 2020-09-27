@@ -85,6 +85,62 @@ class Roles(commands.Cog):
                    # Secondaries stay as Advisor status
         await ctx.send(embed=embed)
 
+    @commands.command(name='switch', hidden=True)
+    @commands.has_any_role('Mentors', 'DO NOT DISTURB')
+    @helpers.in_channel('teacher-lounge')
+    @helpers.in_academy()
+    async def switch_db_toggle(self, ctx):
+        """Toggle member's switch availability status in database."""
+        # Get current status
+        db.execute('''SELECT switch FROM mentors WHERE discord_id = :id''', {'id': ctx.author.id})
+        current = db.fetchone()
+        # Toggle
+        if current:
+            new = False
+            status = '- Unavailable'
+        else:
+            new = True
+            status = '+ Available'
+        db.execute('''UPDATE mentors SET switch = :new WHERE discord_id = :id''', 
+                   {'new': new, 'id': ctx.author.id})
+        # Send embed
+        embed = discord.Embed(
+            color=16711690,
+            description=f'**{member.mention} {str(member)}:**\n'
+                        f'```diff\n{status}```',
+            timestamp=datetime.utcnow())
+        embed.set_author(name='Switch availability updated', icon_url=member.avatar_url)
+        embed.set_footer(text=f'ID: {member.id}')
+        await ctx.send(embed=embed)
+
+    @commands.command(name='xbox', hidden=True)
+    @commands.has_any_role('Mentors', 'DO NOT DISTURB')
+    @helpers.in_channel('teacher-lounge')
+    @helpers.in_academy()
+    async def xbox_db_toggle(self, ctx):
+        """Toggle member's xbox availability status in database."""
+        # Get current status
+        db.execute('''SELECT xbox FROM mentors WHERE discord_id = :id''', {'id': ctx.author.id})
+        current = db.fetchone()
+        # Toggle
+        if current:
+            new = False
+            status = '- Unavailable'
+        else:
+            new = True
+            status = '+ Available'
+        db.execute('''UPDATE mentors SET xbox = :new WHERE discord_id = :id''', 
+                   {'new': new, 'id': ctx.author.id})
+        # Send embed
+        embed = discord.Embed(
+            color=8304896,
+            description=f'**{member.mention} {str(member)}:**\n'
+                        f'```diff\n{status}```',
+            timestamp=datetime.utcnow())
+        embed.set_author(name='Xbox availability updated', icon_url=member.avatar_url)
+        embed.set_footer(text=f'ID: {member.id}')
+        await ctx.send(embed=embed)
+
     # Reaction system for main, secondaries, region, undergrad, and enrollment
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
