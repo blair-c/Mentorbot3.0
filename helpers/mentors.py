@@ -40,27 +40,35 @@ def mentors_of_status(bot, status, character=None, region=None):
     """Return mentors of given status and character/region for embed."""
     mentors = []
     if character:
-        db.execute('''SELECT discord_id, name, region FROM mentors WHERE status = :status
-                        AND characters LIKE :character = 1 AND do_not_disturb = 0''',
-                        {'status': status, 'character': f'%{character}%'})
+        db.execute('''SELECT discord_id, name, region, switch, xbox FROM mentors WHERE 
+                   status = :status AND characters LIKE :character = 1 AND do_not_disturb = 0''',
+                   {'status': status, 'character': f'%{character}%'})
         for row in db.fetchall():
             try:
                 mentor = bot.get_user(row['discord_id'])
-                mentors.append(
-                    f"{mentor.mention} **{str(mentor)}** ({row['region']})")
+                mentors.append(f"{mentor.mention} **{str(mentor)}** ({row['region']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server
                 mentors.append(f"{row['name']} ({row['region']})")
+            # :switch:, :xbox: emotes next to names
+            if row['switch']:
+                mentors[-1] += '<:switch:759539694937309186>'
+            elif row['xbox']:
+                mentors[-1] += '<:xbox:759539695553085460>'
     elif region:
-        db.execute('''SELECT discord_id, name, characters FROM mentors WHERE 
-                        status = :status AND region = :region AND do_not_disturb = 0''',
-                        {'status': status, 'region': region})
+        db.execute('''SELECT discord_id, name, characters, switch, xbox FROM mentors WHERE 
+                   status = :status AND region = :region AND do_not_disturb = 0''',
+                   {'status': status, 'region': region})
         for row in db.fetchall():
             try:
                 mentor = bot.get_user(row['discord_id'])
-                mentors.append(
-                    f"{mentor.mention} **{str(mentor)}** ({row['characters']})")
+                mentors.append(f"{mentor.mention} **{str(mentor)}** ({row['characters']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server
                 mentors.append(f"{row['name']} ({row['characters']})")
+            # :switch:, :xbox: emotes next to names
+            if row['switch']:
+                mentors[-1] += '<:switch:759539694937309186>'
+            elif row['xbox']:
+                mentors[-1] += '<:xbox:759539695553085460>'
     return '\n'.join(mentors)
 
 
@@ -68,25 +76,33 @@ def dnd_mentors(bot, character=None, region=None):
     """Return DND mentors of given character/region for embed."""
     mentors = []
     if character:
-        db.execute('''SELECT discord_id, name, region FROM mentors WHERE
-                        characters LIKE :character = 1 AND do_not_disturb = 1''',
-                        {'character': f'%{character}%'})
+        db.execute('''SELECT discord_id, name, region, switch, xbox FROM mentors WHERE
+                   characters LIKE :character = 1 AND do_not_disturb = 1''',
+                   {'character': f'%{character}%'})
         for row in db.fetchall():
             try:
                 mentor = bot.get_user(row['discord_id'])
-                mentors.append(
-                    f"{mentor.mention} **{str(mentor)}** ({row['region']})")
+                mentors.append(f"{mentor.mention} **{str(mentor)}** ({row['region']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server
                 mentors.append(f"{row['name']} ({row['region']})")
+            # :switch:, :xbox: emotes next to names
+            if row['switch']:
+                mentors[-1] += '<:switch:759539694937309186>'
+            elif row['xbox']:
+                mentors[-1] += '<:xbox:759539695553085460>'
     elif region:
-        db.execute('''SELECT discord_id, name, characters FROM mentors WHERE 
-                        region = :region AND do_not_disturb = 1''', {'region': region})
+        db.execute('''SELECT discord_id, name, characters, switch, xbox FROM mentors WHERE 
+                   region = :region AND do_not_disturb = 1''', {'region': region})
         for row in db.fetchall():
             try:
                 mentor = bot.get_user(row['discord_id'])
-                mentors.append(
-                    f"{mentor.mention} **{str(mentor)}** ({row['characters']})")
+                mentors.append(f"{mentor.mention} **{str(mentor)}** ({row['characters']})")
             except AttributeError:  # catch if user ID isn't found, eg. left the server
                 mentors.append(f"{row['name']} ({row['characters']})")
+            # :switch:, :xbox: emotes next to names
+            if row['switch']:
+                mentors[-1] += '<:switch:759539694937309186>'
+            elif row['xbox']:
+                mentors[-1] += '<:xbox:759539695553085460>'
     return '\n'.join(mentors)
 
