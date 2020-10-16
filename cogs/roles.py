@@ -3,7 +3,7 @@ from datetime import datetime
 import discord
 from discord.ext import commands
 
-from bot import db
+from bot import conn, db
 from data import rivals
 from helpers import helpers
 
@@ -50,8 +50,9 @@ class Roles(commands.Cog):
             embed = await helpers.update_roles(member, dnd_role, mentors_role)
         # Update database
         db.execute(
-            '''UPDATE mentors SET do_not_disturb = :value WHERE discord_id = :id''',
+            '''UPDATE mentors SET do_not_disturb = %(value)s WHERE discord_id = %(id)s''',
             {'value': dnd_value, 'id': ctx.author.id})
+        conn.commit()
         await ctx.send(embed=embed)
 
     @commands.command(name='advisor', hidden=True)
@@ -65,8 +66,9 @@ class Roles(commands.Cog):
             discord.utils.get(ctx.guild.roles, name='Mentor'),  # Remove
             discord.utils.get(ctx.guild.roles, name='Advisor')) # Add
         # Update database
-        db.execute('''UPDATE mentors SET status = 'Advisor' WHERE discord_id = :id''', 
+        db.execute('''UPDATE mentors SET status = 'Advisor' WHERE discord_id = %(id)s''', 
                    {'id': ctx.author.id})
+        conn.commit()
         await ctx.send(embed=embed)
 
     @commands.command(name='mentor', hidden=True)
@@ -80,9 +82,10 @@ class Roles(commands.Cog):
             discord.utils.get(ctx.guild.roles, name='Advisor'), # Remove
             discord.utils.get(ctx.guild.roles, name='Mentor'))  # Add
         # Update database
-        db.execute('''UPDATE mentors SET status = 'Mentor' WHERE discord_id = :id
-                   AND secondaries = 0''' , {'id': ctx.author.id})
+        db.execute('''UPDATE mentors SET status = 'Mentor' WHERE discord_id = %(id)s
+                   AND NOT secondaries''' , {'id': ctx.author.id})
                    # Secondaries stay as Advisor status
+        conn.commit()
         await ctx.send(embed=embed)
 
     @commands.command(name='switch', hidden=True)
@@ -92,8 +95,8 @@ class Roles(commands.Cog):
     async def switch_db_toggle(self, ctx):
         """Toggle member's switch availability status in database."""
         # Get current status
-        db.execute('''SELECT switch FROM mentors WHERE discord_id = :id''', {'id': ctx.author.id})
-        current = db.fetchone()
+        db.execute('''SELECT switch FROM mentors WHERE discord_id = %(id)s''', {'id': ctx.author.id})
+        current = db.fetchone()[0]
         # Toggle
         if current:
             new = False
@@ -101,8 +104,9 @@ class Roles(commands.Cog):
         else:
             new = True
             status = '+ Available'
-        db.execute('''UPDATE mentors SET switch = :new WHERE discord_id = :id''', 
+        db.execute('''UPDATE mentors SET switch = %(new)s WHERE discord_id = %(id)s''', 
                    {'new': new, 'id': ctx.author.id})
+        conn.commit()
         # Send embed
         embed = discord.Embed(
             color=16711690,
@@ -120,8 +124,8 @@ class Roles(commands.Cog):
     async def xbox_db_toggle(self, ctx):
         """Toggle member's xbox availability status in database."""
         # Get current status
-        db.execute('''SELECT xbox FROM mentors WHERE discord_id = :id''', {'id': ctx.author.id})
-        current = db.fetchone()
+        db.execute('''SELECT xbox FROM mentors WHERE discord_id = %(id)s''', {'id': ctx.author.id})
+        current = db.fetchone()[0]
         # Toggle
         if current:
             new = False
@@ -129,8 +133,9 @@ class Roles(commands.Cog):
         else:
             new = True
             status = '+ Available'
-        db.execute('''UPDATE mentors SET xbox = :new WHERE discord_id = :id''', 
+        db.execute('''UPDATE mentors SET xbox = %(new)s WHERE discord_id = %(id)s''', 
                    {'new': new, 'id': ctx.author.id})
+        conn.commit()
         # Send embed
         embed = discord.Embed(
             color=8304896,
