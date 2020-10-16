@@ -41,7 +41,7 @@ def mentors_of_status(bot, status, character=None, region=None):
     mentors = []
     if character:
         db.execute('''SELECT discord_id, name, region, switch, xbox FROM mentors WHERE status
-                   = %(status)s AND characters LIKE %(character)s = 1 AND do_not_disturb = 0''',
+                   = %(status)s AND characters LIKE %(character)s AND do_not_disturb = 0''',
                    {'status': status, 'character': f'%{character}%'})
         for row in db.fetchall():
             try:
@@ -77,7 +77,7 @@ def dnd_mentors(bot, character=None, region=None):
     mentors = []
     if character:
         db.execute('''SELECT discord_id, name, region, switch, xbox FROM mentors WHERE
-                   characters LIKE %(character)s = 1 AND do_not_disturb = 1''',
+                   characters LIKE %(character)s AND do_not_disturb = 1''',
                    {'character': f'%{character}%'})
         for row in db.fetchall():
             try:
