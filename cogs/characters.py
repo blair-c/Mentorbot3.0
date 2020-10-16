@@ -51,7 +51,7 @@ class Characters(commands.Cog):
             if ctx.guild.id not in [252352512332529664, 475599187812155392] \
             or ctx.channel.name == 'ask-a-mentor':
                 return
-            await mentors.mentor_info(ctx, cursor, character=character)
+            await mentors.mentor_info(ctx, character=character)
         else:  # Arg(s) passed, display move info
             await hitboxes.move_info(ctx, cursor, character, move)
 
