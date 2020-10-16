@@ -11,7 +11,7 @@ characters = {
         'icon': 'https://i.imgur.com/wLU8CEL.png'
     },
     'Clairen': {
-        'color': 15870306
+        'color': 15870306,
         'emote': '<:Clairen:547182529837400081>',
         'icon': 'https://imgur.com/hfcf0vb.png'
     },
