@@ -55,9 +55,9 @@ def mentors_of_status(bot, status, character=None, region=None):
             mentors.append(f"{row[1]} ({row[2]})") # name, character/region
         # :switch:, :xbox: emotes next to names
         if row[3]: # switch
-            mentors[-1] += '<:switch:759539694937309186>'
-        elif row[4]: # xbox
-            mentors[-1] += '<:xbox:759539695553085460>'
+            mentors[-1] += ' <:switch:759539694937309186>'
+        if row[4]: # xbox
+            mentors[-1] += ' <:xbox:759539695553085460>'
     return '\n'.join(mentors)
 
 
@@ -79,8 +79,8 @@ def dnd_mentors(bot, character=None, region=None):
             mentors.append(f"{row[1]} ({row[2]})") # name, character/region
         # :switch:, :xbox: emotes next to names
         if row[3]: # switch
-            mentors[-1] += '<:switch:759539694937309186>'
-        elif row[4]: # xbox
-            mentors[-1] += '<:xbox:759539695553085460>'
+            mentors[-1] += ' <:switch:759539694937309186>'
+        if row[4]: # xbox
+            mentors[-1] += ' <:xbox:759539695553085460>'
     return '\n'.join(mentors)
 
