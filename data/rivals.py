@@ -67,7 +67,7 @@ characters = {
     },
     'Shovel Knight': {
         'color': 15774989,
-        'emote': '<:ShovelKnight:547182360219746349>'
+        'emote': '<:ShovelKnight:547182360219746349>',
         'icon': 'https://imgur.com/2BvZbjO.png'
     }
 }
