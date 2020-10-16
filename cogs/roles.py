@@ -110,11 +110,11 @@ class Roles(commands.Cog):
         # Send embed
         embed = discord.Embed(
             color=16711690,
-            description=f'**{member.mention} {str(member)}:**\n'
+            description=f'**{author.mention} {str(author)}:**\n'
                         f'```diff\n{status}```',
             timestamp=datetime.utcnow())
-        embed.set_author(name='Switch availability updated', icon_url=member.avatar_url)
-        embed.set_footer(text=f'ID: {member.id}')
+        embed.set_author(name='Switch availability updated', icon_url=author.avatar_url)
+        embed.set_footer(text=f'ID: {author.id}')
         await ctx.send(embed=embed)
 
     @commands.command(name='xbox', hidden=True)
@@ -139,11 +139,11 @@ class Roles(commands.Cog):
         # Send embed
         embed = discord.Embed(
             color=8304896,
-            description=f'**{member.mention} {str(member)}:**\n'
+            description=f'**{author.mention} {str(author)}:**\n'
                         f'```diff\n{status}```',
             timestamp=datetime.utcnow())
-        embed.set_author(name='Xbox availability updated', icon_url=member.avatar_url)
-        embed.set_footer(text=f'ID: {member.id}')
+        embed.set_author(name='Xbox availability updated', icon_url=author.avatar_url)
+        embed.set_footer(text=f'ID: {author.id}')
         await ctx.send(embed=embed)
 
     # Reaction system for main, secondaries, region, undergrad, and enrollment
