@@ -49,14 +49,14 @@ def mentors_of_status(bot, status, character=None, region=None):
                    {'status': status, 'character': f'%{character}%'})
         for row in db.fetchall():
             try:
-                mentor = bot.get_user(row['discord_id'])
-                mentors.append(f"{mentor.mention} **{str(mentor)}** ({row['region']})")
+                mentor = bot.get_user(row[0]) # discord_id
+                mentors.append(f"{mentor.mention} **{str(mentor)}** ({row[2]})") # region
             except AttributeError:  # catch if user ID isn't found, eg. left the server
-                mentors.append(f"{row['name']} ({row['region']})")
+                mentors.append(f"{row[1]} ({row[2]})") # name, region
             # :switch:, :xbox: emotes next to names
-            if row['switch']:
+            if row[3]: # switch
                 mentors[-1] += '<:switch:759539694937309186>'
-            elif row['xbox']:
+            elif row[4]: # xbox
                 mentors[-1] += '<:xbox:759539695553085460>'
     elif region:
         db.execute('''SELECT discord_id, name, characters, switch, xbox FROM mentors WHERE 
