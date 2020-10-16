@@ -159,7 +159,7 @@ class Info(commands.Cog):
         await ctx.send('https://twitter.com/notMSB/status/1025537436565364738')
 
     # Mentorbot
-    @commands.command(name='about', aliases=['info', 'information'], hidden=True)
+    @commands.command(name='about', aliases=['info', 'information', 'invite'], hidden=True)
     async def info_command(self, ctx):
         """Display information about Mentorbot."""
         embed = discord.Embed(
