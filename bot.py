@@ -38,7 +38,6 @@ extensions = [
     'characters',  # Mentor and hitbox commands
     'info',        # Help, links, and informational commands
     'moderation',  # Moderation commands
-    'owner',       # Bot upkeep commands
     'roles',       # Role request commands and reaction system
 ]
 
