@@ -41,7 +41,7 @@ def mentors_of_status(bot, status, character=None, region=None):
     mentors = []
     if character:
         sql = """SELECT discord_id, name, region, switch, xbox FROM mentors WHERE status
-                 = %(status)s AND characters LIKE %(character)s ESCAPE '' AND do_not_disturb = 0"""
+                 = %(status)s AND characters LIKE %(character)s ESCAPE '' AND NOT do_not_disturb"""
         data = {'status': status, 'character': f'%{character}%'}
         db.execute(sql, data)
         for row in db.fetchall():
