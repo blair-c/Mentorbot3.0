@@ -40,9 +40,10 @@ def mentors_of_status(bot, status, character=None, region=None):
     """Return mentors of given status and character/region for embed."""
     mentors = []
     if character:
-        db.execute('''SELECT discord_id, name, region, switch, xbox FROM mentors WHERE status
-                   = %(status)s AND characters LIKE %(character)s AND do_not_disturb = 0''',
-                   {'status': status, 'character': f'%{character}%'})
+        sql = '''SELECT discord_id, name, region, switch, xbox FROM mentors WHERE status
+                 = %(status)s AND characters LIKE %(character)s AND do_not_disturb = 0'''
+        data = {'status': status, 'character': f'%{character}%'}
+        db.execute(sql, data)
         for row in db.fetchall():
             try:
                 mentor = bot.get_user(row['discord_id'])
