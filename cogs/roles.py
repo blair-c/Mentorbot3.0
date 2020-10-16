@@ -94,8 +94,9 @@ class Roles(commands.Cog):
     @helpers.in_academy()
     async def switch_db_toggle(self, ctx):
         """Toggle member's switch availability status in database."""
+        author = ctx.author
         # Get current status
-        db.execute('''SELECT switch FROM mentors WHERE discord_id = %(id)s''', {'id': ctx.author.id})
+        db.execute('''SELECT switch FROM mentors WHERE discord_id = %(id)s''', {'id': author.id})
         current = db.fetchone()[0]
         # Toggle
         if current:
@@ -105,7 +106,7 @@ class Roles(commands.Cog):
             new = True
             status = '+ Available'
         db.execute('''UPDATE mentors SET switch = %(new)s WHERE discord_id = %(id)s''', 
-                   {'new': new, 'id': ctx.author.id})
+                   {'new': new, 'id': author.id})
         conn.commit()
         # Send embed
         embed = discord.Embed(
@@ -123,8 +124,9 @@ class Roles(commands.Cog):
     @helpers.in_academy()
     async def xbox_db_toggle(self, ctx):
         """Toggle member's xbox availability status in database."""
+        author = ctx.author
         # Get current status
-        db.execute('''SELECT xbox FROM mentors WHERE discord_id = %(id)s''', {'id': ctx.author.id})
+        db.execute('''SELECT xbox FROM mentors WHERE discord_id = %(id)s''', {'id': author.id})
         current = db.fetchone()[0]
         # Toggle
         if current:
@@ -134,7 +136,7 @@ class Roles(commands.Cog):
             new = True
             status = '+ Available'
         db.execute('''UPDATE mentors SET xbox = %(new)s WHERE discord_id = %(id)s''', 
-                   {'new': new, 'id': ctx.author.id})
+                   {'new': new, 'id': author.id})
         conn.commit()
         # Send embed
         embed = discord.Embed(
