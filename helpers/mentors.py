@@ -45,6 +45,7 @@ def mentors_of_status(bot, status, character=None, region=None):
         data = {'status': status, 'character': f'%{character}%'}
         db.execute(sql, data)
         for row in db.fetchall():
+            print(row)
             try:
                 mentor = bot.get_user(row['discord_id'])
                 mentors.append(f"{mentor.mention} **{str(mentor)}** ({row['region']})")
