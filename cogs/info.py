@@ -207,7 +207,7 @@ class Info(commands.Cog):
         embed.add_field(
             name='Method 2:',
             value='1. Make sure "Hidden items" are shown in File Explorer\n'
-                  '2. Go to ```C:\\Users\\yourname\\AppData\\Local\\RivalsofAether\\replays```'
+                  '2. Go to ```C:\\Users\\yourname\\AppData\\Local\\RivalsofAether\\replays```',
             inline=False)
         await ctx.send(embed=embed)
 
