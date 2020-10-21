@@ -161,8 +161,11 @@ class Roles(commands.Cog):
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
         if channel.name != 'set-your-roles': return
         # Add/remove roles
+        print(payload)
         user = self.bot.get_user(user_id)
+        print(user)
         member = guild.get_member(user_id)
+        print(member)
         message = await channel.fetch_message(payload.message_id)
         guild_roles = guild.roles
         emote = payload.emoji.name
