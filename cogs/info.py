@@ -49,7 +49,8 @@ class Info(commands.Cog):
             '6 - Horizontal knockback sends away from the enemy player\n'
             '7 - Horizontal knockback sends toward the enemy player\n'
             '8 - Sends away from the center of the hitbox\n'
-            '9 - Hits toward the center of the hitbox```')
+            '9 - Hits toward the center of the hitbox\n
+            '10 - Sends in the direction the player is moving```')
         embed = discord.Embed(title='Angle Flipper Definitions', description=definitions)
         await ctx.send(embed=embed)
 
