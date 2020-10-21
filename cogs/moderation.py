@@ -41,7 +41,7 @@ class Moderation(commands.Cog):
             desc += f'\n**by {msg.author.mention} {str(msg.author)}'
             # Message content may not exist, such as an embed or picture
             if msg.clean_content:
-                desc += f':**\n```{msg.clean_content}```'
+                desc += f':**\n```{discord.utils.escape_markdown(msg.clean_content)}```'
             else: 
                 desc += '**\n```(No message content)```'
         embed = discord.Embed(color=0xb71c1c, description=desc)

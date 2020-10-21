@@ -219,7 +219,7 @@ class ActionLog(commands.Cog):
         desc = f'**Message by {message.author.mention} deleted in {message.channel.mention}**'
         # Message content may not exist, such as an embed or picture
         if message.clean_content:
-            desc += f'```\n{message.clean_content}```'
+            desc += f'```\n{discord.utils.escape_markdown(message.clean_content)}```'
         embed = discord.Embed(
             color=0xef5350,
             description=desc,
@@ -247,10 +247,12 @@ class ActionLog(commands.Cog):
         embed.set_footer(text=f'User ID: {before.author.id}')
         # Before edit
         if before.content:
-            embed.add_field(name='Before:', value=f'```{before.clean_content}```', inline=False)
+            before_msg = discord.utils.escape_markdown(before.clean_content)
+            embed.add_field(name='Before:', value=f'```{before_msg}```', inline=False)
         # After edit
         if after.content:
-            embed.add_field(name='After:', value=f'```{after.clean_content}```', inline=False)
+            after_msg = discord.utils.escape_markdown(after.clean_content)
+            embed.add_field(name='After:', value=f'```{after_msg}```', inline=False)
         # Send in action-log
         await action_log.send(embed=embed)
 
