@@ -19,8 +19,8 @@ class Info(commands.Cog):
                  'hitstunformula', 'knockbackformula'],
             'Videos & Clips':
                 ['AAAA', 'babydashing', 'bairhitfall', 'pwjpecotr'],
-            'Mentorbot':
-                ['about', 'help'],
+            'Mentorbot/Misc.':
+                ['about', 'help', 'replays'],
             'Beefy Aether Doods':
                 ['cactuardashing', 'DI', 'horizontalwaveland', 'ledgecancel','RAR',
                  'teching', 'wavedashing'],
@@ -192,6 +192,21 @@ class Info(commands.Cog):
             value='Multiple character and move names are supported, try it out!')
         embed.set_image(url='https://i.imgur.com/nHBfPyL.png')
         embed.set_footer(text='For non-hitbox commands, try !commands.')
+        await ctx.send(embed=embed)
+
+    @commands.command(name='replays')
+    async def how_to_access_your_replays(self, ctx, *arg):
+        """Display instructions to access your RoA replays."""
+        embed = discord.Embed()
+        embed.set_author(name='How to Access Your Replays', icon_url=self.bot.user.avatar_url)
+        embed.add_field(
+            name='Method 1:',
+            value='1. Press `Win + R`\n' 
+                  '2. Put in the following: ```%LocalAppData%\RivalsOfAether\replays```')
+        embed.add_field(
+            name='Method 2:',
+            value='1. Make sure "Hidden items" are shown in File Explorer'
+                  '2. Go to ```C:\Users\yourname\AppData\Local\RivalsofAether\replays```')
         await ctx.send(embed=embed)
 
     # Beefy Aether Doods
