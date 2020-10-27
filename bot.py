@@ -11,9 +11,9 @@ except ImportError:
     sys.exit(1)
 
 # Ensure correct Discord.py version
-if discord.__version__ != '1.3.4':
+if discord.__version__ != '1.5.1':
     print(f'Discord.py version: {discord.__version__}.\n'
-          'Please install version 1.3.4', file=sys.stderr)
+          'Please install version 1.5.1', file=sys.stderr)
     sys.exit(1)
 
 bot = commands.Bot(
