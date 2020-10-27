@@ -16,9 +16,18 @@ if discord.__version__ != '1.5.1':
           'Please install version 1.5.1', file=sys.stderr)
     sys.exit(1)
 
+intents = discord.Intents.default()
+intents.members = True
+intents.integrations = False
+intents.webhookes = False
+intents.invites = False
+intents.voice_states = False
+intents.typing = False
+
 bot = commands.Bot(
     command_prefix='!',
-    case_insensitive=True)
+    case_insensitive=True,
+    intents=intents)
 bot.remove_command('help')
 
 # Database
