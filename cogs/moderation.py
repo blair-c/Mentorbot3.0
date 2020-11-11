@@ -77,7 +77,7 @@ class Moderation(commands.Cog):
         join_position = sorted(ctx.guild.members, key=lambda m: m.joined_at).index(member) + 1
         embed.add_field(name='Join Position', value=str(join_position), inline=False)
         # Member's status (eg. online, offline, invisible, etc.)
-        embed.add_field(name='Status', value=member.status, inline=False)
+        # embed.add_field(name='Status', value=member.status, inline=False)  -- needs prescence intent
         # Member's roles, excluding @everyone role
         roles = [role.mention for role in reversed(member.roles)][:-1]
         if roles:
