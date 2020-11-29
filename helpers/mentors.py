@@ -46,7 +46,7 @@ def mentors_of_status(bot, status, character=None, region=None):
     elif region:
         db.execute('''SELECT discord_id, name, characters, switch, xbox FROM mentors WHERE 
                    status = %(status)s AND region = %(region)s AND do_not_disturb = 0''',
-                   {'status': status, 'region': region})
+                   {'status': status, 'region': f'%{region}%'})
     for row in db.fetchall():
         try:
             mentor = bot.get_user(row[0]) # discord_id
