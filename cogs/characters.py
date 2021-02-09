@@ -43,15 +43,25 @@ class Characters(commands.Cog):
         """Display all EU mentors, trial mentors, and advisors."""
         await mentors.mentor_info(ctx, cursor, region='EU')
 
+    ACADEMY_ID = 252352512332529664
+    TEST_SERVER_ID = 475599187812155392
     # Character commands - mentors and hitboxes
     async def character_command(self, ctx, character, move):
         """Display mentor info for character, or return hitbox info for move."""
         sleep(0.1)  # Delay to avoid bot message appearing before command message
-        if not move:  # No args passed, display mentor info in Academy
-            if ctx.guild.id not in [252352512332529664, 475599187812155392] \
-            or ctx.channel.name == 'ask-a-mentor':
-                return
-            await mentors.mentor_info(ctx, character=character)
+        if not move:  # No args passed, display mentor info in Academy, hurtbox info elsewhere
+            if ctx.guild.id not in [ACADEMY_ID, TEST_SERVER_ID]:
+                await hitboxes.move_info(ctx, cursor, character, 'hurtbox')
+            elif ctx.channel.name == 'ask-a-mentor':
+                embed = discord.Embed(
+                    color=0xef5350,
+                    description='Mentor commands are not usable in this channel')
+                error = await ctx.send(embed=embed)  # Send error message
+                sleep(5)
+                await ctx.message.delete()  # Delete message of command
+                await error.delete()  # Delete error message
+            else:
+                await mentors.mentor_info(ctx, character=character)
         else:  # Arg(s) passed, display move info
             await hitboxes.move_info(ctx, cursor, character, move)
 

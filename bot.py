@@ -30,18 +30,6 @@ bot = commands.Bot(
     intents=intents)
 bot.remove_command('help')
 
-# Database
-try:
-    import psycopg2
-except ImportError:
-    print('psycopg2 is not installed', file=sys.stderr)
-    sys.exit(1)
-
-DATABASE_URL = os.environ.get('DATABASE_URL')
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-db = conn.cursor()
-
-
 extensions = [
     'actionlog',   # Action-log channel functionality
     'characters',  # Mentor and hitbox commands
