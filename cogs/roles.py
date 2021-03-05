@@ -3,7 +3,6 @@ from datetime import datetime
 import discord
 from discord.ext import commands
 
-from bot import conn, db
 from data import rivals
 from helpers import helpers
 
@@ -26,7 +25,6 @@ class Roles(commands.Cog):
         member = ctx.guild.get_member(ctx.author.id)
         # Mentors -> DND
         if mentors_role in ctx.author.roles:
-            dnd_value = True
             # Change nickname
             try:
                 if ctx.author.display_name[:6] != '[DND] ':
@@ -34,10 +32,9 @@ class Roles(commands.Cog):
             except discord.errors.Forbidden:
                 pass
             # Update roles and get embed
-            embed = await helpers.update_roles(member, mentors_role, dnd_role)
+            embed = await helpers.update_roles(member, remove=mentors_role, add=dnd_role)
         # DND -> Mentors
         elif dnd_role in ctx.author.roles:
-            dnd_value = False
             # Change nickname
             try:
                 if ctx.author.display_name[6:] == ctx.author.name:
@@ -47,105 +44,59 @@ class Roles(commands.Cog):
             except discord.errors.Forbidden:
                 pass
             # Update roles and get embed
-            embed = await helpers.update_roles(member, dnd_role, mentors_role)
-        # Update database
-        db.execute(
-            '''UPDATE mentors SET do_not_disturb = %(value)s WHERE discord_id = %(id)s''',
-            {'value': dnd_value, 'id': ctx.author.id})
-        conn.commit()
+            embed = await helpers.update_roles(member, remove=dnd_role, add=mentors_role)
         await ctx.send(embed=embed)
 
     @commands.command(name='advisor', hidden=True)
     @commands.has_role('Mentor')
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
-    async def advisor_role_toggle(self, ctx):
+    async def advisor_role_add(self, ctx):
         """Toggle member's roles from mentor to advisor, and update database."""
         embed = await helpers.update_roles(
             ctx.guild.get_member(ctx.author.id),
-            discord.utils.get(ctx.guild.roles, name='Mentor'),  # Remove
-            discord.utils.get(ctx.guild.roles, name='Advisor')) # Add
-        # Update database
-        db.execute('''UPDATE mentors SET status = 'Advisor' WHERE discord_id = %(id)s''', 
-                   {'id': ctx.author.id})
-        conn.commit()
+            remove=discord.utils.get(ctx.guild.roles, name='Mentor'),
+            add=discord.utils.get(ctx.guild.roles, name='Advisor'))
         await ctx.send(embed=embed)
 
     @commands.command(name='mentor', hidden=True)
     @commands.has_role('Advisor')
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
-    async def mentor_role_toggle(self, ctx):
+    async def mentor_role_add(self, ctx):
         """Toggle member's roles from advisor to mentor, and update database."""
         embed = await helpers.update_roles(
             ctx.guild.get_member(ctx.author.id),
-            discord.utils.get(ctx.guild.roles, name='Advisor'), # Remove
-            discord.utils.get(ctx.guild.roles, name='Mentor'))  # Add
-        # Update database
-        db.execute('''UPDATE mentors SET status = 'Mentor' WHERE discord_id = %(id)s
-                   AND NOT secondaries''' , {'id': ctx.author.id})
-                   # Secondaries stay as Advisor status
-        conn.commit()
+            remove=discord.utils.get(ctx.guild.roles, name='Advisor'),
+            add=discord.utils.get(ctx.guild.roles, name='Mentor'))
         await ctx.send(embed=embed)
 
     @commands.command(name='switch', hidden=True)
     @commands.has_any_role('Mentors', 'DO NOT DISTURB')
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
-    async def switch_db_toggle(self, ctx):
+    async def switch_role_toggle(self, ctx):
         """Toggle member's switch availability status in database."""
-        author = ctx.author
-        # Get current status
-        db.execute('''SELECT switch FROM mentors WHERE discord_id = %(id)s''', {'id': author.id})
-        current = db.fetchone()[0]
-        # Toggle
-        if current:
-            new = False
-            status = '- Unavailable'
+        member = ctx.guild.get_member(ctx.author.id)
+        role = discord.utils.get(ctx.guild.roles, name='Switch Mentor')
+        if role in author.roles:
+            embed = await helpers.update_roles(member, remove=role)
         else:
-            new = True
-            status = '+ Available'
-        db.execute('''UPDATE mentors SET switch = %(new)s WHERE discord_id = %(id)s''', 
-                   {'new': new, 'id': author.id})
-        conn.commit()
-        # Send embed
-        embed = discord.Embed(
-            color=16711690,
-            description=f'**{author.mention} {str(author)}:**\n'
-                        f'```diff\n{status}```',
-            timestamp=datetime.utcnow())
-        embed.set_author(name='Switch availability updated', icon_url=author.avatar_url)
-        embed.set_footer(text=f'ID: {author.id}')
+            embed = await helpers.update_roles(member, add=role)
         await ctx.send(embed=embed)
 
     @commands.command(name='xbox', hidden=True)
     @commands.has_any_role('Mentors', 'DO NOT DISTURB')
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
-    async def xbox_db_toggle(self, ctx):
+    async def xbox_role_toggle(self, ctx):
         """Toggle member's xbox availability status in database."""
-        author = ctx.author
-        # Get current status
-        db.execute('''SELECT xbox FROM mentors WHERE discord_id = %(id)s''', {'id': author.id})
-        current = db.fetchone()[0]
-        # Toggle
-        if current:
-            new = False
-            status = '- Unavailable'
+        member = ctx.guild.get_member(ctx.author.id)
+        role = discord.utils.get(ctx.guild.roles, name='Xbox Mentor')
+        if role in author.roles:
+            embed = await helpers.update_roles(member, remove=role)
         else:
-            new = True
-            status = '+ Available'
-        db.execute('''UPDATE mentors SET xbox = %(new)s WHERE discord_id = %(id)s''', 
-                   {'new': new, 'id': author.id})
-        conn.commit()
-        # Send embed
-        embed = discord.Embed(
-            color=8304896,
-            description=f'**{author.mention} {str(author)}:**\n'
-                        f'```diff\n{status}```',
-            timestamp=datetime.utcnow())
-        embed.set_author(name='Xbox availability updated', icon_url=author.avatar_url)
-        embed.set_footer(text=f'ID: {author.id}')
+            embed = await helpers.update_roles(member, add=role)
         await ctx.send(embed=embed)
 
     # Reaction system for main, secondaries, region, undergrad, and enrollment

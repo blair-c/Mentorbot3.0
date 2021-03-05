@@ -56,17 +56,19 @@ def sidebar_color(color):
         return color
 
 
-async def update_roles(member, remove, add):
+async def update_roles(member, remove=None, add=None):
     """Remove/add given roles, and return embed of info."""
-    await member.remove_roles(remove)
-    await member.add_roles(add)
-    embed = discord.Embed(
-        color=sidebar_color(add.color),
-        description=f'**Updated roles for {member.mention} {str(member)}:**\n'
-                    '```diff\n'
-                    f'- {remove.name}\n'
-                    f'+ {add.name}```',
-        timestamp=datetime.utcnow())
+    desc = f'**Updated roles for {member.mention} {str(member)}:**\n```diff\n'
+    if remove:
+        await member.remove_roles(remove)
+        desc += f'- {remove.name}\n'
+        clr = sidebar_color(remove.color)
+    if add:
+        await member.add_roles(add)
+        desc += f'+ {add.name}'
+        clr = sidebar_color(add.color)
+    desc += '```'
+    embed = discord.Embed(color=clr, description=desc, timestamp=datetime.utcnow())
     embed.set_author(name='Roles updated', icon_url=member.avatar_url)
     embed.set_footer(text=f'ID: {member.id}')
     return embed
