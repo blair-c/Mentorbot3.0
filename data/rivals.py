@@ -73,5 +73,39 @@ characters = {
 }
 
 # Rivals regions
-regions = ['WestCoast', 'Midwest', 'EastCoast', 'Europe',
-           'Australia', 'SouthAmerica', 'Asia', 'Africa']
+regions = {
+    'West Coast': {
+        'abbreviation': 'WC',
+        'emote': '<:WestCoast:547189520781803530>'
+    },
+    'Midwest': {
+        'abbreviation': 'MW',
+        'emote': '<:Midwest:547189509272633355>'
+    },
+    'East Coast': {
+        'abbreviation': 'EC',
+        'emote': '<:EastCoast:547189489861132308>'
+    },
+    'Europe': {
+        'abbreviation': 'EU',
+        'color': 3294334,
+        'emote': '<:Europe:547189473432305665>',
+        'icon': 'https://imgur.com/WPMrAhN.png'
+    },
+    'Australia': {
+        'abbreviation': 'AU',
+        'emote': '<:Australia:547189427416596502>'
+    },
+    'South America': {
+        'abbreviation': 'SA',
+        'emote': '<:SouthAmerica:547189406902124595>'
+    },
+    'Asia': {
+        'abbreviation': 'AS',
+        'emote': '<:Asia:547189391399976980>'
+    },
+    'Africa': {
+        'abbreviation': 'AF',
+        'emote': '<:Africa:547189379605725225>'
+    },
+}
