@@ -71,7 +71,7 @@ class Roles(commands.Cog):
             add=discord.utils.get(ctx.guild.roles, name='Mentor'))
         await ctx.send(embed=embed)
 
-    @commands.command(name='switch', hidden=True)
+    @commands.command(name='switchmentor', aliases=['switch-mentor'], hidden=True)
     @commands.has_any_role('Mentors', 'DO NOT DISTURB')
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
@@ -85,7 +85,7 @@ class Roles(commands.Cog):
             embed = await helpers.update_roles(member, add=role)
         await ctx.send(embed=embed)
 
-    @commands.command(name='xbox', hidden=True)
+    @commands.command(name='xboxmentor', aliases=['xbox-mentor'], hidden=True)
     @commands.has_any_role('Mentors', 'DO NOT DISTURB')
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()

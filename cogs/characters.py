@@ -43,6 +43,19 @@ class Characters(commands.Cog):
         """Display all EU mentors, trial mentors, and advisors."""
         await mentors.mentor_info(ctx, region='Europe')
 
+    # Console-based mentor commands
+    @commands.command(name='switch')
+    @helpers.in_academy()
+    async def switch_mentors(self, ctx):
+        """Display all Nintendo Switch mentors, trial mentors, and advisors."""
+        await mentors.mentor_info(ctx, console='Nintendo Switch')
+    
+    @commands.command(name='xbox')
+    @helpers.in_academy()
+    async def xbox_mentors(self, ctx):
+        """Display all Xbox mentors, trial mentors, and advisors."""
+        await mentors.mentor_info(ctx, console='Xbox')
+
     # Character commands - mentors and hitboxes
     async def character_command(self, ctx, character, move):
         """Display mentor info for character, or return hitbox info for move."""

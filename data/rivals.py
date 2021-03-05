@@ -109,3 +109,17 @@ regions = {
         'emote': '<:Africa:547189379605725225>'
     },
 }
+
+# Rivals consoles
+consoles = {
+    'Nintendo Switch': {
+        'color': 16711690,
+        'emote': '<:switch:759539694937309186>',
+        'icon': 'https://i.imgur.com/2ieAFjS.png'
+    },
+    'Xbox': {
+        'color': 8304896,
+        'emote': '<:xbox:759539695553085460>',
+        'icon': 'https://i.imgur.com/6XdeiBK.png'
+    }
+}
