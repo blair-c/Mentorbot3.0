@@ -340,17 +340,6 @@ class Roles(commands.Cog):
                      'SwitchNewbieMatchmaking', 'XboxMatchmaking', 'XboxNewbieMatchmaking']):
             await msg.add_reaction(discord.utils.get(self.bot.emojis, name=emote))
 
-    @commands.command(name='addstudent', hidden=True)
-    @helpers.in_academy()
-    @commands.is_owner()
-    async def add_student_roles(self, ctx):
-        """One-time setup to add Student role to users without Student or New Member"""
-        student = discord.utils.get(ctx.guild.roles, name='Student')
-        new_member = discord.utils.get(ctx.guild.roles, name='New Member')
-        for member in ctx.guild.members:
-            if student not in member.roles and new_member not in member.roles:
-                await member.add_roles(student)
-
 
 def setup(bot):
     bot.add_cog(Roles(bot))
