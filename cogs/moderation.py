@@ -19,7 +19,9 @@ class Moderation(commands.Cog):
         embed.set_author(name='Moderation Commands List', icon_url=self.bot.user.avatar_url)
         commands = {'General': ['clear', 'whois']}
         # Include Academy-specific commands if in Academy
-        if ctx.message.guild.id in [252352512332529664, 475599187812155392]:
+        ACADEMY_ID = 252352512332529664
+        TEST_SERVER_ID = 475599187812155392
+        if ctx.message.guild.id in [ACADEMY_ID, TEST_SERVER_ID]:
             commands['Academy'] = ['suspend', 'unsuspend']
         for category in commands:
             commands_list = [f'!{command}' for command in commands[category]]

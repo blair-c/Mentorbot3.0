@@ -78,7 +78,9 @@ async def update_roles(member, remove=None, add=None):
 def in_academy():
     """Check that command is in Adademy or Mentorbot Test Server."""
     async def predicate(ctx):
-        return ctx.message.guild.id in [252352512332529664, 475599187812155392]
+        ACADEMY_ID = 252352512332529664
+        TEST_SERVER_ID = 475599187812155392
+        return ctx.message.guild.id in [ACADEMY_ID, TEST_SERVER_ID]
     return commands.check(predicate)
 
 

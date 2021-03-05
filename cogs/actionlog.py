@@ -173,7 +173,9 @@ class ActionLog(commands.Cog):
         embed.set_footer(text=f'ID: {member.id}')
         # Ping principals if member was a mentor (only in Academy/test server)
         ping = ''
-        if guild.id in [252352512332529664, 475599187812155392]:
+        ACADEMY_ID = 252352512332529664
+        TEST_SERVER_ID = 475599187812155392
+        if guild.id in [ACADEMY_ID, TEST_SERVER_ID]:
             roles = guild.roles
             mentor = discord.utils.get(roles, name='Mentor')
             dnd = discord.utils.get(roles, name='DO NOT DISTURB')

@@ -104,7 +104,9 @@ class Roles(commands.Cog):
     async def on_raw_reaction_add(self, payload):
         """Give member character, region, undergrad, or student role on reaction."""
         # Ignore non-Academy servers
-        if payload.guild_id not in [252352512332529664, 475599187812155392]: return
+        ACADEMY_ID = 252352512332529664
+        TEST_SERVER_ID = 475599187812155392
+        if payload.guild_id not in [ACADEMY_ID, TEST_SERVER_ID]: return
         # Ignore reactions from Mentorbot
         if (user_id := payload.user_id) == self.bot.user.id: return
         # Ensure set-your-roles channel
@@ -206,7 +208,9 @@ class Roles(commands.Cog):
     async def on_raw_reaction_remove(self, payload):
         """Remove member's character, region, or undergrad role on reaction remove."""
         # Ignore non-Academy servers
-        if payload.guild_id not in [252352512332529664, 475599187812155392]: return
+        ACADEMY_ID = 252352512332529664
+        TEST_SERVER_ID = 475599187812155392
+        if payload.guild_id not in [ACADEMY_ID, TEST_SERVER_ID]: return
         # Ensure set-your-roles channel
         guild = self.bot.get_guild(payload.guild_id)
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
