@@ -79,7 +79,7 @@ class Roles(commands.Cog):
         """Toggle member's switch availability status in database."""
         member = ctx.guild.get_member(ctx.author.id)
         role = discord.utils.get(ctx.guild.roles, name='Switch Mentor')
-        if role in author.roles:
+        if role in member.roles:
             embed = await helpers.update_roles(member, remove=role)
         else:
             embed = await helpers.update_roles(member, add=role)
@@ -93,7 +93,7 @@ class Roles(commands.Cog):
         """Toggle member's xbox availability status in database."""
         member = ctx.guild.get_member(ctx.author.id)
         role = discord.utils.get(ctx.guild.roles, name='Xbox Mentor')
-        if role in author.roles:
+        if role in member.roles:
             embed = await helpers.update_roles(member, remove=role)
         else:
             embed = await helpers.update_roles(member, add=role)
