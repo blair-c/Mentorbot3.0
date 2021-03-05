@@ -93,7 +93,7 @@ async def mentor_info(ctx, character=None, region=None):
             display = f'{mentor.mention} **{str(mentor)}** {"".join(mains + chars)} '
             # Display if mentor is available for Switch/Xbox Mentoring
             if switch_role in mentor.roles:
-                    display += switch_emote
+                display += switch_emote
             if xbox_role in mentor.roles:
                 display += xbox_emote
             formatted.append(display)
