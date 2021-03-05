@@ -3,84 +3,80 @@
 import discord
 from discord.ext import commands
 
-from bot import db
 from data import rivals
 
 
 async def mentor_info(ctx, character=None, region=None):
     """Display an embed listing the mentors of given character/region."""
-    # Get character/region name, color, and icon url
-    if region == 'EU':
-        info = {'color': 3294334, 'icon': 'https://imgur.com/WPMrAhN.png'}
-        selection = 'EU'
-    else:
+    roles = ctx.guild.roles
+    if character:
+        # Get mentors
+        char_role = discord.utils.get(roles, name=character)
+        main_role = discord.utils.get(roles, name=f'{character} (Main)')
+        region_roles = [discord.utils.get(roles, name=r) for r in rivals.regions]
+        # Active mentors
+        active_mentors = [m for m in discord.utils.get(roles, name='Mentors').members
+                         if char_role in m.roles or main_role in m.roles]
+        sections = {'Mentor': [], 'Trial Mentor': [], 'Advisor': []}
+        for status in sections:
+            mentor_list = [m for m in active_mentors if discord.utils.get(roles, name=status) in m.roles]
+            formatted = []
+            for mentor in mentor_list:  # Format
+                regions = [rivals.regions[r.name]['emote'] for r in region_roles if r in mentor.roles]
+                formatted.append(f'{mentor.mention} **{str(mentor)}** {"".join(regions)}')
+            sections[status] = formatted
+        # DND mentors
+        dnd_list = [m for m in discord.utils.get(roles, name='DO NOT DISTURB').members
+                   if char_role in m.roles or main_role in m.roles]
+        formatted = []
+        for mentor in dnd_list:  # Format
+            regions = [rivals.regions[r.name]['emote'] for r in region_roles if r in mentor.roles]
+            formatted.append(f'{mentor.mention} **{str(mentor)}** {"".join(regions)}')
+        dnd_list = formatted
+        # For display 
         info = rivals.characters[character]
         selection = character
-    # Create embed
+    if region:
+        # Get mentors
+        region_role = discord.utils.get(roles, name=region)
+        char_roles = [discord.utils.get(roles, name=c) for c in rivals.characters]
+        main_roles = [discord.utils.get(roles, name=f'{c} (Main)') for c in rivals.characters]
+        # Active mentors
+        active_mentors = [m for m in discord.utils.get(roles, name='Mentors').members
+                         if region_role in m.roles]
+        sections = {'Mentor': [], 'Trial Mentor': [], 'Advisor': []}
+        for status in sections:
+            mentor_list = [m for m in active_mentors if discord.utils.get(roles, name=status) in m.roles]
+            formatted = []
+            for mentor in mentor_list:  # Format
+                mains = [rivals.characters[m.name.replace(' (Main)', '')]['emote'] 
+                        for m in main_roles if m in mentor.roles]
+                chars = [rivals.characters[c.name]['emote'] for c in char_roles if c in mentor.roles]
+                formatted.append(f'{mentor.mention} **{str(mentor)}** {"".join(mains + chars)}')
+            sections[status] = formatted
+        # DND mentors
+        dnd_list = [m for m in discord.utils.get(roles, name='DO NOT DISTURB').members
+                   if region_role in m.roles]
+        formatted = []
+        for mentor in dnd_list:  # Format
+            mains = [rivals.characters[m.name.replace(' (Main)', '')]['emote'] 
+                    for m in main_roles if m in mentor.roles]
+            chars = [rivals.characters[c.name]['emote'] for c in char_roles if c in mentor.roles]
+            formatted.append(f'{mentor.mention} **{str(mentor)}** {"".join(mains + chars)}')
+        dnd_list = formatted
+        # For display
+        info = rivals.regions[region]
+        selection = info['abbreviation']
+    # Display
     embed = discord.Embed(
         color=info['color'],
         title=f"Here's a list of our {selection} mentors and advisors:")
     embed.set_author(name='Great selection!', icon_url=info['icon'])
-    bot = ctx.bot
-    # Active
-    sections = {'Mentor': 'Mentors', 'Trial': 'Trial Mentors', 'Advisor': 'Advisors'}
-    for data_name, display in sections.items():
-        mentors = mentors_of_status(bot, data_name, character=character, region=region)
-        if mentors:
-            embed.add_field(name=display, value=mentors, inline=False)
-    # DND
-    dnd = dnd_mentors(bot, character=character, region=region)
-    if dnd:
-        embed.add_field(name='Do Not Disturb', value=dnd, inline=False)
+    for section, mentor_list in sections.items():
+        if mentor_list:
+            embed.add_field(name=f'{section}s', value='\n'.join(mentor_list), inline=False)
+    if dnd_list:
+        embed.add_field(name='Do Not Disturb', value='\n'.join(dnd_list), inline=False)
     # Send mentor info
     await ctx.send(embed=embed)
-
-
-def mentors_of_status(bot, status, character=None, region=None):
-    """Return mentors of given status and character/region for embed."""
-    mentors = []
-    if character:
-        db.execute('''SELECT discord_id, name, region, switch, xbox FROM mentors WHERE status =
-                   %(status)s AND characters LIKE %(character)s ESCAPE '' AND NOT do_not_disturb''',
-                   {'status': status, 'character': f'%{character}%'})
-    elif region:
-        db.execute('''SELECT discord_id, name, characters, switch, xbox FROM mentors WHERE 
-                   status = %(status)s AND region = %(region)s AND NOT do_not_disturb''',
-                   {'status': status, 'region': region})
-    for row in db.fetchall():
-        try:
-            mentor = bot.get_user(row[0]) # discord_id
-            mentors.append(f"{mentor.mention} **{str(mentor)}** ({row[2]})") # character/region
-        except AttributeError:  # catch if user ID isn't found, eg. left the server
-            mentors.append(f"{row[1]} ({row[2]})") # name, character/region
-        # :switch:, :xbox: emotes next to names
-        if row[3]: # switch
-            mentors[-1] += ' <:switch:759539694937309186>'
-        if row[4]: # xbox
-            mentors[-1] += ' <:xbox:759539695553085460>'
-    return '\n'.join(mentors)
-
-
-def dnd_mentors(bot, character=None, region=None):
-    """Return DND mentors of given character/region for embed."""
-    mentors = []
-    if character:
-        db.execute('''SELECT discord_id, name, region, switch, xbox FROM mentors WHERE
-                   characters LIKE %(character)s AND do_not_disturb''',
-                   {'character': f'%{character}%'})
-    elif region:
-        db.execute('''SELECT discord_id, name, characters, switch, xbox FROM mentors WHERE 
-                   region = %(region)s AND do_not_disturb''', {'region': region})
-    for row in db.fetchall():
-        try:
-            mentor = bot.get_user(row[0]) # discord_id
-            mentors.append(f"{mentor.mention} **{str(mentor)}** ({row[2]})") # character/region
-        except AttributeError:  # catch if user ID isn't found, eg. left the server
-            mentors.append(f"{row[1]} ({row[2]})") # name, character/region
-        # :switch:, :xbox: emotes next to names
-        if row[3]: # switch
-            mentors[-1] += ' <:switch:759539694937309186>'
-        if row[4]: # xbox
-            mentors[-1] += ' <:xbox:759539695553085460>'
-    return '\n'.join(mentors)
-
+    

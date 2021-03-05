@@ -37,19 +37,19 @@ class Characters(commands.Cog):
         await ctx.send(embed=embed)
 
     # Region-based mentor commands
-    @commands.command(name='EU')
+    @commands.command(name='EU', aliases=['europe'])
     @helpers.in_academy()
     async def eu_mentors(self, ctx):
         """Display all EU mentors, trial mentors, and advisors."""
-        await mentors.mentor_info(ctx, cursor, region='EU')
+        await mentors.mentor_info(ctx, region='Europe')
 
-    ACADEMY_ID = 252352512332529664
-    TEST_SERVER_ID = 475599187812155392
     # Character commands - mentors and hitboxes
     async def character_command(self, ctx, character, move):
         """Display mentor info for character, or return hitbox info for move."""
         sleep(0.1)  # Delay to avoid bot message appearing before command message
         if not move:  # No args passed, display mentor info in Academy, hurtbox info elsewhere
+            ACADEMY_ID = 252352512332529664
+            TEST_SERVER_ID = 475599187812155392
             if ctx.guild.id not in [ACADEMY_ID, TEST_SERVER_ID]:
                 await hitboxes.move_info(ctx, cursor, character, 'hurtbox')
             elif ctx.channel.name == 'ask-a-mentor':
@@ -60,7 +60,7 @@ class Characters(commands.Cog):
                 sleep(5)
                 await ctx.message.delete()  # Delete message of command
                 await error.delete()  # Delete error message
-            else:
+            else:  # Mentor command
                 await mentors.mentor_info(ctx, character=character)
         else:  # Arg(s) passed, display move info
             await hitboxes.move_info(ctx, cursor, character, move)
