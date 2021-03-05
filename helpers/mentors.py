@@ -9,6 +9,11 @@ from data import rivals
 async def mentor_info(ctx, character=None, region=None):
     """Display an embed listing the mentors of given character/region."""
     roles = ctx.guild.roles
+    switch_role = discord.utils.get(roles, name='Switch Mentor')
+    switch_emote = '<:switch:759539694937309186>'
+    xbox_role = discord.utils.get(roles, name='Xbox Mentor')
+    xbox_emote = '<:xbox:759539695553085460>'
+
     if character:
         # Get mentors
         char_role = discord.utils.get(roles, name=character)
@@ -22,20 +27,35 @@ async def mentor_info(ctx, character=None, region=None):
             mentor_list = [m for m in active_mentors if discord.utils.get(roles, name=status) in m.roles]
             formatted = []
             for mentor in mentor_list:  # Format
+                # Display regions next to each mentor
                 regions = [rivals.regions[r.name]['emote'] for r in region_roles if r in mentor.roles]
-                formatted.append(f'{mentor.mention} **{str(mentor)}** {"".join(regions)}')
+                display = f'{mentor.mention} **{str(mentor)}** {"".join(regions)} '
+                # Display if mentor is available for Switch/Xbox Mentoring
+                if switch_role in mentor.roles:
+                    display += switch_emote
+                if xbox_role in mentor.roles:
+                    display += xbox_emote
+                formatted.append(display)
             sections[status] = formatted
         # DND mentors
         dnd_list = [m for m in discord.utils.get(roles, name='DO NOT DISTURB').members
                    if char_role in m.roles or main_role in m.roles]
         formatted = []
         for mentor in dnd_list:  # Format
+            # Display regions next to each mentor
             regions = [rivals.regions[r.name]['emote'] for r in region_roles if r in mentor.roles]
-            formatted.append(f'{mentor.mention} **{str(mentor)}** {"".join(regions)}')
+            display = f'{mentor.mention} **{str(mentor)}** {"".join(regions)} '
+            # Display if mentor is available for Switch/Xbox Mentoring
+            if switch_role in mentor.roles:
+                    display += switch_emote
+            if xbox_role in mentor.roles:
+                display += xbox_emote
+            formatted.append(display)
         dnd_list = formatted
         # For display 
         info = rivals.characters[character]
         selection = character
+
     if region:
         # Get mentors
         region_role = discord.utils.get(roles, name=region)
@@ -49,24 +69,39 @@ async def mentor_info(ctx, character=None, region=None):
             mentor_list = [m for m in active_mentors if discord.utils.get(roles, name=status) in m.roles]
             formatted = []
             for mentor in mentor_list:  # Format
+                # Display characters next to each mentor
                 mains = [rivals.characters[m.name.replace(' (Main)', '')]['emote'] 
                         for m in main_roles if m in mentor.roles]
                 chars = [rivals.characters[c.name]['emote'] for c in char_roles if c in mentor.roles]
-                formatted.append(f'{mentor.mention} **{str(mentor)}** {"".join(mains + chars)}')
+                display = f'{mentor.mention} **{str(mentor)}** {"".join(mains + chars)} '
+                # Display if mentor is available for Switch/Xbox Mentoring
+                if switch_role in mentor.roles:
+                    display += switch_emote
+                if xbox_role in mentor.roles:
+                    display += xbox_emote
+                formatted.append(display)
             sections[status] = formatted
         # DND mentors
         dnd_list = [m for m in discord.utils.get(roles, name='DO NOT DISTURB').members
                    if region_role in m.roles]
         formatted = []
         for mentor in dnd_list:  # Format
+            # Display characters next to each mentor
             mains = [rivals.characters[m.name.replace(' (Main)', '')]['emote'] 
                     for m in main_roles if m in mentor.roles]
             chars = [rivals.characters[c.name]['emote'] for c in char_roles if c in mentor.roles]
-            formatted.append(f'{mentor.mention} **{str(mentor)}** {"".join(mains + chars)}')
+            display = f'{mentor.mention} **{str(mentor)}** {"".join(mains + chars)} '
+            # Display if mentor is available for Switch/Xbox Mentoring
+            if switch_role in mentor.roles:
+                    display += switch_emote
+            if xbox_role in mentor.roles:
+                display += xbox_emote
+            formatted.append(display)
         dnd_list = formatted
         # For display
         info = rivals.regions[region]
         selection = info['abbreviation']
+
     # Display
     embed = discord.Embed(
         color=info['color'],
