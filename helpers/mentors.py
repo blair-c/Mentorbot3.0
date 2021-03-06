@@ -27,8 +27,8 @@ async def mentor_info(ctx, character=None, region=None, console=None):
             formatted = []
             for mentor in mentor_list:  # Format
                 # Display regions next to each mentor
-                regions = [rivals.regions[r.name]['emote'] for r in region_roles if r in mentor.roles]
-                display = f'{mentor.mention} **{str(mentor)}** {"".join(regions)} '
+                regions = [rivals.regions[r.name]['abbreviation'] for r in region_roles if r in mentor.roles]
+                display = f'{mentor.mention} **{str(mentor)}** ({"/".join(regions)}) '
                 # Display if mentor is available for Switch/Xbox Mentoring
                 if switch_role in mentor.roles:
                     display += switch_emote
@@ -42,8 +42,8 @@ async def mentor_info(ctx, character=None, region=None, console=None):
         formatted = []
         for mentor in dnd_list:  # Format
             # Display regions next to each mentor
-            regions = [rivals.regions[r.name]['emote'] for r in region_roles if r in mentor.roles]
-            display = f'{mentor.mention} **{str(mentor)}** {"".join(regions)} '
+            regions = [rivals.regions[r.name]['abbreviation'] for r in region_roles if r in mentor.roles]
+            display = f'{mentor.mention} **{str(mentor)}** ({"/".join(regions)}) '
             # Display if mentor is available for Switch/Xbox Mentoring
             if switch_role in mentor.roles:
                     display += switch_emote
@@ -119,11 +119,11 @@ async def mentor_info(ctx, character=None, region=None, console=None):
             formatted = []
             for mentor in mentor_list:  # Format
                 # Display region and characters next to each mentor
-                regions = [rivals.regions[r.name]['emote'] for r in region_roles if r in mentor.roles]
+                regions = [rivals.regions[r.name]['abbreviation'] for r in region_roles if r in mentor.roles]
                 mains = [rivals.characters[m.name.replace(' (Main)', '')]['emote'] 
                         for m in main_roles if m in mentor.roles]
                 chars = [rivals.characters[c.name]['emote'] for c in char_roles if c in mentor.roles]
-                display = f'{mentor.mention} **{str(mentor)}** {"".join(regions)} {"".join(mains + chars)}'
+                display = f'{mentor.mention} **{str(mentor)}** ({"/".join(regions)}) {"".join(mains + chars)}'
                 formatted.append(display)
             sections[status] = formatted
         # DND mentors
@@ -132,11 +132,11 @@ async def mentor_info(ctx, character=None, region=None, console=None):
         formatted = []
         for mentor in dnd_list:  # Format
             # Display region and characters next to each mentor
-            regions = [rivals.regions[r.name]['emote'] for r in region_roles if r in mentor.roles]
+            regions = [rivals.regions[r.name]['abbreviation'] for r in region_roles if r in mentor.roles]
             mains = [rivals.characters[m.name.replace(' (Main)', '')]['emote'] 
                     for m in main_roles if m in mentor.roles]
             chars = [rivals.characters[c.name]['emote'] for c in char_roles if c in mentor.roles]
-            display = f'{mentor.mention} **{str(mentor)}** {"".join(regions)} {"".join(mains + chars)}'
+            display = f'{mentor.mention} **{str(mentor)}** ({"/".join(regions)}) {"".join(mains + chars)}'
             formatted.append(display)
         dnd_list = formatted
         # For display
