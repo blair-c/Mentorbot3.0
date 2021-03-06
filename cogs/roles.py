@@ -8,7 +8,7 @@ from helpers import helpers
 
 
 class Roles(commands.Cog):
-    """Add and remove roles from users, and update mentor database to reflect changes."""
+    """Add and remove roles from users."""
 
     def __init__(self, bot):
         self.bot = bot
@@ -103,75 +103,82 @@ class Roles(commands.Cog):
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
         """Give member character, region, undergrad, or student role on reaction."""
-        # Ignore non-Academy servers
-        ACADEMY_ID = 252352512332529664
-        TEST_SERVER_ID = 475599187812155392
-        if payload.guild_id not in [ACADEMY_ID, TEST_SERVER_ID]: return
         # Ignore reactions from Mentorbot
         if (user_id := payload.user_id) == self.bot.user.id: return
-        # Ensure set-your-roles channel
+        # Ensure set-your-roles channel name
         guild = self.bot.get_guild(payload.guild_id)
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
         if channel.name != 'set-your-roles': return
-        # Add/remove roles
+        # Setup
         user = self.bot.get_user(user_id)
         member = guild.get_member(user_id)
         message = await channel.fetch_message(payload.message_id)
         guild_roles = guild.roles
-        emote = payload.emoji.name
-        # Main
-        if 'main' in message.content:
-            for reaction in message.reactions:
-                character = reaction.emoji.name
-                main_role = discord.utils.get(guild_roles, name=f'{character} (Main)')
-                if character == emote:
-                    # Remove secondary role of main being added
-                    secondary_role = discord.utils.get(guild_roles, name=character)
-                    if secondary_role in member.roles:
+        emote = f'<:{payload.emoji.name}:{payload.emoji.id}>'
+        if message.attachments:
+            img = message.attachments[0].filename
+            # Main
+            if img == 'main.png':
+                for character, info in rivals.characters.items():
+                    if info['emote'] == emote:
+                        main_role = discord.utils.get(guild_roles, name=f'{character} (Main)')
+                        await member.add_roles(main_role)
+                        secondary_role = discord.utils.get(guild_roles, name=character)
                         await member.remove_roles(secondary_role)
-                    # Add new main role
-                    await member.add_roles(main_role)
-                else:
-                    # Remove previous main role
-                    if main_role in member.roles:
+            # Secondaries
+            elif img == 'secondaries.png':
+                for character, info in rivals.characters.items():
+                    if info['emote'] == emote:
+                        secondary_role = discord.utils.get(guild_roles, name=character)
+                        await member.add_roles(secondary_role)
+                        main_role = discord.utils.get(guild_roles, name=f'{character} (Main)')
                         await member.remove_roles(main_role)
-                    # Remove previous main reaction
-                    if user in await reaction.users().flatten():
-                        await reaction.remove(user)
-        # Secondaries
-        elif 'secondaries' in message.content:
-            main_role = discord.utils.get(guild_roles, name=f'{emote} (Main)')
-            if main_role not in member.roles:
-                await member.add_roles(discord.utils.get(guild_roles, name=emote))
         # Region
-        elif 'set your region' in message.content:
-            # Remove previous region roles
-            regions = [discord.utils.get(guild_roles, name=region) for region in
-                      rivals.regions]
-            await member.remove_roles(*[role for role in regions if role in member.roles])
-            # Add new region role
-            await member.add_roles(discord.utils.get(guild_roles, name=emote))
-            for reaction in message.reactions:
-                region = reaction.emoji.name
-                region_role = discord.utils.get(guild_roles, name=region)
-                if region == emote:
-                    # Add new region role
-                    await member.add_roles(region_role)
-                else:
-                    # Remove previous region role
-                    if region_role in member.roles:
-                        await member.remove_roles(region_role)
-                    # Remove previous region reaction
-                    if user in await reaction.users().flatten():
-                        await reaction.remove(user)
+        elif 'West Coast' in message.content:
+            for region, info in rivals.regions.items():
+                if info['emote'] == emote:
+                    await member.add_roles(discord.utils.get(guild_roles, name=region))
+        # Pronouns
+        elif 'he/him' in message.content:
+            if emote == '<:he_him:817651606384017419>':
+                pronoun = 'he/him'
+            elif emote == '<:they_them:817651606396469269>':
+                pronoun = 'they/them'
+            elif emote == '<:she_her:817651606685483008>':
+                pronoun = 'she/her'
+            elif emote == '<:any_pronouns:817651606270902293>':
+                pronoun = 'any pronouns'
+            await member.add_roles(discord.utils.get(guild_roles, name=pronoun))
+        # Ignore non-Academy servers past this point
+        ACADEMY_ID = 252352512332529664
+        TEST_SERVER_ID = 475599187812155392
+        if payload.guild_id not in [ACADEMY_ID, TEST_SERVER_ID]: return
+        # Matchmaking
+        elif 'Matchmaking' in message.content:
+            # PC
+            if emote == '<:PCMatchmaking:817627642143703041>':
+                role = 'Matchmaking (PC)'
+            elif emote == '<:PCNewbieMatchmaking:817627666131845131>':
+                role = 'Newbie Matchmaking (PC)'
+            # Switch
+            elif emote == '<:SwitchMatchmaking:758087700363477074>':
+                role = 'Matchmaking (Switch)'
+            elif emote == '<:SwitchNewbieMatchmaking:758087700468465725>':
+                role = 'Newbie Matchmaking (Switch)'
+            # Xbox
+            elif emote == '<:XboxMatchmaking:758087700405551175>':
+                role = 'Matchmaking (Xbox)'
+            elif emote == '<:XboxNewbieMatchmaking:758087700309082182>':
+                role = 'Newbie Matchmaking (Xbox)'
+            await member.add_roles(discord.utils.get(guild_roles, name=role))
         # RAS
         elif 'amateur' in message.content:
-            if emote == 'NorthAmerica':
+            if emote == '<:NorthAmerica:547189311527845907>':
                 await member.add_roles(discord.utils.get(guild_roles, name='Undergrad'))
-            elif emote == 'Europe':
+            elif emote == '<:Europe:547189473432305665>':
                 await member.add_roles(discord.utils.get(guild_roles, name='amatEUr'))
         # Enrollment
-        elif emote == 'roaa':
+        elif emote == '<:roaa:547193418560962570>':
             student = discord.utils.get(guild_roles, name='Student')
             if student not in member.roles:
                 await member.add_roles(student)
@@ -185,118 +192,137 @@ class Roles(commands.Cog):
                 embed.set_footer(text=f'ID: {payload.user_id}')
                 action_log = discord.utils.get(guild.text_channels, name='action-log')
                 await action_log.send(embed=embed)
-        # Matchmaking
-        elif 'Want to be notified by' in message.content:
-            # Steam
-            if emote == 'SteamMatchmaking':
-                role = 'Matchmaking (Steam)'
-            elif emote == 'SteamNewbieMatchmaking':
-                role = 'Newbie Matchmaking (Steam)'
-            # Switch
-            elif emote == 'SwitchMatchmaking':
-                role = 'Matchmaking (Switch)'
-            elif emote == 'SwitchNewbieMatchmaking':
-                role = 'Newbie Matchmaking (Switch)'
-            # Xbox
-            elif emote == 'XboxMatchmaking':
-                role = 'Matchmaking (Xbox)'
-            elif emote == 'XboxNewbieMatchmaking':
-                role = 'Newbie Matchmaking (Xbox)'
-            await member.add_roles(discord.utils.get(guild_roles, name=role))
 
     @commands.Cog.listener()
     async def on_raw_reaction_remove(self, payload):
         """Remove member's character, region, or undergrad role on reaction remove."""
-        # Ignore non-Academy servers
-        ACADEMY_ID = 252352512332529664
-        TEST_SERVER_ID = 475599187812155392
-        if payload.guild_id not in [ACADEMY_ID, TEST_SERVER_ID]: return
-        # Ensure set-your-roles channel
+        # Ignore reactions from Mentorbot
+        if (user_id := payload.user_id) == self.bot.user.id: return
+        # Ensure set-your-roles channel name
         guild = self.bot.get_guild(payload.guild_id)
         channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
         if channel.name != 'set-your-roles': return
-        # Remove roles
-        member = guild.get_member(payload.user_id)
+        # Setup
+        user = self.bot.get_user(user_id)
+        member = guild.get_member(user_id)
         message = await channel.fetch_message(payload.message_id)
         guild_roles = guild.roles
-        emote = payload.emoji.name
-        # Main
-        if 'main' in message.content:
-            await member.remove_roles(discord.utils.get(guild_roles, name=f'{emote} (Main)'))
-        # Secondaries
-        elif 'secondaries' in message.content:
-            await member.remove_roles(discord.utils.get(guild_roles, name=emote))
-        # RAS
-        elif 'amateur' in message.content:
-            if emote == 'NorthAmerica':
-                await member.remove_roles(discord.utils.get(guild_roles, name='Undergrad'))
-            elif emote == 'Europe':
-                await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
+        emote = f'<:{payload.emoji.name}:{payload.emoji.id}>'
+        if message.attachments:
+            img = message.attachments[0].filename
+            # Main
+            if img == 'main.png':
+                for character, info in rivals.characters.items():
+                    if info['emote'] == emote:
+                        main_role = discord.utils.get(guild_roles, name=f'{character} (Main)')
+                        await member.remove_roles(main_role)
+            # Secondaries
+            elif img == 'secondaries.png':
+                for character, info in rivals.characters.items():
+                    if info['emote'] == emote:
+                        secondary_role = discord.utils.get(guild_roles, name=character)
+                        await member.remove_roles(secondary_role)
+        # Region
+        elif 'West Coast' in message.content:
+            for region, info in rivals.regions.items():
+                if info['emote'] == emote:
+                    await member.remove_roles(discord.utils.get(guild_roles, name=region))
+        # Pronouns
+        elif 'he/him' in message.content:
+            if emote == '<:he_him:817651606384017419>':
+                pronoun = 'he/him'
+            elif emote == '<:they_them:817651606396469269>':
+                pronoun = 'they/them'
+            elif emote == '<:she_her:817651606685483008>':
+                pronoun = 'she/her'
+            elif emote == '<:any_pronouns:817651606270902293>':
+                pronoun = 'any pronouns'
+            await member.remove_roles(discord.utils.get(guild_roles, name=pronoun))
+        # Ignore non-Academy servers past this point
+        ACADEMY_ID = 252352512332529664
+        TEST_SERVER_ID = 475599187812155392
+        if payload.guild_id not in [ACADEMY_ID, TEST_SERVER_ID]: return
         # Matchmaking
-        elif 'Want to be notified by' in message.content:
-            # Steam
-            if emote == 'SteamMatchmaking':
-                role = 'Matchmaking (Steam)'
-            elif emote == 'SteamNewbieMatchmaking':
-                role = 'Newbie Matchmaking (Steam)'
+        elif 'Matchmaking' in message.content:
+            # PC
+            if emote == '<:PCMatchmaking:817627642143703041>':
+                role = 'Matchmaking (PC)'
+            elif emote == '<:PCNewbieMatchmaking:817627666131845131>':
+                role = 'Newbie Matchmaking (PC)'
             # Switch
-            elif emote == 'SwitchMatchmaking':
+            elif emote == '<:SwitchMatchmaking:758087700363477074>':
                 role = 'Matchmaking (Switch)'
-            elif emote == 'SwitchNewbieMatchmaking':
+            elif emote == '<:SwitchNewbieMatchmaking:758087700468465725>':
                 role = 'Newbie Matchmaking (Switch)'
             # Xbox
-            elif emote == 'XboxMatchmaking':
+            elif emote == '<:XboxMatchmaking:758087700405551175>':
                 role = 'Matchmaking (Xbox)'
-            elif emote == 'XboxNewbieMatchmaking':
+            elif emote == '<:XboxNewbieMatchmaking:758087700309082182>':
                 role = 'Newbie Matchmaking (Xbox)'
             await member.remove_roles(discord.utils.get(guild_roles, name=role))
+        # RAS
+        elif 'amateur' in message.content:
+            if emote == '<:NorthAmerica:547189311527845907>':
+                await member.remove_roles(discord.utils.get(guild_roles, name='Undergrad'))
+            elif emote == '<:Europe:547189473432305665>':
+                await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
 
-    @commands.command(name='setyourroles')
+    @commands.command(name='setyourroles', aliases=['set-your-roles'])
     @helpers.in_channel('set-your-roles')
-    @helpers.in_academy()
-    @commands.is_owner()
+    @commands.has_permissions(administrator=True)
     async def set_your_roles_channel_setup(self, ctx):
         """Send and react to messages to set up role reaction system channel."""
+        ACADEMY_ID = 252352512332529664
+        TEST_SERVER_ID = 475599187812155392
+        emojis = self.bot.get_guild(TEST_SERVER_ID).emojis
         # Delete message of command
         await ctx.message.delete()
         # Introduction
         await ctx.send(
-            f'Hello! Welcome to the **{ctx.guild.name}!**\n\n'
+            'Hello! Welcome to the **Rivals of Aether Academy!**\n\n'
             '• **Please add reactions below to set your main, secondaries, and region.**\n'
             '• Reacting too quickly may cause the bot to fail in adding/removing roles.\n'
             '• You might need to react and unreact for the role to be added properly.')
         # Main
-        await ctx.send(file=discord.File('images/setyourroles/main.png'))
-        msg = await ctx.send(
-            '• **Click on a character reaction below to set your main.**\n'
-            '• Click on the reaction again to remove a main.\n'
-            '• You may only have one main character.')
+        msg = await ctx.send(file=discord.File('images/setyourroles/main.png'))
         for character in rivals.characters:
-            await msg.add_reaction(
-                discord.utils.get(self.bot.emojis, name=character.replace(' ', '')))
+            await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
         # Secondaries
-        await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
-        msg = await ctx.send(
-            '• **Click on a character reaction below to add a secondary.**\n'
-            '• Click on the reaction again to remove a secondary.\n'
-            '• You may have multiple secondaries.')
+        msg = await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
         for character in rivals.characters:
-            await msg.add_reaction(
-                discord.utils.get(self.bot.emojis, name=character.replace(' ', '')))
+            await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
         # Region
         await ctx.send(file=discord.File('images/setyourroles/region.png'))
         msg = await ctx.send(
-            '• **Click on a region reaction below to set your region.**\n'
-            '<:WestCoast:547189520781803530> → West Coast\n'
-            '<:Midwest:547189509272633355> → Midwest\n'
-            '<:EastCoast:547189489861132308> → East Coast\n'
-            '<:Europe:547189473432305665> → Europe\n'
-            '<:Australia:547189427416596502> → Australia\n'
-            '<:SouthAmerica:547189406902124595> → South America\n'
-            '<:Asia:547189391399976980> → Asia\n'
-            '<:Africa:547189379605725225> → Africa')
+            '\n'.join([f'{info["emote"]} → {region}' for region, info in rivals.regions.items()]))
         for region in rivals.regions:
-            await msg.add_reaction(discord.utils.get(self.bot.emojis, name=region))
+            await msg.add_reaction(discord.utils.get(emojis, name=region.replace(' ', '')))
+        # Pronouns
+        await ctx.send(file=discord.File('images/setyourroles/pronouns.png'))
+        msg = await ctx.send(
+            '<:he_him:817651606384017419> → `he/him`\n'
+            '<:they_them:817651606396469269> → `they/them`\n'
+            '<:she_her:817651606685483008> → `she/her`\n'
+            '<:any_pronouns:817651606270902293> → `any pronouns`')
+        for emote in (['he_him', 'they_them', 'she_her', 'any_pronouns']):
+            await msg.add_reaction(discord.utils.get(emojis, name=emote))
+        # Stop here in non-Academy servers
+        if ctx.message.guild.id not in [ACADEMY_ID, TEST_SERVER_ID]: return
+        # Matchmaking
+        await ctx.send(file=discord.File('images/setyourroles/matchmaking.png'))
+        msg = await ctx.send(
+            # Steam
+            '<:PCMatchmaking:817627642143703041> → Matchmaking (PC)\n'
+            '<:PCNewbieMatchmaking:817627666131845131> → Newbie Matchmaking (PC)\n'
+            # Switch
+            '<:SwitchMatchmaking:758087700363477074> → Matchmaking (Switch)\n'
+            '<:SwitchNewbieMatchmaking:758087700468465725> → Newbie Matchmaking (Switch)\n'
+            # Xbox
+            '<:XboxMatchmaking:758087700405551175> → Matchmaking (Xbox)\n'
+            '<:XboxNewbieMatchmaking:758087700309082182> → Newbie Matchmaking (Xbox)')
+        for emote in (['PCMatchmaking', 'PCNewbieMatchmaking', 'SwitchMatchmaking', 
+                     'SwitchNewbieMatchmaking', 'XboxMatchmaking', 'XboxNewbieMatchmaking']):
+            await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # RAS
         await ctx.send(file=discord.File('images/setyourroles/ras.png'))
         msg = await ctx.send(
@@ -306,39 +332,14 @@ class Roles(commands.Cog):
             '<:NorthAmerica:547189311527845907> → North America\n'
             '<:Europe:547189473432305665> → Europe')
         for region in ['NorthAmerica', 'Europe']:
-            await msg.add_reaction(discord.utils.get(self.bot.emojis, name=region))
+            await msg.add_reaction(discord.utils.get(emojis, name=region))
         # Enroll
         await ctx.send(file=discord.File('images/setyourroles/enroll.png'))
         msg = await ctx.send(
             '• **Is this the only channel you can see?**\n'
             '• Click the <:roaa:547193418560962570> reaction below to enroll in the '
             'server and view the rest of the channels!')
-        await msg.add_reaction(discord.utils.get(self.bot.emojis, name='roaa'))
-
-    @commands.command(name='setyourrolesmatchmaking')
-    @helpers.in_channel('set-your-roles')
-    @helpers.in_academy()
-    @commands.is_owner()
-    async def set_your_roles_matchmaking_setup(self, ctx):
-        """Send and react to message to add matchmaking in #set-your-roles."""
-        await ctx.message.delete()  # Delete message of command
-        await ctx.send(file=discord.File('images/setyourroles/matchmaking.png'))
-        msg = await ctx.send(
-            '• **Want to be notified by matchmaking pings? Click on a reaction below.**\n'
-            '• Click on the reaction again to opt out of notifications.\n'
-            # Steam
-            '<:SteamMatchmaking:758087699990315020> → Matchmaking (Steam)\n'
-            '<:SteamNewbieMatchmaking:758087700237778994> → Newbie Matchmaking (Steam)\n'
-            # Switch
-            '<:SwitchMatchmaking:758087700363477074> → Matchmaking (Switch)\n'
-            '<:SwitchNewbieMatchmaking:758087700468465725> → Newbie Matchmaking (Switch)\n'
-            # Xbox
-            '<:XboxMatchmaking:758087700405551175> → Matchmaking (Xbox)\n'
-            '<:XboxNewbieMatchmaking:758087700309082182> → Newbie Matchmaking (Xbox)')
-        # Add reactions to msg
-        for emote in (['SteamMatchmaking', 'SteamNewbieMatchmaking', 'SwitchMatchmaking', 
-                     'SwitchNewbieMatchmaking', 'XboxMatchmaking', 'XboxNewbieMatchmaking']):
-            await msg.add_reaction(discord.utils.get(self.bot.emojis, name=emote))
+        await msg.add_reaction(discord.utils.get(emojis, name='roaa'))
 
 
 def setup(bot):
