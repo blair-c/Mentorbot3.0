@@ -19,7 +19,7 @@ class Roles(commands.Cog):
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
     async def do_not_disturb_toggle(self, ctx):
-        """Toggle member's do not disturb role, and update database."""
+        """Toggle member between mentors and do not disturb roles."""
         mentors_role = discord.utils.get(ctx.guild.roles, name='Mentors')
         dnd_role = discord.utils.get(ctx.guild.roles, name='DO NOT DISTURB')
         member = ctx.guild.get_member(ctx.author.id)
@@ -52,7 +52,7 @@ class Roles(commands.Cog):
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
     async def advisor_role_add(self, ctx):
-        """Toggle member's roles from mentor to advisor, and update database."""
+        """Toggle mentor's roles from mentor to advisor."""
         embed = await helpers.update_roles(
             ctx.guild.get_member(ctx.author.id),
             remove=discord.utils.get(ctx.guild.roles, name='Mentor'),
@@ -64,7 +64,7 @@ class Roles(commands.Cog):
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
     async def mentor_role_add(self, ctx):
-        """Toggle member's roles from advisor to mentor, and update database."""
+        """Toggle mentor's roles from advisor to mentor."""
         embed = await helpers.update_roles(
             ctx.guild.get_member(ctx.author.id),
             remove=discord.utils.get(ctx.guild.roles, name='Advisor'),
@@ -76,7 +76,7 @@ class Roles(commands.Cog):
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
     async def keyboard_role_toggle(self, ctx):
-        """Toggle mentor's keyboard status."""
+        """Toggle mentor's keyboard status in roles and commands."""
         member = ctx.guild.get_member(ctx.author.id)
         role = discord.utils.get(ctx.guild.roles, name='Keyboard')
         if role in member.roles:
@@ -90,7 +90,7 @@ class Roles(commands.Cog):
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
     async def switch_role_toggle(self, ctx):
-        """Toggle member's switch availability status in database."""
+        """Toggle mentor's Nintendo Switch availability status in roles and commands."""
         member = ctx.guild.get_member(ctx.author.id)
         role = discord.utils.get(ctx.guild.roles, name='Switch Mentor')
         if role in member.roles:
@@ -104,7 +104,7 @@ class Roles(commands.Cog):
     @helpers.in_channel('teacher-lounge')
     @helpers.in_academy()
     async def xbox_role_toggle(self, ctx):
-        """Toggle member's xbox availability status in database."""
+        """Toggle mentor's Xbox availability status in roles and commands."""
         member = ctx.guild.get_member(ctx.author.id)
         role = discord.utils.get(ctx.guild.roles, name='Xbox Mentor')
         if role in member.roles:
