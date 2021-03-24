@@ -15,7 +15,7 @@ class Info(commands.Cog):
         embed.set_author(name='Commands List', icon_url=self.bot.user.avatar_url)
         commands = {
             'Rivals Data':
-                ['angleflippers', 'dodgedata', 'forceflinch', 'hitpauseformula', 
+                ['angleflippers', 'dodgedata', 'forceflinch', 'hitpauseformula',
                  'hitstunformula', 'knockbackformula'],
             'Videos & Clips':
                 ['AAAA', 'babydashing', 'bairhitfall', 'pwjpecotr'],
@@ -148,7 +148,7 @@ class Info(commands.Cog):
             'continue holding up and towards Orby until the up strong begins```')
         embed = discord.Embed(description=instructions, color=0x76428a)
         embed.set_author(
-            name='Bair Hitfall Ustrongs Tutorial', 
+            name='Bair Hitfall Ustrongs Tutorial',
             icon_url='https://i.imgur.com/WlD8Bac.png')
         await ctx.send(embed=embed)
         # Send example Clip
@@ -167,19 +167,19 @@ class Info(commands.Cog):
             description='A custom Discord bot by the Rivals of Aether Academy.')
         embed.set_author(name='About Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
         embed.add_field(
-            name='<:blair:824365130749181952> Created by blair', 
+            name='<:blair:824365130749181952> Created by blair',
             value='<:twitter:609120999744733204> https://twitter.com/ydefinitely\n'
-                  '<:github:609120967280689161> https://github.com/blair-c/Mentorbot3.0', 
+                  '<:github:609120967280689161> https://github.com/blair-c/Mentorbot3.0',
             inline=False)
         embed.add_field(
-            name='<:SNC:609053198736424960> Frame data info provided by SNC and Sector 7-G', 
+            name='<:SNC:609053198736424960> Frame data info provided by SNC and Sector 7-G',
             value='<:twitter:609120999744733204> https://twitter.com/SNC_Sector7G\n'
                   '<:discord:609120982543630336> https://discord.gg/qgKqaPX',
             inline=False)
         embed.add_field(
             name='<:Mentorbot:640465696869974017> Add Mentorbot to your own server:',
             value=('https://discord.com/api/oauth2/authorize?'
-                   'client_id=475596740368793600&permissions=313408&scope=bot')
+                   'client_id=475596740368793600&permissions=313408&scope=bot'))
         await ctx.send(embed=embed)
 
     @commands.command(name='help', aliases=['syntax'], hidden=True)
@@ -201,7 +201,7 @@ class Info(commands.Cog):
         embed.set_author(name='How to Access Your Replays', icon_url=self.bot.user.avatar_url)
         embed.add_field(
             name='Method 1:',
-            value='1. Press `Win + R`\n' 
+            value='1. Press `Win + R`\n'
                   '2. Put in the following: ```%LocalAppData%\\RivalsOfAether\\replays```',
             inline=False)
         embed.add_field(
