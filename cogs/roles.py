@@ -71,6 +71,20 @@ class Roles(commands.Cog):
             add=discord.utils.get(ctx.guild.roles, name='Mentor'))
         await ctx.send(embed=embed)
 
+    @commands.command(name='keyboardmentor', aliases=['keyboard-mentor'], hidden=True)
+    @commands.has_any_role('Mentors', 'DO NOT DISTURB')
+    @helpers.in_channel('teacher-lounge')
+    @helpers.in_academy()
+    async def keyboard_role_toggle(self, ctx):
+        """Toggle mentor's keyboard status."""
+        member = ctx.guild.get_member(ctx.author.id)
+        role = discord.utils.get(ctx.guild.roles, name='Keyboard')
+        if role in member.roles:
+            embed = await helpers.update_roles(member, remove=role)
+        else:
+            embed = await helpers.update_roles(member, add=role)
+        await ctx.send(embed=embed)
+
     @commands.command(name='switchmentor', aliases=['switch-mentor'], hidden=True)
     @commands.has_any_role('Mentors', 'DO NOT DISTURB')
     @helpers.in_channel('teacher-lounge')

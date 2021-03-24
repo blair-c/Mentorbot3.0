@@ -48,13 +48,19 @@ class Characters(commands.Cog):
     @helpers.in_academy()
     async def switch_mentors(self, ctx):
         """Display all Nintendo Switch mentors, trial mentors, and advisors."""
-        await mentors.mentor_info(ctx, console='Nintendo Switch')
+        await mentors.mentor_info(ctx, console='Switch')
     
     @commands.command(name='xbox')
     @helpers.in_academy()
     async def xbox_mentors(self, ctx):
         """Display all Xbox mentors, trial mentors, and advisors."""
         await mentors.mentor_info(ctx, console='Xbox')
+    
+    @commands.command(name='keyboard')
+    @helpers.in_academy()
+    async def keyboard_mentors(self, ctx):
+        """Display all Keyboard mentors, trial mentors, and advisors."""
+        await mentors.mentor_info(ctx, console='Keyboard')
 
     # Character commands - mentors and hitboxes
     async def character_command(self, ctx, character, move):

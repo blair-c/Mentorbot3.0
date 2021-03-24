@@ -9,11 +9,11 @@ from data import rivals
 async def mentor_info(ctx, character=None, region=None, console=None):
     """Display an embed listing the mentors of given character/region."""
     roles = ctx.guild.roles
-    switch_role = discord.utils.get(roles, name='Switch Mentor')
-    switch_emote = rivals.consoles['Nintendo Switch']['emote']
-    xbox_role = discord.utils.get(roles, name='Xbox Mentor')
-    xbox_emote = rivals.consoles['Xbox']['emote']
-
+    kb_sw_xb = {
+        discord.utils.get(roles, name='Keyboard'): rivals.consoles['Keyboard']['emote'] + ' ',
+        discord.utils.get(roles, name='Switch Mentor'): rivals.consoles['Nintendo Switch']['emote'],
+        discord.utils.get(roles, name='Xbox Mentor'): rivals.consoles['Xbox']['emote']
+    }
     if character:
         char_role = discord.utils.get(roles, name=character)
         main_role = discord.utils.get(roles, name=f'{character} (Main)')
@@ -29,11 +29,10 @@ async def mentor_info(ctx, character=None, region=None, console=None):
                 # Display regions next to each mentor
                 regions = [rivals.regions[r.name]['abbreviation'] for r in region_roles if r in mentor.roles]
                 display = f'{mentor.mention} **{str(mentor)}** ({"/".join(regions)}) '
-                # Display if mentor is available for Switch/Xbox Mentoring
-                if switch_role in mentor.roles:
-                    display += switch_emote
-                if xbox_role in mentor.roles:
-                    display += xbox_emote
+                # Display if mentor is available for Switch/Xbox Mentoring, and/or plays on keyboard
+                for role, emote in kb_sw_xb.items():
+                    if role in mentor.roles:
+                        display += emote
                 formatted.append(display)
             sections[status] = formatted
         # DND mentors
@@ -44,11 +43,10 @@ async def mentor_info(ctx, character=None, region=None, console=None):
             # Display regions next to each mentor
             regions = [rivals.regions[r.name]['abbreviation'] for r in region_roles if r in mentor.roles]
             display = f'{mentor.mention} **{str(mentor)}** ({"/".join(regions)}) '
-            # Display if mentor is available for Switch/Xbox Mentoring
-            if switch_role in mentor.roles:
-                    display += switch_emote
-            if xbox_role in mentor.roles:
-                display += xbox_emote
+            # Display if mentor is available for Switch/Xbox Mentoring, and/or plays on keyboard
+            for role, emote in kb_sw_xb.items():
+                if role in mentor.roles:
+                    display += emote
             formatted.append(display)
         dnd_list = formatted
         # For display 
@@ -72,11 +70,10 @@ async def mentor_info(ctx, character=None, region=None, console=None):
                         for m in main_roles if m in mentor.roles]
                 chars = [rivals.characters[c.name]['emote'] for c in char_roles if c in mentor.roles]
                 display = f'{mentor.mention} **{str(mentor)}** {"".join(mains + chars)} '
-                # Display if mentor is available for Switch/Xbox Mentoring
-                if switch_role in mentor.roles:
-                    display += switch_emote
-                if xbox_role in mentor.roles:
-                    display += xbox_emote
+                # Display if mentor is available for Switch/Xbox Mentoring, and/or plays on keyboard
+                for role, emote in kb_sw_xb.items():
+                    if role in mentor.roles:
+                        display += emote
                 formatted.append(display)
             sections[status] = formatted
         # DND mentors
@@ -89,11 +86,10 @@ async def mentor_info(ctx, character=None, region=None, console=None):
                     for m in main_roles if m in mentor.roles]
             chars = [rivals.characters[c.name]['emote'] for c in char_roles if c in mentor.roles]
             display = f'{mentor.mention} **{str(mentor)}** {"".join(mains + chars)} '
-            # Display if mentor is available for Switch/Xbox Mentoring
-            if switch_role in mentor.roles:
-                display += switch_emote
-            if xbox_role in mentor.roles:
-                display += xbox_emote
+            # Display if mentor is available for Switch/Xbox Mentoring, and/or plays on keyboard
+            for role, emote in kb_sw_xb.items():
+                if role in mentor.roles:
+                    display += emote
             formatted.append(display)
         dnd_list = formatted
         # For display
@@ -101,12 +97,10 @@ async def mentor_info(ctx, character=None, region=None, console=None):
         selection = info['abbreviation']
 
     elif console:
-        if console == 'Nintendo Switch':
-            console_role = switch_role
-            console_emote = switch_emote
-        elif console == 'Xbox':
-            console_role = xbox_role
-            console_emote = xbox_emote
+        for role, emote in kb_sw_xb.items():
+            if console in role.name:
+                console_role = role
+                console_emote = emote
         region_roles = [discord.utils.get(roles, name=r) for r in rivals.regions]
         char_roles = [discord.utils.get(roles, name=c) for c in rivals.characters]
         main_roles = [discord.utils.get(roles, name=f'{c} (Main)') for c in rivals.characters]

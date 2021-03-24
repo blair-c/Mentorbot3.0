@@ -121,5 +121,10 @@ consoles = {
         'color': 8304896,
         'emote': '<:xbox:759539695553085460>',
         'icon': 'https://i.imgur.com/6XdeiBK.png'
+    },
+    'Keyboard': {
+        'color': 10070709,
+        'emote': '⌨️',
+        'icon': 'https://i.imgur.com/XYdnABI.png'
     }
 }
