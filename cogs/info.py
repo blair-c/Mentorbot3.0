@@ -167,7 +167,7 @@ class Info(commands.Cog):
             description='A custom Discord bot by the Rivals of Aether Academy.')
         embed.set_author(name='About Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
         embed.add_field(
-            name='<:yesdefinitely:609053319415201793> Created by yesdefinitely', 
+            name='<:blair:824365130749181952> Created by blair', 
             value='<:twitter:609120999744733204> https://twitter.com/ydefinitely\n'
                   '<:github:609120967280689161> https://github.com/blair-c/Mentorbot3.0', 
             inline=False)
@@ -178,8 +178,8 @@ class Info(commands.Cog):
             inline=False)
         embed.add_field(
             name='<:Mentorbot:640465696869974017> Add Mentorbot to your own server:',
-            value=('https://discordapp.com/api/oauth2/authorize?'
-                   'client_id=475596740368793600&permissions=264192&scope=bot'))
+            value=('https://discord.com/api/oauth2/authorize?'
+                   'client_id=475596740368793600&permissions=313408&scope=bot')
         await ctx.send(embed=embed)
 
     @commands.command(name='help', aliases=['syntax'], hidden=True)

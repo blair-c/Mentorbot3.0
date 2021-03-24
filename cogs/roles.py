@@ -116,7 +116,7 @@ class Roles(commands.Cog):
     # Reaction system for main, secondaries, region, undergrad, and enrollment
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
-        """Give member character, region, undergrad, or student role on reaction."""
+        """Give member character, region, pronouns, undergrad, or student role on reaction."""
         # Ignore reactions from Mentorbot
         if (user_id := payload.user_id) == self.bot.user.id: return
         # Ensure set-your-roles channel name
@@ -147,6 +147,12 @@ class Roles(commands.Cog):
                         await member.add_roles(secondary_role)
                         main_role = discord.utils.get(guild_roles, name=f'{character} (Main)')
                         await member.remove_roles(main_role)
+            # Characters
+            elif img == 'characters.png':
+                for character, info in rivals.characters.items():
+                    if info['emote'] == emote:
+                        character_role = discord.utils.get(guild_roles, name=character)
+                        await member.add_roles(character_role)
         # Region
         elif 'West Coast' in message.content:
             for region, info in rivals.regions.items():
@@ -222,6 +228,7 @@ class Roles(commands.Cog):
         message = await channel.fetch_message(payload.message_id)
         guild_roles = guild.roles
         emote = f'<:{payload.emoji.name}:{payload.emoji.id}>'
+        # Characters
         if message.attachments:
             img = message.attachments[0].filename
             # Main
@@ -236,6 +243,12 @@ class Roles(commands.Cog):
                     if info['emote'] == emote:
                         secondary_role = discord.utils.get(guild_roles, name=character)
                         await member.remove_roles(secondary_role)
+            # Characters
+            elif img == 'characters.png':
+                for character, info in rivals.characters.items():
+                    if info['emote'] == emote:
+                        character_role = discord.utils.get(guild_roles, name=character)
+                        await member.remove_roles(character_role)
         # Region
         elif 'West Coast' in message.content:
             for region, info in rivals.regions.items():
@@ -292,19 +305,27 @@ class Roles(commands.Cog):
         # Delete message of command
         await ctx.message.delete()
         # Introduction
-        await ctx.send(
-            'Hello! Welcome to the **Rivals of Aether Academy!**\n\n'
-            '• **Please add reactions below to set your main, secondaries, and region.**\n'
-            '• Reacting too quickly may cause the bot to fail in adding/removing roles.\n'
-            '• You might need to react and unreact for the role to be added properly.')
-        # Main
-        msg = await ctx.send(file=discord.File('images/setyourroles/main.png'))
-        for character in rivals.characters:
-            await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
-        # Secondaries
-        msg = await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
-        for character in rivals.characters:
-            await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
+        intro = ('• **Please add reactions below to set your main, secondaries, and region.**\n'
+                '• Reacting too quickly may cause the bot to fail in adding/removing roles.\n'
+                '• You might need to react and unreact for the role to be added properly.')
+        if ctx.message.guild.id in [ACADEMY_ID]:
+            intro = 'Hello! Welcome to the **Rivals of Aether Academy!**\n\n' + intro
+        ctx.send(intro)
+        # Characters
+        if ctx.message.guild.id in [ACADEMY_ID]:
+            # Main
+            msg = await ctx.send(file=discord.File('images/setyourroles/main.png'))
+            for character in rivals.characters:
+                await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
+            # Secondaries
+            msg = await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
+            for character in rivals.characters:
+                await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
+        else:
+            # Characters
+            msg = await ctx.send(file=discord.File('images/setyourroles/characters.png'))
+            for character in rivals.characters:
+                await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
         # Region
         await ctx.send(file=discord.File('images/setyourroles/region.png'))
         msg = await ctx.send(
@@ -321,7 +342,7 @@ class Roles(commands.Cog):
         for emote in (['he_him', 'they_them', 'she_her', 'any_pronouns']):
             await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # Stop here in non-Academy servers
-        if ctx.message.guild.id not in [ACADEMY_ID, TEST_SERVER_ID]: return
+        if ctx.message.guild.id not in [ACADEMY_ID]: return
         # Matchmaking
         await ctx.send(file=discord.File('images/setyourroles/matchmaking.png'))
         msg = await ctx.send(
