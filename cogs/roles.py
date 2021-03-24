@@ -129,6 +129,7 @@ class Roles(commands.Cog):
         message = await channel.fetch_message(payload.message_id)
         guild_roles = guild.roles
         emote = f'<:{payload.emoji.name}:{payload.emoji.id}>'
+        # Characters
         if message.attachments:
             img = message.attachments[0].filename
             # Main
