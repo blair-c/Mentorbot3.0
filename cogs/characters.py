@@ -136,7 +136,7 @@ class Characters(commands.Cog):
             move = 'fair'
         elif move in ['droplet', 'puddle', 'puddleshot']:
             move = 'nspecial'
-        elif move == 'teleport':
+        elif move in['orcahop', 'teleport']:
             move = 'uspecial'
         elif move == 'bubbles':
             move = 'dspecial'
