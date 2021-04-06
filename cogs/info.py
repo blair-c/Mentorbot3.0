@@ -20,7 +20,7 @@ class Info(commands.Cog):
             'Videos & Clips':
                 ['AAAA', 'babydashing', 'bairhitfall', 'pwjpecotr'],
             'Mentorbot/Misc.':
-                ['about', 'help', 'replays'],
+                ['about', 'help', 'parrybot', 'replays'],
             'Beefy Aether Doods':
                 ['cactuardashing', 'DI', 'horizontalwaveland', 'ledgecancel','RAR',
                  'teching', 'wavedashing'],
@@ -159,7 +159,7 @@ class Info(commands.Cog):
         """Link to MSB's pwjpecotr tweet."""
         await ctx.send('https://twitter.com/notMSB/status/1025537436565364738')
 
-    # Mentorbot
+    # Mentorbot/Misc.
     @commands.command(name='about', aliases=['info', 'information', 'invite'], hidden=True)
     async def info_command(self, ctx):
         """Display information about Mentorbot."""
@@ -193,6 +193,11 @@ class Info(commands.Cog):
         embed.set_image(url='https://i.imgur.com/nHBfPyL.png')
         embed.set_footer(text='For non-hitbox commands, try !commands.')
         await ctx.send(embed=embed)
+
+    @commands.command(name='parrybot')
+    async def axmos_parry_bot(self, ctx, *arg):
+        """Link to Axmos' parry practice bot."""
+        await ctx.send('https://axmos.itch.io/axmos-parry-bot')
 
     @commands.command(name='replays')
     async def how_to_access_your_replays(self, ctx, *arg):
