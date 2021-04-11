@@ -117,6 +117,21 @@ class Moderation(commands.Cog):
         await ctx.send(embed=embed)
 
     # Academy-specific mod commands
+    @commands.command(name='dresscode', aliases=['dresscodeviolation'], hidden=True)
+    @commands.has_permissions(ban_members=True)
+    @helpers.in_academy()
+    async def dress_code_violation(self, ctx, *member):
+        """Remove member's nickname permissions via roles."""
+        if not member: return
+        member = ''.join(member).lower()
+        member = helpers.get_member(ctx, member)
+        if not member: return
+        embed = await helpers.update_roles(
+            member,
+            remove=discord.utils.get(ctx.guild.roles, name='Student'),
+            add=discord.utils.get(ctx.guild.roles, name='Dress Code Violation'))
+        await ctx.send(embed=embed)
+
     @commands.command(name='suspend', hidden=True)
     @commands.has_permissions(ban_members=True)
     @helpers.in_academy()
