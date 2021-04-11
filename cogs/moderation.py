@@ -143,8 +143,8 @@ class Moderation(commands.Cog):
         if not member: return
         embed = await helpers.update_roles(
             member,
-            discord.utils.get(ctx.guild.roles, name='Student'),    # Remove
-            discord.utils.get(ctx.guild.roles, name='Suspension')) # Add
+            remove=discord.utils.get(ctx.guild.roles, name='Student'),
+            add=discord.utils.get(ctx.guild.roles, name='Suspension'))
         await ctx.send(embed=embed)
 
     @commands.command(name='unsuspend', hidden=True)
@@ -158,8 +158,8 @@ class Moderation(commands.Cog):
         if not member: return
         embed = await helpers.update_roles(
             member,
-            discord.utils.get(ctx.guild.roles, name='Suspension'), # Remove
-            discord.utils.get(ctx.guild.roles, name='Student'))    # Add
+            remove=discord.utils.get(ctx.guild.roles, name='Suspension'),
+            add=discord.utils.get(ctx.guild.roles, name='Student'))
         await ctx.send(embed=embed)
 
 
