@@ -120,16 +120,18 @@ class Moderation(commands.Cog):
     @commands.command(name='dresscode', aliases=['dresscodeviolation'], hidden=True)
     @commands.has_permissions(ban_members=True)
     @helpers.in_academy()
-    async def dress_code_violation(self, ctx, *member):
-        """Remove member's nickname permissions via roles."""
+    async def dress_code_violation_toggle(self, ctx, *member):
+        """Toggle member's nickname permissions via roles."""
         if not member: return
         member = ''.join(member).lower()
         member = helpers.get_member(ctx, member)
         if not member: return
-        embed = await helpers.update_roles(
-            member,
-            remove=discord.utils.get(ctx.guild.roles, name='Student'),
-            add=discord.utils.get(ctx.guild.roles, name='Dress Code Violation'))
+        student = discord.utils.get(ctx.guild.roles, name='Student')
+        dress_code = discord.utils.get(ctx.guild.roles, name='Dress Code Violation')
+        if student in member.roles:
+            embed = await helpers.update_roles(member, remove=student, add=dress_code)
+        elif dress_code in member.roles:
+            embed = await helpers.update_roles(member, remove=dress_code, add=student)
         await ctx.send(embed=embed)
 
     @commands.command(name='suspend', hidden=True)
