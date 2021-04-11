@@ -201,7 +201,8 @@ class Roles(commands.Cog):
         # Enrollment
         elif emote == '<:roaa:547193418560962570>':
             student = discord.utils.get(guild_roles, name='Student')
-            if student not in member.roles:
+            dress_code = discord.utils.get(guild_roles, name='Dress Code Violation')
+            if student not in member.roles and dress_code not in member.roles:
                 await member.add_roles(student)
                 # Display enrollment in action-log
                 embed = discord.Embed(
