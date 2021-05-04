@@ -11,9 +11,9 @@ except ImportError:
     sys.exit(1)
 
 # Ensure correct Discord.py version
-if discord.__version__ != '1.6.0':
+if discord.__version__ != '1.7.2':
     print(f'Discord.py version: {discord.__version__}.\n'
-          'Please install version 1.6.0', file=sys.stderr)
+          'Please install version 1.7.2', file=sys.stderr)
     sys.exit(1)
 
 intents = discord.Intents.default()
