@@ -2,7 +2,7 @@
 
 A custom Discord bot by the Rivals of Aether Academy.
 
-See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [add it to your own server](https://discord.com/api/oauth2/authorize?client_id=475596740368793600&permissions=313408&scope=bot).
+See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [add it to your own server](https://discord.com/api/oauth2/authorize?client_id=475596740368793600&permissions=268748864&scope=bot).
 
 
 ## Universal Features
@@ -47,7 +47,7 @@ title="Action-Log Examples" alt="action-log examples" width="800"/><br clear="al
 <img src="https://i.imgur.com/so0HtFk.png" align="left" 
 title="!Whois Command" alt="!whois command" width="400"/><br clear="all"/>
 
-<kbd>!clear [n]</kbd> deletes the specified amount of messages from the current chat, and logs this into <kbd>#action-log</kbd>. This command is only accessible to those with permissions to manage messages. To enable this functionality, Mentorbot needs the required permissions to delete messages, and so needs to be invited via [this link](https://discord.com/api/oauth2/authorize?client_id=475596740368793600&permissions=321600&scope=bot).
+<kbd>!clear [n]</kbd> deletes the specified amount of messages from the current chat, and logs this into <kbd>#action-log</kbd>. This command is only accessible to those with permissions to manage messages. To enable this functionality, Mentorbot needs the required permissions to delete messages, and so needs to be invited via [this link](https://discord.com/api/oauth2/authorize?client_id=475596740368793600&permissions=268757056&scope=bot).
 
 <img src="https://i.imgur.com/W0aTDBd.png" align="left" 
 title="!Clear Command" alt="!clear command" width="300"/><br clear="all"/>
