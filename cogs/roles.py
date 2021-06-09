@@ -297,10 +297,10 @@ class Roles(commands.Cog):
                 await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
 
     @commands.command(name='setyourroles', aliases=['set-your-roles'])
-    @helpers.in_channel('set-your-roles')
     @commands.has_permissions(ban_members=True)
     async def set_your_roles_channel_setup(self, ctx):
         """Send and react to messages to set up role reaction system channel."""
+        if 'roles' not in ctx.message.channel.name: return
         ACADEMY_ID = 252352512332529664
         TEST_SERVER_ID = 475599187812155392
         emojis = self.bot.get_guild(TEST_SERVER_ID).emojis
