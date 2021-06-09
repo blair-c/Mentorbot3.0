@@ -304,8 +304,6 @@ class Roles(commands.Cog):
         ACADEMY_ID = 252352512332529664
         TEST_SERVER_ID = 475599187812155392
         emojis = self.bot.get_guild(TEST_SERVER_ID).emojis
-        # Delete message of command
-        await ctx.message.delete()
         # Introduction
         intro = ('• **Please add reactions below to set your main, secondaries, and region.**\n'
                 '• Reacting too quickly may cause the bot to fail in adding/removing roles.\n'
