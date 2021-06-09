@@ -121,8 +121,8 @@ class Roles(commands.Cog):
         if (user_id := payload.user_id) == self.bot.user.id: return
         # Ensure set-your-roles channel name
         guild = self.bot.get_guild(payload.guild_id)
-        channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
-        if channel.name != 'set-your-roles': return
+        channel = guild.get_channel(payload.channel_id)
+        if 'roles' not in channel.name: return
         # Setup
         user = self.bot.get_user(user_id)
         member = guild.get_member(user_id)
@@ -222,8 +222,8 @@ class Roles(commands.Cog):
         if (user_id := payload.user_id) == self.bot.user.id: return
         # Ensure set-your-roles channel name
         guild = self.bot.get_guild(payload.guild_id)
-        channel = discord.utils.get(guild.text_channels, id=payload.channel_id)
-        if channel.name != 'set-your-roles': return
+        channel = guild.get_channel(payload.channel_id)
+        if 'roles' not in channel.name: return
         # Setup
         user = self.bot.get_user(user_id)
         member = guild.get_member(user_id)
