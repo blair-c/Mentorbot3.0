@@ -184,7 +184,7 @@ class Info(commands.Cog):
     @commands.command(name='fpsfix', aliases=['fps', '60fps', '59fps', 'nvidiafix', 'nvidia'])
     async def fps_fix(self, ctx, *arg):
         """Link to 60 fps fix instructions for Nvidia graphics cards."""
-        await ctx.send('https://www.twitter.com/darainbowcuddle/status/1410724611327631364')
+        await ctx.send('https://twitter.com/darainbowcuddle/status/1410724611327631364?s=20')
 
     @commands.command(name='help', aliases=['syntax'], hidden=True)
     async def help_command(self, ctx, *arg):
