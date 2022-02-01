@@ -137,7 +137,7 @@ consoles = {
         'emote': '<:switch:759539694937309186>',
         'icon': 'https://i.imgur.com/2ieAFjS.png'
     },
-    'Xbox': {
+    'Xbox One': {
         'color': 8304896,
         'emote': '<:xbox:759539695553085460>',
         'icon': 'https://i.imgur.com/6XdeiBK.png'
