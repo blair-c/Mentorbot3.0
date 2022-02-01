@@ -6,14 +6,19 @@ characters = {
         'icon': 'https://i.imgur.com/aqLqIbB.png'
     },
     'Forsburn': {
-        'color': 8744800,
+        'color': 11179322,
         'emote': '<:Forsburn:547189098859986984>',
         'icon': 'https://i.imgur.com/wLU8CEL.png'
     },
     'Clairen': {
-        'color': 15870306,
+        'color': 16715114,
         'emote': '<:Clairen:547182529837400081>',
         'icon': 'https://imgur.com/hfcf0vb.png'
+    },
+    'Mollo': {
+        'color': 16729927,
+        'emote': '<:Mollo:937869128977510472>',
+        'icon': ''
     },
     'Orcane': {
         'color': 4812504,
@@ -30,6 +35,11 @@ characters = {
         'emote': '<:Ranno:547182486971613185>',
         'icon': 'https://imgur.com/XNggZrr.png'
     },
+    'Hodan': {
+        'color': 14024191,
+        'emote': '<:Hodan:937869074778693632>',
+        'icon': ''
+    },
     'Kragg': {
         'color': 5866833,
         'emote': '<:Kragg:547182475835736155>',
@@ -44,6 +54,11 @@ characters = {
         'color': 9082654,
         'emote': '<:Sylvanos:547182436161945601>',
         'icon': 'https://imgur.com/DUvl1o8.png'
+    },
+    'Olympia': {
+        'color': 12091475,
+        'emote': '<:Olympia:937869101697761291>',
+        'icon': ''
     },
     'Wrastor': {
         'color': 10702538,
@@ -60,8 +75,13 @@ characters = {
         'emote': '<:Elliana:547182393908396052>',
         'icon': 'https://i.imgur.com/SIFBYfg.png'
     },
+    'Pomme': {
+        'color': 16504300,
+        'emote': '<:Pomme:937869156085268531>',
+        'icon': ''
+    },
     'Ori': {
-        'color': 13041407,
+        'color': 16315900,
         'emote': '<:Ori:547182375956774920>',
         'icon': 'https://imgur.com/uTV41fW.png'
     },
