@@ -12,7 +12,7 @@ async def mentor_info(ctx, character=None, region=None, console=None):
     kb_sw_xb = {
         discord.utils.get(roles, name='Keyboard'): rivals.consoles['Keyboard']['emote'] + ' ',
         discord.utils.get(roles, name='Switch Mentor'): rivals.consoles['Nintendo Switch']['emote'],
-        discord.utils.get(roles, name='Xbox Mentor'): rivals.consoles['Xbox']['emote']
+        discord.utils.get(roles, name='Xbox Mentor'): rivals.consoles['Xbox One']['emote']
     }
     if character:
         char_role = discord.utils.get(roles, name=character)
