@@ -383,7 +383,7 @@ class Roles(commands.Cog):
             '<:she_her:817651606685483008> → `she/her`\n'
             '<:any_pronouns:817651606270902293> → `any pronouns`\n'
             '<:ask_for_pronouns:817652687243444285> → `ask for pronouns`')
-        for emote in (['he_him', 'they_them', 'she_her', 'any_pronouns', 'ask_for_prouns']):
+        for emote in (['he_him', 'they_them', 'she_her', 'any_pronouns', 'ask_for_pronouns']):
             await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # Academy only
         if ctx.message.guild.id in [ACADEMY_ID, TEST_SERVER_ID]:
