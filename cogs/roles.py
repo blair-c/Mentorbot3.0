@@ -135,7 +135,7 @@ class Roles(commands.Cog):
         # Characters
         if message.attachments:
             img = message.attachments[0].filename
-            characters = {c:i for c, i in rivals.characters.items()}
+            characters = dict(rivals.characters)
             if payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
                 characters['Sandbert'] = {'emote': '<:Sandbert:938163492849065994>'}
                 characters['Random'] = {'emote': '<:Random:938274541413756928>'}
@@ -257,7 +257,7 @@ class Roles(commands.Cog):
         # Characters
         if message.attachments:
             img = message.attachments[0].filename
-            characters = {c:i for c, i in rivals.characters.items()}
+            characters = dict(rivals.characters)
             if payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
                 characters['Sandbert'] = {'emote': '<:Sandbert:938163492849065994>'}
                 characters['Random'] = {'emote': '<:Random:938274541413756928>'}
