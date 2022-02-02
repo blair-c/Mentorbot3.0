@@ -355,20 +355,24 @@ class Roles(commands.Cog):
             intro = 'Hello! Welcome to the **Rivals of Aether Academy!**\n\n' + intro
         await ctx.send(intro)
         # Characters
+        emotes = [c.replace(' ', '') for c in rivals.characters]
+        if ctx.message.guild.id in [NACORD_ID, TEST_SERVER_ID]:
+            emotes.append('Sandbert')
+            emotes.append('goingRANDO')
         if ctx.message.guild.id in [ACADEMY_ID, NACORD_ID, TEST_SERVER_ID]:
             # Main
             msg = await ctx.send(file=discord.File('images/setyourroles/main.png'))
-            for character in rivals.characters:
-                await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
+            for emote in emotes:
+                await msg.add_reaction(discord.utils.get(emojis, name=emote))
             # Secondaries
             msg = await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
-            for character in rivals.characters:
-                await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
+            for emote in emotes:
+                await msg.add_reaction(discord.utils.get(emojis, name=emote))
         else:
             # Characters
             msg = await ctx.send(file=discord.File('images/setyourroles/characters.png'))
-            for character in rivals.characters:
-                await msg.add_reaction(discord.utils.get(emojis, name=character.replace(' ', '')))
+            for emote in emotes:
+                await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # Region
         await ctx.send(file=discord.File('images/setyourroles/region.png'))
         msg = await ctx.send(
@@ -421,9 +425,6 @@ class Roles(commands.Cog):
             await msg.add_reaction(discord.utils.get(emojis, name='roaa'))
         # NAcord only
         if ctx.message.guild.id in [NACORD_ID, TEST_SERVER_ID]:
-            # Additional character reactions
-            await msg.add_reaction(discord.utils.get(emojis, name='Sandbert'))
-            await msg.add_reaction(discord.utils.get(emojis, name='goingRANDO'))
             # More
             await ctx.send(file=discord.File('images/setyourroles/more.png'))
             msg = await ctx.send(
