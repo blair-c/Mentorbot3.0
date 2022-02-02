@@ -176,7 +176,7 @@ class Roles(commands.Cog):
                 pronoun = 'she/her'
             elif emote == '<:any_pronouns:817651606270902293>':
                 pronoun = 'any pronouns'
-            elif emote == '<:ask_for_pronouns:817652687243444285>':
+            elif emote == '<:ask_for_pronouns:938288388841308230>':
                 pronoun = 'ask for pronouns'
             await member.add_roles(discord.utils.get(guild_roles, name=pronoun))
         # Academy only
@@ -294,7 +294,7 @@ class Roles(commands.Cog):
                 pronoun = 'she/her'
             elif emote == '<:any_pronouns:817651606270902293>':
                 pronoun = 'any pronouns'
-            elif emote == '<:ask_for_pronouns:817652687243444285>':
+            elif emote == '<:ask_for_pronouns:938288388841308230>':
                 pronoun = 'ask for pronouns'
             await member.remove_roles(discord.utils.get(guild_roles, name=pronoun))
         # Academy Only
