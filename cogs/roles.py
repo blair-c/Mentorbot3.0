@@ -428,17 +428,17 @@ class Roles(commands.Cog):
             # More
             await ctx.send(file=discord.File('images/setyourroles/more.png'))
             msg = await ctx.send(
-                # Consoles
-                f'{rivals.consoles["Nintendo Switch"]["emote"]} → Nintendo Switch\n'
-                f'{rivals.consoles["Xbox One"]["emote"]} → Xbox One\n'
                 # Misc. Roles
                 '🎨 → Artist\n'
                 '🏆 → Tournaments\n'
-                '⏱️ → Speedrunning')
-            for emote in ['switch', 'xbox']:
-                await msg.add_reaction(discord.utils.get(emojis, name=emote))
+                '⏱️ → Speedrunning\n'
+                # Consoles
+                f'{rivals.consoles["Nintendo Switch"]["emote"]} → Nintendo Switch\n'
+                f'{rivals.consoles["Xbox One"]["emote"]} → Xbox One')
             for emote in ['🎨', '🏆', '⏱️']:
                 await msg.add_reaction(emote)
+            for emote in ['switch', 'xbox']:
+                await msg.add_reaction(discord.utils.get(emojis, name=emote))
 
 def setup(bot):
     bot.add_cog(Roles(bot))
