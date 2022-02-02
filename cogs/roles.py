@@ -353,7 +353,7 @@ class Roles(commands.Cog):
                 '• You might need to react and unreact for the role to be added properly.')
         if ctx.message.guild.id in [ACADEMY_ID]:
             intro = 'Hello! Welcome to the **Rivals of Aether Academy!**\n\n' + intro
-        ctx.send(intro)
+        await ctx.send(intro)
         # Characters
         if ctx.message.guild.id in [ACADEMY_ID, NACORD_ID, TEST_SERVER_ID]:
             # Main
