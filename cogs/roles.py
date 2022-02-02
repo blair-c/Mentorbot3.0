@@ -141,7 +141,7 @@ class Roles(commands.Cog):
                 characters['Random'] = {'emote': '<:Random:938274541413756928>'}
             # Main
             if img == 'main.png':
-                for character, info in characters:
+                for character, info in characters.items():
                     if info['emote'] == emote:
                         main_role = discord.utils.get(guild_roles, name=f'{character} (Main)')
                         await member.add_roles(main_role)
@@ -149,7 +149,7 @@ class Roles(commands.Cog):
                         await member.remove_roles(secondary_role)
             # Secondaries
             elif img == 'secondaries.png':
-                for character, info in characters:
+                for character, info in characters.items():
                     if info['emote'] == emote:
                         secondary_role = discord.utils.get(guild_roles, name=character)
                         await member.add_roles(secondary_role)
@@ -157,7 +157,7 @@ class Roles(commands.Cog):
                         await member.remove_roles(main_role)
             # Characters
             elif img == 'characters.png':
-                for character, info in characters:
+                for character, info in characters.items():
                     if info['emote'] == emote:
                         character_role = discord.utils.get(guild_roles, name=character)
                         await member.add_roles(character_role)
@@ -263,19 +263,19 @@ class Roles(commands.Cog):
                 characters['Random'] = {'emote': '<:Random:938274541413756928>'}
             # Main
             if img == 'main.png':
-                for character, info in characters:
+                for character, info in characters.items():
                     if info['emote'] == emote:
                         main_role = discord.utils.get(guild_roles, name=f'{character} (Main)')
                         await member.remove_roles(main_role)
             # Secondaries
             elif img == 'secondaries.png':
-                for character, info in characters:
+                for character, info in characters.items():
                     if info['emote'] == emote:
                         secondary_role = discord.utils.get(guild_roles, name=character)
                         await member.remove_roles(secondary_role)
             # Characters
             elif img == 'characters.png':
-                for character, info in characters:
+                for character, info in characters.items():
                     if info['emote'] == emote:
                         character_role = discord.utils.get(guild_roles, name=character)
                         await member.remove_roles(character_role)
