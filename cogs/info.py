@@ -167,13 +167,17 @@ class Info(commands.Cog):
             description='A custom Discord bot by the Rivals of Aether Academy.')
         embed.set_author(name='About Mentorbot 3.0', icon_url=self.bot.user.avatar_url)
         embed.add_field(
-            name='<:blair:824365130749181952> Created by blair',
+            name='Created by blair',
             value='https://github.com/blair-c/Mentorbot3.0',
             inline=False)
         embed.add_field(
-            name='<:SNC:609053198736424960> Frame data info provided by SNC and Sector 7-G',
+            name='Frame data info provided by SNC and Sector 7-G',
             value='https://twitter.com/SNC_Sector7G\n'
                   'https://discord.gg/qgKqaPX',
+            inline=False)
+        embed.add_field(
+            name='Profile photo drawn by Sxolian',
+            value='https://twitter.com/SxolianArt',
             inline=False)
         embed.add_field(
             name='Add Mentorbot to your own server:',
