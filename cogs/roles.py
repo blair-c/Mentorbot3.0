@@ -435,7 +435,7 @@ class Roles(commands.Cog):
                 '<:Tournaments:938301433806225470> → Tournaments\n'
                 '<:Artist:938293074730303508> → Artist\n'
                 '<:Speedrunning:938293098348425226> → Speedrunning')
-            for emote in ['switch', 'xbox', 'Tournaments', 'Artist', 'Speedrunning']:
+            for emote in ['NintendoSwitch', 'XboxOne', 'Tournaments', 'Artist', 'Speedrunning']:
                 await msg.add_reaction(discord.utils.get(emojis, name=emote))
 
 def setup(bot):

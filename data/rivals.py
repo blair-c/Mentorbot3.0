@@ -134,12 +134,12 @@ regions = {
 consoles = {
     'Nintendo Switch': {
         'color': 16711690,
-        'emote': '<:switch:759539694937309186>',
+        'emote': '<:NintendoSwitch:938304361635913798>',
         'icon': 'https://i.imgur.com/2ieAFjS.png'
     },
     'Xbox One': {
         'color': 8304896,
-        'emote': '<:xbox:759539695553085460>',
+        'emote': '<:XboxOne:938304372356571176>',
         'icon': 'https://i.imgur.com/6XdeiBK.png'
     },
     'Keyboard': {
