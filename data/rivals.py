@@ -36,7 +36,7 @@ characters = {
         'icon': 'https://blair-c.github.io/roaa/img/ranno/icon.png'
     },
     'Hodan': {
-        'color': 14024191,
+        'color': 14286335,
         'emote': '<:Hodan:937869074778693632>',
         'icon': 'https://blair-c.github.io/roaa/img/hodan/icon.png'
     },
@@ -81,7 +81,7 @@ characters = {
         'icon': 'https://blair-c.github.io/roaa/img/pomme/icon.png'
     },
     'Ori': {
-        'color': 15655932,
+        'color': 15460082,
         'emote': '<:Ori:547182375956774920>',
         'icon': 'https://blair-c.github.io/roaa/img/ori/icon.png'
     },
