@@ -355,7 +355,7 @@ class Roles(commands.Cog):
             intro = 'Hello! Welcome to the **Rivals of Aether Academy!**\n\n' + intro
         ctx.send(intro)
         # Characters
-        if ctx.message.guild.id in [ACADEMY_ID]:
+        if ctx.message.guild.id in [ACADEMY_ID, NACORD_ID, TEST_SERVER_ID]:
             # Main
             msg = await ctx.send(file=discord.File('images/setyourroles/main.png'))
             for character in rivals.characters:
@@ -382,8 +382,8 @@ class Roles(commands.Cog):
             '<:they_them:817651606396469269> → `they/them`\n'
             '<:she_her:817651606685483008> → `she/her`\n'
             '<:any_pronouns:817651606270902293> → `any pronouns`\n'
-            '<:ask_for_pronouns:817652687243444285>')
-        for emote in (['he_him', 'they_them', 'she_her', 'any_pronouns']):
+            '<:ask_for_pronouns:817652687243444285> → `ask for pronouns`')
+        for emote in (['he_him', 'they_them', 'she_her', 'any_pronouns', 'ask_for_prouns']):
             await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # Academy only
         if ctx.message.guild.id in [ACADEMY_ID, TEST_SERVER_ID]:
