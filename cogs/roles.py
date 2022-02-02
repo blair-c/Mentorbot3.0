@@ -136,7 +136,7 @@ class Roles(commands.Cog):
         if message.attachments:
             img = message.attachments[0].filename
             characters = rivals.characters.items()
-            if payload.guild_id in [NACORD_ID]:
+            if payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
                 characters['Sandbert'] = {'emote': '<:Sandbert:938163492849065994>'}
                 characters['Random'] = {'emote': '<:goingRANDO:405510195805159436>'}
             # Main
@@ -180,7 +180,7 @@ class Roles(commands.Cog):
                 pronoun = 'ask for pronouns'
             await member.add_roles(discord.utils.get(guild_roles, name=pronoun))
         # Academy only
-        elif payload.guild_id in [ACADEMY_ID, TEST_SERVER_ID]:
+        elif payload.guild_id in [ACADEMY_ID]:
             # Matchmaking
             if 'Matchmaking' in message.content:
                 # PC
@@ -222,7 +222,7 @@ class Roles(commands.Cog):
                     action_log = discord.utils.get(guild.text_channels, name='action-log')
                     await action_log.send(embed=embed)
         # NAcord only
-        elif payload.guild_id in [NACORD_ID]:
+        elif payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
             # Misc. roles
             if 'Speedrunning' in message.content:
                 if emote == rivals.consoles['Nintendo Switch']['emote']:
@@ -258,7 +258,7 @@ class Roles(commands.Cog):
         if message.attachments:
             img = message.attachments[0].filename
             characters = rivals.characters.items()
-            if payload.guild_id in [NACORD_ID]:
+            if payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
                 characters['Sandbert'] = {'emote': '<:Sandbert:938163492849065994>'}
                 characters['Random'] = {'emote': '<:goingRANDO:405510195805159436>'}
             # Main
@@ -298,7 +298,7 @@ class Roles(commands.Cog):
                 pronoun = 'ask for pronouns'
             await member.remove_roles(discord.utils.get(guild_roles, name=pronoun))
         # Academy Only
-        elif payload.guild_id in [ACADEMY_ID, TEST_SERVER_ID]:
+        elif payload.guild_id in [ACADEMY_ID]:
             # Matchmaking
             if 'Matchmaking' in message.content:
                 # PC
@@ -324,7 +324,7 @@ class Roles(commands.Cog):
                 elif emote == '<:Europe:547189473432305665>':
                     await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
         # NAcord only
-        elif payload.guild_id in [NACORD_ID]:
+        elif payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
             # Misc. roles
             if 'Speedrunning' in message.content:
                 if emote == rivals.consoles['Nintendo Switch']['emote']:
@@ -386,7 +386,7 @@ class Roles(commands.Cog):
         for emote in (['he_him', 'they_them', 'she_her', 'any_pronouns', 'ask_for_pronouns']):
             await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # Academy only
-        if ctx.message.guild.id in [ACADEMY_ID, TEST_SERVER_ID]:
+        if ctx.message.guild.id in [ACADEMY_ID]:
             # Matchmaking
             await ctx.send(file=discord.File('images/setyourroles/matchmaking.png'))
             msg = await ctx.send(
@@ -420,7 +420,7 @@ class Roles(commands.Cog):
                 'server and view the rest of the channels!')
             await msg.add_reaction(discord.utils.get(emojis, name='roaa'))
         # NAcord only
-        if ctx.message.guild.id in [NACORD_ID]:
+        if ctx.message.guild.id in [NACORD_ID, TEST_SERVER_ID]:
             # Additional character reactions
             await msg.add_reaction(discord.utils.get(emojis, name='Sandbert'))
             await msg.add_reaction(discord.utils.get(emojis, name='goingRANDO'))
