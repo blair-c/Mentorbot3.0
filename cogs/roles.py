@@ -138,7 +138,7 @@ class Roles(commands.Cog):
             characters = rivals.characters.items()
             if payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
                 characters['Sandbert'] = {'emote': '<:Sandbert:938163492849065994>'}
-                characters['Random'] = {'emote': '<:goingRANDO:405510195805159436>'}
+                characters['Random'] = {'emote': '<:Random:938274541413756928>'}
             # Main
             if img == 'main.png':
                 for character, info in characters:
@@ -260,7 +260,7 @@ class Roles(commands.Cog):
             characters = rivals.characters.items()
             if payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
                 characters['Sandbert'] = {'emote': '<:Sandbert:938163492849065994>'}
-                characters['Random'] = {'emote': '<:goingRANDO:405510195805159436>'}
+                characters['Random'] = {'emote': '<:Random:938274541413756928>'}
             # Main
             if img == 'main.png':
                 for character, info in characters:
@@ -358,7 +358,7 @@ class Roles(commands.Cog):
         emotes = [c.replace(' ', '') for c in rivals.characters]
         if ctx.message.guild.id in [NACORD_ID, TEST_SERVER_ID]:
             emotes.append('Sandbert')
-            emotes.append('goingRANDO')
+            emotes.append('Random')
         if ctx.message.guild.id in [ACADEMY_ID, NACORD_ID, TEST_SERVER_ID]:
             # Main
             msg = await ctx.send(file=discord.File('images/setyourroles/main.png'))
