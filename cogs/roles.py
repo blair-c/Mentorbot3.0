@@ -229,11 +229,11 @@ class Roles(commands.Cog):
                     await member.add_roles(discord.utils.get(guild_roles, name='Joycon'))
                 elif emote == rivals.consoles['Xbox One']['emote']:
                     await member.add_roles(discord.utils.get(guild_roles, name='XB1'))
-                elif emote == '🎨':
-                    await member.add_roles(discord.utils.get(guild_roles, name='Artist'))
-                elif emote == '🏆':
+                elif emote == '<:Tournaments:938298297653788712>':
                     await member.add_roles(discord.utils.get(guild_roles, name='Tournament'))
-                elif emote == '⏱️':
+                elif emote == '<:Artist:938293074730303508>':
+                    await member.add_roles(discord.utils.get(guild_roles, name='Artist'))
+                elif emote == '<:Speedrunning:938293098348425226>':
                     await member.add_roles(discord.utils.get(guild_roles, name='Speedrunner'))
 
     @commands.Cog.listener()
@@ -331,11 +331,11 @@ class Roles(commands.Cog):
                     await member.remove_roles(discord.utils.get(guild_roles, name='Joycon'))
                 elif emote == rivals.consoles['Xbox One']['emote']:
                     await member.remove_roles(discord.utils.get(guild_roles, name='XB1'))
-                elif emote == '🎨':
-                    await member.remove_roles(discord.utils.get(guild_roles, name='Artist'))
-                elif emote == '🏆':
+                elif emote == '<:Tournaments:938298297653788712>':
                     await member.remove_roles(discord.utils.get(guild_roles, name='Tournament'))
-                elif emote == '⏱️':
+                elif emote == '<:Artist:938293074730303508>':
+                    await member.remove_roles(discord.utils.get(guild_roles, name='Artist'))
+                elif emote == '<:Speedrunning:938293098348425226>':
                     await member.remove_roles(discord.utils.get(guild_roles, name='Speedrunner'))
 
     @commands.command(name='setyourroles', aliases=['set-your-roles'])
@@ -428,16 +428,14 @@ class Roles(commands.Cog):
             # More
             await ctx.send(file=discord.File('images/setyourroles/more.png'))
             msg = await ctx.send(
-                # Misc. Roles
-                '🎨 → Artist\n'
-                '🏆 → Tournaments\n'
-                '⏱️ → Speedrunning\n'
                 # Consoles
                 f'{rivals.consoles["Nintendo Switch"]["emote"]} → Nintendo Switch\n'
-                f'{rivals.consoles["Xbox One"]["emote"]} → Xbox One')
-            for emote in ['🎨', '🏆', '⏱️']:
-                await msg.add_reaction(emote)
-            for emote in ['switch', 'xbox']:
+                f'{rivals.consoles["Xbox One"]["emote"]} → Xbox One\n'
+                # Misc. Roles
+                '<:Tournaments:938298297653788712> → Tournaments\n'
+                '<:Artist:938293074730303508> → Artist\n'
+                '<:Speedrunning:938293098348425226> → Speedrunning')
+            for emote in ['switch', 'xbox', 'tournaments', 'artist', 'speedrunning']:
                 await msg.add_reaction(discord.utils.get(emojis, name=emote))
 
 def setup(bot):
