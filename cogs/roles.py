@@ -348,7 +348,7 @@ class Roles(commands.Cog):
         TEST_SERVER_ID = 475599187812155392
         emojis = self.bot.get_guild(TEST_SERVER_ID).emojis
         # Introduction
-        intro = ('• **Please add reactions below to set your main, secondaries, and region.**\n'
+        intro = ('• **Add reactions below to set your main, secondaries, and region.**\n'
                 '• Reacting too quickly may cause the bot to fail in adding/removing roles.\n'
                 '• You might need to react and unreact for the role to be added properly.')
         if ctx.message.guild.id in [ACADEMY_ID]:
