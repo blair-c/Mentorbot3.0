@@ -359,6 +359,7 @@ class Roles(commands.Cog):
         if ctx.message.guild.id in [NACORD_ID, TEST_SERVER_ID]:
             emotes.append('Sandbert')
             emotes.append('Random')
+            print(emotes)
         if ctx.message.guild.id in [ACADEMY_ID, NACORD_ID, TEST_SERVER_ID]:
             # Main
             msg = await ctx.send(file=discord.File('images/setyourroles/main.png'))
