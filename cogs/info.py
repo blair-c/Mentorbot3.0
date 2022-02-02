@@ -372,8 +372,7 @@ class Info(commands.Cog):
     @commands.command(name='jackie', aliases=['mindset'])
     async def jackie_screenshot(self, ctx):
         """Send screenshot of Jackie Chan mindset post."""
-        jackie = '<:jackie:547193437229940746>'
-        await ctx.send(f'{jackie} https://i.imgur.com/jDnEAOz.jpg {jackie}')
+        await ctx.send('https://i.imgur.com/jDnEAOz.jpg')
 
 
 def setup(bot):
