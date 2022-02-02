@@ -435,8 +435,10 @@ class Roles(commands.Cog):
                 '🎨 → Artist\n'
                 '🏆 → Tournaments\n'
                 '⏱️ → Speedrunning')
-            for emote in ['switch', 'xbox', 'art', 'trophy', 'stopwatch']:
+            for emote in ['switch', 'xbox']:
                 await msg.add_reaction(discord.utils.get(emojis, name=emote))
+            for emote in ['🎨', '🏆', '⏱️']:
+                await msg.add_reaction(emote)
 
 def setup(bot):
     bot.add_cog(Roles(bot))
