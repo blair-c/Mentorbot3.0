@@ -356,7 +356,7 @@ class Roles(commands.Cog):
         await ctx.send(intro)
         # Characters
         emotes = [c.replace(' ', '') for c in rivals.characters]
-        if ctx.message.guild.id in [NACORD_ID, TEST_SERVER_ID]:
+        if ctx.message.guild.id in [NACORD_ID]:
             emotes.append('Sandbert')
             emotes.append('Random')
         # Main
@@ -418,7 +418,7 @@ class Roles(commands.Cog):
                 'server and view the rest of the channels!')
             await msg.add_reaction(discord.utils.get(emojis, name='roaa'))
         # NAcord only
-        if ctx.message.guild.id in [NACORD_ID, TEST_SERVER_ID]:
+        if ctx.message.guild.id in [NACORD_ID]:
             # More
             await ctx.send(file=discord.File('images/setyourroles/more.png'))
             msg = await ctx.send(
