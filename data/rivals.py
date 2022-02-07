@@ -81,7 +81,7 @@ characters = {
         'icon': 'https://blair-c.github.io/roaa/img/pomme/icon.png'
     },
     'Ori': {
-        'color': 15460082,
+        'color': 9472665,
         'emote': '<:Ori:547182375956774920>',
         'icon': 'https://blair-c.github.io/roaa/img/ori/icon.png'
     },
