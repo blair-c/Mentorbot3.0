@@ -367,6 +367,10 @@ class Roles(commands.Cog):
         msg = await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
         for emote in emotes:
             await msg.add_reaction(discord.utils.get(emojis, name=emote))
+        # Characters
+            msg = await ctx.send(file=discord.File('images/setyourroles/characters.png'))
+            for emote in emotes:
+                await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # Region
         await ctx.send(file=discord.File('images/setyourroles/region.png'))
         msg = await ctx.send(
