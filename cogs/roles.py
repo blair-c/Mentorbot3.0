@@ -359,20 +359,14 @@ class Roles(commands.Cog):
         if ctx.message.guild.id in [NACORD_ID, TEST_SERVER_ID]:
             emotes.append('Sandbert')
             emotes.append('Random')
-        if ctx.message.guild.id in [ACADEMY_ID, NACORD_ID, TEST_SERVER_ID]:
-            # Main
-            msg = await ctx.send(file=discord.File('images/setyourroles/main.png'))
-            for emote in emotes:
-                await msg.add_reaction(discord.utils.get(emojis, name=emote))
-            # Secondaries
-            msg = await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
-            for emote in emotes:
-                await msg.add_reaction(discord.utils.get(emojis, name=emote))
-        else:
-            # Characters
-            msg = await ctx.send(file=discord.File('images/setyourroles/characters.png'))
-            for emote in emotes:
-                await msg.add_reaction(discord.utils.get(emojis, name=emote))
+        # Main
+        msg = await ctx.send(file=discord.File('images/setyourroles/main.png'))
+        for emote in emotes:
+            await msg.add_reaction(discord.utils.get(emojis, name=emote))
+        # Secondaries
+        msg = await ctx.send(file=discord.File('images/setyourroles/secondaries.png'))
+        for emote in emotes:
+            await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # Region
         await ctx.send(file=discord.File('images/setyourroles/region.png'))
         msg = await ctx.send(
