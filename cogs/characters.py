@@ -96,7 +96,7 @@ class Characters(commands.Cog):
             title='Rivals of Aether Academy Frame Data - Updated for 2.0.8.0',
             description='For up to date frame data info, see the RoAA !framedata document '
                         'linked here.')
-        embed.set_avatar(name='Mentorbot is not updated!', icon_url=self.bot.user.avatar_url)
+        embed.set_author(name='Mentorbot is not updated!', icon_url=self.bot.user.avatar_url)
         embed.set_thumbnail(url='https://i.imgur.com/lwrMohK.png')
         await ctx.send(embed=embed)
 
