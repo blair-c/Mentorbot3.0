@@ -84,6 +84,22 @@ class Characters(commands.Cog):
         else:  # Arg(s) passed, display move info
             await hitboxes.move_info(ctx, cursor, character, move)
 
+    # New WS pack
+    @commands.command(name='workshop', aliases=['mollo', 'hodan', 'olympia', 'oly', 'pomme'])
+    async def ws_pack(self, ctx, *move):
+        """Send notice that Mentorbot isn't updated with the new characters."""
+        move = move
+        link = ('https://docs.google.com/spreadsheets/d/'
+                '19UtK7xG2c-ehxdlhCFKMpM4_IHSG-EXFgXLJaunE79I')
+        embed = discord.Embed(
+            url=link,
+            title='Rivals of Aether Academy Frame Data - Updated for 2.0.8.0',
+            description='For up to date frame data info, see the RoAA !framedata document '
+                        'linked here.')
+        embed.set_avatar(name='Mentorbot is not updated!', icon_url=self.bot.user.avatar_url)
+        embed.set_thumbnail(url='https://i.imgur.com/lwrMohK.png')
+        await ctx.send(embed=embed)
+
     @commands.command(name='zetterburn', aliases=['zetter', 'zet'])
     async def zetterburn(self, ctx, *move):
         """Display Zetterburn mentors, or display info of move given."""
