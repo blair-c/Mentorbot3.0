@@ -97,7 +97,7 @@ class Characters(commands.Cog):
             description='For up to date frame data info, see the RoAA !framedata document '
                         'linked here.')
         embed.set_author(name='Mentorbot is not updated!', icon_url=self.bot.user.avatar_url)
-        embed.set_thumbnail(url='https://i.imgur.com/lwrMohK.png')
+        embed.set_thumbnail(url='https://i.imgur.com/nMS0QPT.png')
         await ctx.send(embed=embed)
 
     @commands.command(name='zetterburn', aliases=['zetter', 'zet'])
