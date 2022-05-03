@@ -85,10 +85,8 @@ class Characters(commands.Cog):
             await hitboxes.move_info(ctx, cursor, character, move)
 
     # New WS pack
-    @commands.command(name='workshop', aliases=['mollo', 'hodan', 'olympia', 'oly', 'pomme'])
-    async def ws_pack(self, ctx, *move):
+    async def ws_pack(self, ctx):
         """Send notice that Mentorbot isn't updated with the new characters."""
-        move = move
         link = ('https://docs.google.com/spreadsheets/d/'
                 '19UtK7xG2c-ehxdlhCFKMpM4_IHSG-EXFgXLJaunE79I')
         embed = discord.Embed(
@@ -143,6 +141,14 @@ class Characters(commands.Cog):
             move = 'dspecial'
         await self.character_command(ctx, 'Clairen', move)
 
+    @commands.command(name='mollo')
+    async def mollo(self, ctx, *move):
+        """Display Mollo mentors, or display info of move given."""
+        if move:
+            await self.ws_pack(ctx)
+        else:
+            await self.character_command(ctx, 'Mollo', move)
+
     @commands.command(name='orcane', aliases=['orc', 'orca'])
     async def orcane(self, ctx, *move):
         """Display Orcane mentors, or display info of move given."""
@@ -187,6 +193,14 @@ class Characters(commands.Cog):
         elif move == 'bubble':
             move = 'dspecial'
         await self.character_command(ctx, 'Ranno', move)
+
+    @commands.command(name='hodan')
+    async def hodan(self, ctx, *move):
+        """Display Hodan mentors, or display info of move given."""
+        if move:
+            await self.ws_pack(ctx)
+        else:
+            await self.character_command(ctx, 'Hodan', move)
 
     @commands.command(name='kragg')
     async def kragg(self, ctx, *move):
@@ -239,6 +253,14 @@ class Characters(commands.Cog):
             move = 'dspecial'
         await self.character_command(ctx, 'Sylvanos', move)
 
+    @commands.command(name='olympia', aliases=['oly'])
+    async def olympia(self, ctx, *move):
+        """Display Olympia mentors, or display info of move given."""
+        if move:
+            await self.ws_pack(ctx)
+        else:
+            await self.character_command(ctx, 'Olympia', move)
+
     @commands.command(name='wrastor')
     async def wrastor(self, ctx, *move):
         """Display Wrastor mentors, or display info of move given."""
@@ -285,6 +307,14 @@ class Characters(commands.Cog):
         elif move == 'mine':
             move = 'dspecial'
         await self.character_command(ctx, 'Elliana', move)
+
+    @commands.command(name='pomme')
+    async def pomme(self, ctx, *move):
+        """Display Pomme mentors, or display info of move given."""
+        if move:
+            await self.ws_pack(ctx)
+        else:
+            await self.character_command(ctx, 'Pomme', move)
 
     @commands.command(name='ori')
     async def ori(self, ctx, *move):
