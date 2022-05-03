@@ -72,7 +72,7 @@ async def move_info(ctx, cursor, character, move):
     embed.set_footer(text=f'See {more_info_command} document for full details.')
     # Send move info
     await ctx.send(embed=embed)
-    # Send additional info message for Clairen Plasma Field
+    # Send additional info message for Clairen Plasma Field & Etalus Fair
     if character_info['name'] == 'Clairen' and move['id'] == 17:
         embed = discord.Embed(
             url='https://docs.google.com/document/d/'
@@ -81,4 +81,14 @@ async def move_info(ctx, cursor, character, move):
             title='Clairen Plasma Field Interactions',
             description="General projectile interactions with Clairen's Plasma Field")
         embed.set_thumbnail(url='https://i.imgur.com/5NVvUtj.png')
+        await ctx.send(embed=embed)
+    if character_info['name'] == 'Etalus' and move['id'] == 10:
+        embed = discord.Embed(
+            url='https://docs.google.com/spreadsheets/d/'
+                '1IpKZaS6cLhsj_BDZ8nMrR7fdRAHGSV7m_EltM-t6300',
+            color=character_info['color'],
+            title='Etalus Fair Armor Calculator',
+            description="% that attacks will break Etalus forward air armor")
+        embed.set_thumbnail(url='https://i.imgur.com/nMS0QPT.png')
+        embed.set_footer(text=f'Certain attacks may be out of date.')
         await ctx.send(embed=embed)
