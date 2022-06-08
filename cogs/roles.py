@@ -417,15 +417,13 @@ class Roles(commands.Cog):
             msg = await ctx.send(
                 '• **If you would like to be notified for our weekly amateur tournaments '
                 '(Rivals Amateur Series), please click on a region reaction below.**\n'
-                '• Click on the reaction again to opt out of notifications.\n'
                 '<:NorthAmerica:547189311527845907> → North America\n'
                 '<:Europe:547189473432305665> → Europe')
             for region in ['NorthAmerica', 'Europe']:
                 await msg.add_reaction(discord.utils.get(emojis, name=region))
             msg = await ctx.send(
                 '• **If you would like to be notified for our weekly North American open '
-                'brackets, plus other open brackets, please click on the reaction below.**\n'
-                '• Click on the reaction again to opt out of notifications.\n')
+                'brackets, plus additional Academy brackets, click on the reaction below.**')
             await msg.add_reaction(discord.utils.get(emojis, name='NorthAmerica'))
             # Enroll
             await ctx.send(file=discord.File('images/setyourroles/enroll.png'))
