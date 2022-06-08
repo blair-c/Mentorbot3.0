@@ -423,8 +423,8 @@ class Roles(commands.Cog):
                 await msg.add_reaction(discord.utils.get(emojis, name=region))
             msg = await ctx.send(
                 '• **If you would like to be notified for our weekly North American open '
-                'brackets (Go to School, Wednesdays at 8 PM ET / 5 PM PT), plus additional '
-                'Academy open brackets, click on the reaction below.**')
+                'brackets** (Go to School: Wednesdays at 8 PM ET / 5 PM PT, plus additional '
+                'Academy open brackets) **click on the reaction below.**')
             await msg.add_reaction(discord.utils.get(emojis, name='NorthAmerica'))
             # Enroll
             await ctx.send(file=discord.File('images/setyourroles/enroll.png'))
