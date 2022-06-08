@@ -415,15 +415,15 @@ class Roles(commands.Cog):
             # Tournaments
             await ctx.send(file=discord.File('images/setyourroles/tournaments.png'))
             msg = await ctx.send(
-                '• **If you would like to be notified for our weekly amateur tournaments '
-                '(Rivals Amateur Series), click on a region reaction below.**\n'
+                '• **If you would like to be notified for our weekly amateur tournaments** '
+                '(Rivals Amateur Series)**, click on a region reaction below.**\n'
                 '<:NorthAmerica:547189311527845907> → Thursdays at 8 PM ET / 5 PM PT\n'
-                '<:Europe:547189473432305665> → Saturdays at 8 PM ET / 5 PM PT')
+                '<:Europe:547189473432305665> → Saturdays at 20:30 CEST')
             for region in ['NorthAmerica', 'Europe']:
                 await msg.add_reaction(discord.utils.get(emojis, name=region))
             msg = await ctx.send(
                 '• **If you would like to be notified for our weekly North American open '
-                'brackets** (Go to School: Wednesdays at 8 PM ET / 5 PM PT), **plus additional '
+                'brackets** (Go to School: Wednesdays at 8 PM ET / 5 PM PT)**, plus additional '
                 'Academy open brackets, click on the reaction below.**')
             await msg.add_reaction(discord.utils.get(emojis, name='NorthAmerica'))
             # Enroll
