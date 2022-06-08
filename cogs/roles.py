@@ -180,7 +180,7 @@ class Roles(commands.Cog):
                 pronoun = 'ask for pronouns'
             await member.add_roles(discord.utils.get(guild_roles, name=pronoun))
         # Academy only
-        elif payload.guild_id in [ACADEMY_ID]:
+        elif payload.guild_id in [ACADEMY_ID, TEST_SERVER_ID]:
             # Matchmaking
             if 'Matchmaking' in message.content:
                 # PC
@@ -226,7 +226,7 @@ class Roles(commands.Cog):
                     action_log = discord.utils.get(guild.text_channels, name='action-log')
                     await action_log.send(embed=embed)
         # NAcord only
-        elif payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
+        elif payload.guild_id in [NACORD_ID]:
             # Misc. roles
             if 'Speedrunning' in message.content:
                 if emote == rivals.consoles['Nintendo Switch']['emote']:
@@ -302,7 +302,7 @@ class Roles(commands.Cog):
                 pronoun = 'ask for pronouns'
             await member.remove_roles(discord.utils.get(guild_roles, name=pronoun))
         # Academy Only
-        elif payload.guild_id in [ACADEMY_ID]:
+        elif payload.guild_id in [ACADEMY_ID, TEST_SERVER_ID]:
             # Matchmaking
             if 'Matchmaking' in message.content:
                 # PC
@@ -332,7 +332,7 @@ class Roles(commands.Cog):
                 if emote == '<:NorthAmerica:547189311527845907>':
                     await member.remove_roles(discord.utils.get(guild_roles, name='Intramural'))
         # NAcord only
-        elif payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
+        elif payload.guild_id in [NACORD_ID]:
             # Misc. roles
             if 'Speedrunning' in message.content:
                 if emote == rivals.consoles['Nintendo Switch']['emote']:
@@ -396,7 +396,7 @@ class Roles(commands.Cog):
         for emote in (['he_him', 'they_them', 'she_her', 'any_pronouns', 'ask_for_pronouns']):
             await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # Academy only
-        if ctx.message.guild.id in [ACADEMY_ID]:
+        if ctx.message.guild.id in [ACADEMY_ID, TEST_SERVER_ID]:
             # Matchmaking
             await ctx.send(file=discord.File('images/setyourroles/matchmaking.png'))
             msg = await ctx.send(
