@@ -205,6 +205,10 @@ class Roles(commands.Cog):
                     await member.add_roles(discord.utils.get(guild_roles, name='Undergrad'))
                 elif emote == '<:Europe:547189473432305665>':
                     await member.add_roles(discord.utils.get(guild_roles, name='amatEUr'))
+            # Open
+            elif 'open' in message.content:
+                if emote == '<:NorthAmerica:547189311527845907>':
+                    await member.add_roles(discord.utils.get(guild_roles, name='Intramural'))
             # Enrollment
             elif emote == '<:roaa:547193418560962570>':
                 student = discord.utils.get(guild_roles, name='Student')
@@ -323,6 +327,10 @@ class Roles(commands.Cog):
                     await member.remove_roles(discord.utils.get(guild_roles, name='Undergrad'))
                 elif emote == '<:Europe:547189473432305665>':
                     await member.remove_roles(discord.utils.get(guild_roles, name='amatEUr'))
+            # Open
+            elif 'open' in message.content:
+                if emote == '<:NorthAmerica:547189311527845907>':
+                    await member.remove_roles(discord.utils.get(guild_roles, name='Intramural'))
         # NAcord only
         elif payload.guild_id in [NACORD_ID, TEST_SERVER_ID]:
             # Misc. roles
@@ -404,16 +412,21 @@ class Roles(commands.Cog):
             for emote in (['PCMatchmaking', 'PCNewbieMatchmaking', 'SwitchMatchmaking', 
                         'SwitchNewbieMatchmaking', 'XboxMatchmaking', 'XboxNewbieMatchmaking']):
                 await msg.add_reaction(discord.utils.get(emojis, name=emote))
-            # RAS
-            await ctx.send(file=discord.File('images/setyourroles/ras.png'))
+            # Tournaments
+            await ctx.send(file=discord.File('images/setyourroles/tournaments.png'))
             msg = await ctx.send(
                 '• **If you would like to be notified for our weekly amateur tournaments '
-                ' (Rivals Amateur Series), please click on a region reaction below.**\n'
+                '(Rivals Amateur Series), please click on a region reaction below.**\n'
                 '• Click on the reaction again to opt out of notifications.\n'
                 '<:NorthAmerica:547189311527845907> → North America\n'
                 '<:Europe:547189473432305665> → Europe')
             for region in ['NorthAmerica', 'Europe']:
                 await msg.add_reaction(discord.utils.get(emojis, name=region))
+            msg = await ctx.send(
+                '• **If you would like to be notified for our weekly North American open '
+                'brackets, plus other open brackets, please click on the reaction below.**\n'
+                '• Click on the reaction again to opt out of notifications.\n')
+            await msg.add_reaction(discord.utils.get(emojis, name='NorthAmerica'))
             # Enroll
             await ctx.send(file=discord.File('images/setyourroles/enroll.png'))
             msg = await ctx.send(
