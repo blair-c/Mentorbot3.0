@@ -20,10 +20,10 @@ class Hitboxes(commands.Cog):
 
     moves = [
         'Jab', 'Dash Attack',
-        'Forward Tilt', 'Up Tilt', 'Down Tilt',
-        'Forward Strong', 'Up Strong', 'Down Strong',
-        'Neutral Air', 'Forward Air', 'Back Air', 'Up Air', 'Down Air',
-        'Neutral Special', 'Side Special', 'Up Special', 'Down Special'
+        'Up Tilt', 'Down Tilt', 'Forward Tilt',
+        'Up Strong', 'Down Strong', 'Forward Strong', 
+        'Neutral Air', 'Up Air', 'Down Air', 'Forward Air', 'Back Air',
+        'Neutral Special', 'Up Special', 'Down Special', 'Side Special'
     ]
     moves = dict.fromkeys(moves)  # Dict of keys moves and values None
 
@@ -45,12 +45,12 @@ class Hitboxes(commands.Cog):
 
     # Forsburn
     fors_moves = moves.copy()
-    fors_moves['Forward Strong'] = 'Cape'
     fors_moves['Up Strong'] = 'Cape'
+    fors_moves['Forward Strong'] = 'Cape'
     fors_moves['Neutral Special'] = 'Smoke'
-    fors_moves['Side Special'] = 'Clone'
     fors_moves['Up Special'] = 'Teleport'
     fors_moves['Down Special'] = 'Clone Pop/Combust'
+    fors_moves['Side Special'] = 'Clone'
     fors_moves = [f'{move} ({name})' if name else move  # Formatted list
                   for move, name in fors_moves.items()]
     fors_moves = Literal[tuple(fors_moves)]  # To pass into command as choices
@@ -100,8 +100,8 @@ class Hitboxes(commands.Cog):
     # Etalus
     eta_moves = moves.copy()
     eta_moves['Neutral Special'] = 'Hammer'
-    eta_moves['Side Special'] = 'Icicles'
     eta_moves['Down Special'] = 'Freeze'
+    eta_moves['Side Special'] = 'Icicles'
     eta_moves = [f'{move} ({name})' if name else move  # Formatted list
                  for move, name in eta_moves.items()]
     eta_moves = Literal[tuple(eta_moves)]  # To pass into command as choices
@@ -117,8 +117,8 @@ class Hitboxes(commands.Cog):
     # Ranno
     ranno_moves = moves.copy()
     ranno_moves['Neutral Special'] = 'Needles'
-    ranno_moves['Side Special'] = 'Tongue'
     ranno_moves['Down Special'] = 'Bubble'
+    ranno_moves['Side Special'] = 'Tongue'
     ranno_moves = [f'{move} ({name})' if name else move  # Formatted list
                    for move, name in ranno_moves.items()]
     ranno_moves = Literal[tuple(ranno_moves)]  # To pass into command as choices
@@ -172,9 +172,9 @@ class Hitboxes(commands.Cog):
     sylv_moves = moves.copy()
     sylv_moves['Jab'] = 'Petal Wave'
     sylv_moves['Neutral Special'] = 'Seed/Flower'
-    sylv_moves['Side Special'] = 'Beast Dash'
     sylv_moves['Up Special'] = 'Burrow/Bite'
     sylv_moves['Down Special'] = 'Howl'
+    sylv_moves['Side Special'] = 'Beast Dash'
     sylv_moves = [f'{move} ({name})' if name else move  # Formatted list
                   for move, name in sylv_moves.items()]
     sylv_moves = Literal[tuple(sylv_moves)]  # To pass into command as choices
@@ -189,8 +189,8 @@ class Hitboxes(commands.Cog):
 
     # Wrastor
     wrastor_moves = moves.copy()
-    wrastor_moves['Forward Strong'] = 'Clap'
     wrastor_moves['Up Strong'] = 'Clap'
+    wrastor_moves['Forward Strong'] = 'Clap'
     wrastor_moves['Neutral Special'] = 'Tornado'
     wrastor_moves['Side Special'] = 'Slipstream'
     wrastor_moves = [f'{move} ({name})' if name else move  # Formatted list
@@ -208,8 +208,8 @@ class Hitboxes(commands.Cog):
     # Absa
     absa_moves = moves.copy()
     absa_moves['Neutral Special'] = 'Cloud/Thunderline'
-    absa_moves['Side Special'] = 'Cloud'
     absa_moves['Down Special'] = 'Cloud Bomb'
+    absa_moves['Side Special'] = 'Cloud'
     absa_moves = [f'{move} ({name})' if name else move  # Formatted list
                   for move, name in absa_moves.items()]
     absa_moves = Literal[tuple(absa_moves)]  # To pass into command as choices
@@ -224,13 +224,13 @@ class Hitboxes(commands.Cog):
 
     # Elliana
     elli_moves = moves.copy()
-    elli_moves['Forward Strong'] = 'Steam'
     elli_moves['Up Strong'] = 'Steam'
     elli_moves['Down Strong'] = 'Steam'
+    elli_moves['Forward Strong'] = 'Steam'
     elli_moves['Neutral Special'] = 'Fist'
-    elli_moves['Side Special'] = 'Missile'
     elli_moves['Up Special'] = 'Eject Mech'
     elli_moves['Down Special'] = 'Mine'
+    elli_moves['Side Special'] = 'Missile'
     elli_moves = [f'{move} ({name})' if name else move  # Formatted list
                   for move, name in elli_moves.items()]
     elli_moves = Literal[tuple(elli_moves)]  # To pass into command as choices
@@ -246,9 +246,9 @@ class Hitboxes(commands.Cog):
     # Ori
     ori_moves = moves.copy()
     ori_moves['Neutral Special'] = 'Sein Charge/Taps'
-    ori_moves['Side Special'] = 'Light Orb'
     ori_moves['Up Special'] = 'Parasol'
     ori_moves['Down Special'] = 'Bash'
+    ori_moves['Side Special'] = 'Light Orb'
     ori_moves = [f'{move} ({name})' if name else move  # Formatted list
                  for move, name in ori_moves.items()]
     ori_moves = Literal[tuple(ori_moves)]  # To pass into command as choices
@@ -270,9 +270,9 @@ class Hitboxes(commands.Cog):
     sk_moves['Horn'] = None
     sk_moves['Mobile Gear'] = None
     sk_moves['Ghost Gloves'] = None
-    sk_moves['Side Special'] = 'Infinidagger'
     sk_moves['Up Special'] = 'Anchor'
     sk_moves['Down Special'] = 'Fish'
+    sk_moves['Side Special'] = 'Infinidagger'
     sk_moves['Taunt'] = 'Shop'
     sk_moves = [f'{move} ({name})' if name else move  # Formatted list
                 for move, name in sk_moves.items()]
