@@ -108,9 +108,7 @@ regions = {
     },
     'Europe': {
         'abbreviation': 'EU',
-        'color': 3294334,
         'emote': '<:Europe:547189473432305665>',
-        'icon': 'https://imgur.com/WPMrAhN.png'
     },
     'Australia': {
         'abbreviation': 'AU',
@@ -128,23 +126,4 @@ regions = {
         'abbreviation': 'AF',
         'emote': '<:Africa:547189379605725225>'
     },
-}
-
-# Rivals consoles
-consoles = {
-    'Nintendo Switch': {
-        'color': 16711690,
-        'emote': '<:NintendoSwitch:938304361635913798>',
-        'icon': 'https://i.imgur.com/2ieAFjS.png'
-    },
-    'Xbox One': {
-        'color': 8304896,
-        'emote': '<:XboxOne:938304372356571176>',
-        'icon': 'https://i.imgur.com/6XdeiBK.png'
-    },
-    'Keyboard': {
-        'color': 10070709,
-        'emote': '⌨️',
-        'icon': 'https://i.imgur.com/XYdnABI.png'
-    }
 }

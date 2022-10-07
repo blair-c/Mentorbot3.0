@@ -1,8 +1,8 @@
 import os
 import sys
 from itertools import cycle
+from typing import Literal
 
-# Discord setup
 try:
     import discord
     from discord.ext import commands, tasks
@@ -10,64 +10,61 @@ except ImportError:
     print('Discord.py is not installed', file=sys.stderr)
     sys.exit(1)
 
-# Ensure correct Discord.py version
-if discord.__version__ != '1.7.2':
+correct_ver = '2.0.1'
+if discord.__version__ != correct_ver:
     print(f'Discord.py version: {discord.__version__}.\n'
-          'Please install version 1.7.2', file=sys.stderr)
+          f'Please install version {correct_ver}', file=sys.stderr)
     sys.exit(1)
+
+
+class MyBot(commands.Bot):
+
+    def __init__(self, *, intents: discord.Intents):
+        super().__init__(command_prefix=commands.when_mentioned, intents=intents)
+    
+    async def setup_hook(self):
+        cogs = [
+            'actionlog',  # (Limited functionality with update)
+            'hitboxes',  # Frame data and hitbox commands
+            'info',      # Links and informational commands
+            'mentors',   # Mentor list and management commands
+            'meta',      # About, help, and misc. commands
+            'roles',     # Roles channel setup and functionality
+        ]
+        for cog in cogs:
+            await self.load_extension(f'cogs.{cog}')
+            print(f'Loaded {cog} cog...')
+
 
 intents = discord.Intents.default()
 intents.members = True
-intents.integrations = False
-intents.webhooks = False
-intents.invites = False
-intents.voice_states = False
-intents.typing = False
-
-bot = commands.Bot(
-    command_prefix='!',
-    case_insensitive=True,
-    intents=intents)
+bot = MyBot(intents=intents)
 bot.remove_command('help')
 
-extensions = [
-    'actionlog',   # Action-log channel functionality
-    'characters',  # Mentor and hitbox commands
-    'info',        # Help, links, and informational commands
-    'moderation',  # Moderation commands
-    'roles',       # Role request commands and reaction system
-]
+@bot.command()
+@commands.guild_only()
+@commands.is_owner()
+async def sync(ctx: commands.Context, scope: Literal['global', 'guild', 'clear']):
+    """Sync global or guild commands"""
+    async with ctx.channel.typing():
+        if scope == 'global':
+            synced = await ctx.bot.tree.sync()
+            txt = 'globally'
+        elif scope == 'guild':
+            synced = await ctx.bot.tree.sync(guild=ctx.guild)
+            txt = 'to the current guild'
+        elif scope == 'clear':
+            ctx.bot.tree.clear_commands(guild=ctx.guild)
+            await ctx.bot.tree.sync(guild=ctx.guild)
+            synced = []
+    await ctx.send(f'Synced {len(synced)} commands {txt}')
 
-statuses = {
-    'update_note': 'Currently updating to definitive',
-    'academy_link': 'discord.me/mentor',
-    'usage_stats': ''  # To be updated in loop
-}
-index_cycle = cycle(['update_note', 'academy_link', 'usage_stats'])
-
-@tasks.loop(seconds=10)
-async def change_bot_activity():
-    """Update bot's activity to display message or usage statistics."""
-    index = next(index_cycle)
-    if index == 'usage_stats':  # Update usage stats if necessary
-        statuses['usage_stats'] = f'{len(bot.guilds):,} servers, {len(bot.users):,} users!'
-    status = statuses[index]
-    await bot.change_presence(activity=discord.Game(status))
-
+# Start
 @bot.event
 async def on_ready():
-    """Set bot activity, and display bot info when fully prepared."""
-    change_bot_activity.start()
-    print(f'Logged in as {bot.user.name}\nUser ID: {bot.user.id}')
+    await bot.change_presence(activity=discord.Game('discord.me/mentor'))
+    print(f'Logged in as {bot.user}\nUser ID: {bot.user.id}\n'
+          f'{len(bot.guilds):,} guilds, {len(bot.users):,} users')
 
 if __name__ == '__main__':
-    for cog in extensions:
-        try:
-            bot.load_extension(f'cogs.{cog}')  # Dot path to cogs subdirectory
-            print(f'Loaded {cog} cog...')
-        except Exception as e:
-            print(f'Failed to load {cog} cog.\n'
-                  f'[{type(e).__name__}: {e}]', file=sys.stderr)
-            sys.exit(1)
-    print('Logging in...')
-    bot.run(os.environ.get('TOKEN'))  # API Key from environment
+    bot.run(os.getenv('TOKEN'))  # API Key from environment

@@ -3,8 +3,6 @@ from datetime import datetime, timedelta
 import discord
 from discord.ext import commands
 
-from helpers import helpers
-
 
 class ActionLog(commands.Cog):
     """Log info on members joining/leaving, deleted/edited messages, etc."""
@@ -202,10 +200,10 @@ class ActionLog(commands.Cog):
         embed.set_author(name=f'{str(before)}', icon_url=before.avatar_url)
         embed.set_footer(text=f'ID: {before.id}')
         # Before nickname change
-        embed.add_field(name='Before:', value=f'```{helpers.get_nickname(before)}```',
+        embed.add_field(name='Before:', value=f'```{before.display_name}```',
                         inline=False)
         # After nickname change
-        embed.add_field(name='After:', value=f'```{helpers.get_nickname(after)}```',
+        embed.add_field(name='After:', value=f'```{after.display_name}```',
                         inline=False)
         # Send in action-log
         await action_log.send(embed=embed)
@@ -259,5 +257,5 @@ class ActionLog(commands.Cog):
         await action_log.send(embed=embed)
 
 
-def setup(bot):
-    bot.add_cog(ActionLog(bot))
+async def setup(bot):
+    await bot.add_cog(ActionLog(bot))

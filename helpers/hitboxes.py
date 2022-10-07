@@ -4,14 +4,25 @@ import discord
 from discord.ext import commands
 from tabulate import tabulate
 
-from helpers import helpers
+
+def char_info(cursor, character=None, region=None):
+    """Return id, name, color, and icon url of given character/region."""
+    if character:  # If character was given
+        return cursor.execute(
+            '''SELECT * FROM characters WHERE name = :character''',
+            {'character': character.title()}).fetchone()
+    elif region:  # If region was given
+        return cursor.execute(
+            '''SELECT * FROM characters WHERE name = :region''',
+            {'region': region.upper()}).fetchone()
 
 
-async def move_info(ctx, cursor, character, move):
+async def move_info(interaction, cursor, character, move):
     """Display frame data and hitbox info of move given."""
     # Get character info
-    character_info = helpers.character_info(cursor, character=character)
+    character_info = char_info(cursor, character=character)
     # Get move ID and display name
+    move = move.lower().replace(' ', '')
     move = cursor.execute(
         '''SELECT id, display_name FROM moves WHERE name1 = :move OR name2 = :move
            OR name3 = :move OR name4 = :move OR name5 = :move OR name6 = :move''', 
@@ -66,12 +77,12 @@ async def move_info(ctx, cursor, character, move):
         embed.set_image(url=move_info[0]['image'])
     # Display different footer for hitbox/hurtbox commands
     if move['id'] == 0:
-        more_info_command = '!hurtboxdata'
+        more_info_command = '/hurtboxdata'
     else:
-        more_info_command = '!framedata'
+        more_info_command = '/framedata'
     embed.set_footer(text=f'See {more_info_command} document for full details.')
     # Send move info
-    await ctx.send(embed=embed)
+    await interaction.response.send_message(embed=embed)
     # Send additional info message for Clairen Plasma Field & Etalus Fair
     if character_info['name'] == 'Clairen' and move['id'] == 17:
         embed = discord.Embed(
@@ -81,7 +92,7 @@ async def move_info(ctx, cursor, character, move):
             title='Clairen Plasma Field Interactions',
             description="General projectile interactions with Clairen's Plasma Field")
         embed.set_thumbnail(url='https://i.imgur.com/5NVvUtj.png')
-        await ctx.send(embed=embed)
+        await interaction.channel.send(embed=embed)
     if character_info['name'] == 'Etalus' and move['id'] == 10:
         embed = discord.Embed(
             url='https://docs.google.com/spreadsheets/d/'
@@ -91,4 +102,4 @@ async def move_info(ctx, cursor, character, move):
             description="% that attacks will break Etalus forward air armor")
         embed.set_thumbnail(url='https://i.imgur.com/nMS0QPT.png')
         embed.set_footer(text=f'Certain attacks may be out of date.')
-        await ctx.send(embed=embed)
+        await interaction.channel.send(embed=embed)

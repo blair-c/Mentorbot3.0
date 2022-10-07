@@ -4,114 +4,14 @@ import discord
 from discord.ext import commands
 
 from data import rivals
-from helpers import helpers
 
 
 class Roles(commands.Cog):
     """Add and remove roles from users."""
 
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
 
-    # Role toggle commands for mentors
-    @commands.command(name='dnd', hidden=True)
-    @commands.has_any_role('Mentors', 'DO NOT DISTURB')
-    @helpers.in_channel('teacher-lounge')
-    @helpers.in_academy()
-    async def do_not_disturb_toggle(self, ctx):
-        """Toggle member between mentors and do not disturb roles."""
-        mentors_role = discord.utils.get(ctx.guild.roles, name='Mentors')
-        dnd_role = discord.utils.get(ctx.guild.roles, name='DO NOT DISTURB')
-        member = ctx.guild.get_member(ctx.author.id)
-        # Mentors -> DND
-        if mentors_role in ctx.author.roles:
-            # Change nickname
-            try:
-                if ctx.author.display_name[:6] != '[DND] ':
-                    await ctx.author.edit(nick=f'[DND] {ctx.author.display_name}')
-            except discord.errors.Forbidden:
-                pass
-            # Update roles and get embed
-            embed = await helpers.update_roles(member, remove=mentors_role, add=dnd_role)
-        # DND -> Mentors
-        elif dnd_role in ctx.author.roles:
-            # Change nickname
-            try:
-                if ctx.author.display_name[6:] == ctx.author.name:
-                    await ctx.author.edit(nick=None)
-                elif ctx.author.display_name[:6] == '[DND] ':
-                    await ctx.author.edit(nick=ctx.author.display_name[6:])
-            except discord.errors.Forbidden:
-                pass
-            # Update roles and get embed
-            embed = await helpers.update_roles(member, remove=dnd_role, add=mentors_role)
-        await ctx.send(embed=embed)
-
-    @commands.command(name='advisor', hidden=True)
-    @commands.has_role('Mentor')
-    @helpers.in_channel('teacher-lounge')
-    @helpers.in_academy()
-    async def advisor_role_add(self, ctx):
-        """Toggle mentor's roles from mentor to advisor."""
-        embed = await helpers.update_roles(
-            ctx.guild.get_member(ctx.author.id),
-            remove=discord.utils.get(ctx.guild.roles, name='Mentor'),
-            add=discord.utils.get(ctx.guild.roles, name='Advisor'))
-        await ctx.send(embed=embed)
-
-    @commands.command(name='mentor', hidden=True)
-    @commands.has_role('Advisor')
-    @helpers.in_channel('teacher-lounge')
-    @helpers.in_academy()
-    async def mentor_role_add(self, ctx):
-        """Toggle mentor's roles from advisor to mentor."""
-        embed = await helpers.update_roles(
-            ctx.guild.get_member(ctx.author.id),
-            remove=discord.utils.get(ctx.guild.roles, name='Advisor'),
-            add=discord.utils.get(ctx.guild.roles, name='Mentor'))
-        await ctx.send(embed=embed)
-
-    @commands.command(name='keyboardmentor', aliases=['keyboard-mentor'], hidden=True)
-    @commands.has_any_role('Mentors', 'DO NOT DISTURB')
-    @helpers.in_channel('teacher-lounge')
-    @helpers.in_academy()
-    async def keyboard_role_toggle(self, ctx):
-        """Toggle mentor's keyboard status in roles and commands."""
-        member = ctx.guild.get_member(ctx.author.id)
-        role = discord.utils.get(ctx.guild.roles, name='Keyboard')
-        if role in member.roles:
-            embed = await helpers.update_roles(member, remove=role)
-        else:
-            embed = await helpers.update_roles(member, add=role)
-        await ctx.send(embed=embed)
-
-    @commands.command(name='switchmentor', aliases=['switch-mentor'], hidden=True)
-    @commands.has_any_role('Mentors', 'DO NOT DISTURB')
-    @helpers.in_channel('teacher-lounge')
-    @helpers.in_academy()
-    async def switch_role_toggle(self, ctx):
-        """Toggle mentor's Nintendo Switch availability status in roles and commands."""
-        member = ctx.guild.get_member(ctx.author.id)
-        role = discord.utils.get(ctx.guild.roles, name='Switch Mentor')
-        if role in member.roles:
-            embed = await helpers.update_roles(member, remove=role)
-        else:
-            embed = await helpers.update_roles(member, add=role)
-        await ctx.send(embed=embed)
-
-    @commands.command(name='xboxmentor', aliases=['xbox-mentor'], hidden=True)
-    @commands.has_any_role('Mentors', 'DO NOT DISTURB')
-    @helpers.in_channel('teacher-lounge')
-    @helpers.in_academy()
-    async def xbox_role_toggle(self, ctx):
-        """Toggle mentor's Xbox availability status in roles and commands."""
-        member = ctx.guild.get_member(ctx.author.id)
-        role = discord.utils.get(ctx.guild.roles, name='Xbox Mentor')
-        if role in member.roles:
-            embed = await helpers.update_roles(member, remove=role)
-        else:
-            embed = await helpers.update_roles(member, add=role)
-        await ctx.send(embed=embed)
 
     # Reaction system for main, secondaries, region, undergrad, and enrollment
     @commands.Cog.listener()
@@ -215,16 +115,6 @@ class Roles(commands.Cog):
                 dress_code = discord.utils.get(guild_roles, name='Dress Code Violation')
                 if student not in member.roles and dress_code not in member.roles:
                     await member.add_roles(student)
-                    # Display enrollment in action-log
-                    embed = discord.Embed(
-                        color=0xfefefe,
-                        description=f'{member.mention}\n**{str(member)}**',
-                        timestamp=datetime.utcnow())
-                    embed.set_author(name='Member Enrolled', icon_url=member.avatar_url)
-                    embed.set_thumbnail(url=user.avatar_url)
-                    embed.set_footer(text=f'ID: {payload.user_id}')
-                    action_log = discord.utils.get(guild.text_channels, name='action-log')
-                    await action_log.send(embed=embed)
         # NAcord only
         elif payload.guild_id in [NACORD_ID]:
             # Misc. roles
@@ -448,5 +338,5 @@ class Roles(commands.Cog):
             for emote in ['NintendoSwitch', 'XboxOne', 'Tournaments', 'Artist', 'Speedrunning']:
                 await msg.add_reaction(discord.utils.get(emojis, name=emote))
 
-def setup(bot):
-    bot.add_cog(Roles(bot))
+async def setup(bot: commands.Bot):
+    await bot.add_cog(Roles(bot))
