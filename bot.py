@@ -64,7 +64,7 @@ async def sync(ctx: commands.Context, scope: Literal['global', 'guild', 'clear']
 async def on_ready():
     await bot.change_presence(activity=discord.Game('discord.me/mentor'))
     print(f'Logged in as {bot.user}\nUser ID: {bot.user.id}\n'
-          f'{len(bot.guilds):,} guilds, {len(bot.users):,} users')
+          f'{len(bot.guilds):,} guilds / {len(bot.users):,} users')
 
 if __name__ == '__main__':
     bot.run(os.getenv('TOKEN'))  # API Key from environment

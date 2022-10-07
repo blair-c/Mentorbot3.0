@@ -12,11 +12,12 @@ class Meta(commands.Cog):
     @app_commands.command(name='about')
     async def info_command(self, interaction: discord.Interaction):
         """About Mentorbot"""
-        embed = discord.Embed(
-            description=f'{len(self.bot.guilds):,} servers, {len(self.bot.users):,} users!')
+        desc = 'A Discord bot by the Rivals of Aether Academy.'
+        desc += f'```ml\n{len(self.bot.guilds):,} servers / {len(self.bot.users):,} users```'
+        embed = discord.Embed(description=desc)
         embed.set_author(
-            name='A custom Discord bot by the Rivals of Aether Academy.',
-            icon_url=self.bot.user.avatar.url)
+            name='About Mentorbot 3.0',
+            icon_url=self.bot.user.display_avatar.url)
         embed.add_field(
             name='Created by blair',
             value='https://github.com/blair-c/Mentorbot3.0',
