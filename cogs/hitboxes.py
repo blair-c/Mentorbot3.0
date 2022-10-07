@@ -20,10 +20,10 @@ class Hitboxes(commands.Cog):
 
     moves = [
         'Jab', 'Dash Attack',
-        'Up Tilt', 'Down Tilt', 'Forward Tilt',
-        'Up Strong', 'Down Strong', 'Forward Strong', 
-        'Neutral Air', 'Up Air', 'Down Air', 'Forward Air', 'Back Air',
-        'Neutral Special', 'Up Special', 'Down Special', 'Side Special'
+        'Down Tilt', 'Up Tilt', 'Forward Tilt',
+        'Down Strong', 'Up Strong', 'Forward Strong', 
+        'Neutral Air', 'Down Air', 'Up Air', 'Forward Air', 'Back Air',
+        'Neutral Special', 'Down Special', 'Up Special', 'Side Special'
     ]
     moves = dict.fromkeys(moves)  # Dict of keys moves and values None
 
@@ -48,8 +48,8 @@ class Hitboxes(commands.Cog):
     fors_moves['Up Strong'] = 'Cape'
     fors_moves['Forward Strong'] = 'Cape'
     fors_moves['Neutral Special'] = 'Smoke'
-    fors_moves['Up Special'] = 'Teleport'
     fors_moves['Down Special'] = 'Clone Pop/Combust'
+    fors_moves['Up Special'] = 'Teleport'
     fors_moves['Side Special'] = 'Clone'
     fors_moves = [f'{move} ({name})' if name else move  # Formatted list
                   for move, name in fors_moves.items()]
@@ -172,8 +172,8 @@ class Hitboxes(commands.Cog):
     sylv_moves = moves.copy()
     sylv_moves['Jab'] = 'Petal Wave'
     sylv_moves['Neutral Special'] = 'Seed/Flower'
-    sylv_moves['Up Special'] = 'Burrow/Bite'
     sylv_moves['Down Special'] = 'Howl'
+    sylv_moves['Up Special'] = 'Burrow/Bite'
     sylv_moves['Side Special'] = 'Beast Dash'
     sylv_moves = [f'{move} ({name})' if name else move  # Formatted list
                   for move, name in sylv_moves.items()]
@@ -224,12 +224,12 @@ class Hitboxes(commands.Cog):
 
     # Elliana
     elli_moves = moves.copy()
-    elli_moves['Up Strong'] = 'Steam'
     elli_moves['Down Strong'] = 'Steam'
+    elli_moves['Up Strong'] = 'Steam'
     elli_moves['Forward Strong'] = 'Steam'
     elli_moves['Neutral Special'] = 'Fist'
-    elli_moves['Up Special'] = 'Eject Mech'
     elli_moves['Down Special'] = 'Mine'
+    elli_moves['Up Special'] = 'Eject Mech'
     elli_moves['Side Special'] = 'Missile'
     elli_moves = [f'{move} ({name})' if name else move  # Formatted list
                   for move, name in elli_moves.items()]
@@ -246,8 +246,8 @@ class Hitboxes(commands.Cog):
     # Ori
     ori_moves = moves.copy()
     ori_moves['Neutral Special'] = 'Sein Charge/Taps'
-    ori_moves['Up Special'] = 'Parasol'
     ori_moves['Down Special'] = 'Bash'
+    ori_moves['Up Special'] = 'Parasol'
     ori_moves['Side Special'] = 'Light Orb'
     ori_moves = [f'{move} ({name})' if name else move  # Formatted list
                  for move, name in ori_moves.items()]
@@ -270,8 +270,8 @@ class Hitboxes(commands.Cog):
     sk_moves['Horn'] = None
     sk_moves['Mobile Gear'] = None
     sk_moves['Ghost Gloves'] = None
-    sk_moves['Up Special'] = 'Anchor'
     sk_moves['Down Special'] = 'Fish'
+    sk_moves['Up Special'] = 'Anchor'
     sk_moves['Side Special'] = 'Infinidagger'
     sk_moves['Taunt'] = 'Shop'
     sk_moves = [f'{move} ({name})' if name else move  # Formatted list
