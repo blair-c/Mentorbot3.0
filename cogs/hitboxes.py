@@ -67,6 +67,7 @@ class Hitboxes(commands.Cog):
     clairen_moves = moves.copy()
     clairen_moves['Neutral Special'] = 'Grab/Throw'
     clairen_moves['Down Special'] = 'Counter/Plasma Field'
+    clairen_moves['Side Special'] = 'Teleport'
     clairen_moves = [f'{move} ({name})' if name else move  # Formatted list
                      for move, name in clairen_moves.items()]
     clairen_moves = Literal[tuple(clairen_moves)]  # To pass into command as choices
@@ -81,6 +82,7 @@ class Hitboxes(commands.Cog):
 
     # Orcane
     orca_moves = moves.copy()
+    orca_moves['Neutral Air'] = 'Bounce'
     orca_moves['Forward Air'] = 'Bubblebutt'
     orca_moves['Neutral Special'] = 'Droplet'
     orca_moves['Down Special'] = 'Bubbles'
@@ -118,6 +120,7 @@ class Hitboxes(commands.Cog):
     ranno_moves = moves.copy()
     ranno_moves['Neutral Special'] = 'Needles'
     ranno_moves['Down Special'] = 'Bubble'
+    ranno_moves['Up Special'] = 'Divekick/Needlestorm'
     ranno_moves['Side Special'] = 'Tongue'
     ranno_moves = [f'{move} ({name})' if name else move  # Formatted list
                    for move, name in ranno_moves.items()]
@@ -245,7 +248,7 @@ class Hitboxes(commands.Cog):
 
     # Ori
     ori_moves = moves.copy()
-    ori_moves['Neutral Special'] = 'Sein Charge/Taps'
+    ori_moves['Neutral Special'] = 'Sein Taps/Charged Spirit Flame'
     ori_moves['Down Special'] = 'Bash'
     ori_moves['Up Special'] = 'Parasol'
     ori_moves['Side Special'] = 'Light Orb'
