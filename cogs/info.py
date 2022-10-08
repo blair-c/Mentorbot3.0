@@ -21,9 +21,7 @@ class Info(commands.Cog):
             url=link,
             title='Rivals of Aether Academy Frame Data - Updated for 2.1.3.0',  # TODO: scrape doc for patch
             description='Data extracted manually in-game and from dev-mode files by SNC. '
-                        'Extra information provided by Menace13 and Youngblood. '
-                        'General Stats created by Kisuno. '
-                        'Collated Patch Notes created by SNC.')
+                        'Extra information provided by Menace13 and Youngblood. ')
         embed.set_thumbnail(url='https://i.imgur.com/nMS0QPT.png')
         await interaction.response.send_message(content=link, embed=embed)
 
