@@ -29,7 +29,7 @@ class Meta(commands.Cog):
             inline=False)
         embed.add_field(
             name='Profile photo drawn by Sxolian',
-            value='https://twitter.com/SxolianArt',
+            value='https://twitter.com/Sxolian',
             inline=False)
         await interaction.response.send_message(embed=embed)
 
