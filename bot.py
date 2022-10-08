@@ -44,7 +44,7 @@ bot.remove_command('help')
 @bot.command()
 @commands.guild_only()
 @commands.is_owner()
-async def sync(ctx: commands.Context, scope: Literal['global', 'guild', 'clear']):
+async def sync(ctx: commands.Context, scope: Literal['global', 'guild']):
     """Sync global or guild commands"""
     async with ctx.channel.typing():
         if scope == 'global':
@@ -53,10 +53,6 @@ async def sync(ctx: commands.Context, scope: Literal['global', 'guild', 'clear']
         elif scope == 'guild':
             synced = await ctx.bot.tree.sync(guild=ctx.guild)
             txt = 'to the current guild'
-        elif scope == 'clear':
-            ctx.bot.tree.clear_commands(guild=ctx.guild)
-            await ctx.bot.tree.sync(guild=ctx.guild)
-            synced = []
     await ctx.send(f'Synced {len(synced)} commands {txt}')
 
 # Start
