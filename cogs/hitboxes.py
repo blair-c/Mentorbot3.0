@@ -278,7 +278,7 @@ class Hitboxes(commands.Cog):
                 for move, name in sk_moves.items()]
     sk_moves = Literal[tuple(sk_moves)]  # To pass into command as choices
 
-    @app_commands.command(name='sk', extras=moves)
+    @app_commands.command(name='shovelknight', extras=moves)
     async def shovel_knight(self, interaction: discord.Interaction, attack: sk_moves):
         """Shovel Knight frame data and hitbox info"""
         for orig in interaction.command.extras:  # Original moves w/o char-specific names
