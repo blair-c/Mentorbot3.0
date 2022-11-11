@@ -179,7 +179,9 @@ class Info(commands.Cog):
     async def how_to_access_your_replays(self, interaction: discord.Interaction):
         """How to access your RoA replays"""
         embed = discord.Embed()
-        embed.set_author(name='How to Access Your Replays', icon_url=self.bot.user.avatar_url)
+        embed.set_author(
+            name='How to Access Your Replays', 
+            icon_url=self.bot.user.display_avatar.url)
         embed.add_field(
             name='Method 1:',
             value='1. Press `Win + R`\n'
