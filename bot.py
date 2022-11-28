@@ -10,7 +10,7 @@ except ImportError:
     print('Discord.py is not installed', file=sys.stderr)
     sys.exit(1)
 
-correct_ver = '2.0.1'
+correct_ver = '2.1.0'
 if discord.__version__ != correct_ver:
     print(f'Discord.py version: {discord.__version__}.\n'
           f'Please install version {correct_ver}', file=sys.stderr)
