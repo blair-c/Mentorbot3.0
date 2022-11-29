@@ -119,9 +119,9 @@ class Roles(commands.Cog):
         elif payload.guild_id in [NACORD_ID]:
             # Misc. roles
             if 'Speedrunning' in message.content:
-                if emote == rivals.consoles['Nintendo Switch']['emote']:
+                if emote == '<:NintendoSwitch:938304361635913798>':
                     await member.add_roles(discord.utils.get(guild_roles, name='Joycon'))
-                elif emote == rivals.consoles['Xbox One']['emote']:
+                elif emote == '<:XboxOne:938304372356571176>':
                     await member.add_roles(discord.utils.get(guild_roles, name='XB1'))
                 elif emote == '<:Tournaments:938301433806225470>':
                     await member.add_roles(discord.utils.get(guild_roles, name='Tournament'))
@@ -225,9 +225,9 @@ class Roles(commands.Cog):
         elif payload.guild_id in [NACORD_ID]:
             # Misc. roles
             if 'Speedrunning' in message.content:
-                if emote == rivals.consoles['Nintendo Switch']['emote']:
+                if emote == '<:NintendoSwitch:938304361635913798>':
                     await member.remove_roles(discord.utils.get(guild_roles, name='Joycon'))
-                elif emote == rivals.consoles['Xbox One']['emote']:
+                elif emote == '<:XboxOne:938304372356571176>':
                     await member.remove_roles(discord.utils.get(guild_roles, name='XB1'))
                 elif emote == '<:Tournaments:938301433806225470>':
                     await member.remove_roles(discord.utils.get(guild_roles, name='Tournament'))
@@ -329,8 +329,8 @@ class Roles(commands.Cog):
             await ctx.send(file=discord.File('images/setyourroles/more.png'))
             msg = await ctx.send(
                 # Consoles
-                f'{rivals.consoles["Nintendo Switch"]["emote"]} → Nintendo Switch\n'
-                f'{rivals.consoles["Xbox One"]["emote"]} → Xbox One\n'
+                '<:NintendoSwitch:938304361635913798> → Nintendo Switch\n'
+                '<:XboxOne:938304372356571176> → Xbox One\n'
                 # Misc. Roles
                 '<:Tournaments:938301433806225470> → Tournaments\n'
                 '<:Artist:938293074730303508> → Artist\n'
