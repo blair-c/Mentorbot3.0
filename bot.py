@@ -17,10 +17,10 @@ class MyBot(commands.Bot):
     
     async def setup_hook(self):
         cogs = [
+            'about',     # About command
             'hitboxes',  # Frame data and hitbox commands
             'info',      # Links and informational commands
             'mentors',   # Mentor list and management commands
-            'about',      # About, help, and misc. commands
             'roles',     # Roles channel setup and functionality
         ]
         for cog in cogs:

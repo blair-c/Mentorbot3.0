@@ -3,14 +3,14 @@ from discord import app_commands
 from discord.ext import commands
 
 
-class Meta(commands.Cog):
+class About(commands.Cog):
     """Send information about Mentorbot and Academy."""
 
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
     @app_commands.command(name='about')
-    async def info_command(self, interaction: discord.Interaction):
+    async def about_command(self, interaction: discord.Interaction):
         """About Mentorbot"""
         desc = 'A Discord bot by the Rivals of Aether Academy.'
         desc += f'```ml\n{len(self.bot.guilds):,} servers / {len(self.bot.users):,} users```'
@@ -33,10 +33,6 @@ class Meta(commands.Cog):
             inline=False)
         await interaction.response.send_message(embed=embed)
 
-    # @app_commands.command(name='help')
-    # async def help_command(self, interaction, discord.Interaction):
-    #     """"""
-
 
 async def setup(bot: commands.Bot):
-    await bot.add_cog(Meta(bot))
+    await bot.add_cog(About(bot))
