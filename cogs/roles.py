@@ -270,11 +270,12 @@ class Roles(commands.Cog):
         for emote in emotes:
             await msg.add_reaction(discord.utils.get(emojis, name=emote))
         # Region
-        await ctx.send(file=discord.File('images/setyourroles/region.png'))
-        msg = await ctx.send(
-            '\n'.join([f'{info["emote"]} → {region}' for region, info in rivals.regions.items()]))
-        for region in rivals.regions:
-            await msg.add_reaction(discord.utils.get(emojis, name=region.replace(' ', '')))
+        if ctx.message.guild.id in [ACADEMY_ID, NACORD_ID, TEST_SERVER_ID]:
+            await ctx.send(file=discord.File('images/setyourroles/region.png'))
+            msg = await ctx.send(
+                '\n'.join([f'{info["emote"]} → {region}' for region, info in rivals.regions.items()]))
+            for region in rivals.regions:
+                await msg.add_reaction(discord.utils.get(emojis, name=region.replace(' ', '')))
         # Pronouns
         await ctx.send(file=discord.File('images/setyourroles/pronouns.png'))
         msg = await ctx.send(
