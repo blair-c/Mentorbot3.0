@@ -2,12 +2,15 @@ import os
 import sys
 from typing import Literal
 
+import box
 import discord
 from discord.ext import commands, tasks
 import tabulate
 
 print(f'Python {sys.version}\n'
-      f'discord.py {discord.__version__} | tabulate {tabulate.__version__}')
+      f'discord.py {discord.__version__} | '
+      f'python-box {box.__version__} | '
+      f'tabulate {tabulate.__version__}')
 
 
 class MyBot(commands.Bot):

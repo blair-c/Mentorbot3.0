@@ -21,13 +21,12 @@ class Info(commands.Cog):
             name='About Mentorbot 3.0',
             icon_url=self.bot.user.display_avatar.url)
         embed.add_field(
-            name='Created by blair',
+            name='Developed by blair',
             value='https://github.com/blair-c/Mentorbot3.0',
             inline=False)
         embed.add_field(
-            name='Frame data info provided by SNC and Sector 7-G',
-            value='https://twitter.com/SNC_Sector7G\n'
-                  'https://discord.gg/qgKqaPX',
+            name='Data curated by Sector 7-G',
+            value='https://rivals.academy/library',
             inline=False)
         embed.add_field(
             name='Profile photo drawn by Sxolian',
