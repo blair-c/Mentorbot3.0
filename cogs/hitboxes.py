@@ -13,12 +13,14 @@ from data import rivals
 
 class MoveSelect(Button):
     """"""
-    def __init__(self, name: str, embed: discord.Embed):
+    def __init__(self, name: str, embed: discord.Embed, user: discord.User):
         self.embed = embed
+        self.user = user
         super().__init__(label=name, style=discord.ButtonStyle.gray)
 
     async def callback(self, interaction):
-        await interaction.response.edit_message(embed=self.embed)
+        if self.user == interaction.user:
+            await interaction.response.edit_message(embed=self.embed)
 
 
 class Hitboxes(commands.Cog):
@@ -349,7 +351,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Side Special: Clone', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Non-Empowered', embed=embed))
+            view.add_item(MoveSelect(name='Non-Empowered', embed=embed, user=interaction.user))
             # Super Clone
             link = 'https://rivals.academy/library/forsburn#side-special-empowered-super-clone'
             desc = link
@@ -357,7 +359,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Forsburn Empowered Side Special: Super Clone', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Empowered: Super Clone', embed=embed2))
+            view.add_item(MoveSelect(name='Empowered: Super Clone', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Special/B':
             move = char.upSpecial
@@ -664,7 +666,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Bomb', embed=embed))
+            view.add_item(MoveSelect(name='No Bomb', embed=embed, user=interaction.user))
             # Bomb Toss
             link = 'https://rivals.academy/library/mollo#forward-strong-bomb-toss'
             desc = link
@@ -672,7 +674,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Mollo Forward Strong: Bomb Toss', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Bomb Toss', embed=embed2))
+            view.add_item(MoveSelect(name='Bomb Toss', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Strong':
             move = char.upStrong
@@ -684,7 +686,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Bomb', embed=embed))
+            view.add_item(MoveSelect(name='No Bomb', embed=embed, user=interaction.user))
             # Bomb Toss
             link = 'https://rivals.academy/library/mollo#up-strong-bomb-toss'
             desc = link
@@ -692,7 +694,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Mollo Up Strong: Bomb Toss', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Bomb Toss', embed=embed2))
+            view.add_item(MoveSelect(name='Bomb Toss', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Strong':
             move = char.downStrong
@@ -704,7 +706,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Bomb', embed=embed))
+            view.add_item(MoveSelect(name='No Bomb', embed=embed, user=interaction.user))
             # Bomb Toss
             link = 'https://rivals.academy/library/mollo#down-strong-bomb-toss'
             desc = link
@@ -712,7 +714,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Mollo Down Strong: Bomb Toss', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Bomb Toss', embed=embed2))
+            view.add_item(MoveSelect(name='Bomb Toss', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Neutral Special/B (Bomb Pull/Cherry/Firecracker/Flashbang/Finisher)':
             move = char.neutralSpecial
@@ -724,7 +726,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Neutral Special: Bomb Pull', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Bomb Pull', embed=embed))
+            view.add_item(MoveSelect(name='Bomb Pull', embed=embed, user=interaction.user))
             # Cherry Bomb
             link = 'https://rivals.academy/library/mollo#neutral-special-cherry-bomb-explosion'
             desc = link
@@ -732,7 +734,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Mollo Neutral Special: Cherry Bomb Explosion', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Cherry Bomb', embed=embed2))
+            view.add_item(MoveSelect(name='Cherry Bomb', embed=embed2, user=interaction.user))
             # Firecracker
             link = 'https://rivals.academy/library/mollo#neutral-special-firecracker-explosion'
             desc = link
@@ -740,7 +742,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[2].image.highRes)
             embed2.set_author(name='Mollo Neutral Special: Firecracker Explosion', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Firecracker', embed=embed2))
+            view.add_item(MoveSelect(name='Firecracker', embed=embed2, user=interaction.user))
             # Flashbang
             link = 'https://rivals.academy/library/mollo#neutral-special-flashbang-explosion'
             desc = link
@@ -748,7 +750,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[3].image.highRes)
             embed2.set_author(name='Mollo Neutral Special: Flashbang Explosion', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Flashbang', embed=embed2))
+            view.add_item(MoveSelect(name='Flashbang', embed=embed2, user=interaction.user))
             # Finisher Bomb
             link = 'https://rivals.academy/library/mollo#neutral-special-finisher-bomb-explosion'
             desc = link
@@ -756,7 +758,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[4].image.highRes)
             embed2.set_author(name='Mollo Neutral Special: Finisher Bomb Explosion', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Finisher Bomb', embed=embed2))
+            view.add_item(MoveSelect(name='Finisher Bomb', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Side Special/B (Flare Gun)':
             move = char.sideSpecial
@@ -902,7 +904,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Puddle', embed=embed))
+            view.add_item(MoveSelect(name='No Puddle', embed=embed, user=interaction.user))
             # Puddle Empowered
             link = 'https://rivals.academy/library/orcane#forward-strong-puddle-empowered'
             desc = link
@@ -910,7 +912,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Orcane Forward Strong: Puddle Empowered', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Puddle Empowered', embed=embed2))
+            view.add_item(MoveSelect(name='Puddle Empowered', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Strong':
             move = char.upStrong
@@ -922,7 +924,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Puddle', embed=embed))
+            view.add_item(MoveSelect(name='No Puddle', embed=embed, user=interaction.user))
             # Puddle Empowered
             link = 'https://rivals.academy/library/orcane#up-strong-puddle-empowered'
             desc = link
@@ -930,7 +932,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Orcane Up Strong: Puddle Empowered', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Puddle Empowered', embed=embed2))
+            view.add_item(MoveSelect(name='Puddle Empowered', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Strong':
             move = char.downStrong
@@ -942,7 +944,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Puddle', embed=embed))
+            view.add_item(MoveSelect(name='No Puddle', embed=embed, user=interaction.user))
             # Puddle Empowered
             link = 'https://rivals.academy/library/orcane#down-strong-puddle-empowered'
             desc = link
@@ -950,7 +952,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Orcane Down Strong: Puddle Empowered', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Puddle Empowered', embed=embed2))
+            view.add_item(MoveSelect(name='Puddle Empowered', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Neutral Special/B (Droplet)':
             move = char.neutralSpecial
@@ -971,13 +973,13 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Side Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Puddle', embed=embed))
+            view.add_item(MoveSelect(name='No Puddle', embed=embed, user=interaction.user))
             # Puddle Empowered
             embed2 = discord.Embed(color=info['color'], description=desc)
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Orcane Side Special: Puddle Empowered', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Puddle Empowered', embed=embed2))
+            view.add_item(MoveSelect(name='Puddle Empowered', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Special/B (Teleport)':
             move = char.upSpecial
@@ -998,7 +1000,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Down Special: Droplet/Puddle', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Droplet', embed=embed))
+            view.add_item(MoveSelect(name='Droplet', embed=embed, user=interaction.user))
             # Bubbles
             link = 'https://rivals.academy/library/orcane#down-special-bubbles'
             desc = link
@@ -1006,7 +1008,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Orcane Down Special: Bubbles', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Bubbles', embed=embed2))
+            view.add_item(MoveSelect(name='Bubbles', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
 
     # Etalus
@@ -1125,7 +1127,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Armor', embed=embed))
+            view.add_item(MoveSelect(name='No Armor', embed=embed, user=interaction.user))
             # Ice Armored
             link = 'https://rivals.academy/library/etalus#forward-strong-ice-armored'
             desc = link
@@ -1133,7 +1135,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Etalus Forward Strong: Ice Armored', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Ice Armored', embed=embed2))
+            view.add_item(MoveSelect(name='Ice Armored', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Strong':
             move = char.upStrong
@@ -1145,7 +1147,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Armor', embed=embed))
+            view.add_item(MoveSelect(name='No Armor', embed=embed, user=interaction.user))
             # Ice Armored
             link = 'https://rivals.academy/library/etalus#up-strong-ice-armored'
             desc = link
@@ -1153,7 +1155,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Etalus Up Strong: Ice Armored', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Ice Armored', embed=embed2))
+            view.add_item(MoveSelect(name='Ice Armored', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Strong':
             move = char.downStrong
@@ -1165,7 +1167,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Armor', embed=embed))
+            view.add_item(MoveSelect(name='No Armor', embed=embed, user=interaction.user))
             # Ice Armored
             link = 'https://rivals.academy/library/etalus#down-strong-ice-armored'
             desc = link
@@ -1173,7 +1175,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Etalus Down Strong: Ice Armored', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Ice Armored', embed=embed2))
+            view.add_item(MoveSelect(name='Ice Armored', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Neutral Special/B (Hammer)':
             move = char.neutralSpecial
@@ -1203,7 +1205,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Armor', embed=embed))
+            view.add_item(MoveSelect(name='No Armor', embed=embed, user=interaction.user))
             # Ice Armored
             link = 'https://rivals.academy/library/etalus#up-special-ice-armored'
             desc = link
@@ -1211,7 +1213,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Etalus Up Special: Ice Armored', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Ice Armored', embed=embed2))
+            view.add_item(MoveSelect(name='Ice Armored', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Special/B (Freeze)':
             move = char.downSpecial
@@ -1384,7 +1386,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Lunge/Divekick', embed=embed))
+            view.add_item(MoveSelect(name='Lunge/Divekick', embed=embed, user=interaction.user))
             # Needle Storm
             link = 'https://rivals.academy/library/ranno#up-special-needle-storm'
             desc = link
@@ -1392,7 +1394,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Ranno Up Special: Needle Storm', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Needle Storm', embed=embed2))
+            view.add_item(MoveSelect(name='Needle Storm', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Special/B (Bubble)':
             move = char.downSpecial
@@ -1439,7 +1441,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Uncharged', embed=embed))
+            view.add_item(MoveSelect(name='Uncharged', embed=embed, user=interaction.user))
             # EX Charged
             link = 'https://rivals.academy/library/hodan#dash-attack-ex-charged'
             desc = link
@@ -1447,7 +1449,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Hodan Dash Attack: EX Charged', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='EX Charged', embed=embed2))
+            view.add_item(MoveSelect(name='EX Charged', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Forward Tilt':
             move = char.forwardTilt
@@ -1468,7 +1470,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Uncharged', embed=embed))
+            view.add_item(MoveSelect(name='Uncharged', embed=embed, user=interaction.user))
             # EX Charged
             link = 'https://rivals.academy/library/hodan#dash-attack-ex-charged'
             desc = link
@@ -1476,7 +1478,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Hodan Up Tilt: EX Charged', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='EX Charged', embed=embed2))
+            view.add_item(MoveSelect(name='EX Charged', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Tilt':
             move = char.downTilt
@@ -1506,7 +1508,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Uncharged', embed=embed))
+            view.add_item(MoveSelect(name='Uncharged', embed=embed, user=interaction.user))
             # EX Charged
             link = 'https://rivals.academy/library/hodan#forward-air-ex-charged'
             desc = link
@@ -1514,7 +1516,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Hodan Forward Air: EX Charged', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='EX Charged', embed=embed2))
+            view.add_item(MoveSelect(name='EX Charged', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Back Air':
             move = char.backAir
@@ -1570,7 +1572,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Uncharged', embed=embed))
+            view.add_item(MoveSelect(name='Uncharged', embed=embed, user=interaction.user))
             # EX Charged
             link = 'https://rivals.academy/library/hodan#down-strong-ex-charged'
             desc = link
@@ -1578,7 +1580,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Hodan Down Strong: EX Charged', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='EX Charged', embed=embed2))
+            view.add_item(MoveSelect(name='EX Charged', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Neutral Special/B (Spin)':
             move = char.neutralSpecial
@@ -1599,7 +1601,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Side Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Uncharged', embed=embed))
+            view.add_item(MoveSelect(name='Uncharged', embed=embed, user=interaction.user))
             # EX Charged
             link = 'https://rivals.academy/library/hodan#side-special-ex-charged'
             desc = link
@@ -1607,7 +1609,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Hodan Side Special: EX Charged', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='EX Charged', embed=embed2))
+            view.add_item(MoveSelect(name='EX Charged', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Special/B':
             move = char.upSpecial
@@ -1619,7 +1621,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Uncharged', embed=embed))
+            view.add_item(MoveSelect(name='Uncharged', embed=embed, user=interaction.user))
             # EX Charged
             link = 'https://rivals.academy/library/hodan#up-special-ex-charged'
             desc = link
@@ -1627,7 +1629,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Hodan Up Special: EX Charged', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='EX Charged', embed=embed2))
+            view.add_item(MoveSelect(name='EX Charged', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Special/B (Mud Slam/Bury)':
             move = char.downSpecial
@@ -1783,7 +1785,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Neutral Special: Rock', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Rock Pull/Pickup', embed=embed))
+            view.add_item(MoveSelect(name='Rock Pull/Pickup', embed=embed, user=interaction.user))
             # Rock Throw
             link = 'https://rivals.academy/library/kragg#neutral-special-rock-throw'
             desc = link
@@ -1791,7 +1793,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Kragg Neutral Special: Rock Throw', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Rock Throw', embed=embed2))
+            view.add_item(MoveSelect(name='Rock Throw', embed=embed2, user=interaction.user))
             # Rock Shards
             link = 'https://rivals.academy/library/kragg#neutral-special-rock-shards'
             desc = link
@@ -1799,7 +1801,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[2].image.highRes)
             embed2.set_author(name='Kragg Neutral Special: Rock Shards', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Rock Shards', embed=embed2))
+            view.add_item(MoveSelect(name='Rock Shards', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Side Special/B':
             move = char.sideSpecial
@@ -1829,7 +1831,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Down Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Rock Spikes', embed=embed))
+            view.add_item(MoveSelect(name='Rock Spikes', embed=embed, user=interaction.user))
             # Rock Shards
             link = 'https://rivals.academy/library/kragg#down-special-aerial-stomp'
             desc = link
@@ -1837,7 +1839,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Kragg Aerial Down Special', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Aerial Stomp', embed=embed2))
+            view.add_item(MoveSelect(name='Aerial Stomp', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Taunt':
             move = char.taunt
@@ -2010,7 +2012,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Up Special: Uppercut', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Uppercut', embed=embed))
+            view.add_item(MoveSelect(name='Uppercut', embed=embed, user=interaction.user))
             # Tether
             link = 'https://rivals.academy/library/maypul#up-special-tether'
             desc = link
@@ -2018,7 +2020,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Maypul Up Special: Tether', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Tether', embed=embed2))
+            view.add_item(MoveSelect(name='Tether', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Special/B (Lily)':
             move = char.downSpecial
@@ -2030,7 +2032,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[1].image.highRes)
             embed.set_author(name='Maypul Down Special: Lily', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Lily', embed=embed))
+            view.add_item(MoveSelect(name='Lily', embed=embed, user=interaction.user))
             # Aerial
             link = 'https://rivals.academy/library/maypul#down-special-aerial'
             desc = link
@@ -2038,7 +2040,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[2].image.highRes)
             embed2.set_author(name='Maypul Aerial Down Special', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Aerial', embed=embed2))
+            view.add_item(MoveSelect(name='Aerial', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
 
     # Sylvanos
@@ -2067,7 +2069,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Jab 1-3', embed=embed))
+            view.add_item(MoveSelect(name='Jab 1-3', embed=embed, user=interaction.user))
             # Jab Special
             link = 'https://rivals.academy/library/sylvanos#jab-jab-special-finisher'
             desc = link
@@ -2075,7 +2077,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Sylvanos Jab Special: Petal Wave', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Jab Special', embed=embed2))
+            view.add_item(MoveSelect(name='Jab Special', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Dash Attack':
             move = char.dashAttack
@@ -2213,7 +2215,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Up Special: Dive', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Dive', embed=embed))
+            view.add_item(MoveSelect(name='Dive', embed=embed, user=interaction.user))
             # Burrow/Emerge
             link = 'https://rivals.academy/library/sylvanos#up-special-burrow-emerge'
             desc = link
@@ -2221,7 +2223,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Sylvanos Up Special: Burrow/Emerge', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Burrow/Emerge', embed=embed2))
+            view.add_item(MoveSelect(name='Burrow/Emerge', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Special/B (Howl)':
             move = char.downSpecial
@@ -2376,7 +2378,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Neutral Special: Throw Gem', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Throw Gem', embed=embed))
+            view.add_item(MoveSelect(name='Throw Gem', embed=embed, user=interaction.user))
             # Activate Gem Field
             link = 'https://rivals.academy/library/olympia#neutral-special-activate-gem-field'
             desc = link
@@ -2384,7 +2386,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Olympia Neutral Special: Activate Gem Field', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Activate Gem Field', embed=embed2))
+            view.add_item(MoveSelect(name='Activate Gem Field', embed=embed2, user=interaction.user))
             # Crystallize (Break Out)
             link = 'https://rivals.academy/library/olympia#neutral-special-crystallize-break-out'
             desc = link
@@ -2392,7 +2394,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[2].image.highRes)
             embed2.set_author(name='Olympia Neutral Special: Crystallize (Break Out)', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Crystallize', embed=embed2))
+            view.add_item(MoveSelect(name='Crystallize', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Side Special/B':
             move = char.sideSpecial
@@ -2422,7 +2424,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Down Special: Focus Punch', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Focus Punch', embed=embed))
+            view.add_item(MoveSelect(name='Focus Punch', embed=embed, user=interaction.user))
             # Crystallize (Break Out)
             link = 'https://rivals.academy/library/olympia#down-special-crystallize-break-out'
             desc = link
@@ -2430,7 +2432,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Olympia Down Special: Crystallize (Break Out)', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Crystallize', embed=embed2))
+            view.add_item(MoveSelect(name='Crystallize', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
 
     # Wrastor
@@ -2647,7 +2649,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Ftilt1', embed=embed))
+            view.add_item(MoveSelect(name='Ftilt1', embed=embed, user=interaction.user))
             # Ftilt2
             link = 'https://rivals.academy/library/absa#forward-tilt-lightning-whip-ftilt2'
             desc = link
@@ -2655,7 +2657,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Absa Forward Tilt: Lightning Whip', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Ftilt2', embed=embed2))
+            view.add_item(MoveSelect(name='Ftilt2', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Tilt':
             move = char.upTilt
@@ -2694,7 +2696,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Cloud', embed=embed))
+            view.add_item(MoveSelect(name='No Cloud', embed=embed, user=interaction.user))
             # Cloud Kick
             link = 'https://rivals.academy/library/absa#forward-air-cloud-kick'
             desc = link
@@ -2702,7 +2704,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Absa Forward Air: Cloud Kick', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Cloud Kick', embed=embed2))
+            view.add_item(MoveSelect(name='Cloud Kick', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Back Air':
             move = char.backAir
@@ -2714,7 +2716,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Cloud', embed=embed))
+            view.add_item(MoveSelect(name='No Cloud', embed=embed, user=interaction.user))
             # Cloud Kick
             link = 'https://rivals.academy/library/absa#back-air-cloud-kick'
             desc = link
@@ -2722,7 +2724,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Absa Back Air: Cloud Kick', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Cloud Kick', embed=embed2))
+            view.add_item(MoveSelect(name='Cloud Kick', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Air':
             move = char.upAir
@@ -2743,7 +2745,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Cloud', embed=embed))
+            view.add_item(MoveSelect(name='No Cloud', embed=embed, user=interaction.user))
             # Cloud Kick
             link = 'https://rivals.academy/library/absa#down-air-cloud-kick'
             desc = link
@@ -2751,7 +2753,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Absa Down Air: Cloud Kick', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Cloud Kick', embed=embed2))
+            view.add_item(MoveSelect(name='Cloud Kick', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Forward Strong':
             move = char.forwardStrong
@@ -2790,7 +2792,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Neutral Special: Cloud', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Cloud Hop/Pop', embed=embed))
+            view.add_item(MoveSelect(name='Cloud Hop/Pop', embed=embed, user=interaction.user))
             # Thunder Line
             link = 'https://rivals.academy/library/absa#neutral-special-thunder-line'
             desc = link
@@ -2798,7 +2800,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Absa Neutral Special: Thunder Line', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Thunder Line', embed=embed2))
+            view.add_item(MoveSelect(name='Thunder Line', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Side Special/B (Cloud)':
             move = char.sideSpecial
@@ -2828,7 +2830,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Down Special: Cloud Bomb', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Cloud Bomb', embed=embed))
+            view.add_item(MoveSelect(name='Cloud Bomb', embed=embed, user=interaction.user))
             # Charged to Absa
             link = 'https://rivals.academy/library/absa#down-special-charged-to-absa'
             desc = link
@@ -2836,26 +2838,9 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Absa Down Special: Charged to Absa', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Charged to Absa', embed=embed2))
+            view.add_item(MoveSelect(name='Charged to Absa', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
 
-    # # Elliana
-    # elli_moves = moves.copy()
-    # elli_moves['Down Strong'] = 'Steam'
-    # elli_moves['Up Strong'] = 'Steam'
-    # elli_moves['Forward Strong'] = 'Steam'
-    # elli_moves['Neutral Special'] = 'Fist'
-    # elli_moves['Down Special'] = 'Mine'
-    # elli_moves['Up Special'] = 'Eject Mech'
-    # elli_moves['Side Special'] = 'Missile'
-    # elli_moves = [f'{move} ({name})' if name else move  # Formatted list
-    #               for move, name in elli_moves.items()]
-    # elli_moves = Literal[tuple(elli_moves)]  # To pass into command as choices
-
-    # @app_commands.command(name='elliana')
-    # async def elliana(self, interaction: discord.Interaction, attack: elli_moves):
-    #     """Elliana frame data and hitbox info"""
-    #     return
     # Elliana
     moves = Literal[
         'Jab', 'Dash Attack',
@@ -2972,7 +2957,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Steam', embed=embed))
+            view.add_item(MoveSelect(name='Steam', embed=embed, user=interaction.user))
             # Overheated
             link = 'https://rivals.academy/library/elliana#forward-strong-overheated'
             desc = link
@@ -2980,7 +2965,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Elliana Overheated Forward Strong', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Overheated', embed=embed2))
+            view.add_item(MoveSelect(name='Overheated', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Strong (Steam)':
             move = char.upStrong
@@ -2992,7 +2977,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Steam', embed=embed))
+            view.add_item(MoveSelect(name='Steam', embed=embed, user=interaction.user))
             # Overheated
             link = 'https://rivals.academy/library/elliana#up-strong-overheated'
             desc = link
@@ -3000,7 +2985,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Elliana Up Forward Strong', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Overheated', embed=embed2))
+            view.add_item(MoveSelect(name='Overheated', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Strong (Steam)':
             move = char.downStrong
@@ -3012,7 +2997,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Steam', embed=embed))
+            view.add_item(MoveSelect(name='Steam', embed=embed, user=interaction.user))
             # Overheated
             link = 'https://rivals.academy/library/elliana#down-strong-overheated'
             desc = link
@@ -3020,7 +3005,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Elliana Overheated Down Strong', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Overheated', embed=embed2))
+            view.add_item(MoveSelect(name='Overheated', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Neutral Special/B (Fist)':
             move = char.neutralSpecial
@@ -3041,7 +3026,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Side Special: Missile', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Uncharged', embed=embed))
+            view.add_item(MoveSelect(name='Uncharged', embed=embed, user=interaction.user))
             # Charged
             link = 'https://rivals.academy/library/elliana#side-special-charged-missile'
             desc = link
@@ -3049,7 +3034,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Elliana Side Special: Charged Missile', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Charged', embed=embed2))
+            view.add_item(MoveSelect(name='Charged', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Special/B (Eject/Mech)':
             move = char.upSpecial
@@ -3061,7 +3046,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Up Special: Eject/Rebuild', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Eject/Rebuild', embed=embed))
+            view.add_item(MoveSelect(name='Eject/Rebuild', embed=embed, user=interaction.user))
             # Mech Explosion
             link = 'https://rivals.academy/library/elliana#up-special-charged-missile'
             desc = link
@@ -3069,7 +3054,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Elliana Up Special: Mech Explosion', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Mech Explosion', embed=embed2))
+            view.add_item(MoveSelect(name='Mech Explosion', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Special/B (Mine)':
             move = char.downSpecial
@@ -3081,7 +3066,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Down Special: Plant Mine', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Plant Mine', embed=embed))
+            view.add_item(MoveSelect(name='Plant Mine', embed=embed, user=interaction.user))
             # Mine Explosion
             link = 'https://rivals.academy/library/elliana#down-special-mine-explosion'
             desc = link
@@ -3089,7 +3074,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Elliana Down Special: Mine Explosion', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Mine Explosion', embed=embed2))
+            view.add_item(MoveSelect(name='Mine Explosion', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
 
     # Pomme
@@ -3389,7 +3374,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Sein', embed=embed))
+            view.add_item(MoveSelect(name='No Sein', embed=embed, user=interaction.user))
             # Sein Team-Up
             link = 'https://rivals.academy/library/elliana#forward-strong-sein-team-up'
             desc = link
@@ -3397,7 +3382,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Ori Team-Up Forward Strong', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Sein Team Up', embed=embed2))
+            view.add_item(MoveSelect(name='Sein Team Up', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Strong':
             move = char.upStrong
@@ -3409,7 +3394,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Sein', embed=embed))
+            view.add_item(MoveSelect(name='No Sein', embed=embed, user=interaction.user))
             # Sein Team-Up
             link = 'https://rivals.academy/library/up#forward-strong-sein-team-up'
             desc = link
@@ -3417,7 +3402,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Ori Team-Up Up Strong', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Sein Team Up', embed=embed2))
+            view.add_item(MoveSelect(name='Sein Team Up', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Strong':
             move = char.downStrong
@@ -3429,7 +3414,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Sein', embed=embed))
+            view.add_item(MoveSelect(name='No Sein', embed=embed, user=interaction.user))
             # Sein Team-Up
             link = 'https://rivals.academy/library/elliana#down-strong-sein-team-up'
             desc = link
@@ -3437,7 +3422,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Ori Team-Up Down Strong', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Sein Team Up', embed=embed2))
+            view.add_item(MoveSelect(name='Sein Team Up', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Neutral Special/B (Sein Taps/Charged Flame)':
             move = char.neutralSpecial
@@ -3449,7 +3434,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Neutral Special: Taps', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Taps', embed=embed))
+            view.add_item(MoveSelect(name='Taps', embed=embed, user=interaction.user))
             # Charged
             link = 'https://rivals.academy/library/ori#neutral-special-charged-flame'
             desc = link
@@ -3457,7 +3442,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Ori Neutral Special: Charged Flame', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Charged Flame', embed=embed2))
+            view.add_item(MoveSelect(name='Charged Flame', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Side Special/B (Light Orb)':
             move = char.sideSpecial
@@ -3613,7 +3598,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='No Rock', embed=embed))
+            view.add_item(MoveSelect(name='No Rock', embed=embed, user=interaction.user))
             # Rock
             link = 'https://rivals.academy/library/shovel-knight#up-strong-rock'
             desc = link
@@ -3621,7 +3606,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Shovel Knight Up Strong Rock', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Rock', embed=embed2))
+            view.add_item(MoveSelect(name='Rock', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Down Strong':
             move = char.downStrong
@@ -3649,7 +3634,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[1].image.highRes)
             embed.set_author(name='Shovel Knight Neutral Special: War Horn', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='War Horn', embed=embed))
+            view.add_item(MoveSelect(name='War Horn', embed=embed, user=interaction.user))
             # Mobile Gear
             link = 'https://rivals.academy/library/shovel-knight#neutral-special-mobile-gear'
             desc = link
@@ -3657,7 +3642,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[2].image.highRes)
             embed2.set_author(name='Shovel Knight Neutral Special: Mobile Gear', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Mobile Gear', embed=embed2))
+            view.add_item(MoveSelect(name='Mobile Gear', embed=embed2, user=interaction.user))
             # Ghost Gloves
             link = 'https://rivals.academy/library/shovel-knight#neutral-special-ghost-gloves'
             desc = link
@@ -3665,7 +3650,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[3].image.highRes)
             embed2.set_author(name='Shovel Knight Neutral Special: Ghost Gloves', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Ghost Gloves', embed=embed2))
+            view.add_item(MoveSelect(name='Ghost Gloves', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Side Special/B (Infinidagger)':
             move = char.sideSpecial
@@ -3677,7 +3662,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Side Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Charge', embed=embed))
+            view.add_item(MoveSelect(name='Charge', embed=embed, user=interaction.user))
             # Infinidagger
             link = 'https://rivals.academy/library/shovel-knight#side-special-infinidagger'
             desc = link
@@ -3685,7 +3670,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Shovel Knight Side Special: Infinidagger', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Infinidagger', embed=embed2))
+            view.add_item(MoveSelect(name='Infinidagger', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Up Special/B':
             move = char.upSpecial
@@ -3706,7 +3691,7 @@ class Hitboxes(commands.Cog):
             embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Down Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Anchor', embed=embed))
+            view.add_item(MoveSelect(name='Anchor', embed=embed, user=interaction.user))
             # Infinidagger
             link = 'https://rivals.academy/library/shovel-knight#down-special-treasure-pile'
             desc = link
@@ -3714,7 +3699,7 @@ class Hitboxes(commands.Cog):
             embed2.set_image(url=move[1].image.highRes)
             embed2.set_author(name='Shovel Knight Down Special: Treasure Pile', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Treasure Pile', embed=embed2))
+            view.add_item(MoveSelect(name='Treasure Pile', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Taunt':
             move = char.taunt
