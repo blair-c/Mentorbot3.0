@@ -90,7 +90,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Neutral Air':
             move = char.neutralAir
-            link = 'https://rivals.academy/library/zetterburn#neutral-Air'
+            link = 'https://rivals.academy/library/zetterburn#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -117,7 +117,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Air':
             move = char.upAir
-            link = 'https://rivals.academy/library/zetterburn#up-Air'
+            link = 'https://rivals.academy/library/zetterburn#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -260,7 +260,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Neutral Air':
             move = char.neutralAir
-            link = 'https://rivals.academy/library/forsburn#neutral-Air'
+            link = 'https://rivals.academy/library/forsburn#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -287,7 +287,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Air':
             move = char.upAir
-            link = 'https://rivals.academy/library/forsburn#up-Air'
+            link = 'https://rivals.academy/library/forsburn#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -441,7 +441,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Neutral Air':
             move = char.neutralAir
-            link = 'https://rivals.academy/library/clairen#neutral-Air'
+            link = 'https://rivals.academy/library/clairen#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -468,7 +468,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Air':
             move = char.upAir
-            link = 'https://rivals.academy/library/clairen#up-Air'
+            link = 'https://rivals.academy/library/clairen#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -611,7 +611,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Neutral Air':
             move = char.neutralAir
-            link = 'https://rivals.academy/library/mollo#neutral-Air'
+            link = 'https://rivals.academy/library/mollo#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -638,7 +638,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Air':
             move = char.upAir
-            link = 'https://rivals.academy/library/mollo#up-Air'
+            link = 'https://rivals.academy/library/mollo#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -849,7 +849,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Neutral Air (Bounce)':
             move = char.neutralAir
-            link = 'https://rivals.academy/library/orcane#neutral-Air'
+            link = 'https://rivals.academy/library/orcane#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -876,7 +876,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Air (Bellyflop)':
             move = char.upAir
-            link = 'https://rivals.academy/library/orcane#up-Air'
+            link = 'https://rivals.academy/library/orcane#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -1072,7 +1072,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Neutral Air':
             move = char.neutralAir
-            link = 'https://rivals.academy/library/etalus#neutral-Air'
+            link = 'https://rivals.academy/library/etalus#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -1099,7 +1099,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Air':
             move = char.upAir
-            link = 'https://rivals.academy/library/etalus#up-Air'
+            link = 'https://rivals.academy/library/etalus#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -1286,7 +1286,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Neutral Air':
             move = char.neutralAir
-            link = 'https://rivals.academy/library/ranno#neutral-Air'
+            link = 'https://rivals.academy/library/ranno#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -1313,7 +1313,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Air':
             move = char.upAir
-            link = 'https://rivals.academy/library/ranno#up-Air'
+            link = 'https://rivals.academy/library/ranno#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -1489,7 +1489,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Neutral Air':
             move = char.neutralAir
-            link = 'https://rivals.academy/library/hodan#neutral-Air'
+            link = 'https://rivals.academy/library/hodan#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -1527,7 +1527,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Air':
             move = char.upAir
-            link = 'https://rivals.academy/library/hodan#up-Air'
+            link = 'https://rivals.academy/library/hodan#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -1703,7 +1703,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Neutral Air':
             move = char.neutralAir
-            link = 'https://rivals.academy/library/kragg#neutral-Air'
+            link = 'https://rivals.academy/library/kragg#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -1730,7 +1730,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Air':
             move = char.upAir
-            link = 'https://rivals.academy/library/kragg#up-Air'
+            link = 'https://rivals.academy/library/kragg#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image.highRes)
@@ -1807,7 +1807,7 @@ class Hitboxes(commands.Cog):
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
-            embed.set_author(name='Kragg Side Special: Fireball', icon_url=info['icon'], url=link)
+            embed.set_author(name='Kragg Side Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Special/B (Pillar)':
@@ -1825,19 +1825,19 @@ class Hitboxes(commands.Cog):
             # Rock Throw
             link = 'https://rivals.academy/library/kragg#down-special'
             desc = link
-            embed2 = discord.Embed(color=info['color'], description=desc)
-            embed2.set_image(url=move[0].image.highRes)
-            embed2.set_author(name='Kragg Down Special: Rock Throw', icon_url=info['icon'], url=link)
-            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Spikes', embed=embed2))
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Kragg Down Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Rock Spikes', embed=embed))
             # Rock Shards
             link = 'https://rivals.academy/library/kragg#down-special-aerial-stomp'
             desc = link
             embed2 = discord.Embed(color=info['color'], description=desc)
             embed2.set_image(url=move[1].image.highRes)
-            embed2.set_author(name='Kragg Down Special: Aerial Stomp', icon_url=info['icon'], url=link)
+            embed2.set_author(name='Kragg Aerial Down Special', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
-            view.add_item(MoveSelect(name='Aerial', embed=embed2))
+            view.add_item(MoveSelect(name='Aerial Stomp', embed=embed2))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Taunt':
             move = char.taunt
@@ -1849,65 +1849,995 @@ class Hitboxes(commands.Cog):
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
 
-    # # Maypul
-    # may_moves = moves.copy()
-    # may_moves['Down Air'] = 'Root'
-    # may_moves['Neutral Special'] = 'Seed'
-    # may_moves['Down Special'] = 'Lily'
-    # may_moves['Up Special'] = 'Tether/Uppercut'
-    # may_moves = [f'{move} ({name})' if name else move  # Formatted list
-    #                 for move, name in may_moves.items()]
-    # maypmoves = Literal[tuple(may_moves)]  # To pass into command as choices
+    # Maypul
+    moves = Literal[
+        'Jab', 'Dash Attack',
+        'Down Tilt', 'Up Tilt', 'Forward Tilt',
+        'Neutral Air', 'Down Air (Root)', 'Up Air', 'Forward Air', 'Back Air',
+        'Down Strong', 'Up Strong', 'Forward Strong', 
+        'Up Special/B (Tether/Uppercut)', 'Neutral Special/B (Seed)',
+        'Down Special/B (Lily)', 'Side Special/B',
+    ]
 
-    # @app_commands.command(name='maypul')
-    # async def maypul(self, interaction: discord.Interaction, attack: may_moves):
-    #     """Maypul frame data and hitbox info"""
-    #     return
+    @app_commands.command(name='maypul')
+    async def maypul(self, interaction: discord.Interaction, attack: moves):
+        """Maypul frame data and hitbox info"""
+        resp = requests.get(url='https://rivals.academy/library/maypul/data.json')
+        char = Box(resp.json())
+        info = rivals.characters['Maypul']
+        if attack == 'Jab':
+            move = char.jab
+            link = 'https://rivals.academy/library/maypul#jab'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Jab', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Dash Attack':
+            move = char.dashAttack
+            link = 'https://rivals.academy/library/maypul#dash-attack'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Dash Attack', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Tilt':
+            move = char.forwardTilt
+            link = 'https://rivals.academy/library/maypul#forward-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Forward Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Tilt':
+            move = char.upTilt
+            link = 'https://rivals.academy/library/maypul#up-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Up Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Tilt':
+            move = char.downTilt
+            link = 'https://rivals.academy/library/maypul#down-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Down Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Air':
+            move = char.neutralAir
+            link = 'https://rivals.academy/library/maypul#neutral-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Air':
+            move = char.forwardAir
+            link = 'https://rivals.academy/library/maypul#forward-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Forward Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Back Air':
+            move = char.backAir
+            link = 'https://rivals.academy/library/maypul#back-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Back Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Air':
+            move = char.upAir
+            link = 'https://rivals.academy/library/maypul#up-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Up Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Air (Root)':
+            move = char.downAir
+            link = 'https://rivals.academy/library/maypul#down-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Down Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Strong':
+            move = char.forwardStrong
+            link = 'https://rivals.academy/library/maypul#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Forward Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Strong':
+            move = char.upStrong
+            link = 'https://rivals.academy/library/maypul#up-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Up Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Strong':
+            move = char.downStrong
+            link = 'https://rivals.academy/library/maypul#down-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Down Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Special/B (Seed)':
+            move = char.neutralSpecial
+            link = 'https://rivals.academy/library/maypul#neutral-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Neutral Special: Seed', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Side Special/B':
+            move = char.sideSpecial
+            link = 'https://rivals.academy/library/maypul#side-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Side Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Special/B (Tether/Uppercut)':
+            move = char.upSpecial
+            view = View()
+            # Uppercut
+            link = 'https://rivals.academy/library/maypul#up-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Maypul Up Special: Uppercut', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Uppercut', embed=embed))
+            # Tether
+            link = 'https://rivals.academy/library/maypul#up-special-tether'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Maypul Up Special: Tether', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Tether', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Down Special/B (Lily)':
+            move = char.downSpecial
+            view = View()
+            # Lily
+            link = 'https://rivals.academy/library/maypul#down-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[1].image.highRes)
+            embed.set_author(name='Maypul Down Special: Lily', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Lily', embed=embed))
+            # Aerial
+            link = 'https://rivals.academy/library/maypul#down-special-aerial'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[2].image.highRes)
+            embed2.set_author(name='Maypul Aerial Down Special', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Aerial', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
 
-    # # Sylvanos
-    # sylv_moves = moves.copy()
-    # sylv_moves['Jab'] = 'Petal Wave'
-    # sylv_moves['Neutral Special'] = 'Seed/Flower'
-    # sylv_moves['Down Special'] = 'Howl'
-    # sylv_moves['Up Special'] = 'Burrow/Bite'
-    # sylv_moves['Side Special'] = 'Beast Dash'
-    # sylv_moves = [f'{move} ({name})' if name else move  # Formatted list
-    #               for move, name in sylv_moves.items()]
-    # sylv_moves = Literal[tuple(sylv_moves)]  # To pass into command as choices
+    # Sylvanos
+    moves = Literal[
+        'Jab (Petal Wave)', 'Dash Attack',
+        'Down Tilt', 'Up Tilt', 'Forward Tilt (Seed/Flower)',
+        'Neutral Air', 'Down Air', 'Up Air', 'Forward Air', 'Back Air (Pin)',
+        'Down Strong', 'Up Strong', 'Forward Strong', 
+        'Up Special/B (Burrow)', 'Neutral Special/B (Seed/Flower)',
+        'Down Special/B (Howl)', 'Side Special/B (Beast Dash)',
+    ]
 
-    # @app_commands.command(name='sylvanos')
-    # async def sylvanos(self, interaction: discord.Interaction, attack: sylv_moves):
-    #     """Sylvanos frame data and hitbox info"""
-    #     return
+    @app_commands.command(name='sylvanos')
+    async def sylvanos(self, interaction: discord.Interaction, attack: moves):
+        """Sylvanos frame data and hitbox info"""
+        resp = requests.get(url='https://rivals.academy/library/sylvanos/data.json')
+        char = Box(resp.json())
+        info = rivals.characters['Sylvanos']
+        if attack == 'Jab (Petal Wave)':
+            move = char.jab
+            view = View()
+            # Jab 1-3
+            link = 'https://rivals.academy/library/sylvanos#jab'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Sylvanos Jab', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Jab 1-3', embed=embed))
+            # Jab Special
+            link = 'https://rivals.academy/library/sylvanos#jab-jab-special-finisher'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Sylvanos Jab Special: Petal Wave', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Jab Special', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Dash Attack':
+            move = char.dashAttack
+            link = 'https://rivals.academy/library/sylvanos#dash-attack'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Dash Attack', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Tilt (Seed/Flower)':
+            move = char.forwardTilt
+            link = 'https://rivals.academy/library/sylvanos#forward-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Sylvanos Forward Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Tilt':
+            move = char.upTilt
+            link = 'https://rivals.academy/library/sylvanos#up-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Up Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Tilt':
+            move = char.downTilt
+            link = 'https://rivals.academy/library/sylvanos#down-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Down Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Air':
+            move = char.neutralAir
+            link = 'https://rivals.academy/library/sylvanos#neutral-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Maypul Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Air':
+            move = char.forwardAir
+            link = 'https://rivals.academy/library/sylvanos#forward-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Forward Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Back Air (Pin)':
+            move = char.backAir
+            link = 'https://rivals.academy/library/sylvanos#back-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image[0].highRes)
+            embed.set_author(name='Sylvanos Back Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Air':
+            move = char.upAir
+            link = 'https://rivals.academy/library/sylvanos#up-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Up Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Air':
+            move = char.downAir
+            link = 'https://rivals.academy/library/sylvanos#down-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Down Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Strong':
+            move = char.forwardStrong
+            link = 'https://rivals.academy/library/sylvanos#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Forward Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Strong':
+            move = char.upStrong
+            link = 'https://rivals.academy/library/sylvanos#up-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Up Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Strong':
+            move = char.downStrong
+            link = 'https://rivals.academy/library/sylvanos#down-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Down Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Special/B (Seed/Flower)':
+            move = char.neutralSpecial
+            link = 'https://rivals.academy/library/sylvanos#neutral-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Sylvanos Neutral Special: Seed', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Side Special/B (Beast Dash)':
+            move = char.sideSpecial
+            link = 'https://rivals.academy/library/sylvanos#side-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Side Special: Beast Dash', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Special/B (Burrow)':
+            move = char.upSpecial
+            view = View()
+            # Dive
+            link = 'https://rivals.academy/library/sylvanos#up-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Sylvanos Up Special: Dive', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Dive', embed=embed))
+            # Burrow/Emerge
+            link = 'https://rivals.academy/library/sylvanos#up-special-burrow-emerge'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Sylvanos Up Special: Burrow/Emerge', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Burrow/Emerge', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Down Special/B (Howl)':
+            move = char.downSpecial
+            link = 'https://rivals.academy/library/sylvanos#down-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Sylvanos Down Special: Howl', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
 
-    # # Wrastor
-    # wras_moves = moves.copy()
-    # wras_moves['Up Strong'] = 'Clap'
-    # wras_moves['Forward Strong'] = 'Clap'
-    # wras_moves['Neutral Special'] = 'Tornado'
-    # wras_moves['Side Special'] = 'Slipstream'
-    # wras_moves = [f'{move} ({name})' if name else move  # Formatted list
-    #                  for move, name in wras_moves.items()]
-    # wras_moves = Literal[tuple(wras_moves)]  # To pass into command as choices
+    # Olympia
+    moves = Literal[
+        'Jab', 'Dash Attack',
+        'Down Tilt', 'Up Tilt', 'Forward Tilt',
+        'Neutral Air', 'Down Air', 'Up Air', 'Forward Air', 'Back Air',
+        'Down Strong', 'Up Strong', 'Forward Strong', 
+        'Up Special/B', 'Neutral Special/B (Gem/Crystal)',
+        'Down Special/B (Focus Punch)', 'Side Special/B',
+    ]
 
-    # @app_commands.command(name='wrastor')
-    # async def wrastor(self, interaction: discord.Interaction, attack: wras_moves):
-    #     """Wrastor frame data and hitbox info"""
-    #     return
+    @app_commands.command(name='olympia')
+    async def olympia(self, interaction: discord.Interaction, attack: moves):
+        """Olympia frame data and hitbox info"""
+        resp = requests.get(url='https://rivals.academy/library/olympia/data.json')
+        char = Box(resp.json())
+        info = rivals.characters['Olympia']
+        if attack == 'Jab':
+            move = char.jab
+            link = 'https://rivals.academy/library/olympia#jab'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Jab', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Dash Attack':
+            move = char.dashAttack
+            link = 'https://rivals.academy/library/olympia#dash-attack'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Dash Attack', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Tilt':
+            move = char.forwardTilt
+            link = 'https://rivals.academy/library/olympia#forward-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Forward Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Tilt':
+            move = char.upTilt
+            link = 'https://rivals.academy/library/olympia#up-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Up Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Tilt':
+            move = char.downTilt
+            link = 'https://rivals.academy/library/olympia#down-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Down Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Air':
+            move = char.neutralAir
+            link = 'https://rivals.academy/library/olympia#neutral-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Air':
+            move = char.forwardAir
+            link = 'https://rivals.academy/library/olympia#forward-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Forward Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Back Air':
+            move = char.backAir
+            link = 'https://rivals.academy/library/olympia#back-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Back Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Air':
+            move = char.upAir
+            link = 'https://rivals.academy/library/olympia#up-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Up Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Air':
+            move = char.downAir
+            link = 'https://rivals.academy/library/olympia#down-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Down Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Strong':
+            move = char.forwardStrong
+            link = 'https://rivals.academy/library/olympia#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Forward Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Strong':
+            move = char.upStrong
+            link = 'https://rivals.academy/library/olympia#up-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Up Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Strong':
+            move = char.downStrong
+            link = 'https://rivals.academy/library/olympia#down-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Down Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Special/B (Gem/Crystal)':
+            move = char.neutralSpecial
+            view = View()
+            # Throw Gem
+            link = 'https://rivals.academy/library/olympia#neutral-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Olympia Neutral Special: Throw Gem', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Throw Gem', embed=embed))
+            # Activate Gem Field
+            link = 'https://rivals.academy/library/olympia#neutral-special-activate-gem-field'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Olympia Neutral Special: Activate Gem Field', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Activate Gem Field', embed=embed2))
+            # Crystallize (Break Out)
+            link = 'https://rivals.academy/library/olympia#neutral-special-crystallize-break-out'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[2].image.highRes)
+            embed2.set_author(name='Olympia Neutral Special: Crystallize (Break Out)', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Crystallize', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Side Special/B':
+            move = char.sideSpecial
+            link = 'https://rivals.academy/library/olympia#side-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Side Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Special/B':
+            move = char.upSpecial
+            link = 'https://rivals.academy/library/olympia#up-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Olympia Up Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Special/B (Focus Punch)':
+            move = char.downSpecial
+            view = View()
+            # Focus Punch
+            link = 'https://rivals.academy/library/olympia#down-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Olympia Down Special: Focus Punch', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Focus Punch', embed=embed))
+            # Crystallize (Break Out)
+            link = 'https://rivals.academy/library/olympia#down-special-crystallize-break-out'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Olympia Down Special: Crystallize (Break Out)', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Crystallize', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
 
-    # # Absa
-    # absa_moves = moves.copy()
-    # absa_moves['Neutral Special'] = 'Cloud/Thunderline'
-    # absa_moves['Down Special'] = 'Cloud Bomb'
-    # absa_moves['Side Special'] = 'Cloud'
-    # absa_moves = [f'{move} ({name})' if name else move  # Formatted list
-    #               for move, name in absa_moves.items()]
-    # absa_moves = Literal[tuple(absa_moves)]  # To pass into command as choices
+    # Wrastor
+    moves = Literal[
+        'Jab', 'Dash Attack',
+        'Down Tilt', 'Up Tilt', 'Forward Tilt',
+        'Neutral Air', 'Down Air', 'Up Air', 'Forward Air', 'Back Air',
+        'Down Strong', 'Up Strong (Clap)', 'Forward Strong (Clap)', 
+        'Up Special/B', 'Neutral Special/B (Tornado)',
+        'Down Special/B', 'Side Special/B (Slipstream)'
+    ]
 
-    # @app_commands.command(name='absa')
-    # async def absa(self, interaction: discord.Interaction, attack: absa_moves):
-    #     """Absa frame data and hitbox info"""
-    #     return
+    @app_commands.command(name='wrastor')
+    async def wrastor(self, interaction: discord.Interaction, attack: moves):
+        """Wrastor frame data and hitbox info"""
+        resp = requests.get(url='https://rivals.academy/library/wrastor/data.json')
+        char = Box(resp.json())
+        info = rivals.characters['Wrastor']
+        if attack == 'Jab':
+            move = char.jab
+            link = 'https://rivals.academy/library/wrastor#jab'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Jab', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Dash Attack':
+            move = char.dashAttack
+            link = 'https://rivals.academy/library/wrastor#dash-attack'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Dash Attack', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Tilt':
+            move = char.forwardTilt
+            link = 'https://rivals.academy/library/wrastor#forward-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Forward Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Tilt':
+            move = char.upTilt
+            link = 'https://rivals.academy/library/wrastor#up-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Up Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Tilt':
+            move = char.downTilt
+            link = 'https://rivals.academy/library/wrastor#down-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Down Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Air':
+            move = char.neutralAir
+            link = 'https://rivals.academy/library/wrastor#neutral-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Air':
+            move = char.forwardAir
+            link = 'https://rivals.academy/library/wrastor#forward-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Forward Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Back Air':
+            move = char.backAir
+            link = 'https://rivals.academy/library/wrastor#back-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Back Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Air':
+            move = char.upAir
+            link = 'https://rivals.academy/library/wrastor#up-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Up Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Air':
+            move = char.downAir
+            link = 'https://rivals.academy/library/wrastor#down-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Down Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Strong (Clap)':
+            move = char.forwardStrong
+            link = 'https://rivals.academy/library/wrastor#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Forward Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Strong (Clap)':
+            move = char.upStrong
+            link = 'https://rivals.academy/library/wrastor#up-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Up Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Strong':
+            move = char.downStrong
+            link = 'https://rivals.academy/library/wrastor#down-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Down Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Special/B (Tornado)':
+            move = char.neutralSpecial
+            link = 'https://rivals.academy/library/wrastor#neutral-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Neutral Special: Tornado', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Side Special/B (Slipstream)':
+            move = char.sideSpecial
+            link = 'https://rivals.academy/library/wrastor#side-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Side Special: Slipstream', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Special/B':
+            move = char.upSpecial
+            link = 'https://rivals.academy/library/wrastor#up-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Up Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Special/B':
+            move = char.downSpecial
+            link = 'https://rivals.academy/library/wrastor#down-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Wrastor Down Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+
+    # Absa
+    moves = Literal[
+        'Jab', 'Dash Attack',
+        'Down Tilt', 'Up Tilt', 'Forward Tilt',
+        'Neutral Air', 'Down Air', 'Up Air', 'Forward Air', 'Back Air',
+        'Down Strong', 'Up Strong', 'Forward Strong', 
+        'Up Special/B (Quick Attack)', 'Neutral Special/B (Cloud Hop/Pop/Thunder Line)',
+        'Down Special/B (Cloud Bomb)', 'Side Special/B (Cloud)',
+    ]
+
+    @app_commands.command(name='absa')
+    async def absa(self, interaction: discord.Interaction, attack: moves):
+        """Absa frame data and hitbox info"""
+        resp = requests.get(url='https://rivals.academy/library/absa/data.json')
+        char = Box(resp.json())
+        info = rivals.characters['Absa']
+        if attack == 'Jab':
+            move = char.jab
+            link = 'https://rivals.academy/library/absa#jab'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Jab', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Dash Attack':
+            move = char.dashAttack
+            link = 'https://rivals.academy/library/absa#dash-attack'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Dash Attack', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Tilt':
+            move = char.forwardTilt
+            view = View()
+            # Ftilt1
+            link = 'https://rivals.academy/library/absa#forward-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Absa Forward Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Ftilt1', embed=embed))
+            # Ftilt2
+            link = 'https://rivals.academy/library/absa#forward-tilt-lightning-whip-ftilt2'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Absa Forward Tilt: Lightning Whip', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Ftilt2', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Up Tilt':
+            move = char.upTilt
+            link = 'https://rivals.academy/library/absa#up-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Up Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Tilt':
+            move = char.downTilt
+            link = 'https://rivals.academy/library/absa#down-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Down Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Air':
+            move = char.neutralAir
+            link = 'https://rivals.academy/library/absa#neutral-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Air':
+            move = char.forwardAir
+            view = View()
+            # No Cloud
+            link = 'https://rivals.academy/library/absa#forward-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Absa Forward Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='No Cloud', embed=embed))
+            # Cloud Kick
+            link = 'https://rivals.academy/library/absa#forward-air-cloud-kick'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Absa Forward Air: Cloud Kick', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Cloud Kick', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Back Air':
+            move = char.backAir
+            view = View()
+            # No Cloud
+            link = 'https://rivals.academy/library/absa#back-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Absa Back Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='No Cloud', embed=embed))
+            # Cloud Kick
+            link = 'https://rivals.academy/library/absa#back-air-cloud-kick'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Absa Back Air: Cloud Kick', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Cloud Kick', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Up Air':
+            move = char.upAir
+            link = 'https://rivals.academy/library/absa#up-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Up Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Air':
+            move = char.downAir
+            view = View()
+            # No Cloud
+            link = 'https://rivals.academy/library/absa#down-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Absa Down Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='No Cloud', embed=embed))
+            # Cloud Kick
+            link = 'https://rivals.academy/library/absa#down-air-cloud-kick'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Absa Down Air: Cloud Kick', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Cloud Kick', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Forward Strong':
+            move = char.forwardStrong
+            link = 'https://rivals.academy/library/absa#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Forward Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Strong':
+            move = char.upStrong
+            link = 'https://rivals.academy/library/absa#up-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Up Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Strong':
+            move = char.downStrong
+            link = 'https://rivals.academy/library/absa#down-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Down Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Special/B (Cloud Hop/Pop/Thunder Line)':
+            move = char.neutralSpecial
+            view = View()
+            # Cloud Hop/Pop
+            link = 'https://rivals.academy/library/absa#neutral-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Absa Neutral Special: Cloud', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Cloud Hop/Pop', embed=embed))
+            # Thunder Line
+            link = 'https://rivals.academy/library/absa#neutral-special-thunder-line'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Absa Neutral Special: Thunder Line', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Thunder Line', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Side Special/B (Cloud)':
+            move = char.sideSpecial
+            link = 'https://rivals.academy/library/absa#side-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Side Special: Cloud', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Special/B (Quick Attack)':
+            move = char.upSpecial
+            link = 'https://rivals.academy/library/absa#up-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Absa Up Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Special/B (Cloud Bomb)':
+            move = char.downSpecial
+            view = View()
+            # Cloud Bomb
+            link = 'https://rivals.academy/library/absa#down-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Absa Down Special: Cloud Bomb', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Cloud Bomb', embed=embed))
+            # Charged to Absa
+            link = 'https://rivals.academy/library/absa#down-special-charged-to-absa'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Absa Down Special: Charged to Absa', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Charged to Absa', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
 
     # # Elliana
     # elli_moves = moves.copy()
@@ -1926,40 +2856,875 @@ class Hitboxes(commands.Cog):
     # async def elliana(self, interaction: discord.Interaction, attack: elli_moves):
     #     """Elliana frame data and hitbox info"""
     #     return
+    # Elliana
+    moves = Literal[
+        'Jab', 'Dash Attack',
+        'Down Tilt', 'Up Tilt', 'Forward Tilt',
+        'Neutral Air', 'Down Air', 'Up Air', 'Forward Air', 'Back Air',
+        'Down Strong (Steam)', 'Up Strong (Steam)', 'Forward Strong (Steam)', 
+        'Up Special/B (Eject/Mech)', 'Neutral Special/B (Fist)',
+        'Down Special/B (Mine)', 'Side Special/B (Missile)',
+    ]
 
-    # # Ori
-    # ori_moves = moves.copy()
-    # ori_moves['Neutral Special'] = 'Sein Taps/Charged Spirit Flame'
-    # ori_moves['Down Special'] = 'Bash'
-    # ori_moves['Up Special'] = 'Parasol'
-    # ori_moves['Side Special'] = 'Light Orb'
-    # ori_moves = [f'{move} ({name})' if name else move  # Formatted list
-    #              for move, name in ori_moves.items()]
-    # ori_moves = Literal[tuple(ori_moves)]  # To pass into command as choices
+    @app_commands.command(name='elliana')
+    async def elliana(self, interaction: discord.Interaction, attack: moves):
+        """Elliana frame data and hitbox info"""
+        resp = requests.get(url='https://rivals.academy/library/elliana/data.json')
+        char = Box(resp.json())
+        info = rivals.characters['Elliana']
+        if attack == 'Jab':
+            move = char.jab
+            link = 'https://rivals.academy/library/elliana#jab'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Jab', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Dash Attack':
+            move = char.dashAttack
+            link = 'https://rivals.academy/library/elliana#dash-attack'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Dash Attack', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Tilt':
+            move = char.forwardTilt
+            link = 'https://rivals.academy/library/elliana#forward-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Forward Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Tilt':
+            move = char.upTilt
+            link = 'https://rivals.academy/library/elliana#up-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Up Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Tilt':
+            move = char.downTilt
+            link = 'https://rivals.academy/library/elliana#down-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Down Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Air':
+            move = char.neutralAir
+            link = 'https://rivals.academy/library/elliana#neutral-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Air':
+            move = char.forwardAir
+            link = 'https://rivals.academy/library/elliana#forward-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Forward Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Back Air':
+            move = char.backAir
+            link = 'https://rivals.academy/library/elliana#back-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Back Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Air':
+            move = char.upAir
+            link = 'https://rivals.academy/library/elliana#up-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Up Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Air':
+            move = char.downAir
+            link = 'https://rivals.academy/library/elliana#down-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Down Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Strong (Steam)':
+            move = char.forwardStrong
+            view = View()
+            # Steam
+            link = 'https://rivals.academy/library/elliana#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Elliana Forward Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Steam', embed=embed))
+            # Overheated
+            link = 'https://rivals.academy/library/elliana#forward-strong-overheated'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Elliana Overheated Forward Strong', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Overheated', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Up Strong (Steam)':
+            move = char.upStrong
+            view = View()
+            # Steam
+            link = 'https://rivals.academy/library/elliana#up-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Elliana Up Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Steam', embed=embed))
+            # Overheated
+            link = 'https://rivals.academy/library/elliana#up-strong-overheated'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Elliana Up Forward Strong', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Overheated', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Down Strong (Steam)':
+            move = char.downStrong
+            view = View()
+            # Steam
+            link = 'https://rivals.academy/library/down#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Elliana Down Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Steam', embed=embed))
+            # Overheated
+            link = 'https://rivals.academy/library/elliana#down-strong-overheated'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Elliana Overheated Down Strong', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Overheated', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Neutral Special/B (Fist)':
+            move = char.neutralSpecial
+            link = 'https://rivals.academy/library/elliana#neutral-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Elliana Neutral Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Side Special/B (Missile)':
+            move = char.sideSpecial
+            view = View()
+            # Uncharged
+            link = 'https://rivals.academy/library/elliana#side-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Elliana Side Special: Missile', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Uncharged', embed=embed))
+            # Charged
+            link = 'https://rivals.academy/library/elliana#side-special-charged-missile'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Elliana Side Special: Charged Missile', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Charged', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Up Special/B (Eject/Mech)':
+            move = char.upSpecial
+            view = View()
+            # Eject/Rebuild
+            link = 'https://rivals.academy/library/elliana#up-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Elliana Up Special: Eject/Rebuild', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Eject/Rebuild', embed=embed))
+            # Mech Explosion
+            link = 'https://rivals.academy/library/elliana#up-special-charged-missile'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Elliana Up Special: Mech Explosion', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Mech Explosion', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Down Special/B (Mine)':
+            move = char.downSpecial
+            view = View()
+            # Plant Mine
+            link = 'https://rivals.academy/library/elliana#down-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Elliana Down Special: Plant Mine', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Plant Mine', embed=embed))
+            # Mine Explosion
+            link = 'https://rivals.academy/library/elliana#down-special-mine-explosion'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Elliana Down Special: Mine Explosion', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Mine Explosion', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
 
-    # @app_commands.command(name='ori')
-    # async def ori(self, interaction: discord.Interaction, attack: ori_moves):
-    #     """Ori frame data and hitbox info"""
-    #     return
+    # Pomme
+    moves = Literal[
+        'Jab', 'Dash Attack',
+        'Down Tilt', 'Up Tilt', 'Forward Tilt',
+        'Neutral Air', 'Down Air', 'Up Air', 'Forward Air', 'Back Air',
+        'Down Strong', 'Up Strong', 'Forward Strong', 
+        'Up Special/B', 'Neutral Special/B (Notes)',
+        'Down Special/B (Harmony Field)', 'Side Special/B (Vince)',
+        'Taunt (Mic Drop)'
+    ]
 
-    # # TODO: touch up this system & implementation
-    # # Shovel Knight
-    # moves['Taunt'] = None  # Add Taunt
-    # sk_moves = moves.copy()
-    # sk_moves['Up Strong'] = 'Rock'
-    # sk_moves['Neutral Special'] = 'Coin Capture/Horn/Mobile Gear/Ghost Gloves'
-    # sk_moves['Down Special'] = 'Fish'
-    # sk_moves['Up Special'] = 'Anchor'
-    # sk_moves['Side Special'] = 'Infinidagger'
-    # sk_moves['Taunt'] = 'Shop'
-    # sk_moves = [f'{move} ({name})' if name else move  # Formatted list
-    #            for move, name in sk_moves.items()]
-    # sk_moves = Literal[tuple(sk_moves)]  # To pass into command as choices
+    @app_commands.command(name='pomme')
+    async def pomme(self, interaction: discord.Interaction, attack: moves):
+        """Pomme frame data and hitbox info"""
+        resp = requests.get(url='https://rivals.academy/library/pomme/data.json')
+        char = Box(resp.json())
+        info = rivals.characters['Pomme']
+        if attack == 'Jab':
+            move = char.jab
+            link = 'https://rivals.academy/library/pomme#jab'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Jab', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Dash Attack':
+            move = char.dashAttack
+            link = 'https://rivals.academy/library/pomme#dash-attack'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Dash Attack', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Tilt':
+            move = char.forwardTilt
+            link = 'https://rivals.academy/library/pomme#forward-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Forward Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Tilt':
+            move = char.upTilt
+            link = 'https://rivals.academy/library/pomme#up-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Up Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Tilt':
+            move = char.downTilt
+            link = 'https://rivals.academy/library/pomme#down-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Down Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Air':
+            move = char.neutralAir
+            link = 'https://rivals.academy/library/pomme#neutral-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Air':
+            move = char.forwardAir
+            link = 'https://rivals.academy/library/pomme#forward-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Forward Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Back Air':
+            move = char.backAir
+            link = 'https://rivals.academy/library/pomme#back-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Back Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Air':
+            move = char.upAir
+            link = 'https://rivals.academy/library/pomme#up-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Up Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Air':
+            move = char.downAir
+            link = 'https://rivals.academy/library/pomme#down-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Down Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Strong':
+            move = char.forwardStrong
+            link = 'https://rivals.academy/library/pomme#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Forward Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Strong':
+            move = char.upStrong
+            link = 'https://rivals.academy/library/pomme#up-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Up Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Strong':
+            move = char.downStrong
+            link = 'https://rivals.academy/library/pomme#down-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Down Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Special/B (Notes)':
+            move = char.neutralSpecial
+            link = 'https://rivals.academy/library/pomme#neutral-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Neutral Special: Tornado', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Side Special/B (Vince)':
+            move = char.sideSpecial
+            link = 'https://rivals.academy/library/pomme#side-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Side Special: Slipstream', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Special/B':
+            move = char.upSpecial
+            link = 'https://rivals.academy/library/pomme#up-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Up Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Special/B (Harmony Field)':
+            move = char.downSpecial
+            link = 'https://rivals.academy/library/pomme#down-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Pomme Down Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Taunt (Mic Drop)':
+            move = char.taunt
+            link = 'https://rivals.academy/library/pomme#taunt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Pomme Taunt: Mic Drop', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
 
-    # @app_commands.command(name='shovelknight')
-    # async def shovel_knight(self, interaction: discord.Interaction, attack: sk_moves):
-    #     """Shovel Knight frame data and hitbox info"""
-    #     return
+    # Ori
+    moves = Literal[
+        'Jab', 'Dash Attack',
+        'Down Tilt', 'Up Tilt', 'Forward Tilt',
+        'Neutral Air', 'Down Air', 'Up Air', 'Forward Air', 'Back Air',
+        'Down Strong', 'Up Strong', 'Forward Strong', 
+        'Up Special/B (Parasol)', 'Neutral Special/B (Sein Taps/Charged Flame)',
+        'Down Special/B (Bash)', 'Side Special/B (Light Orb)',
+        'Taunt'
+    ]
+
+    @app_commands.command(name='ori')
+    async def ori(self, interaction: discord.Interaction, attack: moves):
+        """Ori frame data and hitbox info"""
+        resp = requests.get(url='https://rivals.academy/library/ori/data.json')
+        char = Box(resp.json())
+        info = rivals.characters['Ori']
+        if attack == 'Jab':
+            move = char.jab
+            link = 'https://rivals.academy/library/ori#jab'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Jab', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Dash Attack':
+            move = char.dashAttack
+            link = 'https://rivals.academy/library/ori#dash-attack'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Dash Attack', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Tilt':
+            move = char.forwardTilt
+            link = 'https://rivals.academy/library/ori#forward-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Forward Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Tilt':
+            move = char.upTilt
+            link = 'https://rivals.academy/library/ori#up-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Up Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Tilt':
+            move = char.downTilt
+            link = 'https://rivals.academy/library/ori#down-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Down Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Air':
+            move = char.neutralAir
+            link = 'https://rivals.academy/library/ori#neutral-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Air':
+            move = char.forwardAir
+            link = 'https://rivals.academy/library/ori#forward-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Forward Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Back Air':
+            move = char.backAir
+            link = 'https://rivals.academy/library/ori#back-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Back Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Air':
+            move = char.upAir
+            link = 'https://rivals.academy/library/ori#up-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Up Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Air':
+            move = char.downAir
+            link = 'https://rivals.academy/library/ori#down-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Down Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Strong':
+            move = char.forwardStrong
+            view = View()
+            # No Sein
+            link = 'https://rivals.academy/library/ori#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Ori Forward Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='No Sein', embed=embed))
+            # Sein Team-Up
+            link = 'https://rivals.academy/library/elliana#forward-strong-sein-team-up'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Ori Team-Up Forward Strong', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Sein Team Up', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Up Strong':
+            move = char.upStrong
+            view = View()
+            # No Sein
+            link = 'https://rivals.academy/library/ori#up-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Ori Up Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='No Sein', embed=embed))
+            # Sein Team-Up
+            link = 'https://rivals.academy/library/up#forward-strong-sein-team-up'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Ori Team-Up Up Strong', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Sein Team Up', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Down Strong':
+            move = char.downStrong
+            view = View()
+            # No Sein
+            link = 'https://rivals.academy/library/ori#down-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Ori Down Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='No Sein', embed=embed))
+            # Sein Team-Up
+            link = 'https://rivals.academy/library/elliana#down-strong-sein-team-up'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Ori Team-Up Down Strong', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Sein Team Up', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Neutral Special/B (Sein Taps/Charged Flame)':
+            move = char.neutralSpecial
+            view = View()
+            # Taps
+            link = 'https://rivals.academy/library/ori#neutral-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Ori Neutral Special: Taps', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Taps', embed=embed))
+            # Charged
+            link = 'https://rivals.academy/library/ori#neutral-special-charged-flame'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Ori Neutral Special: Charged Flame', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Charged Flame', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Side Special/B (Light Orb)':
+            move = char.sideSpecial
+            link = 'https://rivals.academy/library/ori#side-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Side Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Special/B (Parasol)':
+            move = char.upSpecial
+            link = 'https://rivals.academy/library/ori#up-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Ori Up Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Special/B (Bash)':
+            move = char.downSpecial
+            link = 'https://rivals.academy/library/ori#down-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Ori Down Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+
+    # Shovel Knight
+    moves = Literal[
+        'Jab', 'Dash Attack',
+        'Down Tilt', 'Up Tilt', 'Forward Tilt',
+        'Neutral Air', 'Down Air', 'Up Air', 'Forward Air', 'Back Air',
+        'Down Strong', 'Up Strong (Rock)', 'Forward Strong', 
+        'Up Special/B', 'Neutral Special/B (War Horn/Mobile Gear/Ghost Gloves)',
+        'Down Special/B', 'Side Special/B (Infinidagger)',
+        'Taunt'
+    ]
+
+    @app_commands.command(name='shovelknight')
+    async def shovelknight(self, interaction: discord.Interaction, attack: moves):
+        """Shovel Knight frame data and hitbox info"""
+        resp = requests.get(url='https://rivals.academy/library/shovel-knight/data.json')
+        char = Box(resp.json())
+        info = rivals.characters['Shovel Knight']
+        if attack == 'Jab':
+            move = char.jab
+            link = 'https://rivals.academy/library/shovel-knight#jab'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Jab', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Dash Attack':
+            move = char.dashAttack
+            link = 'https://rivals.academy/library/shovel-knight#dash-attack'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Dash Attack', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Tilt':
+            move = char.forwardTilt
+            link = 'https://rivals.academy/library/shovel-knight#forward-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Forward Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Tilt':
+            move = char.upTilt
+            link = 'https://rivals.academy/library/shovel-knight#up-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Up Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Tilt':
+            move = char.downTilt
+            link = 'https://rivals.academy/library/shovel-knight#down-tilt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Down Tilt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Air':
+            move = char.neutralAir
+            link = 'https://rivals.academy/library/shovel-knight#neutral-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Neutral Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Air':
+            move = char.forwardAir
+            link = 'https://rivals.academy/library/shovel-knight#forward-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Forward Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Back Air':
+            move = char.backAir
+            link = 'https://rivals.academy/library/shovel-knight#back-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Back Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Air':
+            move = char.upAir
+            link = 'https://rivals.academy/library/shovel-knight#up-air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Up Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Air':
+            move = char.downAir
+            link = 'https://rivals.academy/library/shovel-knight#down-Air'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Down Air', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Forward Strong':
+            move = char.forwardStrong
+            link = 'https://rivals.academy/library/shovel-knight#forward-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Forward Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Up Strong (Rock)':
+            move = char.upStrong
+            view = View()
+            # No Rock
+            link = 'https://rivals.academy/library/shovel-knight#up-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Shovel Knight Up Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='No Rock', embed=embed))
+            # Rock
+            link = 'https://rivals.academy/library/shovel-knight#up-strong-rock'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Shovel Knight Up Strong Rock', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Rock', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Down Strong':
+            move = char.downStrong
+            link = 'https://rivals.academy/library/shovel-knight#down-strong'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Down Strong', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Neutral Special/B (War Horn/Mobile Gear/Ghost Gloves)':
+            move = char.neutralSpecial
+            view = View()
+            # Coin Capture
+            # link = 'https://rivals.academy/library/shovel-knight#neutral-special'
+            # desc = link
+            # embed = discord.Embed(color=info['color'], description=desc)
+            # embed.set_author(name='Shovel Knight Neutral Special: Coin Capture', icon_url=info['icon'], url=link)
+            # embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            # view.add_item(MoveSelect(name='Coin Capture', embed=embed))
+            # War Horn
+            link = 'https://rivals.academy/library/shovel-knight#neutral-special-war-horn'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[1].image.highRes)
+            embed.set_author(name='Shovel Knight Neutral Special: War Horn', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='War Horn', embed=embed))
+            # Mobile Gear
+            link = 'https://rivals.academy/library/shovel-knight#neutral-special-mobile-gear'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[2].image.highRes)
+            embed2.set_author(name='Shovel Knight Neutral Special: Mobile Gear', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Mobile Gear', embed=embed2))
+            # Ghost Gloves
+            link = 'https://rivals.academy/library/shovel-knight#neutral-special-ghost-gloves'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[3].image.highRes)
+            embed2.set_author(name='Shovel Knight Neutral Special: Ghost Gloves', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Ghost Gloves', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Side Special/B (Infinidagger)':
+            move = char.sideSpecial
+            view = View()
+            # Charge
+            link = 'https://rivals.academy/library/shovel-knight#side-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Shovel Knight Side Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Charge', embed=embed))
+            # Infinidagger
+            link = 'https://rivals.academy/library/shovel-knight#side-special-infinidagger'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Shovel Knight Side Special: Infinidagger', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Infinidagger', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Up Special/B':
+            move = char.upSpecial
+            link = 'https://rivals.academy/library/shovel-knight#up-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Up Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
+        elif attack == 'Down Special/B':
+            move = char.downSpecial
+            view = View()
+            # Anchor
+            link = 'https://rivals.academy/library/shovel-knight#down-special'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move[0].image.highRes)
+            embed.set_author(name='Shovel Knight Down Special', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Anchor', embed=embed))
+            # Infinidagger
+            link = 'https://rivals.academy/library/shovel-knight#down-special-treasure-pile'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[1].image.highRes)
+            embed2.set_author(name='Shovel Knight Down Special: Treasure Pile', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='Treasure Pile', embed=embed2))
+            await interaction.response.send_message(embed=embed, view=view)
+        elif attack == 'Taunt':
+            move = char.taunt
+            link = 'https://rivals.academy/library/shovel-knight#taunt'
+            desc = link
+            embed = discord.Embed(color=info['color'], description=desc)
+            embed.set_image(url=move.image.highRes)
+            embed.set_author(name='Shovel Knight Taunt', icon_url=info['icon'], url=link)
+            embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            await interaction.response.send_message(embed=embed)
 
 
 async def setup(bot: commands.Bot):
