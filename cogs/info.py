@@ -179,7 +179,7 @@ class Info(commands.Cog):
         'Babydashing': 'https://www.youtube.com/watch?v=BW1M8zx_KGM'
     }
 
-    @app_commands.command(name='guide', extras=guides)
+    @app_commands.command(name='guides', extras=guides)
     async def guide_selection(self, interaction: discord.Interaction, 
                               guide: Literal[tuple(guides.keys())]):
         """Rivals techniques explanations and resources"""
