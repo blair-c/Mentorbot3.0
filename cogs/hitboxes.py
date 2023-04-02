@@ -48,7 +48,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -57,7 +57,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -66,7 +66,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -75,7 +75,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -84,7 +84,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -93,7 +93,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -102,7 +102,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -111,7 +111,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -120,7 +120,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -129,7 +129,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -138,7 +138,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -147,7 +147,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -156,7 +156,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -165,7 +165,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#neutral-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Neutral Special: Shine', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -174,7 +174,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Side Special: Fireball', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -183,7 +183,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/zetterburn#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Zetterburn Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -218,7 +218,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -227,7 +227,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -236,7 +236,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -245,7 +245,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -254,7 +254,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -263,7 +263,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -272,7 +272,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -281,7 +281,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -290,7 +290,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -299,7 +299,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -308,7 +308,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -317,7 +317,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -326,7 +326,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -335,7 +335,7 @@ class Hitboxes(commands.Cog):
         #     link = 'https://rivals.academy/library/forsburn#neutral-special'
         #     desc = link
         #     embed = discord.Embed(color=info['color'], description=desc)
-        #     embed.set_image(url=move.image.highRes)
+        #     embed.set_image(url=move[0].image.highRes)
         #     embed.set_author(name='Forsburn Neutral Special', icon_url=info['icon'], url=link)
         #     embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
         #     await interaction.response.send_message(embed=embed)
@@ -364,7 +364,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/forsburn#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Forsburn Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -399,7 +399,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -408,7 +408,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -417,7 +417,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -426,7 +426,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -435,7 +435,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -444,7 +444,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -453,7 +453,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -462,7 +462,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -471,7 +471,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -480,7 +480,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -489,7 +489,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -498,7 +498,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -507,7 +507,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -516,7 +516,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#neutral-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Neutral Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -525,7 +525,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Side Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -534,7 +534,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -569,7 +569,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -578,7 +578,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -587,7 +587,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -596,7 +596,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -605,7 +605,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -614,7 +614,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -623,7 +623,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -632,7 +632,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -641,7 +641,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -650,7 +650,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -763,7 +763,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Side Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -772,7 +772,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -781,7 +781,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/mollo#down-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Mollo Down Special: Bat', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -807,7 +807,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -816,7 +816,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -825,7 +825,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -834,7 +834,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -843,7 +843,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -852,7 +852,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -861,7 +861,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -870,7 +870,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -879,7 +879,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -888,7 +888,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -957,7 +957,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/orcane#neutral-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Orcane Neutral Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1030,7 +1030,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1039,7 +1039,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1048,7 +1048,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1057,7 +1057,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1066,7 +1066,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1075,7 +1075,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1084,7 +1084,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1093,7 +1093,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1102,7 +1102,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1111,7 +1111,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1189,7 +1189,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/etalus#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Etalus Side Special: Icicles', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1244,7 +1244,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1253,7 +1253,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1262,7 +1262,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1271,7 +1271,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1280,7 +1280,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1289,7 +1289,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1298,7 +1298,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1307,7 +1307,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1316,7 +1316,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1325,7 +1325,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1334,7 +1334,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1343,7 +1343,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1352,7 +1352,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1361,7 +1361,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ranno#neutral-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ranno Neutral Special: Poison Darts', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1425,7 +1425,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1454,7 +1454,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1483,7 +1483,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1492,7 +1492,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1521,7 +1521,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1530,7 +1530,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1539,7 +1539,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1548,7 +1548,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1557,7 +1557,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1585,7 +1585,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/hodan#neutral-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Hodan Neutral Special: Spin', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1661,7 +1661,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1670,7 +1670,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1679,7 +1679,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1688,7 +1688,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1697,7 +1697,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1706,7 +1706,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1715,7 +1715,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1724,7 +1724,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1733,7 +1733,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1742,7 +1742,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1751,7 +1751,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1760,7 +1760,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1769,7 +1769,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1844,7 +1844,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/kragg#taunt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Kragg Taunt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1870,7 +1870,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1879,7 +1879,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1888,7 +1888,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1897,7 +1897,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1906,7 +1906,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1915,7 +1915,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1924,7 +1924,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1933,7 +1933,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1942,7 +1942,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1951,7 +1951,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1960,7 +1960,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1969,7 +1969,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1978,7 +1978,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1987,7 +1987,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#neutral-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Neutral Special: Seed', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -1996,7 +1996,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/maypul#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Side Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2082,7 +2082,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2100,7 +2100,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2109,7 +2109,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2118,7 +2118,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Maypul Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2127,7 +2127,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2145,7 +2145,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2154,7 +2154,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2163,7 +2163,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2172,7 +2172,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2181,7 +2181,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2199,7 +2199,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Side Special: Beast Dash', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2228,7 +2228,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/sylvanos#down-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Sylvanos Down Special: Howl', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2254,7 +2254,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2263,7 +2263,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2272,7 +2272,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2281,7 +2281,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2290,7 +2290,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2299,7 +2299,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2308,7 +2308,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2317,7 +2317,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2326,7 +2326,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2335,7 +2335,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2344,7 +2344,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2353,7 +2353,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2362,7 +2362,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2399,7 +2399,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Side Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2408,7 +2408,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/olympia#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Olympia Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2454,7 +2454,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2463,7 +2463,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2472,7 +2472,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2481,7 +2481,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2490,7 +2490,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2499,7 +2499,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2508,7 +2508,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2517,7 +2517,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2526,7 +2526,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2535,7 +2535,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2544,7 +2544,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2553,7 +2553,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2562,7 +2562,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2571,7 +2571,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#neutral-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Neutral Special: Tornado', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2580,7 +2580,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Side Special: Slipstream', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2589,7 +2589,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2598,7 +2598,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/wrastor#down-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Wrastor Down Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2624,7 +2624,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2633,7 +2633,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2662,7 +2662,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2671,7 +2671,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2680,7 +2680,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2729,7 +2729,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2758,7 +2758,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2767,7 +2767,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2776,7 +2776,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2805,7 +2805,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Side Special: Cloud', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2814,7 +2814,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/absa#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Absa Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2877,7 +2877,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2886,7 +2886,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2895,7 +2895,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2904,7 +2904,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2913,7 +2913,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2922,7 +2922,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2931,7 +2931,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2940,7 +2940,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Back Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2949,7 +2949,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -2958,7 +2958,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3027,7 +3027,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/elliana#neutral-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Elliana Neutral Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3114,7 +3114,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3123,7 +3123,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3132,7 +3132,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3141,7 +3141,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3150,7 +3150,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3159,7 +3159,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3168,7 +3168,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3177,7 +3177,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3186,7 +3186,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3195,7 +3195,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3204,7 +3204,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3213,7 +3213,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#up-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Up Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3222,7 +3222,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3231,7 +3231,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#neutral-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Neutral Special: Tornado', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3240,7 +3240,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Side Special: Slipstream', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3249,7 +3249,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3267,7 +3267,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/pomme#taunt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Pomme Taunt: Mic Drop', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3294,7 +3294,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3303,7 +3303,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3312,7 +3312,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3321,7 +3321,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3330,7 +3330,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3339,7 +3339,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3348,7 +3348,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3357,7 +3357,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3366,7 +3366,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3375,7 +3375,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3464,7 +3464,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#side-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Side Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3473,7 +3473,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/ori#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Ori Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3509,7 +3509,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#jab'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Jab', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3518,7 +3518,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#dash-attack'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Dash Attack', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3527,7 +3527,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#forward-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Forward Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3536,7 +3536,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#up-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Up Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3545,7 +3545,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#down-tilt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Down Tilt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3554,7 +3554,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#neutral-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Neutral Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3563,7 +3563,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#forward-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Forward Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3572,7 +3572,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#back-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Back Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3581,7 +3581,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#up-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Up Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3590,7 +3590,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#down-Air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Down Air', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3599,7 +3599,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#forward-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Forward Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3628,7 +3628,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#down-strong'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Down Strong', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3692,7 +3692,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#up-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Up Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
@@ -3721,7 +3721,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/shovel-knight#taunt'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move.image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Shovel Knight Taunt', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
