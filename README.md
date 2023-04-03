@@ -1,9 +1,8 @@
 # Mentorbot 3.0
 
-A custom Discord bot by the Rivals of Aether Academy.
+A custom Discord app by the Rivals of Aether Academy, written with [discord.py](https://github.com/Rapptz/discord.py).
 
-See Mentorbot in the [Rivals of Aether Academy](https://discord.me/mentor), or [add it to your own server](https://discord.com/api/oauth2/authorize?client_id=475596740368793600&permissions=268748864&scope=bot).
-
+See Mentorbot in the [Rivals Academy](https://discord.me/mentor), the [Official Rivals of Aether Discord](https://discord.gg/roa), or [add it to your own server](https://discord.com/api/oauth2/authorize?client_id=475596740368793600&permissions=18432&scope=bot).
 
 ## Universal Features
 
