@@ -101,7 +101,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/zetterburn#forward-Air'
+            link = 'https://rivals.academy/library/zetterburn#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -110,7 +110,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/zetterburn#back-Air'
+            link = 'https://rivals.academy/library/zetterburn#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -128,7 +128,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/zetterburn#down-Air'
+            link = 'https://rivals.academy/library/zetterburn#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -271,7 +271,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/forsburn#forward-Air'
+            link = 'https://rivals.academy/library/forsburn#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -280,7 +280,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/forsburn#back-Air'
+            link = 'https://rivals.academy/library/forsburn#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -298,7 +298,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/forsburn#down-Air'
+            link = 'https://rivals.academy/library/forsburn#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -452,7 +452,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/clairen#forward-Air'
+            link = 'https://rivals.academy/library/clairen#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -461,7 +461,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/clairen#back-Air'
+            link = 'https://rivals.academy/library/clairen#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -479,7 +479,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/clairen#down-Air'
+            link = 'https://rivals.academy/library/clairen#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -622,7 +622,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/mollo#forward-Air'
+            link = 'https://rivals.academy/library/mollo#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -631,7 +631,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/mollo#back-Air'
+            link = 'https://rivals.academy/library/mollo#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -649,7 +649,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/mollo#down-Air'
+            link = 'https://rivals.academy/library/mollo#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -860,7 +860,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air (Bubblebutt)':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/orcane#forward-Air'
+            link = 'https://rivals.academy/library/orcane#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -869,7 +869,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/orcane#back-Air'
+            link = 'https://rivals.academy/library/orcane#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -887,7 +887,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/orcane#down-Air'
+            link = 'https://rivals.academy/library/orcane#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1083,7 +1083,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/etalus#forward-Air'
+            link = 'https://rivals.academy/library/etalus#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1092,7 +1092,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/etalus#back-Air'
+            link = 'https://rivals.academy/library/etalus#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1110,7 +1110,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/etalus#down-Air'
+            link = 'https://rivals.academy/library/etalus#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1297,7 +1297,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/ranno#forward-Air'
+            link = 'https://rivals.academy/library/ranno#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1306,7 +1306,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/ranno#back-Air'
+            link = 'https://rivals.academy/library/ranno#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1324,7 +1324,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/ranno#down-Air'
+            link = 'https://rivals.academy/library/ranno#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1520,7 +1520,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/hodan#back-Air'
+            link = 'https://rivals.academy/library/hodan#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1538,7 +1538,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/hodan#down-Air'
+            link = 'https://rivals.academy/library/hodan#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1715,7 +1715,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/kragg#forward-Air'
+            link = 'https://rivals.academy/library/kragg#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1724,7 +1724,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/kragg#back-Air'
+            link = 'https://rivals.academy/library/kragg#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1742,7 +1742,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/kragg#down-Air'
+            link = 'https://rivals.academy/library/kragg#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1924,7 +1924,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/maypul#forward-Air'
+            link = 'https://rivals.academy/library/maypul#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1933,7 +1933,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/maypul#back-Air'
+            link = 'https://rivals.academy/library/maypul#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -1951,7 +1951,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air (Root)':
             move = char.downAir
-            link = 'https://rivals.academy/library/maypul#down-Air'
+            link = 'https://rivals.academy/library/maypul#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -2127,7 +2127,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/sylvanos#forward-Air'
+            link = 'https://rivals.academy/library/sylvanos#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -2136,7 +2136,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air (Pin)':
             move = char.backAir
-            link = 'https://rivals.academy/library/sylvanos#back-Air'
+            link = 'https://rivals.academy/library/sylvanos#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move.image[0].highRes)
@@ -2154,7 +2154,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/sylvanos#down-Air'
+            link = 'https://rivals.academy/library/sylvanos#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -2308,7 +2308,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/olympia#forward-Air'
+            link = 'https://rivals.academy/library/olympia#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -2317,7 +2317,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/olympia#back-Air'
+            link = 'https://rivals.academy/library/olympia#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -2335,7 +2335,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/olympia#down-Air'
+            link = 'https://rivals.academy/library/olympia#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -2508,7 +2508,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/wrastor#forward-Air'
+            link = 'https://rivals.academy/library/wrastor#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -2517,7 +2517,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/wrastor#back-Air'
+            link = 'https://rivals.academy/library/wrastor#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -2535,7 +2535,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/wrastor#down-Air'
+            link = 'https://rivals.academy/library/wrastor#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -3151,7 +3151,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/pomme#forward-Air'
+            link = 'https://rivals.academy/library/pomme#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -3160,7 +3160,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/pomme#back-Air'
+            link = 'https://rivals.academy/library/pomme#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -3178,7 +3178,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/pomme#down-Air'
+            link = 'https://rivals.academy/library/pomme#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -3331,7 +3331,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/ori#forward-Air'
+            link = 'https://rivals.academy/library/ori#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -3340,7 +3340,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/ori#back-Air'
+            link = 'https://rivals.academy/library/ori#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -3358,7 +3358,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/ori#down-Air'
+            link = 'https://rivals.academy/library/ori#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -3546,7 +3546,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Forward Air':
             move = char.forwardAir
-            link = 'https://rivals.academy/library/shovel-knight#forward-Air'
+            link = 'https://rivals.academy/library/shovel-knight#forward-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -3555,7 +3555,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Back Air':
             move = char.backAir
-            link = 'https://rivals.academy/library/shovel-knight#back-Air'
+            link = 'https://rivals.academy/library/shovel-knight#back-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
@@ -3573,7 +3573,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Air':
             move = char.downAir
-            link = 'https://rivals.academy/library/shovel-knight#down-Air'
+            link = 'https://rivals.academy/library/shovel-knight#down-air'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
