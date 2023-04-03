@@ -1565,6 +1565,7 @@ class Hitboxes(commands.Cog):
             await interaction.response.send_message(embed=embed)
         elif attack == 'Down Strong (Parry)':
             move = char.downStrong
+            view = View()
             # Uncharged
             link = 'https://rivals.academy/library/hodan#down-strong'
             desc = link
