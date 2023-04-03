@@ -1,14 +1,14 @@
 # Mentorbot 3.0
 
-A custom Discord app by the Rivals of Aether Academy, written with [discord.py](https://github.com/Rapptz/discord.py).
+A custom Discord app by [Rivals Academy](https://rivals.academy), written with [discord.py](https://github.com/Rapptz/discord.py).
 
-See Mentorbot in the [Rivals Academy](https://discord.me/mentor), the [Official Rivals of Aether Discord](https://discord.gg/roa), or [add it to your own server](https://discord.com/api/oauth2/authorize?client_id=475596740368793600&permissions=18432&scope=bot).
+See Mentorbot in the [Rivals Academy Discord](https://discord.me/mentor), the [Official Rivals of Aether Discord](https://discord.gg/roa), or [add to your own Discord server](https://discord.com/api/oauth2/authorize?client_id=475596740368793600&permissions=18432&scope=bot).
 
 ## Universal Features
 
 ### Hitbox Commands
 
-Mentorbot's hitbox commands provide detailed frame data and hitbox images for any move in the game, covering the movesets of all 14 characters.
+Mentorbot's hitbox commands provide detailed frame data and hitbox images for any move in the game, covering the movesets of all 18 characters.
 
 <img src="https://i.imgur.com/ZMwQbvT.png" align="left"
 title="Hitbox Commands" alt="hitbox commands examples" width="800"/><br clear="all"/>
