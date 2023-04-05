@@ -545,7 +545,7 @@ class Hitboxes(commands.Cog):
             link = 'https://rivals.academy/library/clairen#down-special'
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
-            embed.set_image(url=move[1].image.highRes)
+            embed.set_image(url=move[0].image.highRes)
             embed.set_author(name='Clairen Down Special', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
