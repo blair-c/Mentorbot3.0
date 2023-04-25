@@ -1,3 +1,4 @@
+import json, requests
 from typing import Literal
 
 import discord
@@ -40,9 +41,10 @@ class Info(commands.Cog):
         """SNC's frame data document"""
         link = ('https://docs.google.com/spreadsheets/d/'
                 '19UtK7xG2c-ehxdlhCFKMpM4_IHSG-EXFgXLJaunE79I')
+        patch = requests.get(url='https://rivals.academy/library/pomme/data.json').json()['patch']
         embed = discord.Embed(
             url=link,
-            title='Rivals of Aether Academy Frame Data - Updated for 2.1.3.0',  # TODO: scrape doc for patch
+            title=f'Rivals of Aether Academy Frame Data - Updated for {patch}',
             description='Data extracted manually in-game and from dev-mode files by SNC. '
                         'Extra information provided by Menace13 and Youngblood. ')
         embed.set_thumbnail(url='https://i.imgur.com/nMS0QPT.png')
