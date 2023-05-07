@@ -3227,7 +3227,7 @@ class Hitboxes(commands.Cog):
             desc = link
             embed = discord.Embed(color=info['color'], description=desc)
             embed.set_image(url=move[0].image.highRes)
-            embed.set_author(name='Pomme Side Special: Slipstream', icon_url=info['icon'], url=link)
+            embed.set_author(name='Pomme Side Special: Vince', icon_url=info['icon'], url=link)
             embed.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             await interaction.response.send_message(embed=embed)
         elif attack == 'Up Special/B':
