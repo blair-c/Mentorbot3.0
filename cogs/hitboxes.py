@@ -1583,7 +1583,7 @@ class Hitboxes(commands.Cog):
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             view.add_item(MoveSelect(name='EX Charged', embed=embed2, user=interaction.user))
             # EX Charged (Parry Success)
-            link = 'https://rivals.academy/library/hodan#down-strong-ex-charged'
+            link = 'https://rivals.academy/library/hodan#down-strong-ex-charged-parry-success'
             desc = link
             embed2 = discord.Embed(color=info['color'], description=desc)
             embed2.set_image(url=move[2].image.highRes)
