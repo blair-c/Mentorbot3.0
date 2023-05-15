@@ -1582,6 +1582,14 @@ class Hitboxes(commands.Cog):
             embed2.set_author(name='Hodan Down Strong: EX Charged', icon_url=info['icon'], url=link)
             embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
             view.add_item(MoveSelect(name='EX Charged', embed=embed2, user=interaction.user))
+            # EX Charged (Parry Success)
+            link = 'https://rivals.academy/library/hodan#down-strong-ex-charged'
+            desc = link
+            embed2 = discord.Embed(color=info['color'], description=desc)
+            embed2.set_image(url=move[2].image.highRes)
+            embed2.set_author(name='Hodan Down Strong: EX Charged (Parry Success)', icon_url=info['icon'], url=link)
+            embed2.set_footer(text=f'Up-to-date as of Patch {char.patch}')
+            view.add_item(MoveSelect(name='EX Parry Success', embed=embed2, user=interaction.user))
             await interaction.response.send_message(embed=embed, view=view)
         elif attack == 'Neutral Special/B (Spin)':
             move = char.neutralSpecial
