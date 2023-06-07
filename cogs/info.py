@@ -162,31 +162,6 @@ class Info(commands.Cog):
         embed = discord.Embed(title='Force Flinch Definitions', description=definitions)
         await interaction.response.send_message(embed=embed)
 
-    # Guides
-    guides = {
-        # Golden guides
-        'The Basics': 'https://docs.google.com/document/d/1232jAesA_q1tRch-jer7rYYxWWn3K8BXVmhX75Tmnyw',
-        'Every Tech': 'https://docs.google.com/document/d/1R10JBGY3633U3Ja1voqvNwV8YS5-XI1HbjyXmV592uA',
-        'Survival DI': 'https://docs.google.com/document/d/1Q7b0bLYcATnwlakuB_HtS2Mx2Jl3rf2YQlVX5RQJIeU',
-        'Techchasing': 'https://docs.google.com/document/d/1e0japzRqVI5VvnwzZ5uijL4nkOrRrOSaQ_qlyU6Bww0',
-        # Beefy Aether Doods
-        'Cactuar Dashing': 'https://www.youtube.com/watch?v=SBQOpChfbx4',
-        'DI': 'https://www.youtube.com/watch?v=-22VyPy6QZU',
-        'Horizontal Waveland': 'https://www.youtube.com/watch?v=ejN--TPcePE',
-        'Ledge Cancelling': 'https://www.youtube.com/watch?v=6N6joIHrqDg',
-        'RAR': 'https://www.youtube.com/watch?v=M8XgHJkAltw',
-        'Teching': 'https://www.youtube.com/watch?v=tc781GiW20Q',
-        'Wavedashing': 'https://www.youtube.com/watch?v=RkLciJMr42g',
-        # Rivals Dojo
-        'Babydashing': 'https://www.youtube.com/watch?v=BW1M8zx_KGM'
-    }
-
-    @app_commands.command(name='guides', extras=guides)
-    async def guide_selection(self, interaction: discord.Interaction, 
-                              guide: Literal[tuple(guides.keys())]):
-        """Rivals techniques explanations and resources"""
-        await interaction.response.send_message(interaction.command.extras[guide])
-
     # Misc.
     @app_commands.command(name='fpsfix')
     async def fps_fix(self, interaction: discord.Interaction):
