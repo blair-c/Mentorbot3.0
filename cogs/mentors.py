@@ -36,7 +36,7 @@ class Mentors(commands.Cog):
             for i, mentor in enumerate(mentors):
                 regions = [rivals.regions[r.name]['abbreviation'] for r in region_roles
                           if r in mentor.roles]
-                mentors[i] = f'{mentor.mention} **{str(mentor)}** ({"/".join(regions)})'
+                mentors[i] = f'{mentor.mention} **@{str(mentor)}** ({"/".join(regions)})'
             sections[status] = mentors
         # Embed
         info = rivals.characters[character]
