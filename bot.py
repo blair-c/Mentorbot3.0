@@ -4,7 +4,7 @@ from typing import Literal
 
 import box
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 import tabulate
 
 print(f'Python {sys.version}\n'
@@ -21,7 +21,7 @@ class MyBot(commands.Bot):
     async def setup_hook(self):
         cogs = [
             'hitboxes',  # Frame data and hitbox commands
-            'info',      # Links and informational commands
+            'info',      # Links, info, and utility commands
             'mentors',   # Mentor list and management commands
             'roles',     # Roles channel setup and functionality
         ]
