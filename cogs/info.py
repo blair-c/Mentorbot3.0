@@ -95,26 +95,26 @@ class Info(commands.Cog):
     async def dodge_data(self, interaction: discord.Interaction):
         """Universal parry, roll, and airdodge frame data"""
         embed = discord.Embed(description=
-             # Parry
+            # Parry
             ('**Parry** ```ml\n'
-             'Startup      | 2    \n'
-             'Invulnerable | 3-10 \n'
-             'Endlag       | 20   \n'
-             'FAF          | 31   \n'
-             'Cooldown     | 20   \n'
-             'successfully parrying removes your ability to parry/roll for 30 frames.```'
-             # Roll
-             '\n**Roll** ```ml\n'
-             'Startup      | 4    \n'
-             'Invulnerable | 5-19 \n'
-             'Endlag       | 12   \n'
-             'FAF          | 31```'
-             # Airdodge
-             '\n**Airdodge** ```ml\n'
-             'Startup      | 2    \n'
-             'Invulnerable | 3-15 \n'
-             'Endlag       | 12   \n'
-             'FAF          | 27```'))
+            'Startup      | 2    \n'
+            'Invulnerable | 3-10 \n'
+            'Endlag       | 20   \n'
+            'FAF          | 31   \n'
+            'Cooldown     | 20   \n'
+            'successfully parrying removes your ability to parry/roll for 30 frames.```'
+            # Roll
+            '\n**Roll** ```ml\n'
+            'Startup      | 4    \n'
+            'Invulnerable | 5-19 \n'
+            'Endlag       | 12   \n'
+            'FAF          | 31```'
+            # Airdodge
+            '\n**Airdodge** ```ml\n'
+            'Startup      | 2    \n'
+            'Invulnerable | 3-15 \n'
+            'Endlag       | 12   \n'
+            'FAF          | 27```'))
         embed.set_author(name='Universal Dodge Frame Data')
         await interaction.response.send_message(embed=embed)
 
@@ -122,15 +122,15 @@ class Info(commands.Cog):
     async def formulas_kb_hs_hp(self, interaction: discord.Interaction):
         """Rivals' knockback, hitstun, and hitpause formulas"""
         embed = discord.Embed(description=
-             # Knockback
+            # Knockback
             ('**Knockback** ```ml\n'
              'BKB + Damage * Knockback_Scaling * 0.12 * Knockback_Adj```'
-             # Hitstun
-             '\n**Hitstun** ```ml\n'
+            # Hitstun
+            '\n**Hitstun** ```ml\n'
              'BKB * 4 * ((Knockback_Adj - 1) * 0.6 + 1) + Damage * '
              '0.12 * Knockback_scaling * 4 * 0.65 * Knockback_Adj```'
-             # Hitpause
-             '\n**Hitpause** ```ml\n'
+            # Hitpause
+            '\n**Hitpause** ```ml\n'
              'Base_Hitpause + Damage * Hitpause_scaling * .05```'))
         embed.set_author(name='Rivals Formulas')
         await interaction.response.send_message(embed=embed)
