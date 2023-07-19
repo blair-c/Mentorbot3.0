@@ -29,7 +29,14 @@ async def invite(interaction: discord.Interaction, steamid: str, ping: discord.M
     if update_db:
         r.set(interaction.user.id, info['steamid'])
     # Invite
-    if not info.get('gameid'):
+    if info.get('communityvisibilitystate') == 2:
+        embed = discord.Embed(title='Error: Private Profile', color=COLOR)
+        embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
+        view = ui.View()
+        view.add_item(RetryButton(user=interaction.user, steamid=info['steamid'], ping=ping))
+        view.add_item(SetSteamButton(name='Not you?', user=interaction.user, ping=ping))
+        await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
+    elif not info.get('gameid'):
         embed = discord.Embed(title='Error: Not Currently In-Game', color=COLOR)
         embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
         view = ui.View()
