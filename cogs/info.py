@@ -1,6 +1,5 @@
 import json, requests
 import os
-from urllib.parse import quote
 
 import discord
 from discord import app_commands
@@ -169,50 +168,6 @@ class Info(commands.Cog):
         """60 fps fix instructions for Nvidia graphics cards"""
         link = 'https://twitter.com/darainbowcuddle/status/1410724611327631364'
         await interaction.response.send_message(link)
-
-    @app_commands.command(name='lobbylink')
-    async def lobbylink(self, interaction: discord.Interaction, steamid: str):
-        """Send lobby invite link using your Steam ID"""
-        steamid = quote(steamid)  # Sanitize
-        api_key = os.getenv('STEAMKEY')
-        api_url = 'https://api.steampowered.com/ISteamUser/'
-        # Vanity URL to Steam ID
-        if not (len(steamid) == 17 and steamid.isdigit()):
-            resp = requests.get(url=f'{api_url}ResolveVanityURL/v0001/?key={api_key}&vanityurl={steamid}')
-            resp = resp.json()['response']
-            if resp['success'] == 1:
-                steamid = resp['steamid']
-        # Player Summary
-        resp = requests.get(url=f'{api_url}GetPlayerSummaries/v2/?key={api_key}&steamids=[{steamid}]')
-        resp = resp.json()['response']['players']
-        try:
-            info = resp[0]
-        except IndexError:
-            embed = discord.Embed(
-                title='Error: Invalid Steam ID',
-                description='```asciidoc'
-                            '\nhttps://steamcommunity/id/[SteamID]'
-                            '\nhttps://steamcommunity/profiles/[SteamID]```',
-                color=1336470)
-            await interaction.response.send_message(embed=embed, ephemeral=True)
-            return
-        if not info.get('gameid'):
-            embed = discord.Embed(title='Error: Not Currently In-Game', color=1336470)
-            embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
-            await interaction.response.send_message(embed=embed, ephemeral=True)
-            return
-        if not info.get('lobbysteamid'):
-            embed = discord.Embed(title='Error: No Joinable Game Lobby Found', color=1336470)
-            embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
-            await interaction.response.send_message(embed=embed, ephemeral=True)
-            return
-        # Success:
-        embed = discord.Embed(
-            title=f"In Game: {info['gameextrainfo']}",
-            description=f"steam://joinlobby/{info['gameid']}/{info['lobbysteamid']}/{info['steamid']}",
-            color=1336470)
-        embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
-        await interaction.response.send_message(embed=embed)
 
     @app_commands.command(name='parrybot')
     async def axmos_parry_bot(self, interaction: discord.Interaction):

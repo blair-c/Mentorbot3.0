@@ -1,0 +1,126 @@
+import json, requests
+from os import getenv
+from urllib.parse import quote
+
+import discord
+from discord import app_commands, ui
+from discord.ext import commands
+import redis
+
+r = redis.Redis.from_url(getenv('REDISURL'))
+STEAMKEY = getenv('STEAMKEY')
+COLOR = 1336470
+
+
+async def invite(interaction: discord.Interaction, steamid: str, ping: discord.Member, update_db=False):
+    """Final logic once Steam ID is set."""
+    resp = requests.get(
+        url='https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/'
+            f'?key={STEAMKEY}&steamids=[{steamid}]')
+    resp = resp.json()['response']['players']
+    try:
+        info = resp[0]
+    except IndexError:
+        embed = discord.Embed(title='Error: Invalid Steam ID', color=COLOR)
+        view = ui.View()
+        view.add_item(SetSteamButton(name='Try Another', user=interaction.user, ping=ping))
+        await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
+        return
+    if update_db:
+        r.set(interaction.user.id, info['steamid'])
+    # Invite
+    if not info.get('gameid'):
+        embed = discord.Embed(title='Error: Not Currently In-Game', color=COLOR)
+        embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
+        view = ui.View()
+        view.add_item(RetryButton(user=interaction.user, steamid=info['steamid'], ping=ping))
+        view.add_item(SetSteamButton(name='Not you?', user=interaction.user, ping=ping))
+        await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
+    elif not info.get('lobbysteamid'):
+        embed = discord.Embed(title='Error: No Joinable Game Lobby Found', color=COLOR)
+        embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
+        view = ui.View()
+        view.add_item(RetryButton(user=interaction.user, steamid=info['steamid'], ping=ping))
+        view.add_item(SetSteamButton(name='Not you?', user=interaction.user, ping=ping))
+        await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
+    else:  # Success
+        embed = discord.Embed(
+            title=f"In Game: {info['gameextrainfo']}",
+            description=f"steam://joinlobby/{info['gameid']}/{info['lobbysteamid']}/{info['steamid']}",
+            color=COLOR)
+        embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
+        await interaction.response.send_message(content=ping.mention, embed=embed)
+
+
+class RetryButton(ui.Button):
+    """Button to retry invite."""
+    def __init__(self, user: discord.User, steamid: str, ping: discord.Member):
+        self.user = user
+        self.steamid = steamid
+        self.ping = ping
+        super().__init__(label='Retry', style=discord.ButtonStyle.blurple)
+
+    async def callback(self, interaction):
+        if self.user == interaction.user:
+            await invite(interaction=interaction, steamid=self.steamid, ping=self.ping)
+        else:
+            return
+
+
+class SetSteamButton(ui.Button):
+    """Button to bring up Steam Modal."""
+    def __init__(self, name: str, user: discord.User, ping: discord.Member):
+        self.user = user
+        self.ping = ping
+        super().__init__(label=name, style=discord.ButtonStyle.gray)
+
+    async def callback(self, interaction):
+        if self.user == interaction.user:
+            await interaction.response.send_modal(SteamModal(ping=self.ping))
+        else:
+            return
+
+
+class SteamModal(ui.Modal):
+    """Resolve Steam ID from user input, then proceed with invite."""
+    def __init__(self, ping: discord.Member):
+        self.ping = ping
+        super().__init__(title="What's your Steam?")
+
+    user_input = ui.TextInput(label='Steam ID or URL', placeholder='Place Steam ID or URL here...')
+
+    async def on_submit(self, interaction: discord.Interaction):
+        user_input = self.user_input.value
+        user_input = user_input.replace('https://', '')
+        user_input = user_input.replace('steamcommunity.com/id/', '')
+        user_input = user_input.replace('steamcommunity.com/profile/', '')
+        user_input = user_input.replace('/', '')
+        user_input = quote(user_input)
+        if not user_input.isdigit():  # Vanity URL to Steam ID
+            resp = requests.get(
+                url='https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/'
+                    f'?key={STEAMKEY}&vanityurl={user_input}')
+            resp = resp.json()['response']
+            if resp['success'] == 1:
+                user_input = resp['steamid']
+        await invite(interaction=interaction, steamid=user_input, ping=self.ping, update_db=True)
+
+
+class Steam(commands.Cog):
+    """Steam invite command."""
+
+    def __init__(self, bot: commands.Bot):
+        self.bot = bot
+
+    @app_commands.command(name='invite')
+    async def invite_cmd(self, interaction: discord.Interaction, ping: discord.Member):
+        """Send "Join Game" Steam lobby invite link"""
+        author = interaction.user
+        if steamid := r.get(author.id):
+            await invite(interaction=interaction, steamid=steamid, ping=ping)
+        else:
+            await interaction.response.send_modal(SteamModal(ping=ping))
+
+
+async def setup(bot: commands.Bot):
+    await bot.add_cog(Steam(bot))

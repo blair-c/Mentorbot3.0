@@ -1,15 +1,17 @@
-import os
-import sys
+from os import getenv
+from sys import version
 from typing import Literal
 
 import box
 import discord
 from discord.ext import commands
+import redis
 import tabulate
 
-print(f'Python {sys.version}\n'
+print(f'Python {version}\n'
       f'discord.py {discord.__version__} | '
       f'python-box {box.__version__} | '
+      f'hiredis-py {redis.__version__} | '
       f'tabulate {tabulate.__version__}')
 
 
@@ -21,9 +23,10 @@ class MyBot(commands.Bot):
     async def setup_hook(self):
         cogs = [
             'hitboxes',  # Frame data and hitbox commands
-            'info',      # Links, info, and utility commands
+            'info',      # Links and info commands
             'mentors',   # Mentor list and management commands
             'roles',     # Roles channel setup and functionality
+            'steam',     # Steam invite command
         ]
         for cog in cogs:
             await self.load_extension(f'cogs.{cog}')
@@ -51,4 +54,4 @@ async def sync(ctx: commands.Context, scope: Literal['global', 'guild']):
     await ctx.send(f'Synced {len(synced)} commands {txt}')
 
 if __name__ == '__main__':
-    bot.run(os.getenv('TOKEN'))  # API Key from environment
+    bot.run(getenv('TOKEN'))  # API Key from environment
