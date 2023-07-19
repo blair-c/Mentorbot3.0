@@ -7,7 +7,7 @@ from discord import app_commands, ui
 from discord.ext import commands
 import redis
 
-r = redis.Redis.from_url(getenv('REDISURL'))
+r = redis.Redis.from_url(getenv('REDIS_URL'))
 STEAMKEY = getenv('STEAMKEY')
 COLOR = 1336470
 
