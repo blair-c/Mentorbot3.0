@@ -111,12 +111,23 @@ class Steam(commands.Cog):
 
     def __init__(self, bot: commands.Bot):
         self.bot = bot
+        self.ctx_menu = app_commands.ContextMenu(
+            name='Invite to Lobby',
+            callback=self.invite_menu,
+        )
+        self.bot.tree.add_command(self.ctx_menu)
+
+    async def invite_menu(self, interaction: discord.Interaction, ping: discord.Member):
+        """Invite user with Steam "Join Game" lobby link"""
+        if steamid := r.get(interaction.user.id):
+            await invite(interaction=interaction, steamid=steamid, ping=ping)
+        else:
+            await interaction.response.send_modal(SteamModal(ping=ping))
 
     @app_commands.command(name='invite')
     async def invite_cmd(self, interaction: discord.Interaction, ping: discord.Member):
-        """Send "Join Game" Steam lobby invite link"""
-        author = interaction.user
-        if steamid := r.get(author.id):
+        """Invite user with Steam "Join Game" lobby link"""
+        if steamid := r.get(interaction.user.id):
             await invite(interaction=interaction, steamid=steamid, ping=ping)
         else:
             await interaction.response.send_modal(SteamModal(ping=ping))
