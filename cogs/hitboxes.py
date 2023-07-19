@@ -21,6 +21,8 @@ class MoveSelect(Button):
     async def callback(self, interaction):
         if self.user == interaction.user:
             await interaction.response.edit_message(embed=self.embed)
+        else:
+            return
 
 
 class Hitboxes(commands.Cog):
