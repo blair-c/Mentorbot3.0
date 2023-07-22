@@ -37,7 +37,7 @@ async def invite(interaction: discord.Interaction, steamid: str, ping: discord.M
         view.add_item(SetSteamButton(name='Not you?', user=interaction.user, ping=ping))
         await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
     elif not info.get('gameid'):
-        embed = discord.Embed(title='Error: Not Currently In-Game', color=COLOR)
+        embed = discord.Embed(title='Error: Not Publicly In-Game', color=COLOR)
         embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
         embed.set_footer(text='Make sure "Game details" are set to "Public" in Steam Privacy Settings')
         view = ui.View()
