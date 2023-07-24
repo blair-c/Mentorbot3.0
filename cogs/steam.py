@@ -128,7 +128,7 @@ class Steam(commands.Cog):
         self.bot.tree.add_command(self.ctx_menu)
 
     async def invite_menu(self, interaction: discord.Interaction, ping: discord.Member):
-        """Invite user with Steam "Join Game" lobby link"""
+        """Invite a user with your Steam "Join Game" lobby link"""
         if steamid := r.get(interaction.user.id):
             await invite(interaction=interaction, steamid=steamid, ping=ping)
         else:
