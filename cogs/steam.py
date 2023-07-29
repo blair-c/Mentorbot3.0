@@ -29,7 +29,7 @@ async def invite(interaction: discord.Interaction, steamid: str, ping: discord.M
     if update_db:
         r.set(interaction.user.id, info['steamid'])
     # Invite
-    if info.get('communityvisibilitystate') == 2:
+    if info.get('communityvisibilitystate') == 1:
         embed = discord.Embed(title='Error: Private Profile', color=COLOR)
         embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
         view = ui.View()
