@@ -97,13 +97,14 @@ class SteamModal(ui.Modal):
         self.ping = ping
         super().__init__(title="What's your Steam?")
 
-    user_input = ui.TextInput(label='Steam ID or URL', placeholder='Place Steam ID or URL here...')
+    user_input = ui.TextInput(label='Steam ID or URL', placeholder='https://steamcommunity.com/...')
 
     async def on_submit(self, interaction: discord.Interaction):
         user_input = self.user_input.value
         user_input = user_input.replace('https://', '')
-        user_input = user_input.replace('steamcommunity.com/id/', '')
-        user_input = user_input.replace('steamcommunity.com/profile/', '')
+        user_input = user_input.replace('steamcommunity.com/', '')
+        user_input = user_input.replace('id/', '')
+        user_input = user_input.replace('profiles/', '')
         user_input = user_input.replace('/', '')
         user_input = quote(user_input)
         if not user_input.isdigit():  # Vanity URL to Steam ID
