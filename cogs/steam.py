@@ -54,9 +54,10 @@ async def invite(interaction: discord.Interaction, steamid: str, ping: discord.M
         view.add_item(SetSteamButton(name='Not you?', user=interaction.user, ping=ping))
         await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
     else:  # Success
+        lobbylink = f"https://steamjoin.com/{info['profileurl'].rstrip('/').split('/')[-1]}"
         embed = discord.Embed(
-            title=f"In Game: {info['gameextrainfo']}",
-            description=f"steam://joinlobby/{info['gameid']}/{info['lobbysteamid']}/{info['steamid']}",
+            title=f"Playing {info['gameextrainfo']}",
+            description=f'Join Game: {lobbylink}',
             color=COLOR)
         embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
         await interaction.response.send_message(content=ping.mention, embed=embed)
