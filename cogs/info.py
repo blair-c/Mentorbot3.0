@@ -79,7 +79,12 @@ class Info(commands.Cog):
     async def igl_google_docs(self, interaction: discord.Interaction):
         """IGL's list of informational graphics, data, and tools"""
         link = 'https://drive.google.com/drive/folders/1krAYYBW4Q8UYrNMXJ7C6T-85w0HCVJiJ'
-        await interaction.response.send_message(link)
+        embed = discord.Embed(
+            url=link,
+            title='IGL\'s Lab',
+            description='Informational graphics, data, and tools by IGL.')
+        embed.set_thumbnail(url='https://i.imgur.com/nN6DAmT.png')
+        await interaction.response.send_message(content=link, embed=embed)
 
     @app_commands.command(name='patchnotes')
     async def patch_notes_doc(self, interaction: discord.Interaction):
@@ -171,7 +176,7 @@ class Info(commands.Cog):
     @app_commands.command(name='teching')
     async def force_flinch(self, interaction: discord.Interaction):
         """Teching frame data comparison"""
-        await interaction.respons.send_message(
+        await interaction.response.send_message(
             'https://cdn.discordapp.com/attachments/'
             '376248878334214145/1160821640221962341/'
             'roaknockdownframedata.png')
