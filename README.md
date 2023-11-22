@@ -10,7 +10,7 @@ See Mentorbot in the [Rivals Academy Discord](https://rivals.academy/discord), t
 
 Mentorbot's hitbox commands provide quick hitbox references for any move in the game, covering the movesets of all 18 characters.
 
-![Using the Clairen Uptilt hitbox command](readme/hitbox.png)
+![Using the Mollo Up Strong hitbox command](readme/hitbox.png)
 
 ### Informational Commands
 
