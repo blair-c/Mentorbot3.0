@@ -2,7 +2,6 @@ from os import getenv
 from sys import version
 from typing import Literal
 
-import box
 import discord
 from discord.ext import commands
 import redis
