@@ -6,19 +6,24 @@ import box
 import discord
 from discord.ext import commands
 import redis
+import requests
 import tabulate
 
 print(f'Python {version}\n'
       f'discord.py {discord.__version__} | '
-      f'python-box {box.__version__} | '
       f'hiredis-py {redis.__version__} | '
+      f'requests {requests.__version__} | '
       f'tabulate {tabulate.__version__}')
 
 
 class MyBot(commands.Bot):
 
     def __init__(self, *, intents: discord.Intents):
-        super().__init__(command_prefix=commands.when_mentioned, intents=intents)
+        super().__init__(
+            activity=discord.CustomActivity(name='https://rivals.academy/'),
+            command_prefix=commands.when_mentioned,
+            intents=intents
+        )
     
     async def setup_hook(self):
         cogs = [
