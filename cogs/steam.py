@@ -46,10 +46,13 @@ async def invite(interaction: discord.Interaction, steamid: str, ping: discord.M
         view.add_item(SetSteamButton(name='Not you?', user=interaction.user, ping=ping))
         await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
     elif not info.get('lobbysteamid'):
-        embed = discord.Embed(title='Error: No Joinable Game Lobby Found', color=COLOR)
+        desc = ''
+        if info['gameid'] == '383980':  # RoA
+            desc = 'Create a new, empty friendlies match lobby, then retry'
+        embed = discord.Embed(title='Error: No Joinable Game Lobby Found', description=desc, color=COLOR)
         embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
         if info['gameid'] == '383980':  # RoA
-            embed.set_footer(text='Create a new, empty friendlies match lobby, then retry')
+            embed.set_image(url='https://steamjoin.com/img/lobby-roa.png')
         view = ui.View()
         view.add_item(RetryButton(user=interaction.user, steamid=info['steamid'], ping=ping))
         view.add_item(SetSteamButton(name='Not you?', user=interaction.user, ping=ping))
