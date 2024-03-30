@@ -19,7 +19,7 @@ class MyBot(commands.Bot):
 
     def __init__(self, *, intents: discord.Intents):
         super().__init__(
-            activity=discord.CustomActivity(name='https://rivals.academy/'),
+            activity=discord.CustomActivity(name='rivals.academy/'),
             command_prefix=commands.when_mentioned,
             intents=intents
         )
