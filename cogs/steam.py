@@ -64,7 +64,17 @@ async def invite(interaction: discord.Interaction, steamid: str, ping: discord.M
             description=f'Join Game: {lobbylink}',
             color=COLOR)
         embed.set_author(name=info['personaname'], url=info['profileurl'], icon_url=info['avatar'])
-        await interaction.response.send_message(content=ping.mention, embed=embed)
+        embed.set_footer(
+            text=('/invite has been moved to a separate bot and will be removed from Mentorbot on Jan 1 2025. '
+                "Click below, then in the meantime remove Mentorbot's /invite in Server Settings > Integrations.")
+        )
+        view = ui.View()
+        view.add_item(ui.Button(
+            label='New Bot',
+            url='https://discord.com/oauth2/authorize?client_id=1223433851200602214',
+            style=discord.ButtonStyle.link
+        ))
+        await interaction.response.send_message(content=ping.mention, embed=embed, view=view)
 
 
 class RetryButton(ui.Button):
