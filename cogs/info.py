@@ -33,7 +33,7 @@ class Info(commands.Cog):
             name='Profile photo drawn by Sxolian',
             value='https://twitter.com/Sxolian',
             inline=False)
-        await interaction.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed, ephemeral=True)
 
     # Sector 7-G Documents
     @app_commands.command(name='framedata')
